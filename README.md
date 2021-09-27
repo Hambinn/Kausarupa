@@ -4,7 +4,7 @@
 
 ### Sebelum clone github ini, tolong install dulu npm ya! ini wajib bin wajib banget pokonya! jangan sampe kelewat!
 
-### Slahkan dibaca baca dikit aja keterangan dibawah ini, di beberapa subfolder juga ada file PENTING.md yang harus kalian baca ya!
+### Silahkan dibaca baca dikit aja keterangan dibawah ini, di beberapa subfolder juga ada file PENTING.md yang harus kalian baca ya!
 
 ### :heart_eyes: SEMANGAT SEMUANYA! :heart_eyes:
 
