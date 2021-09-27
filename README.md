@@ -1,20 +1,14 @@
-# Kausarupa
+# Welcome to Website KAUSARUPA!
 
-## Build Setup
+## `BACA DULU GES!`
+
+### Sebelum clone github ini, tolong install dulu npm ya! ini wajib bin wajib banget pokonya! jangan sampe kelewat!
+
+### Slahkan dibaca baca dikit aja keterangan dibawah ini, di beberapa subfolder juga ada file PENTING.md yang harus kalian baca ya!
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+# buat jalanin websitenya di laptop kalian, otomatis bisa di buka di link http://localhost:3000/
+$ npm run dev (ini di ketik di terminal ya)
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
