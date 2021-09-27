@@ -1,10 +1,13 @@
-# Welcome to Website KAUSARUPA!
+# :fire: Welcome to Website KAUSARUPA! :fire:
 
-## `BACA DULU GES!`
+## :open_book: `BACA DULU GES!` :open_book:
 
 ### Sebelum clone github ini, tolong install dulu npm ya! ini wajib bin wajib banget pokonya! jangan sampe kelewat!
 
 ### Slahkan dibaca baca dikit aja keterangan dibawah ini, di beberapa subfolder juga ada file PENTING.md yang harus kalian baca ya!
+
+### :heart_eyes: SEMANGAT SEMUANYA! :heart_eyes:
+
 
 ```bash
 # buat jalanin websitenya di laptop kalian, otomatis bisa di buka di link http://localhost:3000/
