@@ -1,0 +1,1 @@
+tolong baca semua file PENTING.md yang ada di beberapa folder ya, jangan ragu ragu buat nanya pokonya!
