@@ -8,6 +8,10 @@
 
 ### :heart_eyes: SEMANGAT SEMUANYA! :heart_eyes:
 
+## `link figma:`
+### https://www.figma.com/file/nhuaxpL8TeofctonCKhapL/GEP?node-id=32%3A2
+
+
 
 ```bash
 # buat jalanin websitenya di laptop kalian, otomatis bisa di buka di link http://localhost:3000/
