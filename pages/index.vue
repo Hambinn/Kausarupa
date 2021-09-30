@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>Hello world</p>
     <!-- ini buat naro berbagai component yg ada di folder components -->
   </div>
 </template>
