@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <div class="Logo">
+      <p>hello world</p>
     <img src="~assets/svg/LandingPage/logo kausarupa.svg" height="500">
     </div>
     <!-- ini buat naro berbagai component yg ada di folder components -->
