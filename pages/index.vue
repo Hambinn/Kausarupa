@@ -1,7 +1,7 @@
 <template>
   <div class="container">
+    <tombol/>
     <div class="Logo">
-      <p>hello world</p>
     <img src="~assets/svg/LandingPage/logo kausarupa.svg" height="500">
     </div>
     <!-- ini buat naro berbagai component yg ada di folder components -->
@@ -9,9 +9,11 @@
 </template>
 
 <script>
-export default {
+import Tombol from '../components/Tombol.vue'
+    export default {
+  components: { Tombol },
 // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
-}
+    }
 </script>
 
 <style>
