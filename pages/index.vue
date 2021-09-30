@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="Logo">
-    <img src="~assets/svg/LandingPage/logo kausarupa.svg">
+    <img src="~assets/svg/LandingPage/logo kausarupa.svg" height="500">
     </div>
     <!-- ini buat naro berbagai component yg ada di folder components -->
   </div>
@@ -29,7 +29,7 @@ export default {
 }
 
 .Logo{
-  padding: 70px 0;
+  padding: 120px 0;
   text-align: center;
 }
 
