@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Nuxt-link to="/test"><tombol/></Nuxt-link>
+    <Nuxt-link to="/Welcome"><tombol/></Nuxt-link>
     <bintang/>
     <awan-loading/>
     <div class="Logo">
@@ -20,7 +20,7 @@ import AwanLoading from '../components/AwanLoading.vue'
     }
 </script>
 
-<style >
+<style>
 *{
    padding: 0;
    margin: 0;
