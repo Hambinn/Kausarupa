@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <tombol/>
+    <Nuxt-link to="/test"><tombol/></Nuxt-link>
     <div class="Logo">
     <img src="~assets/svg/LandingPage/logo kausarupa.svg" height="500">
     </div>
