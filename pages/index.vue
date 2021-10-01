@@ -4,7 +4,7 @@
     <bintang/>
     <awan-loading/>
     <div class="Logo">
-    <img src="~assets/svg/LandingPage/logo kausarupa.svg" height="500">
+    <img src="~assets/svg/LandingPage/logo kausarupa.svg" alt="" height="500">
     </div>
     <!-- ini buat naro berbagai component yg ada di folder components -->
   </div>
@@ -29,8 +29,14 @@ import AwanLoading from '../components/AwanLoading.vue'
    background-size: 1920px 1080px;*/
 }
 
+html{
+  background-image: url("../assets/png/LandingPage/Background.png");
+  background-repeat: no-repeat;
+  background-size: 1920px 1080px;
+}
+
 @media only  screen and (max-width: 1366px) {
-    *{
+    html{
         background-size: 1366px 768px;
     }
 }
