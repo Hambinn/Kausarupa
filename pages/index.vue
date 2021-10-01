@@ -24,9 +24,9 @@ import AwanLoading from '../components/AwanLoading.vue'
 *{
    padding: 0;
    margin: 0;
-   background-image: url("../assets/png/LandingPage/Background.png");
+   /*background-image: url("../assets/png/LandingPage/Background.png");
    background-repeat: no-repeat;
-   background-size: 1920px 1080px;
+   background-size: 1920px 1080px;*/
 }
 
 @media only  screen and (max-width: 1366px) {

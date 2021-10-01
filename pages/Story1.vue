@@ -1,18 +1,16 @@
 <template>
     <div>
-       <Nuxt-link to="/Story1"><tombol-welcome/></Nuxt-link>
+        <p>Hello World</p>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
 
 <script>
-import TombolWelcome from '../components/TombolWelcome.vue'
     export default {
-  components: { TombolWelcome },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
 
-<style>
+<style  scoped>
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
