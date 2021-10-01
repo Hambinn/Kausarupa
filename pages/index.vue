@@ -2,8 +2,7 @@
   <div class="container">
     <Nuxt-link to="/test"><tombol/></Nuxt-link>
     <bintang/>
-    <AwanKanan/>
-    <AwanKiri/>
+    <awan-loading/>
     <div class="Logo">
     <img src="~assets/svg/LandingPage/logo kausarupa.svg" height="500">
     </div>
@@ -14,15 +13,14 @@
 <script>
 import Tombol from '../components/Tombol.vue'
 import Bintang from '../components/Bintang.vue'
-import AwanKanan from '../components/AwanKanan.vue'
-import AwanKiri from '../components/AwanKiri.vue'
+import AwanLoading from '../components/AwanLoading.vue'
     export default {
-  components: { Tombol , Bintang , AwanKanan , AwanKiri },
+  components: { Tombol , Bintang, AwanLoading },
 // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
 
-<style>
+<style >
 *{
    padding: 0;
    margin: 0;
