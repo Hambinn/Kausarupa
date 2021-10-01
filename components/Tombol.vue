@@ -1,6 +1,6 @@
 <template>
-    <div class="Tap">
-        <img src="~assets/svg/LandingPage/tap me - box.svg">
+    <div>
+        <button class="button">Tap Me!</button>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -12,12 +12,23 @@
 </script>
 
 <style  scoped>
-.Tap{
-  margin: 0;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.button{
+    position: absolute;
+    width: 648px;
+    height: 86px;
+    left: 620px;
+    top: 640px;
+
+    background: #30455A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+
+    font-family: Tf Grotesk Italic;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 58px;
+
 }
 
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */

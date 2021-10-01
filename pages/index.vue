@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <tombol/>
+    <Nuxt-link to="/test"><tombol/></Nuxt-link>
     <bintang/>
     <AwanKanan/>
     <AwanKiri/>
