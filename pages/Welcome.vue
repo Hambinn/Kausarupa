@@ -1,6 +1,7 @@
 <template>
     <div>
        <tombol-welcome />
+       <bintang-welcome />
 
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -8,8 +9,9 @@
 
 <script>
 import TombolWelcome from '../components/TombolWelcome.vue'
+import BintangWelcome from '../components/BintangWelcome.vue'
     export default {
-  components: { TombolWelcome },
+  components: { TombolWelcome , BintangWelcome },
   data(){
       return{
           contactUs:"~/assets/svg/WelcomePage/contact us.svg",
