@@ -3,9 +3,7 @@
     <Nuxt-link to="/Welcome"><tombol/></Nuxt-link>
     <bintang/>
     <awan-loading/>
-    <div class="Logo">
-    <img src="~assets/svg/LandingPage/logo kausarupa.svg" alt="" height="500">
-    </div>
+    <logo/>
     <!-- ini buat naro berbagai component yg ada di folder components -->
   </div>
 </template>
@@ -13,9 +11,10 @@
 <script>
 import Tombol from '../components/Tombol.vue'
 import Bintang from '../components/Bintang.vue'
+import Logo from '../components/Logo.vue'
 import AwanLoading from '../components/AwanLoading.vue'
     export default {
-  components: { Tombol , Bintang, AwanLoading },
+  components: { Tombol , Bintang, AwanLoading, Logo },
 // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
@@ -41,10 +40,7 @@ html{
     }
 }
 
-.Logo{
-  padding: 120px 0;
-  text-align: center;
-}
+
 
 /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
