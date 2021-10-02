@@ -80,10 +80,12 @@ export default {
     position: absolute;
 }
 .container-awan .kiri{
-    transform: translate(-100%,-10%);
+    height: 900px;
+    transform: translate(-70%,-10%);
 }
 .container-awan .kanan{
-    transform: translate(266.5%,30%);
+    height: 700px;
+    transform: translate(256.5%,11%);
 }
 
 .tap-me{

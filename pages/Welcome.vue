@@ -1,8 +1,7 @@
 <template>
-    <div>
+    <div class="container-welcome">
        <tombol-welcome />
        <bintang-welcome />
-
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -24,9 +23,26 @@ import BintangWelcome from '../components/BintangWelcome.vue'
     }
 </script>
 
-<style scoped>
-    /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
-    html{
-        background-image: linear-gradient(aqua,navy);
+<style>
+*{
+        padding: 0;
+        margin: 0;
+        
+}
+
+.container-welcome{
+    text-align: center;
+    background-image: url("../assets/svg/WelcomePage/background (1).svg");
+    background-repeat: no-repeat;
+    background-size: 100% 1080px;
+    height: 100vh;
+    width: 100vw;
     }
+
+@media only  screen and (max-width: 1366px) {
+    .container-welcome{
+        background-size: 1366px 768px;
+    }
+}
+    /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
