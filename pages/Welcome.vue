@@ -59,28 +59,28 @@
     height: 150px;
     top: 50%;
     left: 50%;
-    transform: translate(320%,470%);
+    transform: translate(260%,470%);
 }
 
 .container-popup .about{
     height: 150px;
     top: 50%;
     left: 50%;
-    transform: translate(30%,370%);
+    transform: translate(0%,370%);
 }
 
 .container-popup .catatan{
     height: 150px;
     top: 50%;
     left: 50%;
-    transform: translate(990%,370%);
+    transform: translate(895%,370%);
 }
 
 .container-popup .trailer{
     height: 150px;
     top: 50%;
     left: 50%;
-    transform: translate(700%,470%);
+    transform: translate(620%,470%);
 }
 
 .next{
