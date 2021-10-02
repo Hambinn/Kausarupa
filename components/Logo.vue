@@ -21,5 +21,6 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
