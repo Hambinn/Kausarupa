@@ -9,6 +9,10 @@
     <div class="container-about">
       <img src="~assets/svg/WelcomePage/about us.svg" alt="">
     </div>
+    <div class="container-bintang">
+        <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
+        <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
+    </div>
       
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -43,6 +47,24 @@
     height: 100vh;
     width: 100vw;
     }
+
+.container-bintang{
+    position: absolute;
+}
+
+.container-bintang .oren{
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(200%,30%);
+}
+
+.container-bintang .ungu{
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(1300%,30%);
+}
 
 @media only  screen and (max-width: 1366px) {
     .container-welcome{
