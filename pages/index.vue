@@ -55,7 +55,7 @@ export default {
     height: 500px;
     top: 50%;
     left: 50%;
-    transform: translate(83%,40%);
+    transform: translate(83%,30%);
 }
 
 .container-bintang{
@@ -95,7 +95,7 @@ export default {
     width: 670px;
     height: 86px;
     position: relative;
-    top: 755px;
+    top: 670px;
     font-size: 50px;
     color: #F2F7ED;
 }

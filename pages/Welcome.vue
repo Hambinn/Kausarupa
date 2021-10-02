@@ -1,7 +1,9 @@
 <template>
     <div class="container-welcome">
-       <tombol-welcome />
-       <bintang-welcome />
+        <Nuxt-link to="/Main">
+        <button class="next">Next</button>
+        </Nuxt-link>
+        <bintang-welcome />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -43,6 +45,23 @@ import BintangWelcome from '../components/BintangWelcome.vue'
     .container-welcome{
         background-size: 1366px 768px;
     }
+}
+
+.next{
+    background: #C4C4C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 27px;
+    width: 648px;
+    height: 86px;
+    position: relative;
+    top: 640px;
+
+    font-size: 48px;
+    font-family: Tf Grotesk Italic;
+    font-style: italic;
+    font-weight: normal;
+    color: #000000;
+
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
