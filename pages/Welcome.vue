@@ -1,19 +1,23 @@
 <template>
   <div class="container-welcome">
+    <div class="container-popup">
+      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact">
+      <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about">
+      <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan">
+      <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer">
+    </div>
+    <div class="Tombol-next">
       <Nuxt-link to="/Main">
       <button class="next">Next</button>
       </Nuxt-link>
-    <div class="container-contact">
-      <img src="~assets/svg/WelcomePage/contact us.svg" alt="">
-    </div>
-    <div class="container-about">
-      <img src="~assets/svg/WelcomePage/about us.svg" alt="">
     </div>
     <div class="container-bintang">
         <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
         <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
     </div>
-      
+
+=======
+>>>>>>> dafc5701e217a2c21fc6eb8304c3a5400dd62fbf
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -72,6 +76,38 @@
     }
 }
 
+.container-popup{
+    position: absolute;
+}
+
+.container-popup .contact{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(260%,470%);
+}
+
+.container-popup .about{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,370%);
+}
+
+.container-popup .catatan{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(895%,370%);
+}
+
+.container-popup .trailer{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(620%,470%);
+}
+
 .next{
     background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -79,7 +115,7 @@
     width: 648px;
     height: 86px;
     position: relative;
-    top: 640px;
+    top: 670px;
 
     font-size: 48px;
     font-family: Tf Grotesk Italic;
