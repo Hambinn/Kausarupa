@@ -1,15 +1,16 @@
 <template>
   <div class="container-welcome">
+    <div class="container-contact">
+      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" height="150">
+    </div>
+    <div class="container-about">
+      <img src="~assets/svg/WelcomePage/about us.svg" alt="" height="150">
+    </div>
+    <div class="Tombol-next">
       <Nuxt-link to="/Main">
       <button class="next">Next</button>
       </Nuxt-link>
-    <div class="container-contact">
-      <img src="~assets/svg/WelcomePage/contact us.svg" alt="">
     </div>
-    <div class="container-about">
-      <img src="~assets/svg/WelcomePage/about us.svg" alt="">
-    </div>
-      
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -50,6 +51,20 @@
     }
 }
 
+.container-contact{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-390%,85%);
+}
+
+.container-about{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-550%,-30%);
+}
+
 .next{
     background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -57,7 +72,7 @@
     width: 648px;
     height: 86px;
     position: relative;
-    top: 640px;
+    top: 670px;
 
     font-size: 48px;
     font-family: Tf Grotesk Italic;
