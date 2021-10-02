@@ -66,14 +66,14 @@ export default {
     height: 70px;
     top: 50%;
     left: 50%;
-    transform: translate(1700%,290%);
+    transform: translate(1770%,200%);
 }
 
 .container-bintang .besar{
     height: 100px;
     top: 50%;
     left: 50%;
-    transform: translate(450%,430%);
+    transform: translate(450%,540%);
 }
 
 .container-awan{
