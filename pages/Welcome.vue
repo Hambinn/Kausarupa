@@ -1,10 +1,10 @@
 <template>
   <div class="container-welcome">
-    <div class="container-contact">
-      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" height="150">
-    </div>
-    <div class="container-about">
-      <img src="~assets/svg/WelcomePage/about us.svg" alt="" height="150">
+    <div class="container-popup">
+      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact">
+      <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about">
+      <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan">
+      <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer">
     </div>
     <div class="Tombol-next">
       <Nuxt-link to="/Main">
@@ -51,18 +51,36 @@
     }
 }
 
-.container-contact{
+.container-popup{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-390%,85%);
 }
 
-.container-about{
-    position: absolute;
+.container-popup .contact{
+    height: 150px;
     top: 50%;
     left: 50%;
-    transform: translate(-550%,-30%);
+    transform: translate(320%,470%);
+}
+
+.container-popup .about{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(30%,370%);
+}
+
+.container-popup .catatan{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(990%,370%);
+}
+
+.container-popup .trailer{
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(700%,470%);
 }
 
 .next{
