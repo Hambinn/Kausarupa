@@ -4,8 +4,8 @@
       <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
     </div>
     <div class="container-awan">
-      <img src="../assets/svg/LandingPage/awan kanan bawah.svg" alt="" class="kanan">
-      <img src="../assets/svg/LandingPage/awan kiri atas.svg" alt="" class="kiri">
+      <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
+      <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
     </div>
     <div class="container-bintang">
         <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="kecil">
@@ -80,12 +80,12 @@ export default {
     position: absolute;
 }
 .container-awan .kiri{
-    height: 900px;
-    transform: translate(-70%,-10%);
+    height: 340px;
+    transform: translate(-93%,-30%);
 }
 .container-awan .kanan{
-    height: 700px;
-    transform: translate(256.5%,10%);
+    height: 476px;
+    transform: translate(287.5%,100%);
 }
 
 .tap-me{
