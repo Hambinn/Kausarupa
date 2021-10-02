@@ -15,9 +15,6 @@
         <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
         <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
     </div>
-
-=======
->>>>>>> dafc5701e217a2c21fc6eb8304c3a5400dd62fbf
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
