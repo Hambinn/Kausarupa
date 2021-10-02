@@ -34,9 +34,9 @@ export default {
 
 .container-landing{
     text-align: center;
-    background-image: url("../assets/png/LandingPage/Background.png");
+    background-image: url("../assets/png/LandingPage/bg panjang 16_9.png");
     background-repeat: no-repeat;
-    background-size: 100% 1080px;
+    background-size: 100% 100%;
     height: 100vh;
     width: 100vw;
     }
@@ -85,7 +85,7 @@ export default {
 }
 .container-awan .kanan{
     height: 700px;
-    transform: translate(256.5%,11%);
+    transform: translate(256.5%,10%);
 }
 
 .tap-me{

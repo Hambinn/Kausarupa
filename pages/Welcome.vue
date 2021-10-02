@@ -1,18 +1,21 @@
 <template>
-    <div class="container-welcome">
-        <Nuxt-link to="/Main">
-        <button class="next">Next</button>
-        </Nuxt-link>
-        <bintang-welcome />
+  <div class="container-welcome">
+      <Nuxt-link to="/Main">
+      <button class="next">Next</button>
+      </Nuxt-link>
+    <div class="container-contact">
+      <img src="~assets/svg/WelcomePage/contact us.svg" alt="">
+    </div>
+    <div class="container-about">
+      <img src="~assets/svg/WelcomePage/about us.svg" alt="">
+    </div>
+      
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
 
 <script>
-import TombolWelcome from '../components/TombolWelcome.vue'
-import BintangWelcome from '../components/BintangWelcome.vue'
     export default {
-  components: { TombolWelcome , BintangWelcome },
   data(){
       return{
           contactUs:"~/assets/svg/WelcomePage/contact us.svg",
@@ -27,14 +30,14 @@ import BintangWelcome from '../components/BintangWelcome.vue'
 
 <style>
 *{
-        padding: 0;
-        margin: 0;
+    padding: 0;
+    margin: 0;
         
 }
 
 .container-welcome{
     text-align: center;
-    background-image: url("../assets/svg/WelcomePage/background (1).svg");
+    background-image: url("../assets/png/WelcomePage/bg welcome 16_9.png");
     background-repeat: no-repeat;
     background-size: 100% 1080px;
     height: 100vh;
