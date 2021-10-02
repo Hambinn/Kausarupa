@@ -54,17 +54,17 @@
 }
 
 .container-bintang .oren{
-    height: 100px;
+    height: 140px;
     top: 50%;
     left: 50%;
-    transform: translate(200%,30%);
+    transform: translate(180%,60%);
 }
 
 .container-bintang .ungu{
-    height: 70px;
+    height: 90px;
     top: 50%;
     left: 50%;
-    transform: translate(1300%,30%);
+    transform: translate(1350%,210%);
 }
 
 @media only  screen and (max-width: 1366px) {
