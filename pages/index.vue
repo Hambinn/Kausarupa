@@ -32,6 +32,7 @@ export default {
         
 }
 
+
 .container-landing{
     text-align: center;
     background-image: url("../assets/png/LandingPage/bg panjang 16_9.png");
@@ -89,6 +90,10 @@ export default {
 }
 
 .tap-me{
+    all: unset;
+    font-family: 'Tf Grotesk';
+    font-weight: normal;
+    font-style: italic;
     background: #30455A;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
@@ -99,5 +104,9 @@ export default {
     font-size: 50px;
     color: #F2F7ED;
 }
-   
+ 
+a{
+    text-decoration: none;
+}
+
 </style>

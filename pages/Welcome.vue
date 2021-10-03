@@ -106,6 +106,7 @@
 }
 
 .next{
+    all: unset;
     background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 27px;
@@ -115,11 +116,19 @@
     top: 670px;
 
     font-size: 48px;
-    font-family: Tf Grotesk Italic;
-    font-style: italic;
+    font-family: 'Tf Grotesk';
     font-weight: normal;
+    font-style: italic;
     color: #000000;
 
+}
+
+.next:hover{
+    background-color:#587EA5 ;
+}
+
+a{
+    text-decoration: none;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
