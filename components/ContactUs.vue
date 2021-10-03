@@ -1,6 +1,10 @@
 <template>
     <div>
         <div class="ContactUs">Contact Us</div>
+        <img src="~assets/svg/WelcomePage/icon ig.svg" alt="" class="ig">
+        <img src="~assets/svg/WelcomePage/icon cp.svg" alt="" class="cp">
+        <img src="~assets/svg/WelcomePage/icon twitter.svg" alt="" class="twitter">
+        <img src="~assets/svg/WelcomePage/icon youtube.svg" alt="" class="youtube">
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -29,6 +33,38 @@
     font-size: 48px;
     line-height: 150px;
     text-align: center;
+}
+
+.ig{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 350px;
+    left: 750px;
+}
+
+.cp{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 350px;
+    left: 980px;
+}
+
+.twitter{
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    top: 470px;
+    left: 750px;
+}
+
+.youtube{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 470px;
+    left: 980px;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
