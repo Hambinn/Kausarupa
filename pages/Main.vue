@@ -32,9 +32,12 @@
     }
 </script>
 
-<style  scoped>
+<style >
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
-
+    body{
+        margin: 0;
+        padding: 0;
+    }
     .container-main{
         background-image: url("../assets/png/MainPage/bg_terang.png");
         background-repeat: no-repeat;
