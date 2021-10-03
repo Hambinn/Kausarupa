@@ -15,14 +15,20 @@
         <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
         <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
     </div>
+    <div>
+        <form-welcome/>
+    </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
 
 <script>
+import FormWelcome from '../components/FormWelcome.vue'
     export default {
+        components:{FormWelcome},
   data(){
       return{
+      
           contactUs:"~/assets/svg/WelcomePage/contact us.svg",
           trailer:"~/assets/svg/WelcomePage/trailer.svg",
           aboutUs:"~/assets/svg/WelcomePage/aboutUSs.svg",
@@ -113,7 +119,7 @@
     width: 648px;
     height: 86px;
     position: relative;
-    top: 670px;
+    top: 700px;
 
     font-size: 48px;
     font-family: 'Tf Grotesk';
