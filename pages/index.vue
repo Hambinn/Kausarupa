@@ -85,7 +85,7 @@ export default {
 }
 .container-awan .kanan{
     height: 476px;
-    transform: translate(287.5%,100%);
+    transform: translate(287.9%,99%);
 }
 
 .tap-me{
