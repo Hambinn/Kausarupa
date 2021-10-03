@@ -11,6 +11,10 @@
       <button class="next">Next</button>
       </Nuxt-link>
     </div>
+    <div class="container-bintang">
+        <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
+        <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
+    </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -44,6 +48,24 @@
     height: 100vh;
     width: 100vw;
     }
+
+.container-bintang{
+    position: absolute;
+}
+
+.container-bintang .oren{
+    height: 140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(180%,60%);
+}
+
+.container-bintang .ungu{
+    height: 90px;
+    top: 50%;
+    left: 50%;
+    transform: translate(1350%,210%);
+}
 
 @media only  screen and (max-width: 1366px) {
     .container-welcome{
@@ -84,6 +106,7 @@
 }
 
 .next{
+    all: unset;
     background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 27px;
@@ -93,11 +116,19 @@
     top: 670px;
 
     font-size: 48px;
-    font-family: Tf Grotesk Italic;
-    font-style: italic;
+    font-family: 'Tf Grotesk';
     font-weight: normal;
+    font-style: italic;
     color: #000000;
 
+}
+
+.next:hover{
+    background-color:#587EA5 ;
+}
+
+a{
+    text-decoration: none;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

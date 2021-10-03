@@ -32,6 +32,7 @@ export default {
         
 }
 
+
 .container-landing{
     text-align: center;
     background-image: url("../assets/png/LandingPage/bg panjang 16_9.png");
@@ -66,14 +67,14 @@ export default {
     height: 70px;
     top: 50%;
     left: 50%;
-    transform: translate(1700%,290%);
+    transform: translate(1770%,200%);
 }
 
 .container-bintang .besar{
     height: 100px;
     top: 50%;
     left: 50%;
-    transform: translate(450%,430%);
+    transform: translate(450%,540%);
 }
 
 .container-awan{
@@ -85,10 +86,14 @@ export default {
 }
 .container-awan .kanan{
     height: 476px;
-    transform: translate(287.5%,100%);
+    transform: translate(287.9%,99%);
 }
 
 .tap-me{
+    all: unset;
+    font-family: 'Tf Grotesk';
+    font-weight: normal;
+    font-style: italic;
     background: #30455A;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
@@ -99,5 +104,9 @@ export default {
     font-size: 50px;
     color: #F2F7ED;
 }
-   
+ 
+a{
+    text-decoration: none;
+}
+
 </style>
