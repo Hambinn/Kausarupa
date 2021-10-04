@@ -1,7 +1,7 @@
 <template>
     <div class="modal-overlay" @click="$emit(`close-modal`)">
         <div class="Youtube" @click.stop>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
