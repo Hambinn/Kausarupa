@@ -32,9 +32,12 @@
     }
 </script>
 
-<<<<<<< HEAD
-<style>
+<style >
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
+body{
+    margin: 0;
+    padding: 0;
+}
 
 .container-main{
     background-image: url("../assets/png/MainPage/bg_terang.png");
@@ -43,21 +46,6 @@
     height: 100%;
     width: 100%;
 }
-=======
-<style >
-    /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
-    body{
-        margin: 0;
-        padding: 0;
-    }
-    .container-main{
-        background-image: url("../assets/png/MainPage/bg_terang.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-    }
->>>>>>> b3e0fad779c1348248b12234c22062caad74341f
 
 @media only screen and (max-width: 1366px) {
     .container-welcome{
