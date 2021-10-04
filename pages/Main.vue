@@ -46,12 +46,6 @@ body{
     height: 100%;
     width: 100%;
 }
-
-@media only screen and (max-width: 1366px) {
-    .container-welcome{
-        background-size: 1366px 768px;
-    }
-}
     
 .container-bulan{
     height: 180px;
@@ -109,5 +103,9 @@ body{
     transform: translate(0%, 50%);
 }
 
-
+@media only screen and (max-width: 1366px) {
+    .container-welcome{
+        background-size: 1366px 768px;
+    }
+}
 </style>
