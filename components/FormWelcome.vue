@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <h1 class="welcome">Welcome</h1>
-        <div class="BoxNama">
-            <h1 class="nama">Nama</h1>
-        </div>
-        <div class="BoxInstansi">
-            <h1 class="instansi">Instansi</h1>
+        <div class="form-control">
+            <form action="">
+                <input type="text" id="nama" name="nama" placeholder="Instansi" class="placeholder name" autocomplete="off">
+                <input type="text" id="instansi" name="instansi" placeholder="Nama" class="placeholder instansi" autocomplete="off">
+            </form>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -101,6 +101,36 @@ color: rgba(0, 0, 0, 0.5);
     line-height: 28px;
 
     color: rgba(0, 0, 0, 0.5);
+}
+
+.placeholder::placeholder{
+    text-align: center;
+}
+
+input{
+    all: unset;
+    width: 500px;
+    height: 67px;
+    border-radius: 50px;
+    background: #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input::-webkit-input-placeholder{
+    font-family: Roboto;
+    font-size: 24px;
+}
+
+.name{
+    position: absolute;
+    left: 160px;
+    top: 390px;
+}
+
+.instansi{
+    position: absolute;
+    left: 160px;
+    top: 290px;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
