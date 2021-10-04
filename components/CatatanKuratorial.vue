@@ -2,7 +2,7 @@
     <div class="modal-overlay" @click="$emit(`close-modal`)">
         <div class="CatatanKuratorial" @click.stop>
             <h4>Catatan Kuratorial</h4>
-            <p>mana catatannya kepin ajg</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quam consequuntur, consectetur vero autem voluptates aliquam quidem? Eum cupiditate perferendis et placeat suscipit quidem iusto ab nihil molestias alias possimus minus exercitationem, quos harum cumque sunt qui maiores hic! Alias officiis voluptates, explicabo laudantium magni corrupti error magnam, saepe cum dolores illo. Ullam blanditiis ipsum sunt ratione deserunt, quo porro perspiciatis voluptas eum ea odio quis fugiat modi vero esse nostrum perferendis possimus id accusantium aspernatur? Blanditiis beatae ex optio rem exercitationem iure vitae expedita dicta ea, quisquam magnam laboriosam doloribus!</p>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -43,6 +43,12 @@
     display: flex;
     justify-content: center;
     background-color: #000000da;
+}
+
+p{
+    font-family: 'Gaegu', cursive;
+    font-size: 24px;
+    line-height: 30px;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
