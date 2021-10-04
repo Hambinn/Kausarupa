@@ -2,7 +2,7 @@
     <div class="modal-overlay" @click="$emit(`close-modal`)">
         <div class="CatatanKuratorial" @click.stop>
             <h4>Catatan Kuratorial</h4>
-            <p>mana catatannya ngentt</p>
+            <p>mana catatannya kepin ajg</p>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
