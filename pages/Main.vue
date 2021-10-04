@@ -23,6 +23,15 @@
         <div class="container-pita">
             <img src="../assets/svg/MainPage/pita.svg" alt="" class="oren">
         </div>
+        <div class="container-permen">
+            <img src="../assets/svg/MainPage/permen.svg" alt="" class="oren">
+        </div>
+        <div class="container-bintang-item">
+            <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
+        </div>
+        <div class="container-bintang-putih-1">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="oren">
+        </div>
     </div>
 </template>
 
@@ -72,7 +81,7 @@ body{
     height: auto;
     top: 50%;
     left: 50%;
-    transform: translate(20%, 0%);
+    transform: translate(33%, 0%);
 }
 
 .container-kamera{
@@ -83,10 +92,10 @@ body{
 }
 
 .container-ikan .ungu{
-    height: 400px;
+    height: 300px;
     top: 50%;
     left: 50%;
-    transform: translate(105%, 95%);
+    transform: translate(340%, -260%);
 }
 
 .container-ikan .oren{
@@ -101,6 +110,27 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(0%, 50%);
+}
+
+.container-permen{
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(22%, -172%);
+}
+
+.container-bintang-item{
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(80%, -5650%);
+}
+
+.container-bintang-putih-1{
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(13%, -3850%);
 }
 
 @media only screen and (max-width: 1366px) {
