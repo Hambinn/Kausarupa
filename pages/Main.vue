@@ -32,30 +32,78 @@
     }
 </script>
 
-<style  scoped>
+<style>
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 
-    .container-main{
-        background-image: url("../assets/png/MainPage/bg_terang.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-    }
+.container-main{
+    background-image: url("../assets/png/MainPage/bg_terang.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
 
-    .container-bulan{
-        position: absolute;
-        transform: translate(40%, 30%);
+@media only screen and (max-width: 1366px) {
+    .container-welcome{
+        background-size: 1366px 768px;
     }
+}
+    
+.container-bulan{
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 25%);
+}
 
-    .container-kelinci{
-        position: absolute;
-        transform: translate(140%, 150%);
-    }
+.container-kelinci{
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(73%, 10%);
+}
+    
+.container-saturnus{
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(3%, -60%);
+}
 
-    @media only screen and (max-width: 1366px) {
-        .container-welcome{
-            background-size: 1366px 768px;
-        }
-    }
+.container-lolipop{
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(20%, 0%);
+}
+
+.container-kamera{
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 25%);
+}
+
+.container-ikan .ungu{
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(105%, 95%);
+}
+
+.container-ikan .oren{
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, 50%);
+}
+
+.container-pita{
+    height: 650px;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 50%);
+}
+
+
 </style>
