@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <div class="AboutUs">About Us</div>
+    <div class="modal-overlay" @click="$emit(`close-modal`)">
+        <div class="AboutUs" @click.stop>About Us
+            <p>ini isinya apa jancok</p>
+        </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -30,6 +32,17 @@
     line-height: 150px;
     text-align: left;
     padding-left: 70px;
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000da;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

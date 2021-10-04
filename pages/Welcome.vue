@@ -1,10 +1,10 @@
 <template>
   <div class="container-welcome">
     <div class="container-popup">
-      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact">
-      <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about">
-      <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan">
-      <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer">
+      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact" @click="showContact = true">
+      <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
+      <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
+      <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
     </div>
     <div class="Tombol-next">
       <Nuxt-link to="/Main">
@@ -17,24 +17,31 @@
     </div>
     <div>
         <form-welcome/>
+        <about-us v-show="showAboutUs" @close-modal="showAboutUs = false"/>
+        <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
+        <contact-us v-show="showContact" @close-modal="showContact = false"/>
+        <youtube v-show="showYoutube" @close-modal="showYoutube=false"/>
     </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
 
 <script>
+import AboutUs from '../components/AboutUs.vue'
+import CatatanKuratorial from '../components/CatatanKuratorial.vue'
+import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
+import Youtube from '../components/Youtube.vue'
     export default {
-        components:{FormWelcome},
-  data(){
-      return{
-      
-          contactUs:"~/assets/svg/WelcomePage/contact us.svg",
-          trailer:"~/assets/svg/WelcomePage/trailer.svg",
-          aboutUs:"~/assets/svg/WelcomePage/aboutUSs.svg",
-          catatan:"~/assets/svg/WelcomePage/catatan kuratorial.svg"
-      }
-  }
+        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
+        data(){
+            return{
+                showAboutUs: false,
+                showCatatan: false,
+                showContact: false,
+                showYoutube: false,
+            }
+        }
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
@@ -88,6 +95,7 @@ import FormWelcome from '../components/FormWelcome.vue'
     top: 50%;
     left: 50%;
     transform: translate(260%,470%);
+    cursor: pointer;
 }
 
 .container-popup .about{
@@ -95,6 +103,7 @@ import FormWelcome from '../components/FormWelcome.vue'
     top: 50%;
     left: 50%;
     transform: translate(-5%,370%);
+    cursor: pointer;
 }
 
 .container-popup .catatan{
@@ -102,6 +111,7 @@ import FormWelcome from '../components/FormWelcome.vue'
     top: 50%;
     left: 50%;
     transform: translate(880%,370%);
+    cursor: pointer;
 }
 
 .container-popup .trailer{
@@ -109,6 +119,7 @@ import FormWelcome from '../components/FormWelcome.vue'
     top: 50%;
     left: 50%;
     transform: translate(610%,470%);
+    cursor: pointer;
 }
 
 .next{

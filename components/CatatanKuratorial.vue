@@ -1,6 +1,9 @@
 <template>
-    <div>
-        <div class="CatatanKuratorial">Catatan Kuratorial</div>
+    <div class="modal-overlay" @click="$emit(`close-modal`)">
+        <div class="CatatanKuratorial" @click.stop>
+            <h4>Catatan Kuratorial</h4>
+            <p>mana catatannya ngentt</p>
+        </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -16,7 +19,7 @@
     background-color: #466584;
     border-radius: 25px;
     position: absolute;
-    width: 630px;
+    width: 700px;
     height: 400px;
     left: 960px;
     top: 400px;
@@ -29,6 +32,17 @@
     font-size: 48px;
     line-height: 150px;
     text-align: center;
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000da;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

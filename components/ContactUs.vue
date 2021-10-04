@@ -1,10 +1,14 @@
 <template>
-    <div>
-        <div class="ContactUs">Contact Us</div>
-        <img src="~assets/svg/WelcomePage/icon ig.svg" alt="" class="ig">
-        <img src="~assets/svg/WelcomePage/icon cp.svg" alt="" class="cp">
-        <img src="~assets/svg/WelcomePage/icon twitter.svg" alt="" class="twitter">
-        <img src="~assets/svg/WelcomePage/icon youtube.svg" alt="" class="youtube">
+    <div class="modal-overlay" @click="$emit(`close-modal`)">
+        <div class="ContactUs" @click.stop>Contact Us</div>
+        <a href="https://www.instagram.com/geplfm/" target="_blank">
+        <img src="~assets/svg/WelcomePage/icon ig.svg"  alt="" class="ig" @click.stop >
+        </a>
+        <img src="~assets/svg/WelcomePage/icon cp.svg" alt="" class="cp" @click.stop title="gep.lfm@gmail.com">
+        <a href="https://twitter.com/GEPLFMITB?s=20" target="_blank">
+        <img src="~assets/svg/WelcomePage/icon twitter.svg" alt="" class="twitter" @click.stop>
+        </a>
+        <img src="~assets/svg/WelcomePage/icon youtube.svg" alt="" class="youtube" @click.stop>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -20,7 +24,7 @@
     background-color: #466584;
     border-radius: 25px;
     position: absolute;
-    width: 630px;
+    width: 700px;
     height: 400px;
     left: 960px;
     top: 400px;
@@ -65,6 +69,17 @@
     height: 100px;
     top: 470px;
     left: 980px;
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000da;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
