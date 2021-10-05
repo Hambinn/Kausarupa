@@ -3,8 +3,8 @@
         <h1 class="welcome">Welcome</h1>
         <div class="form-control">
             <form action="">
-                <input type="text" id="nama" name="nama" placeholder="Instansi" class="placeholder name" autocomplete="off">
-                <input type="text" id="instansi" name="instansi" placeholder="Nama" class="placeholder instansi" autocomplete="off">
+                <input type="text" id="nama" name="nama" placeholder="Instansi" class="placeholder name" autocomplete="off" v-model="nama">
+                <input type="text" id="instansi" name="instansi" placeholder="Nama" class="placeholder instansi" autocomplete="off" v-model="instansi">
             </form>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
@@ -14,6 +14,27 @@
 <script>
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+        data(){
+            return{
+                nama:'',
+                instansi:''
+            }
+        },
+        props:['postMethod'],
+        methods:{
+            async post(){
+                const bukuRef = this.$fire.firestore.collection('buku-tamu').doc()
+                try{
+                    await bukuRef.set({
+                        nama: this.nama,
+                        instansi: this.instansi
+                    })
+                } catch(e){
+                    alert(e)
+                    return
+                }
+            }
+        }
     }
 </script>
 

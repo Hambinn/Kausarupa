@@ -8,7 +8,7 @@
     </div>
     <div class="Tombol-next">
       <Nuxt-link to="/Main">
-      <button class="next">Next</button>
+      <button class="next" @click="$refs.FormWelcome.post()">Next</button>
       </Nuxt-link>
     </div>
     <div class="container-bintang">
@@ -16,7 +16,7 @@
         <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
     </div>
     <div>
-        <form-welcome/>
+        <form-welcome ref="FormWelcome"/>
         <about-us v-show="showAboutUs" @close-modal="showAboutUs = false"/>
         <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
         <contact-us v-show="showContact" @close-modal="showContact = false"/>
