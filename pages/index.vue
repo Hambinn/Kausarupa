@@ -109,4 +109,40 @@ a{
     text-decoration: none;
 }
 
+@media only  screen and (max-width: 1366px) {
+    .container-logo img{
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate( 66%, 33% );
+    }
+    .container-bintang .kecil{
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(1800%,200%);
+    }
+    .container-bintang .besar{
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(250%,460%);
+}
+.container-awan .kiri{
+    height: 250px;
+    transform: translate(-95%, -35%);
+}
+.container-awan .kanan{
+    height: 350px;
+    transform: translate(275%,110%);
+}
+.tap-me{
+    width: 470px;
+    height: 56px;
+    position: relative;
+    top: 550px;
+    font-size: 32px;
+    border-radius: 18px;
+}
+}
 </style>
