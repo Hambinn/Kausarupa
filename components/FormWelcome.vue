@@ -101,10 +101,10 @@ input::-webkit-input-placeholder{
 @media only  screen and (max-width: 1366px) {
     .container{
     position: absolute;
-    width: 280px;
-    height: 181px;
-    left: 200px;
-    top: 70px;
+    width: 541px;
+    height: 350px;
+    left: 400px;
+    top: 140px;
 
     background: rgba(196, 196, 196, 0.5);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -115,13 +115,13 @@ input::-webkit-input-placeholder{
     position: absolute;
     width: 447px;
     height: 115px;
-    left: -85px;
-    top: -10px;
+    left: 50px;
+    top: 20px;
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 35px;
+    font-size: 70px;
     line-height: 115px;
 
     color: #000000;
@@ -134,8 +134,8 @@ input::-webkit-input-placeholder{
 
 input{
     all: unset;
-    width: 170px;
-    height: 20px;
+    width: 293px;
+    height: 39px;
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -143,19 +143,19 @@ input{
 
 input::-webkit-input-placeholder{
     font-family: Roboto;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .name{
     position: absolute;
-    left: 55px;
-    top: 140px;
+    left: 120px;
+    top: 270px;
 }
 
 .instansi{
     position: absolute;
-    left: 55px;
-    top: 105px;
+    left: 120px;
+    top: 210px;
 }
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */

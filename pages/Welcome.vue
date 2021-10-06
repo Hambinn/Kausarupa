@@ -158,14 +158,14 @@ a{
     }
 
     .container-bintang .oren{
-        height: 45px;
+        height: 90px;
         top: 50%;
         left: 50%;
-        transform: translate(220%,90%);
+        transform: translate(220%,80%);
 }
 
 .container-bintang .ungu{
-    height: 35px;
+    height: 70px;
     top: 50%;
     left: 50%;
     transform: translate(1300%,280%);
@@ -176,7 +176,7 @@ a{
 }
 
 .container-popup .contact{
-    height: 50px;
+    height: 100px;
     top: 50%;
     left: 50%;
     transform: translate(300%,540%);
@@ -184,7 +184,7 @@ a{
 }
 
 .container-popup .about{
-    height: 50px;
+    height: 100px;
     top: 50%;
     left: 50%;
     transform: translate(40%,450%);
@@ -192,7 +192,7 @@ a{
 }
 
 .container-popup .catatan{
-    height: 50px;
+    height: 100px;
     top: 50%;
     left: 50%;
     transform: translate(900%,450%);
@@ -200,7 +200,7 @@ a{
 }
 
 .container-popup .trailer{
-    height: 50px;
+    height: 100px;
     top: 50%;
     left: 50%;
     transform: translate(640%,540%);
@@ -211,14 +211,14 @@ a{
     all: unset;
     background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 7px;
-    width: 200px;
-    height: 26px;
+    border-radius: 20px;
+    width: 404px;
+    height: 60px;
     position: relative;
-    top: 270px;
-    left: -340px;
+    top: 535px;
+    left: -15px;
 
-    font-size: 15px;
+    font-size: 35px;
     font-family: 'Tf Grotesk';
     font-weight: normal;
     font-style: italic;
