@@ -80,12 +80,6 @@ import Youtube from '../components/Youtube.vue'
     transform: translate(1350%,210%);
 }
 
-@media only  screen and (max-width: 1366px) {
-    .container-welcome{
-        background-size: 1366px 768px;
-    }
-}
-
 .container-popup{
     position: absolute;
 }
@@ -146,6 +140,99 @@ import Youtube from '../components/Youtube.vue'
 
 a{
     text-decoration: none;
+}
+
+@media only  screen and (max-width: 1366px) {
+    .container-welcome{
+        text-align: center;
+        background-image: url("../assets/png/WelcomePage/bg welcome 16_9.png");
+        background-repeat: no-repeat;
+        background-size: 1366px 768px;
+        height: 100vh;
+        width: 100vw
+    }
+
+    
+    .container-bintang{
+        position: absolute;
+    }
+
+    .container-bintang .oren{
+        height: 45px;
+        top: 50%;
+        left: 50%;
+        transform: translate(220%,90%);
+}
+
+.container-bintang .ungu{
+    height: 35px;
+    top: 50%;
+    left: 50%;
+    transform: translate(1300%,280%);
+}
+
+.container-popup{
+    position: absolute;
+}
+
+.container-popup .contact{
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(300%,540%);
+    cursor: pointer;
+}
+
+.container-popup .about{
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(40%,450%);
+    cursor: pointer;
+}
+
+.container-popup .catatan{
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(900%,450%);
+    cursor: pointer;
+}
+
+.container-popup .trailer{
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(640%,540%);
+    cursor: pointer;
+}
+
+.next{
+    all: unset;
+    background: #C4C4C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+    width: 200px;
+    height: 26px;
+    position: relative;
+    top: 270px;
+    left: -340px;
+
+    font-size: 15px;
+    font-family: 'Tf Grotesk';
+    font-weight: normal;
+    font-style: italic;
+    color: #000000;
+
+}
+
+.next:hover{
+    background-color:#587EA5 ;
+}
+
+a{
+    text-decoration: none;
+}
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
