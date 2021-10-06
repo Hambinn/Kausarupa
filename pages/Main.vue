@@ -29,14 +29,6 @@
         <div class="container-bintang-item">
             <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
         </div>
-        <div class="container-bintang-putih">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih3">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih4">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6">
-        </div>
         <div class="container-penggaris">
             <img src="../assets/svg/MainPage/penggaris.svg" alt="" class="ungu">
         </div>
@@ -45,6 +37,14 @@
         </div>
         <div class="container-permen-bungkus">
             <img src="../assets/svg/MainPage/permen lagi.svg" alt="" class="oren">
+        <div class="container-bintang-putih">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih3">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih4">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6">
+        </div>
         </div>
     </div>
 </template>
@@ -60,6 +60,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .container-main{
@@ -68,6 +69,7 @@ body{
     background-position: center center;
     background-size: 1920px 4592px;
     height: 4592px;
+    margin-top: -10px;
 }
 
 .container-bulan{
