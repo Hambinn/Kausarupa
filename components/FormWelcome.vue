@@ -3,8 +3,8 @@
         <h1 class="welcome">Welcome</h1>
         <div class="form-control">
             <form action="">
-                <input type="text" id="nama" name="nama" placeholder="Instansi" class="placeholder name" autocomplete="off" v-model="nama">
-                <input type="text" id="instansi" name="instansi" placeholder="Nama" class="placeholder instansi" autocomplete="off" v-model="instansi">
+                <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off" v-model="nama">
+                <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi" autocomplete="off" v-model="instansi">
             </form>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
@@ -79,6 +79,7 @@ input{
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;;
 }
 
 input::-webkit-input-placeholder{
@@ -89,13 +90,14 @@ input::-webkit-input-placeholder{
 .name{
     position: absolute;
     left: 160px;
-    top: 390px;
+    top: 290px;
 }
 
 .instansi{
     position: absolute;
+    
     left: 160px;
-    top: 290px;
+    top: 390px;
 }
 
 @media only  screen and (max-width: 1366px) {
@@ -149,13 +151,14 @@ input::-webkit-input-placeholder{
 .name{
     position: absolute;
     left: 120px;
-    top: 270px;
+    top: 210px;
 }
 
 .instansi{
     position: absolute;
+    
     left: 120px;
-    top: 210px;
+    top: 270px;
 }
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
