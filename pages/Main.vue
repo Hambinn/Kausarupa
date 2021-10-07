@@ -37,6 +37,7 @@
         </div>
         <div class="container-permen-bungkus">
             <img src="../assets/svg/MainPage/permen lagi.svg" alt="" class="oren">
+        </div>
         <div class="container-bintang-putih">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2">
@@ -45,6 +46,23 @@
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6">
         </div>
+        <div class="container-papan">
+            <img src="../assets/svg/MainPage/papan.svg" alt="" class="papan">
+        </div>
+        <div class="container-lubang">
+            <img src="../assets/svg/MainPage/lubang.svg" alt="" class="lubang">
+        </div>
+        <div class="container-awan">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-permen">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-papan">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-atas">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-bawah">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="belakang-kasur">            
+        </div>
+        <div class="container-kasur">
+            <img src="../assets/svg/MainPage/kasur.svg" alt="" class="kasur">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">    
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">        
         </div>
     </div>
 </template>
@@ -231,8 +249,81 @@ body{
 
 .container-permen-bungkus .oren{
     position: absolute;
-    transform: translate(15%, 442%);
+    transform: translate(15%, 430%);
 }
+
+.container-awan{
+    position: relative;
+}
+
+.container-awan .bawah-permen{
+    position: absolute;
+    height: 400px;
+    transform: translate(-40%, 790%);
+}
+
+.container-papan{
+    position: relative;
+}
+
+.container-papan .papan{
+    position: absolute;
+    height: 700px;
+    transform: translate(140%, 410%);
+}
+
+.container-awan .bawah-papan{
+    position: absolute;
+    height: 550px;
+    transform: translate(90%, 600%);
+}
+
+.container-awan .lubang-atas{
+    position: absolute;
+    height: 550px;
+    transform: translate(100%, 690%);
+}
+
+.container-awan .lubang-bawah{
+    position: absolute;
+    height: 550px;
+    transform: translate(60%, 720%);
+}
+
+.container-lubang{
+    position: relative;
+}
+
+.container-lubang .lubang{
+    position: absolute;
+    height: 600px;
+    transform: translate(110%, 630%);
+}
+
+.container-awan .belakang-kasur{
+    position: absolute;
+    height: 450px;
+    transform: translate(10%, 800%);
+}
+
+.container-kasur .kasur{
+    position: absolute;
+    height: 750px;
+    transform: translate(0%, 450%);
+}
+
+.container-kasur .depan-kasur1{
+    position: absolute;
+    height: 450px;
+    transform: translate(0%, 830%) rotate(180deg);
+}
+
+.container-kasur .depan-kasur2{
+    position: absolute;
+    height: 450px;
+    transform: translate(-40%, 825%);
+}
+
 
 @media only screen and (max-width: 1366px) {
     .container-welcome{
