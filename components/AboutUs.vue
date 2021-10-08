@@ -44,5 +44,36 @@
     justify-content: center;
     background-color: #000000da;
 }
+
+@media only  screen and (max-width: 1366px) {
+  .AboutUs{
+    background-color: #466584;
+    border-radius: 25px;
+    position: absolute;
+    width: 580px;
+    height: 380px;
+    left: 960px;
+    top: 400px;
+    transform: translate(-100%, -70%);
+    color: #E7E8E7;
+
+    font-family: 'Tf Grotesk';
+    font-style: italic;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 120px;
+    text-align: center;
+    padding-left: 0px;
+}  
+    p{
+    font-family: 'Gaegu', cursive;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+}
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
