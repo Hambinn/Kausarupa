@@ -1,7 +1,7 @@
 <template>
     <div class="modal-overlay" @click="$emit(`close-modal`)">
         <div class="Youtube" @click.stop>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -18,8 +18,8 @@
     background-color: #466584;
     border-radius: 25px;
     position: absolute;
-    width: 700px;
-    height: 400px;
+    width: 800px;
+    height: 530px;
     left: 960px;
     top: 400px;
     transform: translate(-50%, -50%);
@@ -38,8 +38,30 @@
 
 iframe{
     position: absolute;
-    top: 40px;
-    right: 70px;
+    top: 60px;
+    right: 60px;
+    width: 680px;
+    height: 400px;
+}
+
+@media only  screen and (max-width: 1366px) {
+ .Youtube{
+    background-color: #466584;
+    border-radius: 25px;
+    position: absolute;
+    width: 580px;
+    height: 380px;
+    left: 960px;
+    top: 400px;
+    transform: translate(-100%, -70%);
+}
+iframe{
+    position: absolute;
+    top: 45px;
+    right: 40px;
+    width: 500;
+    height: 283;
+}
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
