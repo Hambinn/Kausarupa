@@ -7,8 +7,8 @@
       <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
     </div>
     <div class="Tombol-next">
-      <Nuxt-link to="/Main">
-      <button class="next" @click="$refs.FormWelcome.post()">Next</button>
+      <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'" > 
+      Next
       </Nuxt-link>
     </div>
     <div class="container-bintang">
@@ -16,7 +16,15 @@
         <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
     </div>
     <div>
-        <form-welcome ref="FormWelcome"/>
+        <div class="container-form">
+        <h1 class="welcome">Welcome</h1>
+        <div class="form-control">
+            <form action="">
+                <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off" v-model="nama">
+                <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi" autocomplete="off" v-model="instansi">
+            </form>
+        </div>
+        </div>
         <about-us v-show="showAboutUs" @close-modal="showAboutUs = false"/>
         <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
         <contact-us v-show="showContact" @close-modal="showContact = false"/>
@@ -27,6 +35,7 @@
 </template>
 
 <script>
+// ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
 import AboutUs from '../components/AboutUs.vue'
 import CatatanKuratorial from '../components/CatatanKuratorial.vue'
 import ContactUs from '../components/ContactUs.vue'
@@ -40,9 +49,42 @@ import Youtube from '../components/Youtube.vue'
                 showCatatan: false,
                 showContact: false,
                 showYoutube: false,
+                nama:'',
+                instansi:'',
+                disabled: true,
             }
-        }
-        // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+        },
+        computed:{
+            namaLength(){
+                return this.nama.length;
+            },
+            instLength(){
+                return this.instansi.length;
+            }
+        },
+        methods:{
+            async post(){
+                const bukuRef = this.$fire.firestore.collection('buku-tamu').doc()
+                try{
+                    await bukuRef.set({
+                        nama: this.nama,
+                        instansi: this.instansi
+                    })
+                } catch(e){
+                    alert(e)
+                    return
+                }
+            },
+            formValidation(){
+                if(this.nama.length > 0 && this.instansi.length>0){
+                    console.log(this.nama.length)
+                }
+            }
+            
+        },
+        beforeDestroy(){
+            this.post()
+        },
     }
 </script>
 
@@ -51,6 +93,128 @@ import Youtube from '../components/Youtube.vue'
     padding: 0;
     margin: 0;
         
+}
+.container-form{
+    position: absolute;
+    width: 826px;
+    height: 534px;
+    left: 547px;
+    top: 130px;
+
+    background: rgba(196, 196, 196, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+}
+
+.welcome{
+    position: absolute;
+    width: 447px;
+    height: 115px;
+    left: 190px;
+    top: 80px;
+
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 96px;
+    line-height: 115px;
+
+    color: #000000;
+
+}
+
+.placeholder::placeholder{
+    text-align: center;
+}
+
+input{
+    all: unset;
+    width: 500px;
+    height: 67px;
+    border-radius: 50px;
+    background: #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;;
+}
+
+input::-webkit-input-placeholder{
+    font-family: Roboto;
+    font-size: 24px;
+}
+
+.name{
+    position: absolute;
+    left: 160px;
+    top: 290px;
+}
+
+.instansi{
+    position: absolute;
+    
+    left: 160px;
+    top: 390px;
+}
+
+@media only  screen and (max-width: 1366px) {
+    .container-form{
+    position: absolute;
+    width: 541px;
+    height: 350px;
+    left: 400px;
+    top: 140px;
+
+    background: rgba(196, 196, 196, 0.5);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.welcome{
+    position: absolute;
+    width: 447px;
+    height: 115px;
+    left: 50px;
+    top: 20px;
+
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 115px;
+
+    color: #000000;
+
+}
+
+.placeholder::placeholder{
+    text-align: center;
+}
+
+input{
+    all: unset;
+    width: 293px;
+    height: 39px;
+    border-radius: 50px;
+    background: #C4C4C4;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input::-webkit-input-placeholder{
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.name{
+    position: absolute;
+    left: 120px;
+    top: 210px;
+}
+
+.instansi{
+    position: absolute;
+    
+    left: 120px;
+    top: 270px;
+}
 }
 
 .container-welcome{
@@ -134,9 +298,6 @@ import Youtube from '../components/Youtube.vue'
 
 }
 
-.next:hover{
-    background-color:#587EA5 ;
-}
 
 a{
     text-decoration: none;
