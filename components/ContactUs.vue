@@ -81,5 +81,68 @@
     justify-content: center;
     background-color: #000000da;
 }
+
+@media only  screen and (max-width: 1366px) {
+    .ContactUs{
+    background-color: #466584;
+    border-radius: 25px;
+    position: absolute;
+    width: 580px;
+    height: 380px;
+    left: 960px;
+    top: 400px;
+    transform: translate(-100%, -70%);
+    color: #E7E8E7;
+
+    font-family: 'Tf Grotesk';
+    font-style: italic;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 120px;
+    text-align: center;
+}
+.ig{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 260px;
+    left: 450px;
+}
+
+.cp{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 260px;
+    left: 700px;
+}
+
+.twitter{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 380px;
+    left: 450px;
+}
+
+.youtube{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 380px;
+    left: 700px;
+}
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000da;
+}
+}
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
