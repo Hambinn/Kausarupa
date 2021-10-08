@@ -26,6 +26,11 @@
         <div class="container-permen">
             <img src="../assets/svg/MainPage/permen.svg" alt="" class="oren">
         </div>
+        <div class="container-box">
+        </div>
+        <div class="container-segitiga">
+            <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">
+        </div>
         <div class="container-bintang-item">
             <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
         </div>
@@ -178,8 +183,24 @@ body{
     transform: translate(30%, 81%);
 }
 
+.container-box{
+    position: absolute;
+    height: 80px;
+    width: 250px;
+    background-color: #fff;
+    transform: translate(550%, 100%);
+    border-radius: 50px;
+}
+
 .container-bintang-item{
-    position: relative;
+    position: absolute;
+    transform: translate(1690%, 100%);
+}
+
+.container-segitiga{
+    position: absolute;
+    top: 750px;
+    left: 50%;
 }
 
 .container-bintang-putih{
