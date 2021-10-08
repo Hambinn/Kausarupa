@@ -24,8 +24,8 @@
     background-color: #466584;
     border-radius: 25px;
     position: absolute;
-    width: 700px;
-    height: 400px;
+    width: 800px;
+    height: 530px;
     left: 960px;
     top: 400px;
     transform: translate(-50%, -50%);
@@ -41,32 +41,32 @@
 
 .ig{
     position: absolute;
-    width: 90px;
-    height: 90px;
-    top: 350px;
-    left: 750px;
+    width: 120px;
+    height: 120px;
+    top: 290px;
+    left: 650px;
 }
 
 .cp{
     position: absolute;
-    width: 90px;
-    height: 90px;
-    top: 350px;
+    width: 120px;
+    height: 120px;
+    top: 290px;
     left: 980px;
 }
 
 .twitter{
     position: absolute;
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 120px;
     top: 470px;
-    left: 750px;
+    left: 650px;
 }
 
 .youtube{
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     top: 470px;
     left: 980px;
 }
