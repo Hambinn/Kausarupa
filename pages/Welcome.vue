@@ -41,6 +41,7 @@ import CatatanKuratorial from '../components/CatatanKuratorial.vue'
 import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
 import Youtube from '../components/Youtube.vue'
+import Cookies from 'js-cookie'
     export default {
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
         data(){
@@ -81,6 +82,7 @@ import Youtube from '../components/Youtube.vue'
                     alert(e)
                     return
                 }
+                Cookies.set('nama',this.nama)
             },
             formValidation(){
                 if(this.nama.length > 0 && this.instansi.length>0){
