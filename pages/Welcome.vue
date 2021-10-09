@@ -7,7 +7,7 @@
       <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
     </div>
     <div class="Tombol-next">
-      <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'"  :style="styleObj"> 
+      <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'" @click.native="post"  :style="styleObj"> 
       Next
       </Nuxt-link>
     </div>
@@ -44,6 +44,11 @@ import Youtube from '../components/Youtube.vue'
 import Cookies from 'js-cookie'
     export default {
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
+        beforeMount(){
+            if(Cookies.get('nama') && Cookies.get('nama') !=''){
+                this.$router.push('Main')
+            }
+        },
         data(){
             return{
                 showAboutUs: false,
@@ -58,7 +63,8 @@ import Cookies from 'js-cookie'
                     background: '#C4C4C4',
                     color: '#000000',
                     cursor: 'default'
-                }
+                },
+                clicknative: '@click="post"'
             }
         },
         computed:{
@@ -97,9 +103,6 @@ import Cookies from 'js-cookie'
                     this.styleObj.cursor = 'default'
                 }
             }
-        },
-        beforeDestroy(){
-            this.post()
         },
     }
 </script>
@@ -236,8 +239,9 @@ input::-webkit-input-placeholder{
 .container-welcome{
     text-align: center;
     background-image: url("../assets/png/WelcomePage/bg welcome 16_9.png");
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100% 1080px;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     }
