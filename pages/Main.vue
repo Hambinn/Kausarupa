@@ -28,6 +28,15 @@
         </div>
         <div class="container-box">
         </div>
+        <div class="container-text-box">
+            00
+        </div>
+        <div class="container-text-middle-title">
+            Panduan
+        </div>
+        <div class="container-text-middle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cupiditate corrupti est, vel nesciunt natus tempore recusandae quae cumque eius esse nihil amet blanditiis, illo facere. Accusantium voluptatum tempora earum? Perferendis itaque eveniet exercitationem, beatae quasi dolore, aperiam recusandae rerum voluptatibus perspiciatis, ullam dolorum praesentium accusantium saepe placeat iste veritatis.
+        </div>
         <div class="container-segitiga">
             <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">
         </div>
@@ -57,7 +66,7 @@
         <div class="container-lubang">
             <img src="../assets/svg/MainPage/lubang.svg" alt="" class="lubang">
         </div>
-        <div class="container-awan">
+        <div class="container-awan-main">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-permen">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-papan">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-atas">
@@ -93,6 +102,30 @@ body{
     background-size: 1920px 4592px;
     height: 4592px;
     margin-top: -10px;
+}
+
+.container-text-box{
+    position: absolute;
+    width: 1157.92px;
+    margin: 88px 1700px;
+    text-align: justify;
+    font-size: 48px;
+    font-family: Tf Grotesk;
+}
+
+.container-text-middle-title{
+    position: absolute;
+    width: 804px;
+    font-size: 96px;
+    margin: 220px 780px;
+}
+
+.container-text-middle{
+    position: absolute;
+    width: 1157.92px;
+    margin: 350px 380px;
+    text-align: justify;
+    font-size: 24px;
 }
 
 .container-bulan{
@@ -188,19 +221,19 @@ body{
     height: 80px;
     width: 250px;
     background-color: #fff;
-    transform: translate(550%, 100%);
+    transform: translate(630%, 100%);
     border-radius: 50px;
 }
 
 .container-bintang-item{
     position: absolute;
-    transform: translate(1690%, 100%);
+    transform: translate(1920%, 100%);
 }
 
 .container-segitiga{
     position: absolute;
     top: 750px;
-    left: 50%;
+    left: 917px;
 }
 
 .container-bintang-putih{
@@ -273,11 +306,11 @@ body{
     transform: translate(15%, 430%);
 }
 
-.container-awan{
+.container-awan-main{
     position: relative;
 }
 
-.container-awan .bawah-permen{
+.container-awan-main .bawah-permen{
     position: absolute;
     height: 400px;
     transform: translate(-40%, 790%);
@@ -293,19 +326,19 @@ body{
     transform: translate(140%, 410%);
 }
 
-.container-awan .bawah-papan{
+.container-awan-main .bawah-papan{
     position: absolute;
     height: 550px;
     transform: translate(90%, 600%);
 }
 
-.container-awan .lubang-atas{
+.container-awan-main .lubang-atas{
     position: absolute;
     height: 550px;
     transform: translate(100%, 690%);
 }
 
-.container-awan .lubang-bawah{
+.container-awan-main .lubang-bawah{
     position: absolute;
     height: 550px;
     transform: translate(60%, 720%);
@@ -321,7 +354,7 @@ body{
     transform: translate(110%, 630%);
 }
 
-.container-awan .belakang-kasur{
+.container-awan-main .belakang-kasur{
     position: absolute;
     height: 450px;
     transform: translate(10%, 800%);
@@ -344,7 +377,6 @@ body{
     height: 450px;
     transform: translate(-40%, 825%);
 }
-
 
 @media only screen and (max-width: 1366px) {
     .container-welcome{

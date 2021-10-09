@@ -7,7 +7,7 @@
       <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
     </div>
     <div class="Tombol-next">
-      <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'" > 
+      <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'"  :style="styleObj"> 
       Next
       </Nuxt-link>
     </div>
@@ -20,8 +20,8 @@
         <h1 class="welcome">Welcome</h1>
         <div class="form-control">
             <form action="">
-                <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off" v-model="nama">
-                <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi" autocomplete="off" v-model="instansi">
+                <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off" v-model="nama" @input="formValidation">
+                <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi" autocomplete="off" v-model="instansi" @input="formValidation">
             </form>
         </div>
         </div>
@@ -41,6 +41,7 @@ import CatatanKuratorial from '../components/CatatanKuratorial.vue'
 import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
 import Youtube from '../components/Youtube.vue'
+import Cookies from 'js-cookie'
     export default {
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
         data(){
@@ -52,6 +53,12 @@ import Youtube from '../components/Youtube.vue'
                 nama:'',
                 instansi:'',
                 disabled: true,
+                formval: this.formValidation,
+                styleObj:{
+                    background: '#C4C4C4',
+                    color: '#000000',
+                    cursor: 'default'
+                }
             }
         },
         computed:{
@@ -59,8 +66,9 @@ import Youtube from '../components/Youtube.vue'
                 return this.nama.length;
             },
             instLength(){
-                return this.instansi.length;
+                return this.instansi.length
             }
+
         },
         methods:{
             async post(){
@@ -74,13 +82,21 @@ import Youtube from '../components/Youtube.vue'
                     alert(e)
                     return
                 }
+                Cookies.set('nama',this.nama)
             },
             formValidation(){
                 if(this.nama.length > 0 && this.instansi.length>0){
-                    console.log(this.nama.length)
+                    this.disabled = false;
+                    this.styleObj.background='#587EA5'
+                    this.styleObj.color = '#F8FEF0'
+                    this.styleObj.cursor = 'pointer'
+                }else{
+                    this.disabled = true;
+                    this.styleObj.background='#C4C4C4'
+                    this.styleObj.color = '#000000'
+                    this.styleObj.cursor = 'default'
                 }
             }
-            
         },
         beforeDestroy(){
             this.post()
@@ -282,7 +298,7 @@ input::-webkit-input-placeholder{
 
 .next{
     all: unset;
-    background: #C4C4C4;
+
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 27px;
     width: 648px;
@@ -294,7 +310,7 @@ input::-webkit-input-placeholder{
     font-family: 'Tf Grotesk';
     font-weight: normal;
     font-style: italic;
-    color: #000000;
+
 
 }
 
@@ -370,7 +386,6 @@ a{
 
 .next{
     all: unset;
-    background: #C4C4C4;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     width: 404px;
@@ -383,13 +398,11 @@ a{
     font-family: 'Tf Grotesk';
     font-weight: normal;
     font-style: italic;
-    color: #000000;
+
 
 }
 
-.next:hover{
-    background-color:#587EA5 ;
-}
+
 
 a{
     text-decoration: none;
