@@ -66,7 +66,7 @@
         <div class="container-lubang">
             <img src="../assets/svg/MainPage/lubang.svg" alt="" class="lubang">
         </div>
-        <div class="container-awan">
+        <div class="container-awan-main">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-permen">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-papan">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-atas">
@@ -306,11 +306,11 @@ body{
     transform: translate(15%, 430%);
 }
 
-.container-awan{
+.container-awan-main{
     position: relative;
 }
 
-.container-awan .bawah-permen{
+.container-awan-main .bawah-permen{
     position: absolute;
     height: 400px;
     transform: translate(-40%, 790%);
@@ -326,19 +326,19 @@ body{
     transform: translate(140%, 410%);
 }
 
-.container-awan .bawah-papan{
+.container-awan-main .bawah-papan{
     position: absolute;
     height: 550px;
     transform: translate(90%, 600%);
 }
 
-.container-awan .lubang-atas{
+.container-awan-main .lubang-atas{
     position: absolute;
     height: 550px;
     transform: translate(100%, 690%);
 }
 
-.container-awan .lubang-bawah{
+.container-awan-main .lubang-bawah{
     position: absolute;
     height: 550px;
     transform: translate(60%, 720%);
@@ -354,7 +354,7 @@ body{
     transform: translate(110%, 630%);
 }
 
-.container-awan .belakang-kasur{
+.container-awan-main .belakang-kasur{
     position: absolute;
     height: 450px;
     transform: translate(10%, 800%);
