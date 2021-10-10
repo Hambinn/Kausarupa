@@ -29,13 +29,8 @@
     width: 100vw;
     }
 
-.awan{
-    position: absolute;
-}
-.awan .kanan{
-    height: 476px;
-    transform: translate(287.9%,99%);
-}
+
+
 .awan .kanan{
     height: 350px;
     transform: translate(275%,110%);
