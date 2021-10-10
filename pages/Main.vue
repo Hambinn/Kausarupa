@@ -26,11 +26,6 @@
         <div class="container-permen">
             <img src="../assets/svg/MainPage/permen.svg" alt="" class="oren">
         </div>
-        <div class="container-box">
-        </div>
-        <div class="container-text-box">
-            00
-        </div>
         <div class="container-text-middle-title">
             Panduan
         </div>
@@ -40,9 +35,6 @@
         <div class="container-segitiga">
             <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">
         </div>
-        <div class="container-bintang-item">
-            <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
-        </div>
         <div class="container-penggaris">
             <img src="../assets/svg/MainPage/penggaris.svg" alt="" class="ungu">
         </div>
@@ -51,14 +43,6 @@
         </div>
         <div class="container-permen-bungkus">
             <img src="../assets/svg/MainPage/permen lagi.svg" alt="" class="oren">
-        </div>
-        <div class="container-bintang-putih">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih3">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih4">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6">
         </div>
         <div class="container-papan">
             <img src="../assets/svg/MainPage/papan.svg" alt="" class="papan">
@@ -78,12 +62,56 @@
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">    
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">        
         </div>
+        <div class="score">
+            <div class="container-box">
+            </div>
+            <div class="container-text-box">
+                {{this.score}}
+            </div>
+            <div class="container-bintang-item">
+                <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
+            </div>
+        </div>
+        <div class="container-bintang-putih">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih3" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih4" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6" @click="countBintang">
+        </div>
     </div>
 </template>
 
 <script>
+import Cookies from 'js-cookie'
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+        beforeMount(){
+            if(!Cookies.get('score')){
+                Cookies.set('score',)
+            }
+        },
+        mounted(){
+            console.log(Cookies.get('score'))
+        },
+        data(){
+            return{
+                score: Number(Cookies.get('score'))
+            }
+        },
+        computed:{
+            sekor(){
+                return this.score
+            }
+        },
+        methods:{
+            countBintang(){
+                Cookies.set('score',this.score+1)
+                this.score = Number(Cookies.get('score'))
+                console.log("masuk")
+            }
+        }
     }
 </script>
 
@@ -111,6 +139,7 @@ body{
     text-align: justify;
     font-size: 48px;
     font-family: Tf Grotesk;
+    
 }
 
 .container-text-middle-title{
@@ -376,6 +405,11 @@ body{
     position: absolute;
     height: 450px;
     transform: translate(-40%, 825%);
+}
+
+.score{
+    position: sticky;
+    top: -10px;
 }
 
 @media only screen and (max-width: 1366px) {
