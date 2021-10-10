@@ -1,5 +1,9 @@
 <template>
     <div class="bg-tema">
+        <div class="awan">
+            <img src="~/assets/svg/ChoosePage/awan biru.svg" alt="" class="kanan">
+            <img src="~/assets/svg/ChoosePage/awan oren.svg" alt="" class="tengah">
+            <img src="~/assets/svg/ChoosePage/awan ungu.svg" alt="" class="kiri">
     </div>
 </template>
 
@@ -24,4 +28,15 @@
     width: 100vw;
     }
 
+.awan{
+    position: absolute;
+}
+.awan .kanan{
+    height: 476px;
+    transform: translate(287.9%,99%);
+}
+.awan .kanan{
+    height: 350px;
+    transform: translate(275%,110%);
+}
 </style>
