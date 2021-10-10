@@ -4,6 +4,7 @@
             <img src="~/assets/svg/ChoosePage/awan biru.svg" alt="" class="kanan">
             <img src="~/assets/svg/ChoosePage/awan oren.svg" alt="" class="tengah">
             <img src="~/assets/svg/ChoosePage/awan ungu.svg" alt="" class="kiri">
+        </div>
     </div>
 </template>
 
