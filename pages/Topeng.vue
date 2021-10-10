@@ -36,17 +36,17 @@
 
 .awan .kanan{
     position: absolute;
-    height: 630px;
-    transform: translate(5.5%,10%)
+    height: 1000px;
+    transform: translate(-2%,22%)
 }
 .awan .tengah{
     position: absolute;
-    height: 560px;
-    transform: translate(-54%,29%)
+    height: 800px;
+    transform: translate(-59%,55%)
 }
 .awan .kiri{
     position: absolute;
-    height: 620px;
-    transform: translate(-117%,25%)
+    height: 1000px;
+    transform: translate(-110%,31%)
 }
 </style>
