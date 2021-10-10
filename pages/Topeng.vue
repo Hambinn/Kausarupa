@@ -27,20 +27,25 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     }
 
-
+.awan{
+    position: relative;
+}
 
 .awan .kanan{
+    position: absolute;
     height: 620px;
-    transform: translate(53%,10%);
+    
 }
 .awan .tengah{
+    position: absolute;
     height: 560px;
-    transform: translate(-6%,-196%);
+    
 }
 .awan .kiri{
+    position: absolute;
     height: 620px;
-    transform: translate(-66%,-80%);
 }
 </style>
