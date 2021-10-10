@@ -2,8 +2,8 @@
     <div class="bg-tema">
         <div class="awan">
             <img src="~/assets/svg/ChoosePage/awan biru.svg" alt="" class="kanan">
-            <img src="~/assets/svg/ChoosePage/awan oren.svg" alt="" class="tengah">
             <img src="~/assets/svg/ChoosePage/awan ungu.svg" alt="" class="kiri">
+            <img src="~/assets/svg/ChoosePage/awan oren.svg" alt="" class="tengah">
         </div>
     </div>
 </template>
@@ -35,12 +35,12 @@
     height: 620px;
     transform: translate(53%,10%);
 }
-.awan .kiri{
-    height: 620px;
-    transform: translate(-66%,-170%);
-}
 .awan .tengah{
     height: 560px;
-    transform: translate(-6%,-85%);
+    transform: translate(-6%,-196%);
+}
+.awan .kiri{
+    height: 620px;
+    transform: translate(-66%,-80%);
 }
 </style>
