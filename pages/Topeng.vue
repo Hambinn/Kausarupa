@@ -83,7 +83,7 @@
 .topeng .mamus{
     position: absolute;
     height: 500px;
-    transform: translate(-140%,60%)
+    transform: translate(-140%,62%)
 }
 .topeng .persona{
     position: absolute;
@@ -93,7 +93,7 @@
 .topeng .shadow{
     position: absolute;
     height: 500px;
-    transform: translate(45%,58%)
+    transform: translate(46%,58%)
 }
 
 </style>
