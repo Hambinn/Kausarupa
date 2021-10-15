@@ -6,8 +6,19 @@
         <div class="tombol-next-persona">
             <p class="next-persona">Next</p>
         </div>
-        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        <div class= "container-rumah">
+            <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklat">
+            <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="oren">
+        </div>
+        <div class="container-awan">
+            <img src="../assets/svg/PersonaPage/awan kuning.svg" alt="" class="satu">
+            <img src="../assets/svg/PersonaPage/awan kuning.svg" alt="" class="dua">
+        </div>
+        <div class="container-header">
+            <img src="../assets/svg/PersonaPage/header persona.svg" alt="">
+        </div>
     </div>
+<!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
 </template>
 
 <script>
@@ -35,6 +46,57 @@ import kotakItem from '../components/Persona/kotakItem.vue'
     width: 100vw;
     }
 
+.container-header{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+}
+
+.container-awan{
+position: absolute;
+}
+
+.container-awan .satu{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    left: 700px;
+    top: -150px;
+    z-index: 2;
+}
+
+.container-awan .dua{
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    left: 1150px;
+    top: 20px;
+    z-index: 2;
+}
+.container-rumah{
+    position: absolute;
+}
+
+.container-rumah .coklat{
+    position: absolute;
+    transform: scaleX(-1);
+    width: 700px;
+    height: 700px;
+    left: 1320px;
+    top: 15px;
+    z-index: 2;
+}
+
+.container-rumah .oren{
+    position: absolute;
+    width: 1100px;
+    height: 1100px;
+    left: 750px;
+    top: -470px;
+    z-index: 1;
+}
 .tombol-next-persona{
     position: absolute;
     width: 305px;
