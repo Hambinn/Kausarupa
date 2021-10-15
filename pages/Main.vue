@@ -66,7 +66,7 @@
             <div class="container-box">
             </div>
             <div class="container-text-box">
-                {{this.score}}
+                {{score}}
             </div>
             <div class="container-bintang-item">
                 <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
@@ -88,27 +88,28 @@ import Cookies from 'js-cookie'
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         beforeMount(){
-            if(!Cookies.get('score')){
-                Cookies.set('score',)
+            if(!localStorage.getItem('score')){
+                localStorage.setItem('score', 0)
+            }
+            else{
+                this.score = Number(localStorage.getItem('score'))
             }
         },
         mounted(){
-            console.log(Cookies.get('score'))
+            console.log(localStorage.getItem('score'))
         },
         data(){
             return{
-                score: Number(Cookies.get('score'))
+                score: ''
             }
         },
         computed:{
-            sekor(){
-                return this.score
-            }
+            
         },
         methods:{
             countBintang(){
-                Cookies.set('score',this.score+1)
-                this.score = Number(Cookies.get('score'))
+                localStorage.setItem('score',Number(this.score+1))
+                this.score = Number(localStorage.getItem('score'))
                 console.log("masuk")
             }
         }
