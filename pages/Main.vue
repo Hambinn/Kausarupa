@@ -147,15 +147,17 @@ body{
     position: absolute;
     width: 804px;
     font-size: 96px;
-    margin: 220px 780px;
+    margin: 10% 40.25%;
+    font-family: Tf Grotesk;
 }
 
 .container-text-middle{
     position: absolute;
     width: 1157.92px;
-    margin: 350px 380px;
+    margin: 19% 20%;
     text-align: justify;
     font-size: 24px;
+    font-family: Tf Grotesk;
 }
 
 .container-bulan{
@@ -262,8 +264,7 @@ body{
 
 .container-segitiga{
     position: absolute;
-    top: 750px;
-    left: 917px;
+    transform: translate(1079%, 520%);
 }
 
 .container-bintang-putih{
@@ -418,27 +419,29 @@ body{
     }
 
     .container-text-box{
-    position: absolute;
-    width: 100px;
-    margin: 61.6px 1200px;
-    text-align: justify;
-    font-size: 34px;
-    font-family: Tf Grotesk;
+        position: absolute;
+        width: 100px;
+        margin: 61.6px 1200px;
+        text-align: justify;
+        font-size: 34px;
+        font-family: Tf Grotesk;
     }
 
     .container-text-middle-title{
-    position: absolute;
-    width: 570px;
-    font-size: 96px;
-    margin: 220px 520px;
+        position: absolute;
+        width: 804px;
+        font-size: 96px;
+        margin: 10% 40.25%;
+        font-family: Tf Grotesk;
     }
 
     .container-text-middle{
-    position: absolute;
-    width: 822.12px;
-    margin: 350px 270px;
-    text-align: justify;
-    font-size: 24px;
+        position: absolute;
+        width: 1157.92px;
+        margin: 19% 20%;
+        text-align: justify;
+        font-size: 24px;
+        font-family: Tf Grotesk;
     }
 
     .container-bulan{
@@ -557,8 +560,7 @@ body{
 
     .container-segitiga{
         position: absolute;
-        top: 525px;
-        left: 642px;
+        transform: translate(1079%, 520%);
     }
 
     .container-bintang-putih{
