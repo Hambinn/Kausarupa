@@ -342,8 +342,7 @@ body{
 
 .container-awan-main .bawah-permen{
     position: absolute;
-    height: 400px;
-    transform: translate(-40%, 790%);
+    transform: translate(-50%, 570%);
 }
 
 .container-papan{
@@ -352,26 +351,22 @@ body{
 
 .container-papan .papan{
     position: absolute;
-    height: 700px;
-    transform: translate(140%, 410%);
+    transform: translate(130%, 360%);
 }
 
 .container-awan-main .bawah-papan{
     position: absolute;
-    height: 550px;
-    transform: translate(90%, 600%);
+    transform: translate(90%, 650%);
 }
 
 .container-awan-main .lubang-atas{
     position: absolute;
-    height: 550px;
-    transform: translate(100%, 690%);
+    transform: translate(100%, 710%);
 }
 
 .container-awan-main .lubang-bawah{
     position: absolute;
-    height: 550px;
-    transform: translate(60%, 720%);
+    transform: translate(60%, 740%);
 }
 
 .container-lubang{
@@ -380,31 +375,30 @@ body{
 
 .container-lubang .lubang{
     position: absolute;
-    height: 600px;
     transform: translate(110%, 630%);
 }
 
 .container-awan-main .belakang-kasur{
     position: absolute;
-    height: 450px;
+    height: 50%;
     transform: translate(10%, 800%);
 }
 
 .container-kasur .kasur{
     position: absolute;
-    height: 750px;
-    transform: translate(0%, 450%);
+    height: 85%;
+    transform: translate(0%, 435%);
 }
 
 .container-kasur .depan-kasur1{
     position: absolute;
-    height: 450px;
+    height: 50%;
     transform: translate(0%, 830%) rotate(180deg);
 }
 
 .container-kasur .depan-kasur2{
     position: absolute;
-    height: 450px;
+    height: 50%;
     transform: translate(-40%, 825%);
 }
 
