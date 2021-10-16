@@ -494,7 +494,7 @@ body{
     .container-kamera .ungu{
         width: 19%;
         position: absolute;
-        transform: translate(90%, 610%);
+        transform: translate(90%, 660%);
     }
 
     .container-ikan{
@@ -518,9 +518,9 @@ body{
     }
 
     .container-penggaris .ungu{
-        width: 50%;
+        width: 57%;
         position: absolute;
-        transform: translate(50%, 240%);
+        transform: translate(40%, 200%);
     }
 
     .container-pita{
@@ -573,48 +573,42 @@ body{
 
     .container-bintang-putih .putih1{
         position: absolute;
-        width: 114px;
-        height: 105.44px;
-        left: 246px;
-        top: 524px;
+        width: 5.9%;
+        left: 140px;
+        top: 500px;
     }
 
     .container-bintang-putih .putih2{
         position: absolute;
-        width: 143.8px;
-        height: 133px;
-        left: 538px;
-        top: 1359px;
+        width: 7.48%;
+        left: 380px;
+        top: 1200px;
     }
 
     .container-bintang-putih .putih3{
         position: absolute;
-        width: 82.17px;
-        height: 76px;
+        width: 4.27%;
         left: 1529px;
         top: 1321px;
     }
 
     .container-bintang-putih .putih4{
         position: absolute;
-        width: 82.17px;
-        height: 76px;
-        left: 270px;
-        top: 1879px;
+        width: 4.27%;
+        left: 180px;
+        top: 1600px;
     }
 
     .container-bintang-putih .putih5{
         position: absolute;
-        width: 93px;
-        height: 86.02px;
-        left: 561px;
-        top: 2107px;
+        width: 4.84%;
+        left: 520px;
+        top: 1990px;
     }
 
     .container-bintang-putih .putih6{
         position: absolute;
-        width: 143.8px;
-        height: 133px;
+        width: 7.5%;
         left: 424px;
         top: 2575px;
     }
