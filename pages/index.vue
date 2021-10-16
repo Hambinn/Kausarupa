@@ -1,20 +1,24 @@
 <template>
   <div class="container-landing">
-    <div class="container-logo">
-      <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
-    </div>
-    <div class="container-awan">
-      <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
-      <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
-    </div>
-    <div class="container-bintang">
-        <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="kecil">
-        <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="besar">
-    </div>
-    <div class="container-tombol">
-      <Nuxt-link to="/Welcome">
-      <button class="tap-me">Tap Me!</button>
-      </Nuxt-link>
+    <div class="top-cont">
+      <div class="canvas">
+        <div class="container-logo">
+          <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
+        </div>
+        <div class="container-awan">
+          <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
+          <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
+        </div>
+        <div class="container-bintang">
+          <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="kecil">
+          <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="besar">
+        </div>
+        <div class="container-tombol">
+          <Nuxt-link to="/Welcome">
+            <button class="tap-me">Tap Me!</button>
+          </Nuxt-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -34,60 +38,78 @@ export default {
 
 
 .container-landing{
+    position: absolute;
     text-align: center;
     background-image: url("../assets/png/LandingPage/bg panjang 16_9.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     }
 
 @media only  screen and (max-width: 1366px) {
-    .container-landing{
-        background-size: 1366px 768px;
-    }
+    /* .container-landing{
+        background-size: 100% 100%;
+    } */
 }
 
 .container-logo{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-logo img{
-    height: 500px;
+    height: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(83%,30%);
+    transform: translate(5%,37%);
 }
 
 .container-bintang{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-bintang .kecil{
-    height: 70px;
+    height: 8%;
     top: 50%;
     left: 50%;
-    transform: translate(1770%,200%);
+    transform: translate(570%,150%);
 }
 
 .container-bintang .besar{
-    height: 100px;
+    height: 15%;
     top: 50%;
     left: 50%;
-    transform: translate(450%,540%);
+    transform: translate(-320%,390%);
 }
 
 .container-awan{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 .container-awan .kiri{
-    height: 340px;
-    transform: translate(-93%,-30%);
+    position: absolute;
+    height: 35%;
+    transform: translate(-178%,0%);
 }
 .container-awan .kanan{
-    height: 476px;
-    transform: translate(287.9%,99%);
+    position: absolute;
+    height: 40%;
+    transform: translate(137%,130%);
 }
+
+.container-tombol{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
 
 .tap-me{
     all: unset;
@@ -97,11 +119,10 @@ export default {
     background: #30455A;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
-    width: 670px;
-    height: 86px;
-    position: relative;
-    top: 670px;
-    font-size: 50px;
+    width: 35%;
+    height: 9%;
+    transform: translate(0%,770%);
+    font-size: 2.7vw;
     color: #F2F7ED;
 }
  
@@ -110,7 +131,7 @@ a{
 }
 
 @media only  screen and (max-width: 1366px) {
-    .container-logo img{
+    /* .container-logo img{
         height: 400px;
         top: 50%;
         left: 50%;
@@ -143,6 +164,19 @@ a{
     top: 550px;
     font-size: 32px;
     border-radius: 18px;
+} */
+}
+
+@media only screen and (max-width: 1280px){
+    .container-awan .kiri{
+    position: absolute;
+    height: 35%;
+    transform: translate(-197%,0%);
+}
+.container-awan .kanan{
+    position: absolute;
+    height: 40%;
+    transform: translate(162%,130%);
 }
 }
 </style>
