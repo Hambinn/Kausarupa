@@ -48,10 +48,9 @@ import kotakItem from '../components/Persona/kotakItem.vue'
 
 .container-header{
     position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 120px;
-    top: 50px;
+    height: 50px;
+    width: 50px;
+    transform: translate(175%,20%);
 }
 
 .container-awan{
@@ -62,8 +61,7 @@ position: absolute;
     position: absolute;
     width: 800px;
     height: 800px;
-    left: 700px;
-    top: -150px;
+    transform: translate(90%,-16%);
     z-index: 2;
 }
 
@@ -71,8 +69,7 @@ position: absolute;
     position: absolute;
     width: 1000px;
     height: 1000px;
-    left: 1150px;
-    top: 20px;
+    transform: translate(120%,3%);
     z-index: 2;
 }
 .container-rumah{
@@ -82,10 +79,9 @@ position: absolute;
 .container-rumah .coklat{
     position: absolute;
     transform: scaleX(-1);
-    width: 700px;
-    height: 700px;
-    left: 1320px;
-    top: 15px;
+    width: 650px;
+    height: 650px;
+    transform: translate(190%,10%);
     z-index: 2;
 }
 
@@ -93,16 +89,14 @@ position: absolute;
     position: absolute;
     width: 1100px;
     height: 1100px;
-    left: 750px;
-    top: -470px;
+    transform: translate(70%,-40%);
     z-index: 1;
 }
 .tombol-next-persona{
     position: absolute;
     width: 305px;
     height: 80px;
-    left: 1430px;
-    top: 850px;
+    transform: translate(460%,1100%);
 
     background: #597FA3;
     border-radius: 35px;
