@@ -413,9 +413,308 @@ body{
     top: -10px;
 }
 
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1367px) {
     .container-welcome{
+        text-align: center;
+        background-image: url("../assets/png/MainPage/bg_terang.png");
+        background-repeat: no-repeat;
         background-size: 1366px 768px;
+        height: 100vh;
+        width: 100vw
     }
+
+    .container-text-box{
+    position: absolute;
+    width: 100px;
+    margin: 61.6px 1200px;
+    text-align: justify;
+    font-size: 34px;
+    font-family: Tf Grotesk;
+    }
+
+    .container-text-middle-title{
+    position: absolute;
+    width: 570px;
+    font-size: 96px;
+    margin: 220px 520px;
+    }
+
+    .container-text-middle{
+    position: absolute;
+    width: 822.12px;
+    margin: 350px 270px;
+    text-align: justify;
+    font-size: 24px;
+    }
+
+    .container-bulan{
+        position: relative;
+    }
+
+    .container-bulan .oren{
+        width: 18%;
+        position: absolute;
+        transform: translate(10%, 50%);
+    }
+
+    .container-kelinci{
+        position: relative;
+    }
+
+    .container-kelinci .oren{
+        width: 33%;
+        position: absolute;
+        transform: translate(235%, 67%);
+    }
+
+    .container-saturnus{
+        position: relative;
+    }
+
+    .container-saturnus .ungu{
+        position: absolute;
+        width: 25%;
+        transform: translate(20%, 240%);
+    }
+
+    .container-lolipop{
+        position: relative;
+    }
+
+    .container-lolipop .ungu{
+        width: 55%;
+        position: absolute;
+        transform: translate(58%, 59%);
+    }
+
+    .container-kamera{
+        position: relative;
+    }
+
+    .container-kamera .ungu{
+        width: 19%;
+        position: absolute;
+        transform: translate(90%, 610%);
+    }
+
+    .container-ikan{
+        position: relative;
+    }
+
+    .container-ikan .ungu{
+        position: absolute;
+        width: 17.2%;
+        transform: translate(450%, 730%);
+    }
+
+    .container-ikan .oren{
+        position: absolute;
+        width: 26.2%;
+        transform: translate(-40%, 480%);
+    }
+
+    .container-penggaris{
+        position: relative;
+    }
+
+    .container-penggaris .ungu{
+        width: 50%;
+        position: absolute;
+        transform: translate(50%, 240%);
+    }
+
+    .container-pita{
+        position: relative;
+    }
+
+    .container-pita .oren{
+        position: absolute;
+        width: 17.9%;
+        transform: translate(15%, 630%);
+    }
+
+    .container-permen{
+        position: relative;
+    }
+
+    .container-permen .oren{
+        width: 66.4%;
+        position: absolute;
+        transform: translate(30%, 81%);
+    }
+
+    .container-box{
+        position: absolute;
+        height: 56px;
+        width: 175px;
+        background-color: #fff;
+        transform: translate(630%, 100%);
+        border-radius: 50px;
+    }
+
+    .container-bintang-item{
+        position: absolute;
+        transform: translate(1920%, 100%);
+    }
+
+    .container-bintang-item .oren{
+        width: 58px;
+    }
+
+    .container-segitiga{
+        position: absolute;
+        top: 525px;
+        left: 642px;
+    }
+
+    .container-bintang-putih{
+        position: relative;
+    }
+
+    .container-bintang-putih .putih1{
+        position: absolute;
+        width: 114px;
+        height: 105.44px;
+        left: 246px;
+        top: 524px;
+    }
+
+    .container-bintang-putih .putih2{
+        position: absolute;
+        width: 143.8px;
+        height: 133px;
+        left: 538px;
+        top: 1359px;
+    }
+
+    .container-bintang-putih .putih3{
+        position: absolute;
+        width: 82.17px;
+        height: 76px;
+        left: 1529px;
+        top: 1321px;
+    }
+
+    .container-bintang-putih .putih4{
+        position: absolute;
+        width: 82.17px;
+        height: 76px;
+        left: 270px;
+        top: 1879px;
+    }
+
+    .container-bintang-putih .putih5{
+        position: absolute;
+        width: 93px;
+        height: 86.02px;
+        left: 561px;
+        top: 2107px;
+    }
+
+    .container-bintang-putih .putih6{
+        position: absolute;
+        width: 143.8px;
+        height: 133px;
+        left: 424px;
+        top: 2575px;
+    }
+
+    .container-ubur{
+        position: relative;
+    }
+
+    .container-ubur .oren{
+        width: 78%;
+        position: absolute;
+        transform: translate(50%, 115%);
+    }
+
+    .container-permen-bungkus{
+        position: relative;
+    }
+
+    .container-permen-bungkus .oren{
+        width: 27.8%;
+        position: absolute;
+        transform: translate(15%, 610%);
+    }
+
+    .container-awan-main{
+        position: relative;
+    }
+
+    .container-awan-main .bawah-permen{
+        position: absolute;
+        width: 39.5%;
+        transform: translate(-30%, 755%);
+    }
+
+    .container-papan{
+        position: relative;
+    }
+
+    .container-papan .papan{
+        position: absolute;
+        width: 37%;
+        transform: translate(140%, 410%);
+    }
+
+    .container-awan-main .bawah-papan{
+        position: absolute;
+        width: 55.2%;
+        transform: translate(90%, 580%);
+    }
+
+    .container-awan-main .lubang-atas{
+        position: absolute;
+        width: 55.2%;
+        transform: translate(100%, 690%);
+    }
+
+    .container-awan-main .lubang-bawah{
+        position: absolute;
+        width: 55.2%;
+        transform: translate(60%, 720%);
+    }
+
+    .container-lubang{
+        position: relative;
+    }
+
+    .container-lubang .lubang{
+        position: absolute;
+        width: 35.7%;
+        transform: translate(140%, 635%);
+    }
+
+    .container-awan-main .belakang-kasur{
+        position: absolute;
+        width: 45.2%;
+        transform: translate(10%, 800%);
+    }
+
+    .container-kasur .kasur{
+        position: absolute;
+        width: 39%;
+        transform: translate(0%, 450%);
+    }
+
+    .container-kasur .depan-kasur1{
+        position: absolute;
+        width: 45.2%;
+        transform: translate(0%, 820%) rotate(180deg);
+    }
+
+    .container-kasur .depan-kasur2{
+        position: absolute;
+        width: 45.2%;
+        transform: translate(-40%, 810%);
+    }
+
+    .score{
+        position: sticky;
+        top: -10px;
+    }
+
 }
 </style>
