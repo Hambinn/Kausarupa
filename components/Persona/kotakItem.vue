@@ -17,6 +17,8 @@ width: 875px;
 height: 565px;
 left: 656px;
 top: 210px;
+z-index: 3;
+opacity: 0.95;
 
 background: rgba(131, 131, 131, 0.77);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

@@ -50,8 +50,8 @@ import kotakItem from '../components/Persona/kotakItem.vue'
     position: absolute;
     width: 100px;
     height: 100px;
-    left: 0px;
-    top: 0px;
+    left: 120px;
+    top: 50px;
 }
 
 .container-awan{
