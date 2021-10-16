@@ -45,7 +45,7 @@ import Cookies from 'js-cookie'
     export default {
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
         beforeMount(){
-            if(Cookies.get('nama') && Cookies.get('nama') !=''){
+            if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
                 this.$router.push('Main')
             }
         },
@@ -88,7 +88,7 @@ import Cookies from 'js-cookie'
                     alert(e)
                     return
                 }
-                Cookies.set('nama',this.nama)
+                localStorage.setItem('nama',this.nama)
             },
             formValidation(){
                 if(this.nama.length > 0 && this.instansi.length>0){
