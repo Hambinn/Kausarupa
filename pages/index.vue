@@ -1,22 +1,24 @@
 <template>
   <div class="container-landing">
+    <div class="top-cont">
       <div class="canvas">
-    <div class="container-logo">
-      <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
-    </div>
-    <div class="container-awan">
-      <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
-      <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
-    </div>
-    <div class="container-bintang">
-        <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="kecil">
-        <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="besar">
-    </div>
-    <div class="container-tombol">
-      <Nuxt-link to="/Welcome">
-      <button class="tap-me">Tap Me!</button>
-      </Nuxt-link>
-    </div>
+        <div class="container-logo">
+          <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
+        </div>
+        <div class="container-awan">
+          <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
+          <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
+        </div>
+        <div class="container-bintang">
+          <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="kecil">
+          <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="besar">
+        </div>
+        <div class="container-tombol">
+          <Nuxt-link to="/Welcome">
+            <button class="tap-me">Tap Me!</button>
+          </Nuxt-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -163,5 +165,18 @@ a{
     font-size: 32px;
     border-radius: 18px;
 } */
+}
+
+@media only screen and (max-width: 1280px){
+    .container-awan .kiri{
+    position: absolute;
+    height: 35%;
+    transform: translate(-197%,0%);
+}
+.container-awan .kanan{
+    position: absolute;
+    height: 40%;
+    transform: translate(162%,130%);
+}
 }
 </style>
