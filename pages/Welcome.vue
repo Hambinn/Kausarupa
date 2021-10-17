@@ -1,37 +1,41 @@
 <template>
   <div class="container-welcome">
-    <div class="container-popup">
-      <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact" @click="showContact = true">
-      <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
-      <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
-      <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
-    </div>
-    <div class="Tombol-next">
-      <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'" @click.native="post"  :style="styleObj"> 
-      Next
-      </Nuxt-link>
-    </div>
-    <div class="container-bintang">
-        <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
-        <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
-    </div>
-    <div>
-        <div class="container-form">
-        <h1 class="welcome">Welcome</h1>
-        <div class="form-control">
+    <div class="top-cont">
+      <div class="canvas">
+        <div class="container-popup">
+          <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact" @click="showContact = true">
+          <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
+          <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
+          <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
+        </div>
+        <div class="Tombol-next">
+          <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'" @click.native="post"  :style="styleObj"> 
+          Next
+          </Nuxt-link>
+        </div>
+        <div class="container-bintang">
+          <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
+          <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
+        </div>
+        <div>
+          <div class="container-form">
+          <h1 class="welcome">Welcome</h1>
+          <div class="form-control">
             <form action="">
                 <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off" v-model="nama" @input="formValidation">
                 <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi" autocomplete="off" v-model="instansi" @input="formValidation">
             </form>
         </div>
         </div>
-        <about-us v-show="showAboutUs" @close-modal="showAboutUs = false"/>
-        <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
-        <contact-us v-show="showContact" @close-modal="showContact = false"/>
-        <youtube v-show="showYoutube" @close-modal="showYoutube=false"/>
+          <about-us v-show="showAboutUs" @close-modal="showAboutUs = false"/>
+          <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
+          <contact-us v-show="showContact" @close-modal="showContact = false"/>
+          <youtube v-show="showYoutube" @close-modal="showYoutube=false"/>
+        </div>
+            <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        </div>
     </div>
-        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
-    </div>
+</div>
 </template>
 
 <script>
@@ -113,6 +117,24 @@ import Cookies from 'js-cookie'
     margin: 0;
         
 }
+
+.top-cont{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
+}
+
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .container-form{
     position: absolute;
     width: 40%;
