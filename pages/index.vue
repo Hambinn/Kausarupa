@@ -36,6 +36,22 @@ export default {
         
 }
 
+.top-cont{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
+}
+
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 .container-landing{
     position: absolute;
@@ -167,7 +183,7 @@ a{
 } */
 }
 
-@media only screen and (max-width: 1280px){
+/* @media only screen and (max-width: 1280px){
     .container-awan .kiri{
     position: absolute;
     height: 35%;
@@ -178,5 +194,5 @@ a{
     height: 40%;
     transform: translate(162%,130%);
 }
-}
+} */
 </style>
