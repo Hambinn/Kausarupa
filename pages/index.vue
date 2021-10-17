@@ -111,12 +111,12 @@ export default {
 .container-awan .kiri{
     position: absolute;
     height: 35%;
-    transform: translate(-183%,0%);
+    transform: translate(-161%,20%);
 }
 .container-awan .kanan{
     position: absolute;
     height: 40%;
-    transform: translate(144%,130%);
+    transform: translate(115%,130%);
 }
 
 .container-tombol{
