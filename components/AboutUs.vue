@@ -19,7 +19,7 @@
     border-radius: 25px;
     position: absolute;
     width: 40%;
-    height: 55%;
+    height: 50%;
     transform: translate(0%,35%);
     color: #E7E8E7;
 
@@ -53,7 +53,7 @@
     background-color: #000000da;
 }
 
-@media only  screen and (max-width: 1366px) {
+/* @media only  screen and (max-width: 1366px) {
   .AboutUs{
     background-color: #466584;
     border-radius: 25px;
@@ -82,6 +82,6 @@
     padding-left: 50px;
     padding-right: 50px;
 }
-}
+} */
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

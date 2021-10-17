@@ -25,7 +25,7 @@
     border-radius: 25px;
     position: absolute;
     width: 40%;
-    height: 55%;
+    height: 50%;
     transform: translate(0%,35%);
     color: #E7E8E7;
 
@@ -41,7 +41,7 @@
     position: absolute;
     width: 13%;
     height: 13%;
-    top: 35%;
+    top: 32%;
     left: 32%;
 }
 
@@ -49,7 +49,7 @@
     position: absolute;
     width: 13%;
     height: 13%;
-    top: 35%;
+    top: 32%;
     left: 48%;
 }
 
@@ -57,7 +57,7 @@
     position: absolute;
     width: 13%;
     height: 13%;
-    top: 53%;
+    top: 49%;
     left: 32%;
 }
 
@@ -65,7 +65,7 @@
     position: absolute;
     width: 13%;
     height: 13%;
-    top: 53%;
+    top: 49%;
     left: 48%;
 }
 
@@ -80,7 +80,7 @@
     background-color: #000000da;
 }
 
-@media only  screen and (max-width: 1366px) {
+/* @media only  screen and (max-width: 1366px) {
     .ContactUs{
     background-color: #466584;
     border-radius: 25px;
@@ -141,6 +141,6 @@
     justify-content: center;
     background-color: #000000da;
 }
-}
+} */
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

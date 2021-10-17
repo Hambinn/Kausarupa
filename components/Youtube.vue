@@ -19,7 +19,7 @@
     border-radius: 25px;
     position: absolute;
     width: 40%;
-    height: 55%;
+    height: 50%;
     transform: translate(0%,35%);
 }
 
@@ -42,7 +42,7 @@ iframe{
     height: 70%;
 }
 
-@media only  screen and (max-width: 1366px) {
+/* @media only  screen and (max-width: 1366px) {
  .Youtube{
     background-color: #466584;
     border-radius: 25px;
@@ -60,6 +60,6 @@ iframe{
     width: 500;
     height: 283;
 }
-}
+} */
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
