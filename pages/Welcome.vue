@@ -115,10 +115,11 @@ import Cookies from 'js-cookie'
 }
 .container-form{
     position: absolute;
-    width: 826px;
-    height: 534px;
-    left: 547px;
-    top: 130px;
+    width: 40%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%);
 
     background: rgba(196, 196, 196, 0.5);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -127,16 +128,16 @@ import Cookies from 'js-cookie'
 
 .welcome{
     position: absolute;
-    width: 447px;
-    height: 115px;
-    left: 190px;
-    top: 80px;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -40%);
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 96px;
-    line-height: 115px;
+    font-size: 600%;
+    line-height: 115%;
 
     color: #000000;
 
@@ -148,57 +149,57 @@ import Cookies from 'js-cookie'
 
 input{
     all: unset;
-    width: 500px;
-    height: 67px;
+    width: 65%;
+    height: 12%;
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 30px;;
+    font-size: 120%;;
 }
 
 input::-webkit-input-placeholder{
     font-family: Roboto;
-    font-size: 24px;
+    font-size: 125%;
 }
 
 .name{
     position: absolute;
-    left: 160px;
-    top: 290px;
+    left: 18%;
+    top: 57%;
 }
 
 .instansi{
     position: absolute;
     
-    left: 160px;
-    top: 390px;
+    left: 18%;
+    top: 75%;
 }
 
 @media only  screen and (max-width: 1366px) {
     .container-form{
     position: absolute;
-    width: 541px;
-    height: 350px;
-    left: 400px;
-    top: 140px;
+    width: 40%;
+    height: 45%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-52%, -70%);
 
     background: rgba(196, 196, 196, 0.5);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .welcome{
     position: absolute;
-    width: 447px;
-    height: 115px;
-    left: 50px;
-    top: 20px;
+    height: 100%;
+    left: 50%;
+    top: 50%;
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 70px;
-    line-height: 115px;
+    font-size: 450%;
+    line-height: 145%;
 
     color: #000000;
 
@@ -210,8 +211,8 @@ input::-webkit-input-placeholder{
 
 input{
     all: unset;
-    width: 293px;
-    height: 39px;
+    width: 54%;
+    height: 11%;
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -219,31 +220,33 @@ input{
 
 input::-webkit-input-placeholder{
     font-family: Roboto;
-    font-size: 14px;
+    font-size: 90%;
 }
 
 .name{
     position: absolute;
-    left: 120px;
-    top: 210px;
+    left: 23%;
+    top: 60%;
 }
 
 .instansi{
     position: absolute;
     
-    left: 120px;
-    top: 270px;
+    left: 23%;
+    top: 78%;
 }
 }
 
 .container-welcome{
+    position: absolute;
     text-align: center;
     background-image: url("../assets/png/WelcomePage/bg welcome 16_9.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     }
 
 .container-bintang{
@@ -251,17 +254,17 @@ input::-webkit-input-placeholder{
 }
 
 .container-bintang .oren{
-    height: 140px;
+    height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(180%,35%);
+    transform: translate(-400%,110%);
 }
 
 .container-bintang .ungu{
-    height: 90px;
+    height: 8%;
     top: 50%;
     left: 50%;
-    transform: translate(1350%,210%);
+    transform: translate(750%,300%);
 }
 
 .container-popup{
@@ -305,16 +308,16 @@ input::-webkit-input-placeholder{
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 27px;
-    width: 648px;
-    height: 86px;
-    position: relative;
-    top: 700px;
+    width: 30%;
+    height: 8%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 260%);
 
-    font-size: 48px;
+    font-size: 320%;
     font-family: 'Tf Grotesk';
     font-weight: normal;
     font-style: italic;
-
 
 }
 
@@ -325,12 +328,14 @@ a{
 
 @media only  screen and (max-width: 1366px) {
     .container-welcome{
+        position: absolute;
         text-align: center;
         background-image: url("../assets/png/WelcomePage/bg welcome 16_9.png");
         background-repeat: no-repeat;
-        background-size: 1366px 768px;
+        background-size: 100% 100%;
         height: 100vh;
-        width: 100vw
+        width: 100vw;
+        overflow: hidden;
     }
 
     
@@ -339,17 +344,17 @@ a{
     }
 
     .container-bintang .oren{
-        height: 90px;
+        height: 12%;
         top: 50%;
         left: 50%;
-        transform: translate(220%,80%);
+        transform: translate(-350%,70%);
 }
 
 .container-bintang .ungu{
-    height: 70px;
+    height: 10%;
     top: 50%;
     left: 50%;
-    transform: translate(1300%,280%);
+    transform: translate(500%,200%);
 }
 
 .container-popup{
