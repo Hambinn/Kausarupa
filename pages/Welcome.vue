@@ -2,40 +2,41 @@
   <div class="container-welcome">
     <div class="top-cont">
       <div class="canvas">
+        <div class="container-bintang">
+          <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
+          <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
+        </div>
         <div class="container-popup">
           <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact" @click="showContact = true">
           <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
           <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
-        </div>
-        <div class="Tombol-next">
-          <Nuxt-link to="/Main" class="next"  tag="button"   :event="disabled ? '' : 'click'" @click.native="post"  :style="styleObj"> 
-          Next
+          <Nuxt-link to="/Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click.native="post"
+            :style="styleObj">
+            Next
           </Nuxt-link>
-        </div>
-        <div class="container-bintang">
-          <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
-          <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
         </div>
         <div>
           <div class="container-form">
-          <h1 class="welcome">Welcome</h1>
-          <div class="form-control">
-            <form action="">
-                <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off" v-model="nama" @input="formValidation">
-                <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi" autocomplete="off" v-model="instansi" @input="formValidation">
-            </form>
-        </div>
-        </div>
-          <about-us v-show="showAboutUs" @close-modal="showAboutUs = false"/>
+            <h1 class="welcome">Welcome</h1>
+            <div class="form-control">
+              <form action="">
+                <input type="text" id="nama" name="nama" placeholder="Nama" class="placeholder name" autocomplete="off"
+                  v-model="nama" @input="formValidation">
+                <input type="text" id="instansi" name="instansi" placeholder="Instansi" class="placeholder instansi"
+                  autocomplete="off" v-model="instansi" @input="formValidation">
+              </form>
+            </div>
+          </div>
+          <about-us v-show="showAboutUs" @close-modal="showAboutUs = false" />
           <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
-          <contact-us v-show="showContact" @close-modal="showContact = false"/>
-          <youtube v-show="showYoutube" @close-modal="showYoutube=false"/>
+          <contact-us v-show="showContact" @close-modal="showContact = false" />
+          <youtube v-show="showYoutube" @close-modal="showYoutube=false" />
         </div>
-            <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
-        </div>
+        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -158,7 +159,7 @@ import Cookies from 'js-cookie'
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 600%;
+    font-size: 6.5vw;
     line-height: 115%;
 
     color: #000000;
@@ -176,12 +177,12 @@ input{
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 120%;;
+    font-size: 2vw;
 }
 
 input::-webkit-input-placeholder{
     font-family: Roboto;
-    font-size: 125%;
+    font-size: 2vw;
 }
 
 .name{
@@ -197,7 +198,7 @@ input::-webkit-input-placeholder{
     top: 75%;
 }
 
-@media only  screen and (max-width: 1366px) {
+/* @media only  screen and (max-width: 1366px) {
     .container-form{
     position: absolute;
     width: 40%;
@@ -257,7 +258,7 @@ input::-webkit-input-placeholder{
     left: 23%;
     top: 78%;
 }
-}
+} */
 
 .container-welcome{
     position: absolute;
@@ -273,70 +274,75 @@ input::-webkit-input-placeholder{
 
 .container-bintang{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-bintang .oren{
     height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(-400%,110%);
+    transform: translate(-370%,110%);
 }
 
 .container-bintang .ungu{
     height: 8%;
     top: 50%;
     left: 50%;
-    transform: translate(750%,300%);
+    transform: translate(600%,330%);
 }
 
 .container-popup{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-popup .contact{
-    height: 150px;
+    height: 14%;
     top: 50%;
     left: 50%;
-    transform: translate(260%,470%);
+    transform: translate(-170%,500%);
     cursor: pointer;
 }
 
 .container-popup .about{
-    height: 150px;
+    height: 14%;
     top: 50%;
     left: 50%;
-    transform: translate(-5%,370%);
+    transform: translate(-410%,400%);
     cursor: pointer;
 }
 
 .container-popup .catatan{
-    height: 150px;
+    height: 14%;
     top: 50%;
     left: 50%;
-    transform: translate(880%,370%);
+    transform: translate(410%,400%);
     cursor: pointer;
 }
 
 .container-popup .trailer{
-    height: 150px;
+    height: 14%;
     top: 50%;
     left: 50%;
-    transform: translate(610%,470%);
+    transform: translate(170%,500%);
     cursor: pointer;
 }
+
 
 .next{
     all: unset;
 
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 27px;
+    border-radius: 26px;
     width: 30%;
     height: 8%;
     position: absolute;
     top: 50%;
-    transform: translate(-50%, 260%);
+    transform: translate(-103%, 260%);
 
-    font-size: 320%;
+    font-size: 3vw;
     font-family: 'Tf Grotesk';
     font-weight: normal;
     font-style: italic;
@@ -348,7 +354,7 @@ a{
     text-decoration: none;
 }
 
-@media only  screen and (max-width: 1366px) {
+/* @media only  screen and (max-width: 1366px) {
     .container-welcome{
         position: absolute;
         text-align: center;
@@ -438,6 +444,6 @@ a{
 a{
     text-decoration: none;
 }
-}
+} */
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

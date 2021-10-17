@@ -1,15 +1,17 @@
 <template>
     <div class="modal-overlay" @click="$emit(`close-modal`)">
-        <div class="ContactUs" @click.stop>Contact Us</div>
-        <a href="https://www.instagram.com/geplfm/" target="_blank">
-        <img src="~assets/svg/WelcomePage/icon ig.svg"  alt="" class="ig" @click.stop >
-        </a>
-        <img src="~assets/svg/WelcomePage/icon cp.svg" alt="" class="cp" @click.stop title="gep.lfm@gmail.com">
-        <a href="https://twitter.com/GEPLFMITB?s=20" target="_blank">
-        <img src="~assets/svg/WelcomePage/icon twitter.svg" alt="" class="twitter" @click.stop>
-        </a>
-        <img src="~assets/svg/WelcomePage/icon youtube.svg" alt="" class="youtube" @click.stop>
-        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        <div class="content">
+          <div class="ContactUs" @click.stop>Contact Us</div>
+          <a href="https://www.instagram.com/geplfm/" target="_blank">
+            <img src="~assets/svg/WelcomePage/icon ig.svg" alt="" class="ig" @click.stop>
+          </a>
+          <img src="~assets/svg/WelcomePage/icon cp.svg" alt="" class="cp" @click.stop title="gep.lfm@gmail.com">
+          <a href="https://twitter.com/GEPLFMITB?s=20" target="_blank">
+            <img src="~assets/svg/WelcomePage/icon twitter.svg" alt="" class="twitter" @click.stop>
+          </a>
+          <img src="~assets/svg/WelcomePage/icon youtube.svg" alt="" class="youtube" @click.stop>
+          <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        </div>
     </div>
 </template>
 
@@ -26,7 +28,7 @@
     position: absolute;
     width: 40%;
     height: 50%;
-    transform: translate(0%,35%);
+    transform: translate(-50%,35%);
     color: #E7E8E7;
 
     font-family: 'Tf Grotesk';
@@ -70,14 +72,16 @@
 }
 
 .modal-overlay{
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    background-color: #000000da;
+    background-repeat: repeat;
+    background-color: #000000c2;
+    background-size: 100% 100%;
 }
 
 /* @media only  screen and (max-width: 1366px) {
