@@ -409,7 +409,7 @@ body{
 }
 
 @media only screen and (max-width: 1367px) {
-    .container-welcome{
+    .container-main{
         text-align: center;
         background-image: url("../assets/png/MainPage/bg_terang.png");
         background-repeat: no-repeat;
