@@ -24,51 +24,49 @@
     background-color: #466584;
     border-radius: 25px;
     position: absolute;
-    width: 800px;
-    height: 530px;
-    left: 960px;
-    top: 400px;
-    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 55%;
+    transform: translate(0%,35%);
     color: #E7E8E7;
 
     font-family: 'Tf Grotesk';
     font-style: italic;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 6vh;
     line-height: 150px;
     text-align: center;
 }
 
 .ig{
     position: absolute;
-    width: 120px;
-    height: 120px;
-    top: 290px;
-    left: 650px;
+    width: 13%;
+    height: 13%;
+    top: 35%;
+    left: 32%;
 }
 
 .cp{
     position: absolute;
-    width: 120px;
-    height: 120px;
-    top: 290px;
-    left: 980px;
+    width: 13%;
+    height: 13%;
+    top: 35%;
+    left: 48%;
 }
 
 .twitter{
     position: absolute;
-    width: 120px;
-    height: 120px;
-    top: 470px;
-    left: 650px;
+    width: 13%;
+    height: 13%;
+    top: 53%;
+    left: 32%;
 }
 
 .youtube{
     position: absolute;
-    width: 120px;
-    height: 120px;
-    top: 470px;
-    left: 980px;
+    width: 13%;
+    height: 13%;
+    top: 53%;
+    left: 48%;
 }
 
 .modal-overlay{

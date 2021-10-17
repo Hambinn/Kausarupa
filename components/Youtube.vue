@@ -18,11 +18,9 @@
     background-color: #466584;
     border-radius: 25px;
     position: absolute;
-    width: 800px;
-    height: 530px;
-    left: 960px;
-    top: 400px;
-    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 55%;
+    transform: translate(0%,35%);
 }
 
 .modal-overlay{
@@ -38,10 +36,10 @@
 
 iframe{
     position: absolute;
-    top: 60px;
-    right: 60px;
-    width: 680px;
-    height: 400px;
+    top: 15%;
+    right: 8%;
+    width: 85%;
+    height: 70%;
 }
 
 @media only  screen and (max-width: 1366px) {
