@@ -136,9 +136,9 @@ body{
 .container-text-box{
     position: absolute;
     width: 1157.92px;
-    margin: 88px 1700px;
+    margin: 4.7% 90%;
     text-align: justify;
-    font-size: 48px;
+    font-size: 2.6vw;
     font-family: Tf Grotesk;
     
 }
@@ -146,7 +146,7 @@ body{
 .container-text-middle-title{
     position: absolute;
     width: 804px;
-    font-size: 96px;
+    font-size: 5vw;
     margin: 10% 40.25%;
     font-family: Tf Grotesk;
 }
@@ -156,30 +156,40 @@ body{
     width: 1157.92px;
     margin: 19% 20%;
     text-align: justify;
-    font-size: 24px;
+    font-size: 1.2vw;
     font-family: Tf Grotesk;
 }
 
 .container-bulan{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-bulan .oren{
-    position: absolute;
-    transform: translate(0%, 30%);
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,15%);
 }
 
 .container-kelinci{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-kelinci .oren{
-    position: absolute;
-    transform: translate(225%, 67%);
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(280%,65%);
 }
 
 .container-saturnus{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-saturnus .ungu{
@@ -189,7 +199,9 @@ body{
 }
 
 .container-lolipop{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-lolipop .ungu{
@@ -264,19 +276,26 @@ body{
 
 .container-segitiga{
     position: absolute;
-    transform: translate(1079%, 520%);
+    height: 100%;
+    width: 100%;
+}
+
+.container-segitiga .ungu{
+    top: 50%;
+    left: 50%;
+    transform: translate(1080%,540%);
 }
 
 .container-bintang-putih{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-bintang-putih .putih1{
-    position: absolute;
-    width: 114px;
-    height: 105.44px;
-    left: 246px;
-    top: 524px;
+    top: 50%;
+    left: 50%;
+    transform: translate(220%,470%);
 }
 
 .container-bintang-putih .putih2{
@@ -409,7 +428,7 @@ body{
 }
 
 @media only screen and (max-width: 1367px) {
-    .container-main{
+    /*.container-main{
         text-align: center;
         background-image: url("../assets/png/MainPage/bg_terang.png");
         background-repeat: no-repeat;
@@ -700,7 +719,7 @@ body{
         width: 45.2%;
         transform: translate(-40%, 810%);
     }
-
+*/
     .score{
         position: sticky;
         top: -10px;
