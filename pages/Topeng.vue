@@ -29,8 +29,9 @@
 }
 
 .bg-tema{
+    position: absolute;
     text-align: center;
-    background-image: url("~/assets/svg/ChoosePage/background (3).svg");
+    background-image: url("~/assets/svg/ChoosePage/background topeng.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -39,23 +40,28 @@
     }
 
 .awan{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .awan .kanan{
-    position: absolute;
-    height: 1000px;
-    transform: translate(-1%,22%)
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(47%,20%)
 }
 .awan .tengah{
-    position: absolute;
-    height: 800px;
-    transform: translate(-58%,55%)
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-6%,-202%)
 }
 .awan .kiri{
-    position: absolute;
-    height: 1000px;
-    transform: translate(-110%,31%)
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-59%,-70%)
 }
 
 .ChooseOne{
@@ -71,29 +77,34 @@
     font-family: 'Tf Grotesk';
     font-style: normal;
     font-weight: normal;
-    font-size: 100px;
-    line-height: 150px;
+    font-size: 5.5vw;
+    line-height: 8vw;
     text-align: center;
 }
 
 .topeng{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .topeng .mamus{
-    position: absolute;
-    height: 500px;
-    transform: translate(-140%,62%)
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(2%,60%)
 }
 .topeng .persona{
-    position: absolute;
-    height: 350px;
-    transform: translate(-50%,90%)
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,45%)
 }
 .topeng .shadow{
-    position: absolute;
-    height: 500px;
-    transform: translate(46%,58%)
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(5%,56.5%)
 }
 
 </style>
