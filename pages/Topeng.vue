@@ -1,24 +1,67 @@
 <template>
     <div class="bg-tema">
-        <div class="awan">
+      <div class="top-cont">
+        <div class="canvas">
+          <div class="awan">
             <img src="~/assets/svg/ChoosePage/awan biru.svg" alt="" class="kanan">
             <img src="~/assets/svg/ChoosePage/awan ungu.svg" alt="" class="kiri">
             <img src="~/assets/svg/ChoosePage/awan oren.svg" alt="" class="tengah">
-        </div>
-        <div class="ChooseOne" @click.stop>
+          </div>
+          <div class="ChooseOne" >
             <h4>Choose one!</h4>
+          </div>
+          <div class="tulisan-topeng">
+              <transition name="persona">
+              <h3 v-show="persona" class="tulisan-persona">Persona</h3>
+              </transition>
+              <transition name="mamus">
+              <h3 v-show="mamus" class="tulisan-mamus">Anima/Animus</h3>
+              </transition>
+              <transition name="shadow">
+              <h3 v-show="shadow" class="tulisan-shadow">Shadow</h3>
+              </transition>
+          </div>
+          <div class="topeng">
+            <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus">
+            <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona" @mouseover="munculPersona" @mouseleave="ilangPersona">
+            <img src="~/assets/svg/ChoosePage/Shadow 1.svg" alt="" class="shadow" @mouseover="munculShadow" @mouseleave="ilangShadow">
+          </div>
         </div>
-        <div class="topeng">
-            <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus">
-            <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona">
-            <img src="~/assets/svg/ChoosePage/Shadow 1.svg" alt="" class="shadow">
-        </div>
+      </div>
     </div>
 </template>
 
 <script>
     export default {
-        
+        data(){
+            return{
+                mamus: false,
+                persona: false,
+                shadow: false
+            }
+        },
+        methods:{
+            munculMamus(){
+                this.mamus = true
+            },
+            ilangMamus(){
+                this.mamus = false
+            },
+
+            munculPersona(){
+                this.persona = true
+            },
+            ilangPersona(){
+                this.persona = false
+            },
+
+            munculShadow(){
+                this.shadow = true
+            },
+            ilangShadow(){
+                this.shadow = false
+            }
+        }
     }
 </script>
 
@@ -26,6 +69,23 @@
 *{
     padding: 0;
     margin: 0;
+}
+
+.top-cont{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
+}
+
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .bg-tema{
@@ -65,21 +125,21 @@
 }
 
 .ChooseOne{
-    border-radius: 25px;
     position: absolute;
-    width: 800px;
-    height: 530px;
-    left: 960px;
-    top: 400px;
-    transform: translate(-50%, -55%);
-    color: #466584;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
 
+.ChooseOne h4{
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 135%);
+    color: #466584;
     font-family: 'Tf Grotesk';
     font-style: normal;
     font-weight: normal;
-    font-size: 5.5vw;
-    line-height: 8vw;
-    text-align: center;
+    font-size: 4.5vw;
 }
 
 .topeng{
@@ -107,4 +167,70 @@
     transform: translate(5%,56.5%)
 }
 
+.mamus:hover{
+    cursor: pointer;
+}
+.persona:hover{
+    cursor: pointer;
+}
+.shadow:hover{
+    cursor: pointer;
+}
+
+.tulisan-topeng{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.tulisan-persona{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%,300%);
+    font-size: 3vw;
+}
+
+.tulisan-mamus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-170%,300%);
+    font-size: 3vw;
+}
+
+.tulisan-shadow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(200%,300%);
+    font-size: 3vw;
+}
+
+.mamus-enter-active, .mamus-leave-active{
+    transition: all .5s ease;
+}
+
+.mamus-enter, .mamus-leave-to{
+    opacity: 0;
+    transform: translate(-170%, 600%);
+}
+
+.persona-enter-active, .persona-leave-active{
+    transition: all .5s ease;
+}
+
+.persona-enter, .persona-leave-to{
+    opacity: 0;
+    transform: translate(-45%, 600%);
+}
+
+.shadow-enter-active, .shadow-leave-active{
+    transition: all .5s ease;
+}
+
+.shadow-enter, .shadow-leave-to{
+    opacity: 0;
+    transform: translate(200%,600%);
+}
 </style>
