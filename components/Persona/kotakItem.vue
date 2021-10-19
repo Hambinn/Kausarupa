@@ -13,10 +13,11 @@
 <style  scoped>
 .container{
 position: absolute;
-width: 875px;
-height: 565px;
-left: 656px;
-top: 210px;
+width: 50%;
+height: 55%;
+left: 50%;
+top: 50%;
+transform: translate(-33%, -53%);
 z-index: 3;
 opacity: 0.95;
 

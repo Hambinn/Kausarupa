@@ -11,6 +11,8 @@
           <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
           <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
+          <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
+          <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
           <Nuxt-link to="/Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click.native="post"
             :style="styleObj">
             Next
@@ -154,12 +156,12 @@ import Cookies from 'js-cookie'
     height: 100%;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -39%);
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 6.5vw;
+    font-size: 5.0vw;
     line-height: 115%;
 
     color: #000000;
@@ -177,12 +179,12 @@ input{
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 input::-webkit-input-placeholder{
     font-family: Roboto;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 
 .name{
@@ -299,37 +301,52 @@ input::-webkit-input-placeholder{
 }
 
 .container-popup .contact{
-    height: 14%;
+    height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(-170%,500%);
+    transform: translate(-60%,600%);
     cursor: pointer;
 }
 
 .container-popup .about{
-    height: 14%;
+    height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(-410%,400%);
+    transform: translate(-430%,550%);
     cursor: pointer;
 }
 
 .container-popup .catatan{
-    height: 14%;
+    height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(410%,400%);
+    transform: translate(500%,500%);
     cursor: pointer;
 }
 
 .container-popup .trailer{
-    height: 14%;
+    height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(170%,500%);
+    transform: translate(270%,600%);
     cursor: pointer;
 }
 
+.container-popup .calendar{
+    height: 12%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-590%,500%);
+    cursor: pointer;
+}
+
+.container-popup .bts{
+    height: 12%;
+    top: 50%;
+    left: 50%;
+    transform: translate(330%,550%);
+    cursor: pointer;
+}
 
 .next{
     all: unset;
@@ -340,9 +357,9 @@ input::-webkit-input-placeholder{
     height: 8%;
     position: absolute;
     top: 50%;
-    transform: translate(-103%, 260%);
+    transform: translate(-118%, 260%);
 
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-family: 'Tf Grotesk';
     font-weight: normal;
     font-style: italic;
