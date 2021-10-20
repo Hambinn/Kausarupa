@@ -7,7 +7,7 @@
           <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
         </div>
         <div class="container-popup">
-          <img src="~assets/svg/WelcomePage/contact us.svg" alt="" class="contact" @click="showContact = true">
+          <img src="~assets/png/WelcomePage/contact us.png" alt="" class="contact" @click="showContact = true">
           <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
           <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
