@@ -357,75 +357,97 @@ body{
 }
 
 .container-awan-main{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-awan-main .bawah-permen{
-    position: absolute;
-    transform: translate(-50%, 570%);
-}
-
-.container-papan{
-    position: relative;
-}
-
-.container-papan .papan{
-    position: absolute;
-    transform: translate(130%, 360%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, 570%);
 }
 
 .container-awan-main .bawah-papan{
-    position: absolute;
-    transform: translate(90%, 650%);
+    top: 50%;
+    left: 50%;
+    transform: translate(90%, 510%);
 }
 
 .container-awan-main .lubang-atas{
-    position: absolute;
-    transform: translate(100%, 710%);
+    top: 50%;
+    left: 50%;
+    transform: translate(100%, 520%);
 }
 
 .container-awan-main .lubang-bawah{
-    position: absolute;
-    transform: translate(60%, 740%);
-}
-
-.container-lubang{
-    position: relative;
-}
-
-.container-lubang .lubang{
-    position: absolute;
-    transform: translate(110%, 630%);
+    top: 50%;
+    left: 50%;
+    transform: translate(60%, 450%);
 }
 
 .container-awan-main .belakang-kasur{
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 265%);
+}
+
+.container-papan{
     position: absolute;
-    height: 50%;
-    transform: translate(10%, 800%);
+    height: 100%;
+    width: 100%;
+}
+
+.container-papan .papan{
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(130%, 370%);
+}
+
+.container-lubang{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-lubang .lubang{
+    top: 50%;
+    left: 50%;
+    transform: translate(130%, 645%);
+}
+
+.container-kasur {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-kasur .kasur{
-    position: absolute;
-    height: 85%;
-    transform: translate(0%, 435%);
+    top: 50%;
+    left: 50%;
+    width: 43%;
+    transform: translate(-1%, 410%);
 }
 
 .container-kasur .depan-kasur1{
-    position: absolute;
-    height: 50%;
-    transform: translate(0%, 830%) rotate(180deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, 650%) rotate(180deg);
 }
 
 .container-kasur .depan-kasur2{
-    position: absolute;
-    height: 50%;
-    transform: translate(-40%, 825%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, 530%);
 }
 
 .score{
     position: sticky;
     top: -10px;
 }
+
+/* -------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1367px) {
     /*.container-main{
@@ -719,11 +741,13 @@ body{
         width: 45.2%;
         transform: translate(-40%, 810%);
     }
-*/
+
     .score{
         position: sticky;
         top: -10px;
     }
 
+*/
 }
+
 </style>
