@@ -13,13 +13,14 @@
 <style>
     body, html{
         height: 100%;
-        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+        margin-top: -1%;
     }
 
     body{
         background-image: url("../assets/png/MainPage/bg_gelap.png");
         background-size: cover;
-        background-position: center;
         background-repeat: no-repeat;
         height: 100%;
     }

@@ -1,85 +1,92 @@
 <template>
 <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     <div class="container-main">
-        <div class="container-bulan">
+      <div class="top-cont">
+        <div class="canvas">
+          <div class="container-bulan">
             <img src="../assets/svg/MainPage/bulan.svg" alt="" class="oren">
-        </div>
-        <div class="container-kelinci">
+          </div>
+          <div class="container-kelinci">
             <img src="../assets/svg/MainPage/kelinci.svg" alt="" class="oren">
-        </div>
-        <div class="container-saturnus">
+          </div>
+          <div class="container-saturnus">
             <img src="../assets/svg/MainPage/saturnus.svg" alt="" class="ungu">
-        </div>
-        <div class="container-lolipop">
+          </div>
+          <div class="container-lolipop">
             <img src="../assets/svg/MainPage/lolipop.svg" alt="" class="ungu">
-        </div>
-        <div class="container-kamera">
+          </div>
+          <div class="container-kamera">
             <img src="../assets/svg/MainPage/kamera.svg" alt="" class="ungu">
-        </div>
-        <div class="container-ikan">
+          </div>
+          <div class="container-ikan">
             <img src="../assets/svg/MainPage/ikan oren.svg" alt="" class="oren">
             <img src="../assets/svg/MainPage/ikan ungu.svg" alt="" class="ungu">
-        </div>
-        <div class="container-pita">
+          </div>
+          <div class="container-pita">
             <img src="../assets/svg/MainPage/pita.svg" alt="" class="oren">
-        </div>
-        <div class="container-permen">
+          </div>
+          <div class="container-permen">
             <img src="../assets/svg/MainPage/permen.svg" alt="" class="oren">
-        </div>
-        <div class="container-text-middle-title">
+          </div>
+          <div class="container-text-middle-title">
             Panduan
-        </div>
-        <div class="container-text-middle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cupiditate corrupti est, vel nesciunt natus tempore recusandae quae cumque eius esse nihil amet blanditiis, illo facere. Accusantium voluptatum tempora earum? Perferendis itaque eveniet exercitationem, beatae quasi dolore, aperiam recusandae rerum voluptatibus perspiciatis, ullam dolorum praesentium accusantium saepe placeat iste veritatis.
-        </div>
-        <div class="container-segitiga">
+          </div>
+          <div class="container-text-middle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cupiditate corrupti est, vel nesciunt
+            natus tempore recusandae quae cumque eius esse nihil amet blanditiis, illo facere. Accusantium voluptatum
+            tempora earum? Perferendis itaque eveniet exercitationem, beatae quasi dolore, aperiam recusandae rerum
+            voluptatibus perspiciatis, ullam dolorum praesentium accusantium saepe placeat iste veritatis.
+          </div>
+          <div class="container-segitiga">
             <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">
-        </div>
-        <div class="container-penggaris">
+          </div>
+          <div class="container-penggaris">
             <img src="../assets/svg/MainPage/penggaris.svg" alt="" class="ungu">
-        </div>
-        <div class="container-ubur">
+          </div>
+          <div class="container-ubur">
             <img src="../assets/svg/MainPage/ubur-ubur.svg" alt="" class="oren">
-        </div>
-        <div class="container-permen-bungkus">
+          </div>
+          <div class="container-permen-bungkus">
             <img src="../assets/svg/MainPage/permen lagi.svg" alt="" class="oren">
-        </div>
-        <div class="container-papan">
+          </div>
+          <div class="container-papan">
             <img src="../assets/svg/MainPage/papan.svg" alt="" class="papan">
-        </div>
-        <div class="container-lubang">
+          </div>
+          <div class="container-lubang">
             <img src="../assets/svg/MainPage/lubang.svg" alt="" class="lubang">
-        </div>
-        <div class="container-awan-main">
+          </div>
+          <div class="container-awan-main">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-permen">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-papan">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-atas">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-bawah">
-            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="belakang-kasur">            
-        </div>
-        <div class="container-kasur">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="belakang-kasur">
+          </div>
+          <div class="container-kasur">
             <img src="../assets/svg/MainPage/kasur.svg" alt="" class="kasur">
-            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">    
-            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">        
-        </div>
-        <div class="score">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">
+          </div>
+          <div class="score">
             <div class="container-box">
-            </div>
-            <div class="container-text-box">
+              <div class="container-text-box">
                 {{score}}
+              </div>
             </div>
             <div class="container-bintang-item">
-                <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
+              <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
             </div>
-        </div>
-        <div class="container-bintang-putih">
+          </div>
+          <div class="container-bintang-putih">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih3" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih4" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6" @click="countBintang">
+          </div>
         </div>
+      </div>
     </div>
 </template>
 
@@ -87,6 +94,7 @@
 import Cookies from 'js-cookie'
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+        layout: 'longpage',
         beforeMount(){
             if(!localStorage.getItem('score')){
                 localStorage.setItem('score', 0)
@@ -118,42 +126,48 @@ import Cookies from 'js-cookie'
 
 <style >
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
-body{
-    margin: 0;
-    padding: 0;
+
+
+.container-main{
     overflow-x: hidden;
 }
 
-.container-main{
-    background-image: url("../assets/png/MainPage/bg_terang.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 1920px 4592px;
-    height: 4592px;
-    margin-top: -10px;
+.top-cont{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
+}
+
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .container-text-box{
     position: absolute;
-    width: 1157.92px;
-    margin: 4.7% 90%;
     text-align: justify;
     font-size: 2.6vw;
     font-family: Tf Grotesk;
+    top: 10%;
+    left: 49%;
     
 }
 
 .container-text-middle-title{
     position: absolute;
-    width: 804px;
     font-size: 5vw;
     margin: 10% 40.25%;
     font-family: Tf Grotesk;
-}
+}     
 
 .container-text-middle{
     position: absolute;
-    width: 1157.92px;
     margin: 19% 20%;
     text-align: justify;
     font-size: 1.2vw;
@@ -183,7 +197,7 @@ body{
     height: 60%;
     top: 50%;
     left: 50%;
-    transform: translate(280%,65%);
+    transform: translate(230%,65%);
 }
 
 .container-saturnus{
@@ -193,9 +207,10 @@ body{
 }
 
 .container-saturnus .ungu{
-    position: absolute;
-    height: 320px;
-    transform: translate(20%, 300%);
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    transform: translate(20%, 270%);
 }
 
 .container-lolipop{
@@ -205,59 +220,95 @@ body{
 }
 
 .container-lolipop .ungu{
-    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 110%;
     transform: translate(58%, 59%);
 }
 
+.container-permen{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-permen .oren{
+    height: 120%;
+    top: 50%;
+    left: 50%;
+    transform: translate(25%, 70%);
+}
+
 .container-kamera{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-kamera .ungu{
-    position: absolute;
-    transform: translate(90%, 490%);
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    transform: translate(110%, 520%);
 }
 
 .container-ikan{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-ikan .ungu{
-    position: absolute;
-    transform: translate(500%, 560%);
+    top: 50%;
+    left: 50%;
+    height: 25%;
+    transform: translate(320%, 500%);
 }
 
 .container-ikan .oren{
-    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 35%;
     transform: translate(-40%, 400%);
 }
 
 .container-penggaris{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-penggaris .ungu{
-    position: absolute;
-    transform: translate(20%, 125%);
+    top: 50%;
+    left: 50%;
+    height: 120%;
+    transform: translate(45%, 120%);
 }
 
 .container-pita{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-pita .oren{
-    position: absolute;
-    height: 350px;
+    top: 50%;
+    left: 50%;
+    height: 30%;
     transform: translate(15%, 660%);
 }
 
-.container-permen{
-    position: relative;
+.container-ubur{
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
-.container-permen .oren{
-    position: absolute;
-    transform: translate(30%, 81%);
+.container-ubur .oren{
+    top: 50%;
+    left: 50%;
+    height: 140%;
+    transform: translate(90%, 95%);
 }
 
 .container-box{
@@ -283,7 +334,8 @@ body{
 .container-segitiga .ungu{
     top: 50%;
     left: 50%;
-    transform: translate(1080%,540%);
+    height: 13%;
+    transform: translate(960%,500%);
 }
 
 .container-bintang-putih{
@@ -338,22 +390,19 @@ body{
     top: 2575px;
 }
 
-.container-ubur{
-    position: relative;
-}
 
-.container-ubur .oren{
-    position: absolute;
-    transform: translate(48%, 68%);
-}
 
 .container-permen-bungkus{
-    position: relative;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-permen-bungkus .oren{
-    position: absolute;
-    transform: translate(15%, 430%);
+    top: 50%;
+    left: 50%;
+    height: 60%;
+    transform: translate(8%, 376%);
 }
 
 .container-awan-main{
@@ -365,31 +414,36 @@ body{
 .container-awan-main .bawah-permen{
     top: 50%;
     left: 50%;
-    transform: translate(-45%, 570%);
+    height: 45%;
+    transform: translate(-45%, 590%);
 }
 
 .container-awan-main .bawah-papan{
     top: 50%;
     left: 50%;
-    transform: translate(90%, 510%);
+    height: 50%;
+    transform: translate(113%, 460%);
 }
 
 .container-awan-main .lubang-atas{
     top: 50%;
     left: 50%;
-    transform: translate(100%, 520%);
+    height: 50%;
+    transform: translate(120%, 460%);
 }
 
 .container-awan-main .lubang-bawah{
     top: 50%;
     left: 50%;
-    transform: translate(60%, 450%);
+    height: 40%;
+    transform: translate(-5%, 600%);
 }
 
 .container-awan-main .belakang-kasur{
     top: 50%;
     left: 50%;
-    transform: translate(0%, 265%);
+    height: 50%;
+    transform: translate(10%, 335%);
 }
 
 .container-papan{
@@ -401,8 +455,8 @@ body{
 .container-papan .papan{
     top: 50%;
     left: 50%;
-    width: 40%;
-    transform: translate(130%, 370%);
+    width: 35%;
+    transform: translate(165%, 390%);
 }
 
 .container-lubang{
@@ -414,7 +468,8 @@ body{
 .container-lubang .lubang{
     top: 50%;
     left: 50%;
-    transform: translate(130%, 645%);
+    height: 50%;
+    transform: translate(170%, 660%);
 }
 
 .container-kasur {
@@ -427,24 +482,25 @@ body{
     top: 50%;
     left: 50%;
     width: 43%;
-    transform: translate(-1%, 410%);
+    transform: translate(-1%, 380%);
 }
 
 .container-kasur .depan-kasur1{
     top: 50%;
     left: 50%;
-    transform: translate(-80%, 650%) rotate(180deg);
+    height: 50%;
+    transform: translate(-80%, 610%) rotate(180deg);
 }
 
 .container-kasur .depan-kasur2{
     top: 50%;
     left: 50%;
-    transform: translate(-40%, 530%);
+    height: 50%;
+    transform: translate(-30%, 500%);
 }
 
 .score{
     position: sticky;
-    top: -10px;
 }
 
 /* -------------------------------------------------------------------- */
