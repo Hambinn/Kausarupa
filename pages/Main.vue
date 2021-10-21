@@ -83,8 +83,6 @@
               <div class="container-text-box">
                 {{score}}
               </div>
-            </div>
-            <div class="container-bintang-item">
               <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
             </div>
           </div>
@@ -325,10 +323,10 @@ import Cookies from 'js-cookie'
     border-radius: 50px;
 }
 
-.container-bintang-item{
+.container-box .oren{
     position: fixed;
-    height: 10%;
-    transform: translate(1900%, 68%);
+    height: 100%;
+    transform: translate(10%, 0%);
 }
 
 .container-segitiga{
