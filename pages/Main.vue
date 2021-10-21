@@ -75,6 +75,10 @@
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih4" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih5" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih6" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih7" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih8" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih9" @click="countBintang">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih10" @click="countBintang">
           </div>
         </div>
       </div>
@@ -351,47 +355,71 @@ import Cookies from 'js-cookie'
 .container-bintang-putih .putih1{
     top: 50%;
     left: 50%;
+    height: 9%;
     transform: translate(220%,470%);
 }
 
 .container-bintang-putih .putih2{
-    position: absolute;
-    width: 143.8px;
-    height: 133px;
-    left: 538px;
-    top: 1359px;
+    top: 50%;
+    left: 50%;
+    height: 11%;
+    transform: translate(300%, 1050%);
 }
 
 .container-bintang-putih .putih3{
-    position: absolute;
-    width: 82.17px;
-    height: 76px;
-    left: 1529px;
-    top: 1321px;
+    height: 7%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1460%, 1620%);
 }
 
 .container-bintang-putih .putih4{
-    position: absolute;
-    width: 82.17px;
-    height: 76px;
-    left: 270px;
-    top: 1879px;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    transform: translate(-80%, 2290%);
 }
 
 .container-bintang-putih .putih5{
-    position: absolute;
-    width: 93px;
-    height: 86.02px;
-    left: 561px;
-    top: 2107px;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    transform: translate(180%, 2560%);
 }
 
 .container-bintang-putih .putih6{
-    position: absolute;
-    width: 143.8px;
-    height: 133px;
-    left: 424px;
-    top: 2575px;
+    height: 7%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-330%, 3360%);
+}
+
+.container-bintang-putih .putih7{
+    height: 7%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1480%, 3460%);
+}
+
+.container-bintang-putih .putih8{
+    height: 7%;
+    top: 50%;
+    left: 50%;
+    transform: translate(120%, 3760%);
+}
+
+.container-bintang-putih .putih9{
+    top: 50%;
+    left: 50%;
+    height: 9%;
+    transform: translate(600%, 1960%);
+}
+
+.container-bintang-putih .putih10{
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    transform: translate(0%, 4500%);
 }
 
 
