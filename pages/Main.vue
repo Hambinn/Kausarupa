@@ -500,7 +500,11 @@ import Cookies from 'js-cookie'
 }
 
 .score{
-    position: sticky;
+    position: absolute;
+}
+
+.score .container-box{
+    position: fixed;
 }
 
 /* -------------------------------------------------------------------- */
