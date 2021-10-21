@@ -312,6 +312,9 @@ import Cookies from 'js-cookie'
     transform: translate(90%, 95%);
 }
 /* score */
+.score{
+    position: fixed
+}
 
 .container-box{
     position: fixed;
@@ -324,7 +327,8 @@ import Cookies from 'js-cookie'
 
 .container-bintang-item{
     position: fixed;
-    transform: translate(1900%, 75%);
+    height: 10%;
+    transform: translate(1900%, 68%);
 }
 
 .container-segitiga{
