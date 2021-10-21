@@ -15,6 +15,8 @@
         height: 100%;
         width: 100%;
         overflow-x: hidden;
+    }
+    html{
         margin-top: -1%;
     }
 
