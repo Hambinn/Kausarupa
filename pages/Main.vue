@@ -67,16 +67,7 @@
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">
           </div>
-          <div class="score">
-            <div class="container-box">
-              <div class="container-text-box">
-                {{score}}
-              </div>
-            </div>
-            <div class="container-bintang-item">
-              <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
-            </div>
-          </div>
+          
           <div class="container-bintang-putih">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2" @click="countBintang">
@@ -87,6 +78,16 @@
           </div>
         </div>
       </div>
+      <div class="score">
+            <div class="container-box">
+              <div class="container-text-box">
+                {{score}}
+              </div>
+            </div>
+            <div class="container-bintang-item">
+              <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
+            </div>
+          </div>
     </div>
 </template>
 
@@ -310,19 +311,20 @@ import Cookies from 'js-cookie'
     height: 140%;
     transform: translate(90%, 95%);
 }
+/* score */
 
 .container-box{
-    position: absolute;
-    height: 80px;
-    width: 250px;
+    position: fixed;
+    height: 7.5%;
+    width: 13%;
     background-color: #fff;
     transform: translate(630%, 100%);
     border-radius: 50px;
 }
 
 .container-bintang-item{
-    position: absolute;
-    transform: translate(1920%, 100%);
+    position: fixed;
+    transform: translate(1900%, 75%);
 }
 
 .container-segitiga{
@@ -499,13 +501,9 @@ import Cookies from 'js-cookie'
     transform: translate(-30%, 500%);
 }
 
-.score{
-    position: absolute;
-}
 
-.score .container-box{
-    position: fixed;
-}
+
+
 
 /* -------------------------------------------------------------------- */
 
