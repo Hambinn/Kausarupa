@@ -96,7 +96,6 @@
 import Cookies from 'js-cookie'
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
-        layout: 'longpage',
         beforeMount(){
             if(!localStorage.getItem('score')){
                 localStorage.setItem('score', 0)
@@ -133,6 +132,19 @@ import Cookies from 'js-cookie'
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 html,body{
     margin-top: -1%;
+}
+
+ body, html{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    }
+
+body{
+    background-image: url("../assets/png/MainPage/bg_gelap.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
 .container-main{

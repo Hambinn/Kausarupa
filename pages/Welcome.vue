@@ -13,10 +13,10 @@
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
           <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
           <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
-          <Nuxt-link to="/Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click.native="post(); setNama()"
+          <a href="Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click="post(); setNama()"
             :style="styleObj">
-            Next
-          </Nuxt-link>
+            <p>Next</p>
+          </a>
         </div>
         <div>
           <div class="container-form">
@@ -118,12 +118,11 @@ import Cookies from 'js-cookie'
 
 <style>
 html, body{
-    all: unset;
+    margin: 0;
 }
 *{
     padding: 0;
-    margin: 0;
-        
+    margin: 0;    
 }
 
 .top-cont{
@@ -369,9 +368,11 @@ input::-webkit-input-placeholder{
     font-family: 'Tf Grotesk-italic';
     font-weight: normal;
     font-style: italic;
-
 }
 
+.next p{
+    transform: translate(0%, 20%);
+}
 
 a{
     text-decoration: none;
