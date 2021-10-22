@@ -61,7 +61,7 @@
             },
             ilangShadow(){
                 this.shadow = false
-            }
+            },
         }
     }
 </script>
@@ -71,6 +71,9 @@ html,body{
     all: unset;
     margin: 0;
     padding: 0;
+    font-family: 'Tf Grotesk';
+    font-style: normal;
+    font-weight: normal;
 }
 
 *{
@@ -142,7 +145,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(0%, 135%);
-    color: #466584;
+    color: #2A465C;
     font-family: 'Tf Grotesk';
     font-style: normal;
     font-weight: normal;
@@ -194,16 +197,18 @@ html,body{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-45%,300%);
-    font-size: 3vw;
+    transform: translate(-50%,300%);
+    font-size: 2.5vw;
+    color: #2A465C;
 }
 
 .tulisan-mamus{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-170%,300%);
-    font-size: 3vw;
+    transform: translate(-170%,340%);
+    font-size: 2.5vw;
+    color: #2A465C;
 }
 
 .tulisan-shadow{
@@ -211,7 +216,8 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(200%,300%);
-    font-size: 3vw;
+    font-size: 2.5vw;
+    color: #2A465C;
 }
 
 .mamus-enter-active, .mamus-leave-active{
@@ -229,7 +235,7 @@ html,body{
 
 .persona-enter, .persona-leave-to{
     opacity: 0;
-    transform: translate(-45%, 600%);
+    transform: translate(-50%, 600%);
 }
 
 .shadow-enter-active, .shadow-leave-active{

@@ -125,7 +125,6 @@ html,body{
     width: 15%;
     height: 7%;
     transform: translate(520%,1200%);
-
     background: #597FA3;
     border-radius: 35px;
 }
