@@ -159,10 +159,10 @@ html,body{
 .container-text-box{
     position: absolute;
     text-align: justify;
-    font-size: 2.6vw;
+    font-size: 5.6vh;
     font-family: Tf Grotesk;
-    top: 10%;
-    left: 49%;
+    top: 5%;
+    left: 45%;
     color: #30455A;
     
 }
