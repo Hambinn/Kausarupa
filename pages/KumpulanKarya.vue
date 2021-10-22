@@ -25,7 +25,7 @@
           <div class="score">
             <div class="container-box">
               <div class="container-text-box">
-                {{score}}
+                <!-- {{score}} -->
               </div>
               <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
             </div>
@@ -166,14 +166,12 @@ html,body{
     position: absolute;
     height: 50%;
     transform: translate(25%,-15%);
-    z-index: 1;
 }
 
 .container-awan .KK2{
     position: absolute;
     height: 60%;
     transform: translate(-128%,65%);
-    z-index: 1;
 }
 
 .tombol-next-persona{

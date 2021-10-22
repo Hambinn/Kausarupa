@@ -125,7 +125,8 @@ import Cookies from 'js-cookie'
                 this.score = Number(localStorage.getItem('score'))
                 console.log("masuk")
             }
-        }
+        },
+        middleware: 'redirect'
     }
 </script>
 
