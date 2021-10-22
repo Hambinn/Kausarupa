@@ -34,7 +34,7 @@ import kotakItem from '../components/Persona/kotakItem.vue'
 
 <style>
 html,body{
-    margin: 0;
+    all: unset;
 }
 *{
     padding: 0;
