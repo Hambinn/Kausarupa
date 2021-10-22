@@ -131,7 +131,9 @@ import Cookies from 'js-cookie'
 
 <style >
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
-
+html,body{
+    margin-top: -1%;
+}
 
 .container-main{
     overflow-x: hidden;
