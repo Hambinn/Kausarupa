@@ -1,33 +1,30 @@
 <template>
-    <div class="container-persona">
+    <div class="container-kumpulan-karya">
       <div class="top-cont">
         <div class="canvas">
-          <div class="container-kotak">
-          <kotak-item/>
-          </div>
           <div class="tombol-next-persona">
-              <p class="next-persona">Next</p>
-          </div>
-          <div class= "container-rumah">
-              <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklat">
-          </div>
-          <div class="container-awan">
-              <img src="../assets/svg/PersonaPage/awan kuning.svg" alt="" class="satu">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
+            <p class="next-persona">Next</p>
           </div>
           <div class="container-header">
-              <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+            <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
           </div>
-        </div>  
+          <div class= "container-rumah">
+              <img src="../assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahKK1">
+              <img src="../assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahKK2">
+          </div>
+          <div class="container-awan">
+              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK1">
+              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK2">
+              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK3">
+          </div>
+        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        </div>
       </div>
     </div>
-<!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
 </template>
 
 <script>
-import kotakItem from '../components/Persona/kotakItem.vue'
     export default {
-    components: { kotakItem },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
@@ -38,8 +35,7 @@ html,body{
 }
 *{
     padding: 0;
-    margin: 0;
-        
+    margin: 0;   
 }
 
 .top-cont{
@@ -59,13 +55,13 @@ html,body{
   height: 100%;
 }
 
-.container-persona{
+.container-kumpulan-karya{
     position: absolute;
     text-align: center;
     background-image: url("../assets/png/PersonaPage/bgPersona.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -84,39 +80,27 @@ html,body{
     transform: translate(-150%,70%);
 }
 
-.container-awan{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.container-awan .satu{
-    position: absolute;
-    height: 40%;
-    transform: translate(35%,75%);
-    z-index: 2;
-}
-
-.container-awan .dua{
-    position: absolute;
-    height: 40%;
-    transform: translate(-10%,10%);
-    z-index: 2;
-}
-
 .container-rumah{
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.container-rumah .coklat{
+.container-rumah .rumahKK2{
     position: absolute;
-    transform: scaleX(-1);
     height: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(90%,-70%);
+    transform: translate(-100%,-50%);
+    z-index: 2;
+}
+
+.container-rumah .rumahKK1{
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,-70%);
     z-index: 2;
 }
 
@@ -147,4 +131,5 @@ html,body{
 
 color: #fff;
 }
+    /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
