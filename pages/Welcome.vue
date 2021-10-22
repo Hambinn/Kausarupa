@@ -13,7 +13,7 @@
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
           <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
           <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
-          <Nuxt-link to="/Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click.native="post"
+          <Nuxt-link to="/Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click.native="post(); setNama()"
             :style="styleObj">
             Next
           </Nuxt-link>
@@ -95,7 +95,6 @@ import Cookies from 'js-cookie'
                     alert(e)
                     return
                 }
-                localStorage.setItem('nama',this.nama)
             },
             formValidation(){
                 if(this.nama.length > 0 && this.instansi.length>0){
@@ -109,6 +108,9 @@ import Cookies from 'js-cookie'
                     this.styleObj.color = '#000000'
                     this.styleObj.cursor = 'default'
                 }
+            },
+            setNama(){
+                localStorage.setItem('nama',this.nama)
             }
         },
     }
@@ -182,6 +184,7 @@ input{
     border-radius: 50px;
     background: #C4C4C4;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
     font-size: 1.8vw;
 }
 
@@ -192,7 +195,7 @@ input::-webkit-input-placeholder{
 
 .name{
     position: absolute;
-    left: 18%;
+    left: 18%;          
     top: 57%;
 }
 
@@ -363,7 +366,7 @@ input::-webkit-input-placeholder{
     transform: translate(-118%, 260%);
 
     font-size: 2.5vw;
-    font-family: 'Tf Grotesk';
+    font-family: 'Tf Grotesk-italic';
     font-weight: normal;
     font-style: italic;
 

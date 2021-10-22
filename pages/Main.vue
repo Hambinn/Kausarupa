@@ -29,7 +29,7 @@
             <img src="../assets/svg/MainPage/permen.svg" alt="" class="oren">
           </div>
           <div class="container-text-middle-title">
-            Panduan
+            Story/Panduan?
           </div>
           <div class="container-text-middle">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cupiditate corrupti est, vel nesciunt
@@ -113,7 +113,7 @@ import Cookies from 'js-cookie'
         },
         data(){
             return{
-                score: ''
+                score: '0'
             }
         },
         computed:{
@@ -131,7 +131,9 @@ import Cookies from 'js-cookie'
 
 <style >
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
-
+html,body{
+    margin-top: -1%;
+}
 
 .container-main{
     overflow-x: hidden;
@@ -157,18 +159,20 @@ import Cookies from 'js-cookie'
 .container-text-box{
     position: absolute;
     text-align: justify;
-    font-size: 2.6vw;
+    font-size: 5.6vh;
     font-family: Tf Grotesk;
-    top: 10%;
-    left: 49%;
+    top: 5%;
+    left: 45%;
+    color: #30455A;
     
 }
 
 .container-text-middle-title{
     position: absolute;
     font-size: 5vw;
-    margin: 10% 40.25%;
+    margin: 10% 30%;
     font-family: Tf Grotesk;
+    color: #D2D5D3;
 }     
 
 .container-text-middle{
@@ -177,6 +181,7 @@ import Cookies from 'js-cookie'
     text-align: justify;
     font-size: 1.2vw;
     font-family: Tf Grotesk;
+    color: #D2D5D3;
 }
 
 .container-bulan{
