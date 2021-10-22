@@ -1,5 +1,5 @@
 <template>
-    <div class="container-scroll-karya">
+    <div class="container-kumpulan-karya">
       <div class="top-cont">
         <div class="canvas">
           <div class="tombol-next-persona">
@@ -9,14 +9,18 @@
             <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
             <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
           </div>
+          <div class="container-carousel">
+            <img src="../assets/svg/PersonaPage/carousel.svg" alt="" class="CRBesar">
+            <img src="../assets/svg/PersonaPage/carousel.svg" alt="" class="CRKecil1">
+            <img src="../assets/svg/PersonaPage/carousel.svg" alt="" class="CRKecil2">
+          </div>
           <div class= "container-rumah">
-              <img src="../assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
-              <img src="../assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
+            <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="rumahKK1">
+            <img src="../assets/svg/PersonaPage/rumah oren 4.svg" alt="" class="rumahKK2">
           </div>
           <div class="container-awan">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
+            <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK1">
+            <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK2">
           </div>
           <div class="score">
             <div class="container-box">
@@ -64,7 +68,7 @@ html,body{
   height: 100%;
 }
 
-.container-scroll-karya{
+.container-kumpulan-karya{
     position: absolute;
     text-align: center;
     background-image: url("../assets/png/PersonaPage/bgPersona.png");
@@ -96,28 +100,60 @@ html,body{
     transform: translate(-1600%,60%);
 }
 
+.container-carousel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.container-carousel .CRBesar{
+    position: absolute;
+    height: 65%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-52%);
+}
+
+.container-carousel .CRKecil1{
+    position: absolute;
+    height: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(210%,20%);
+    z-index: 1;
+}
+
+.container-carousel .CRKecil2{
+    position: absolute;
+    height: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-310%,-110%);
+    z-index: 1;
+}
+
 .container-rumah{
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.container-rumah .rumahSK2{
+.container-rumah .rumahKK2{
     position: absolute;
-    height: 60%;
+    height: 40%;
     top: 50%;
     left: 50%;
-    transform: translate(-115%,-25%);
+    transform: translate(170%,-114%);
     z-index: 2;
 }
 
-.container-rumah .rumahSK1{
+.container-rumah .rumahKK1{
     position: absolute;
-    height: 75%;
+    height: 55%;
     top: 50%;
     left: 50%;
-    transform: translate(140%,-40%);
-    z-index: 1;
+    transform: translate(-160%,12%);
+    z-index: 2;
 }
 
 .container-awan{
@@ -126,25 +162,18 @@ html,body{
     width: 100%;
 }
 
-.container-awan .SK1{
+.container-awan .KK1{
     position: absolute;
-    height: 35%;
-    transform: translate(-70%,205%);
+    height: 50%;
+    transform: translate(25%,-15%);
     z-index: 1;
 }
 
-.container-awan .SK2{
+.container-awan .KK2{
     position: absolute;
-    height: 50%;
-    transform: translate(-110%,130%);
-    z-index: 3;
-}
-
-.container-awan .SK3{
-    position: absolute;
-    height: 55%;
-    transform: translate(-10%,110%);
-    z-index: 2;
+    height: 60%;
+    transform: translate(-128%,65%);
+    z-index: 1;
 }
 
 .tombol-next-persona{
@@ -187,6 +216,7 @@ color: #fff;
     background-color: #33485C;
     transform: translate(630%, 150%);
     border-radius: 50px;
+    z-index: 3;
 }
 
 .container-box .topeng-score{
