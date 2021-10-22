@@ -207,6 +207,16 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(0%,15%);
+    animation-name: floating-bulan;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-bulan {
+    0% { transform: translate(0%,15%); }
+    50%  { transform: translate(0%,20%); }
+    100%   { transform: translate(0%,15%); }   
 }
 
 .container-kelinci{
@@ -220,6 +230,16 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(230%,65%);
+    animation-name: floating-kelinci;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-kelinci {
+    0% { transform: translate(230%,65%); }
+    50%  { transform: translate(230%,70%); }
+    100%   { transform: translate(230%,65%); }   
 }
 
 .container-saturnus{
@@ -233,6 +253,16 @@ body{
     left: 50%;
     height: 30%;
     transform: translate(20%, 270%);
+    animation-name: floating-saturnus;
+    animation-duration: 4.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-saturnus {
+    0% { transform: translate(20%, 270%); }
+    50%  { transform: translate(20%, 265%); }
+    100%   { transform: translate(20%, 270%); }   
 }
 
 .container-lolipop{
@@ -246,6 +276,16 @@ body{
     left: 50%;
     height: 110%;
     transform: translate(58%, 59%);
+    animation-name: floating-lolipop-ungu;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-lolipop-ungu {
+    0% { transform: translate(58%, 59%); }
+    50%  { transform: translate(58%, 61%); }
+    100%   { transform: translate(58%, 59%); }   
 }
 
 .container-permen{
@@ -259,6 +299,16 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(25%, 70%);
+    animation-name: floating-permen-oren;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-permen-oren {
+    0% { transform: translate(25%, 70%); }
+    50%  { transform: translate(25%, 71%); }
+    100%   { transform: translate(25%, 70%); }   
 }
 
 .container-kamera{
@@ -272,6 +322,16 @@ body{
     left: 50%;
     height: 30%;
     transform: translate(110%, 520%);
+    animation-name: floating-kamera;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-kamera {
+    0% { transform: translate(110%, 520%); }
+    50%  { transform: translate(110%, 524.5%); }
+    100%   { transform: translate(110%, 520%); }   
 }
 
 .container-ikan{
@@ -285,6 +345,16 @@ body{
     left: 50%;
     height: 25%;
     transform: translate(320%, 500%);
+    animation-name: floating-ikan-ungu;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-ikan-ungu {
+    0% { transform: translate(320%, 500%); }
+    50%  { transform: translate(320%, 505%); }
+    100%   { transform: translate(320%, 500%); }   
 }
 
 .container-ikan .oren{
@@ -292,6 +362,16 @@ body{
     left: 50%;
     height: 35%;
     transform: translate(-40%, 400%);
+    animation-name: floating-ikan-oren;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-ikan-oren {
+    0% { transform: translate(-40%, 400%); }
+    50%  { transform: translate(-40%, 405%); }
+    100%   { transform: translate(-40%, 400%); }   
 }
 
 .container-penggaris{
@@ -305,6 +385,16 @@ body{
     left: 50%;
     height: 120%;
     transform: translate(45%, 120%);
+    animation-name: floating-penggaris;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-penggaris {
+    0% { transform: translate(45%, 120%); }
+    50%  { transform: translate(45%, 121%); }
+    100%   { transform: translate(45%, 120%); }   
 }
 
 .container-pita{
@@ -318,6 +408,16 @@ body{
     left: 50%;
     height: 30%;
     transform: translate(15%, 660%);
+    animation-name: floating-pita;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-pita {
+    0% { transform: translate(15%, 660%); }
+    50%  { transform: translate(15%, 668%); }
+    100%   { transform: translate(15%, 660%); }   
 }
 
 .container-ubur{
@@ -331,7 +431,18 @@ body{
     left: 50%;
     height: 140%;
     transform: translate(90%, 95%);
+    animation-name: floating-ubur;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
+
+@keyframes floating-ubur {
+    0% { transform: translate(90%, 95%); }
+    50%  { transform: translate(90%, 98%); }
+    100%   { transform: translate(90%, 95%); }   
+}
+
 /* score */
 .score{
     position: fixed
@@ -441,8 +552,6 @@ body{
     transform: translate(0%, 4500%);
 }
 
-
-
 .container-permen-bungkus{
     position: absolute;
     height: 100%;
@@ -454,6 +563,16 @@ body{
     left: 50%;
     height: 60%;
     transform: translate(8%, 376%);
+    animation-name: floating-bungkus;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-bungkus {
+    0% { transform: translate(8%, 376%); }
+    50%  { transform: translate(8%, 380%); }
+    100%   { transform: translate(8%, 376%); }   
 }
 
 .container-awan-main{
@@ -467,6 +586,16 @@ body{
     left: 50%;
     height: 45%;
     transform: translate(-45%, 590%);
+    animation-name: floating-awan-bawah-permen;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-awan-bawah-permen {
+    0% { transform: translate(-45%,  590%); }
+    50%  { transform: translate(-45%, 592%); }
+    100%   { transform: translate(-45%, 590%); }   
 }
 
 .container-awan-main .bawah-papan{
@@ -474,6 +603,16 @@ body{
     left: 50%;
     height: 50%;
     transform: translate(113%, 460%);
+    animation-name: floating-awan-bawah-papan;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-awan-bawah-papan {
+    0% { transform: translate(113%, 460%); }
+    50%  { transform: translate(113%, 463%); }
+    100%   { transform: translate(113%, 460%); }   
 }
 
 .container-awan-main .lubang-atas{
@@ -481,6 +620,16 @@ body{
     left: 50%;
     height: 50%;
     transform: translate(120%, 460%);
+    animation-name: floating-awan-lubang-atas;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-awan-lubang-atas {
+    0% { transform: translate(120%, 460%); }
+    50%  { transform: translate(120%, 465%); }
+    100%   { transform: translate(120%, 460%); }   
 }
 
 .container-awan-main .lubang-bawah{
@@ -488,6 +637,16 @@ body{
     left: 50%;
     height: 40%;
     transform: translate(-5%, 600%);
+    animation-name: floating-awan-lubang-bawah;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-awan-lubang-bawah {
+    0% { transform: translate(-5%, 599%); }
+    50%  { transform: translate(-5%, 606%); }
+    100%   { transform: translate(-5%, 599%); }   
 }
 
 .container-awan-main .belakang-kasur{
@@ -495,6 +654,16 @@ body{
     left: 50%;
     height: 50%;
     transform: translate(10%, 335%);
+    animation-name: floating-awan-belakang-kasur;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-awan-belakang-kasur {
+    0% { transform: translate(10%, 335%); }
+    50%  { transform: translate(10%, 337%); }
+    100%   { transform: translate(10%, 335%); }   
 }
 
 .container-papan{
@@ -508,6 +677,16 @@ body{
     left: 50%;
     width: 35%;
     transform: translate(165%, 390%);
+    animation-name: floating-papan;
+    animation-duration: 3.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-papan {
+    0% { transform: translate(165%, 390%); }
+    50%  { transform: translate(165%, 391.5%); }
+    100%   { transform: translate(165%, 390%); }   
 }
 
 .container-lubang{
@@ -534,6 +713,16 @@ body{
     left: 50%;
     width: 43%;
     transform: translate(-1%, 380%);
+    animation-name: floating-kasur;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-kasur {
+    0% { transform: translate(-1%, 380%); }
+    50%  { transform: translate(-1%, 381.5%); }
+    100%   { transform: translate(-1%, 380%); }   
 }
 
 .container-kasur .depan-kasur1{
@@ -541,6 +730,16 @@ body{
     left: 50%;
     height: 50%;
     transform: translate(-80%, 610%) rotate(180deg);
+    animation-name: floating-depan-kasur1;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating-depan-kasur1 {
+    0% { transform: translate(-80%, 610%) rotate(180deg); }
+    50%  { transform: translate(-80%, 612%) rotate(180deg); }
+    100%   { transform: translate(-80%, 610%) rotate(180deg); }   
 }
 
 .container-kasur .depan-kasur2{
@@ -548,8 +747,17 @@ body{
     left: 50%;
     height: 50%;
     transform: translate(-30%, 500%);
+    animation-name: floating-depan-kasur2;
+    animation-duration: 3.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 }
 
+@keyframes floating-depan-kasur2 {
+    0% { transform: translate(-30%, 500%); }
+    50%  { transform: translate(-30%, 503%); }
+    100%   { transform: translate(-30%, 500%); }   
+}
 
 
 
