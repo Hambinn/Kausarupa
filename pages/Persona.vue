@@ -34,7 +34,7 @@ import kotakItem from '../components/Persona/kotakItem.vue'
 
 <style>
 html,body{
-    margin: 0;
+    all: unset;
 }
 *{
     padding: 0;
@@ -65,7 +65,7 @@ html,body{
     background-image: url("../assets/png/PersonaPage/bgPersona.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
