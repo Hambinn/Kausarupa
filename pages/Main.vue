@@ -126,7 +126,6 @@ import Cookies from 'js-cookie'
                 console.log("masuk")
             }
         },
-        middleware: 'redirect'
     }
 </script>
 
