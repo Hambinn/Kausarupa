@@ -17,6 +17,15 @@
           </div>
           <div class="container-header">
               <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+              <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
+          </div>
+          <div class="score">
+            <div class="container-box">
+              <div class="container-text-box">
+                {{score}}
+              </div>
+              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
+            </div>
           </div>
         </div>  
       </div>
@@ -78,10 +87,17 @@ html,body{
 }
 
 .container-header .header{
-    height: 12%;
+    height: 10%;
     top: 50%;
     left: 50%;
-    transform: translate(-150%,70%);
+    transform: translate(-180%,70%);
+}
+
+.container-header .back{
+    height: 6%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1600%,60%);
 }
 
 .container-awan{
@@ -121,10 +137,10 @@ html,body{
 }
 
 .tombol-next-persona{
-    position: absolute;
-    width: 15%;
-    height: 7%;
-    transform: translate(520%,1200%);
+    position: fixed;
+    height: 7.5%;
+    width: 13%;
+    transform: translate(630%, 1120%);
 
     background: #597FA3;
     border-radius: 35px;
@@ -136,7 +152,7 @@ html,body{
     height: 58%;
     left: 50%;
     top: 50%;
-    transform: translate(-48%,-70%);
+    transform: translate(-50%,-70%);
 
     font-family: Tf Grotesk;
     font-style: normal;
@@ -144,7 +160,26 @@ html,body{
     font-size: 2.5vw;
 /* identical to box height */
 
-
 color: #fff;
+}
+
+/* score */
+.score{
+    position: fixed
+}
+
+.container-box{
+    position: fixed;
+    height: 7.5%;
+    width: 13%;
+    background-color: #33485C;
+    transform: translate(630%, 105%);
+    border-radius: 50px;
+}
+
+.container-box .topeng-score{
+    position: fixed;
+    height: 90%;
+    transform: translate(-130%, 10%);
 }
 </style>

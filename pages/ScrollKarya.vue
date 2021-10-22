@@ -7,15 +7,24 @@
           </div>
           <div class="container-header">
             <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+            <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
           </div>
           <div class= "container-rumah">
-              <img src="../assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahKK1">
-              <img src="../assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahKK2">
+              <img src="../assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
+              <img src="../assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
           </div>
           <div class="container-awan">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK1">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK2">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="KK3">
+              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
+              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
+              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
+          </div>
+          <div class="score">
+            <div class="container-box">
+              <div class="container-text-box">
+                {{score}}
+              </div>
+              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
+            </div>
           </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
@@ -74,10 +83,17 @@ html,body{
 }
 
 .container-header .header{
-    height: 12%;
+    height: 10%;
     top: 50%;
     left: 50%;
-    transform: translate(-150%,70%);
+    transform: translate(-180%,70%);
+}
+
+.container-header .back{
+    height: 6%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1600%,60%);
 }
 
 .container-rumah{
@@ -86,7 +102,7 @@ html,body{
     height: 100%;
 }
 
-.container-rumah .rumahKK2{
+.container-rumah .rumahSK2{
     position: absolute;
     height: 60%;
     top: 50%;
@@ -95,7 +111,7 @@ html,body{
     z-index: 2;
 }
 
-.container-rumah .rumahKK1{
+.container-rumah .rumahSK1{
     position: absolute;
     height: 75%;
     top: 50%;
@@ -110,21 +126,21 @@ html,body{
     width: 100%;
 }
 
-.container-awan .KK1{
+.container-awan .SK1{
     position: absolute;
     height: 35%;
     transform: translate(-70%,205%);
     z-index: 1;
 }
 
-.container-awan .KK2{
+.container-awan .SK2{
     position: absolute;
     height: 50%;
     transform: translate(-110%,130%);
     z-index: 3;
 }
 
-.container-awan .KK3{
+.container-awan .SK3{
     position: absolute;
     height: 55%;
     transform: translate(-10%,110%);
@@ -132,10 +148,10 @@ html,body{
 }
 
 .tombol-next-persona{
-    position: absolute;
-    width: 15%;
-    height: 7%;
-    transform: translate(520%,1200%);
+    position: fixed;
+    height: 7.5%;
+    width: 13%;
+    transform: translate(630%, 1120%);
 
     background: #597FA3;
     border-radius: 35px;
@@ -148,16 +164,34 @@ html,body{
     height: 58%;
     left: 50%;
     top: 50%;
-    transform: translate(-48%,-70%);
+    transform: translate(-50%,-70%);
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
     font-size: 2.5vw;
-/* identical to box height */
-
 
 color: #fff;
+}
+
+/* score */
+.score{
+    position: fixed
+}
+
+.container-box{
+    position: fixed;
+    height: 7.5%;
+    width: 13%;
+    background-color: #33485C;
+    transform: translate(630%, 105%);
+    border-radius: 50px;
+}
+
+.container-box .topeng-score{
+    position: fixed;
+    height: 90%;
+    transform: translate(-130%, 10%);
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
