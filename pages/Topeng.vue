@@ -33,6 +33,7 @@
 
 <script>
     export default {
+        layout: 'default',
         data(){
             return{
                 mamus: false,
@@ -66,6 +67,12 @@
 </script>
 
 <style>
+html,body{
+    all: unset;
+    margin: 0;
+    padding: 0;
+}
+
 *{
     padding: 0;
     margin: 0;

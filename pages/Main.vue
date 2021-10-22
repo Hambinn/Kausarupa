@@ -67,7 +67,6 @@
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">
           </div>
-          
           <div class="container-bintang-putih">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih1" @click="countBintang">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" class="putih2" @click="countBintang">
@@ -104,6 +103,9 @@ import Cookies from 'js-cookie'
             }
             else{
                 this.score = Number(localStorage.getItem('score'))
+            }
+            if(!localStorage.getItem('nama')){
+                this.$router.push('Welcome')
             }
         },
         mounted(){
