@@ -149,9 +149,9 @@ html,body{
 
 .tombol-next-persona{
     position: fixed;
-    height: 7.5%;
+    height: 6.5%;
     width: 13%;
-    transform: translate(630%, 1120%);
+    transform: translate(630%, 1300%);
 
     background: #597FA3;
     border-radius: 35px;
@@ -161,7 +161,7 @@ html,body{
 .tombol-next-persona .next-persona{
     position: absolute;
     width: 116%;
-    height: 58%;
+    height: 60%;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-70%);
@@ -169,7 +169,8 @@ html,body{
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
+/* identical to box height */
 
 color: #fff;
 }
@@ -181,17 +182,17 @@ color: #fff;
 
 .container-box{
     position: fixed;
-    height: 7.5%;
+    height: 6%;
     width: 13%;
     background-color: #33485C;
-    transform: translate(630%, 105%);
+    transform: translate(630%, 150%);
     border-radius: 50px;
 }
 
 .container-box .topeng-score{
     position: fixed;
     height: 90%;
-    transform: translate(-130%, 10%);
+    transform: translate(-150%, 10%);
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>
