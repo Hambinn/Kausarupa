@@ -184,7 +184,7 @@ const gepDate = new Date("Nov 8, 2021 21:00:00").getTime();
     justify-content: space-between;
     color: white;
 }
-a
+
 .container-kotak-countdown{
   position: absolute;
   height: 100%;
@@ -193,6 +193,8 @@ a
 
 .kotak-ungu{
   height: 25%;
+  top: 50%;
+  left: 50%;
   transform: translate(90%, 160%);
 }
 
