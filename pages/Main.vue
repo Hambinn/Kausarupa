@@ -104,7 +104,7 @@ import Cookies from 'js-cookie'
                 this.score = Number(localStorage.getItem('score'))
             }
             if(!localStorage.getItem('nama')){
-                this.$router.push('Welcome')
+                this.$router.push('/welcome')
             }
         },
         mounted(){
