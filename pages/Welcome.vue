@@ -13,10 +13,10 @@
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
           <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
           <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
-          <a href="Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click="post(); setNama()"
+          <button  class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
             :style="styleObj">
             <p>Next</p>
-          </a>
+          </button>
         </div>
         <div>
           <div class="container-form">
@@ -112,8 +112,14 @@ import Cookies from 'js-cookie'
                 }
             },
             setNama(){
-                localStorage.setItem('nama',this.nama)
-            }
+                if(this.namaLength== 0 || this.instLength == 0){
+                    alert('isi dulu ya kak :)')
+                }else{
+                    localStorage.setItem('nama',this.nama)
+                    this.$router.push('Main')
+                    this.post()
+                }
+            },
         },
         beforeDestroy(){
             console.log('test aja')
@@ -373,10 +379,6 @@ input::-webkit-input-placeholder{
     font-family: 'Tf Grotesk-italic';
     font-weight: normal;
     font-style: italic;
-}
-
-.next p{
-    transform: translate(0%, 20%);
 }
 
 a{
