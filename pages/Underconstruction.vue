@@ -18,7 +18,7 @@
               <h2 class="this">This website is under construction</h2>
           </div>
           <div class="container-kotak-countdown">
-            <img src="..\assets\png\UnderConstruction\countdown (1).png" alt="" class="kotak-ungu">
+            <img src="../assets/png/UnderConstruction/countdown (1).png" alt="" class="kotak-ungu">
           </div>
           <div class="container-countdown">
             <div class="days">
