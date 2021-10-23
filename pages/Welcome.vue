@@ -13,7 +13,7 @@
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
           <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
           <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
-          <button  class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
+          <button   class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
             :style="styleObj">
             <p>Next</p>
           </button>
@@ -53,7 +53,7 @@ import Cookies from 'js-cookie'
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
         beforeMount(){
             if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
-                this.$router.push('Main')
+                this.$router.replace('Main')
             }
         },
         data(){
@@ -116,7 +116,7 @@ import Cookies from 'js-cookie'
                     alert('isi dulu ya kak :)')
                 }else{
                     localStorage.setItem('nama',this.nama)
-                    this.$router.push('Main')
+                    this.$router.replace('Main')
                     this.post()
                 }
             },
@@ -380,6 +380,9 @@ input::-webkit-input-placeholder{
     font-weight: normal;
     font-style: italic;
 }
+/* .next p{
+    transform: translate(0%,20%);
+} */
 
 a{
     text-decoration: none;
