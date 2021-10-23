@@ -53,7 +53,7 @@ import Cookies from 'js-cookie'
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
         beforeMount(){
             if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
-                this.$router.push('Main')
+                this.$router.push('/Main')
             }
         },
         data(){
