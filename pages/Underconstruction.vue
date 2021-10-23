@@ -3,15 +3,15 @@
       <div class="top-cont">
         <div class="canvas">
           <div class="container-monitor">
-            <img src="..\assets\svg\UnderConstruction\pc.png" alt="" class="monitor">
+            <img src="../assets/svg/UnderConstruction/pc.png" alt="" class="monitor">
           </div>
           <div class="container-bintang-undercons">
-            <img src="..\assets\png\UnderConstruction\bintang oren.png" alt="" class="oren">
-            <img src="..\assets\png\UnderConstruction\bintang pink.png" alt="" class="ungu">
+            <img src="../assets/png/UnderConstruction/bintang oren.png" alt="" class="oren">
+            <img src="../assets/png/UnderConstruction/bintang pink.png" alt="" class="ungu">
           </div>
           <div class="container-hewan">
-            <img src="..\assets\png\UnderConstruction\kiri atas.png" alt="" class="dino">
-            <img src="..\assets\png\UnderConstruction\bawah kanan.png" alt="" class="kelinci">
+            <img src="../assets/png/UnderConstruction/kiri atas.png" alt="" class="dino">
+            <img src="../assets/png/UnderConstruction/bawah kanan.png" alt="" class="kelinci">
           </div>
           <div class="container-oops">
               <h1 class="oops">OOPS!</h1>
