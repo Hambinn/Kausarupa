@@ -17,14 +17,52 @@
               <h1 class="oops">OOPS!</h1>
               <h2 class="this">This website is under construction</h2>
           </div>
+          <div class="container-kotak-countdown">
+            <img src="..\assets\png\UnderConstruction\countdown (1).png" alt="" class="kotak-ungu">
+          </div>
+          <div class="container-countdown">
+            <div class="days">
+              {{days}}D
+            </div>
+            <div class="hours">
+              {{hour}}H
+            </div>
+            <div class="minutes">
+              {{minute}}M
+            </div>
+          </div>
         </div>
       </div>
     </div>
 </template>
 
 <script>
+const gepDate = new Date("Nov 8, 2021 21:00:00").getTime();
     export default {
-        
+        data(){
+          return{
+            days: 0,
+            hour: 0,
+            minute:0,
+            timerInterval: null
+          }
+        },
+        mounted(){
+          this.updateTimer()
+          this.startCountdown()
+        },
+        methods: {
+          updateTimer(){
+            const now = new Date().getTime();
+            const remainingTime = gepDate - now
+            this.days = Math.floor(remainingTime/ (1000*60*60*24))
+            this.hour = Math.floor((remainingTime % (1000*60*60*24)) / (1000 * 60 * 60))
+            this.minute = Math.floor((remainingTime %(1000*60 * 60))/(1000*60))
+          },
+          startCountdown(){
+            this.timerInterval = setInterval(()=> this.updateTimer(), 1000 * 60 * 60)
+          }
+        }
     }
 </script>
 
@@ -131,6 +169,31 @@
 .container-oops .this{
     transform: translate(0%, 1340%);
     font-size: 2.3vw;
+}
+
+.container-countdown{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 25%;
+    font-size: 3vw;
+    text-align: center;
+    font-family: Tf Grotesk;
+    top: 49%;
+    left: 38%;
+    justify-content: space-between;
+    color: white;
+}
+a
+.container-kotak-countdown{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.kotak-ungu{
+  height: 25%;
+  transform: translate(90%, 160%);
 }
 
 </style>
