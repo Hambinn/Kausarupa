@@ -91,10 +91,12 @@ import Cookies from 'js-cookie'
                         nama: this.nama,
                         instansi: this.instansi
                     })
+                    console.log('masuk firebase')
                 } catch(e){
                     alert(e)
                     return
                 }
+                console.log('ntaps')
             },
             formValidation(){
                 if(this.nama.length > 0 && this.instansi.length>0){
@@ -113,6 +115,9 @@ import Cookies from 'js-cookie'
                 localStorage.setItem('nama',this.nama)
             }
         },
+        beforeDestroy(){
+            console.log('test aja')
+        }
     }
 </script>
 
