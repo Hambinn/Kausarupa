@@ -13,10 +13,10 @@
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
           <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
           <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
-          <button class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
+          <NuxtLink to="/Main" class="next" tag="button" :event="disabled ? '' : 'click'" @click.native=" setNama()"
             :style="styleObj">
             <p>Next</p>
-          </button>
+          </NuxtLink>
         </div>
         <div>
           <div class="container-form">
@@ -116,7 +116,6 @@ import Cookies from 'js-cookie'
                     alert('isi dulu ya kak :)')
                 }else{
                     localStorage.setItem('nama',this.nama)
-                    this.$router.push('Main')
                     this.post()
                 }
             },
