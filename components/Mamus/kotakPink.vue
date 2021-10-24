@@ -17,7 +17,7 @@ width: 50%;
 height: 55%;
 left: 50%;
 top: 50%;
-transform: translate(-22%, -50%);
+transform: translate(-22%, -42%);
 z-index: 3;
 opacity: 0.95;
 
