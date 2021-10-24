@@ -62,6 +62,9 @@
             ilangShadow(){
                 this.shadow = false
             },
+        },
+        mounted(){
+            localStorage.setItem('persona','true')
         }
     }
 </script>

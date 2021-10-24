@@ -92,6 +92,7 @@ if (process.client) {
 }
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+
         beforeMount(){
             if(!localStorage.getItem('score')){
                 localStorage.setItem('score', 0)
@@ -102,12 +103,16 @@ if (process.client) {
             if(!localStorage.getItem('nama')){
                 this.$router.push('/welcome')
             }
+            
         },
         mounted(){
             console.log(localStorage.getItem('score'))
             this.dragAwanAtas()
             this.dragAwanBawah()
             this.dragOrang()
+            if(localStorage.getItem('persona') == 'true'){
+                this.dariPersona()
+            }
         },
         data(){
             return{
@@ -128,9 +133,7 @@ if (process.client) {
             }
         },
         computed:{
-            opacityOrang(){
-                
-            }
+
         },
         methods:{
             countBintang(bintang){
@@ -173,6 +176,10 @@ if (process.client) {
             },
             pindahPersona(){
                 this.$router.push('/topeng')
+            },
+            dariPersona(){
+                localStorage.setItem('persona', 'false')
+                location.reload()
             }
         },
     }
