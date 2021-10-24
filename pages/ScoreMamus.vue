@@ -15,6 +15,12 @@
                     <img src="../assets/png/MamusPage/5. skor/bintang.png" alt="" class="bintang-kanan">
                     <img src="../assets/png/MamusPage/5. skor/bintang.png" alt="" class="bintang-kiri">
                 </div>
+                <div class="tulisan-bawah-mamus">
+                    <p> You've Got </p>
+                </div>
+                <div class="skor-mamus">
+                    <p> 000 </p>
+                </div>
                 <div class="tombol-next-mamus">
                     <p class="next-mamus">Next</p>
                 </div>
@@ -71,6 +77,22 @@ html,body{
     width: 100vw;
     overflow: hidden;
     }
+
+.tulisan-bawah-mamus{
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 3.2vw;
+    transform: translate(0%,1000%);
+}
+
+.skor-mamus{
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 8vh;
+    transform: translate(0%,710%);
+}
 
 .container-hiasan{
     position: absolute;
