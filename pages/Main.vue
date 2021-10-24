@@ -52,26 +52,24 @@
           <div class="container-papan">
             <img src="../assets/svg/MainPage/papan.svg" alt="" class="papan">
           </div>
-          <div class="container-lubang">
-            <img src="../assets/svg/MainPage/lubang.svg" alt="" class="lubang">
-          </div>
           <div class="container-awan-main">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-permen">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-papan">
-            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-atas">
-            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="lubang-bawah">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="belakang-kasur">
           </div>
-          <div class="container-kasur">
+        <div class="container-kasur">
             <img src="../assets/svg/MainPage/kasur.svg" alt="" class="kasur">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">
           </div>
+          <div class="svg-container">
+            <img src="../assets/png/MainPage/lubang revisi.png" alt="" class="lubang"/>
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" class="lubang-atas" alt=""> 
+            <img  src="../assets/svg/MainPage/awan-kiri-permen.svg" class="lubang-bawah" alt="">
+            <img src="../assets/png/MainPage/mascot tidur + light.png" alt="" class="orang"/>
+          </div>
           <div class="container-bintang-putih" v-for="star in stars" :key="star.id">
             <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" :class="star.class" @click="countBintang(star.id); " :style="star.opac">
-          </div>
-          <div class="container-orang">
-              <img src="../assets/png/MainPage/mascot tiduran.png" alt="" class="orang">
           </div>
         </div>
       </div>
@@ -87,7 +85,11 @@
 </template>
 
 <script>
-import Cookies from 'js-cookie'
+import {gsap} from "gsap";
+import {Draggable} from "gsap/Draggable"
+if (process.client) {
+  gsap.registerPlugin(Draggable);
+}
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         beforeMount(){
@@ -103,6 +105,9 @@ import Cookies from 'js-cookie'
         },
         mounted(){
             console.log(localStorage.getItem('score'))
+            this.dragAwanAtas()
+            this.dragAwanBawah()
+            this.dragOrang()
         },
         data(){
             return{
@@ -119,11 +124,13 @@ import Cookies from 'js-cookie'
                     {id :8, class:'putih8',opac:{opacity:1} },
                     {id :9, class:'putih9',opac:{opacity:1} },
                     {id :10, class:'putih10',opac:{opacity:1} },
-                ]
+                ],
             }
         },
         computed:{
-            
+            opacityOrang(){
+                
+            }
         },
         methods:{
             countBintang(bintang){
@@ -142,6 +149,30 @@ import Cookies from 'js-cookie'
                 setTimeout(() => {
                     this.stars[bintang-1].opac.opacity = 1
                 }, 3000);
+            },
+            dragAwanAtas(){
+                Draggable.create(".lubang-atas",{
+
+                })
+            },
+            dragAwanBawah(){
+                Draggable.create(".lubang-bawah",{
+
+                })
+            },
+            dragOrang(){
+                const self = this
+                Draggable.create(".orang",{
+                    onDrag: function(){
+                        if(this.hitTest(".lubang")){
+                            gsap.to(this.target,{duration: 0.6, opacity:0, scale: 0, transformOrigin: "100% 90%"})
+                            setTimeout(()=>{self.pindahPersona()}, 500)
+                        }
+                    }
+                })
+            },
+            pindahPersona(){
+                this.$router.push('/topeng')
             }
         },
     }
@@ -166,8 +197,16 @@ body{
     height: 100%;
 }
 
+
 .container-main{
     overflow-x: hidden;
+}
+
+.svg-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 280%);
 }
 
 .top-cont{
@@ -636,15 +675,15 @@ body{
     100%   { transform: translate(113%, 460%); }   
 }
 
-.container-awan-main .lubang-atas{
+.svg-container .lubang-atas{
     top: 50%;
     left: 50%;
-    height: 50%;
-    transform: translate(120%, 460%);
-    animation-name: floating-awan-lubang-atas;
+    height: 40%;
+    transform: translate(150%, 145%);
+    /* animation-name: floating-awan-lubang-atas;
     animation-duration: 4s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out; */
 }
 
 @keyframes floating-awan-lubang-atas {
@@ -653,15 +692,15 @@ body{
     100%   { transform: translate(120%, 460%); }   
 }
 
-.container-awan-main .lubang-bawah{
+.svg-container .lubang-bawah{
     top: 50%;
     left: 50%;
     height: 40%;
-    transform: translate(-5%, 600%);
-    animation-name: floating-awan-lubang-bawah;
+    transform: translate(35%, 170%);
+    /* animation-name: floating-awan-lubang-bawah;
     animation-duration: 5s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out; */
 }
 
 @keyframes floating-awan-lubang-bawah {
@@ -710,17 +749,18 @@ body{
     100%   { transform: translate(165%, 390%); }   
 }
 
-.container-lubang{
+/* .container-lubang{
     position: absolute;
     height: 100%;
     width: 100%;
-}
+} */
 
-.container-lubang .lubang{
+.svg-container .lubang{
+    position: absolute;
     top: 50%;
     left: 50%;
-    height: 50%;
-    transform: translate(170%, 660%);
+    height: 15%;
+    transform: translate(40%, 150%);
 }
 
 .container-kasur {
@@ -786,15 +826,15 @@ body{
     width: 100%;
 }
 
-.orang{
+.svg-container .orang{
     top: 50%;
     left: 50%;
-    height: 60%;
-    transform: translate(17%, 490%);
-    animation-name: floating-orang;
+    height: 30%;
+    transform: translate(15%, -35%);
+    /* animation-name: floating-orang;
     animation-duration: 3.7s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out; */
 }
 
 @keyframes floating-orang {
@@ -803,7 +843,11 @@ body{
     100%   { transform: translate(17%, 490%); }   
 }
 
-
+.container-awan-lubang{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
 /* -------------------------------------------------------------------- */
 
