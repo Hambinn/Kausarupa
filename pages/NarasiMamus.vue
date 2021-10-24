@@ -83,7 +83,7 @@ html,body{
     width: 37%;
     top: 50%;
     left: 50%;
-    transform: translate(-65%,13%);
+    transform: translate(-65%, 20%);
 }
 
 .container-jamur-kanan-belakang{
@@ -96,7 +96,7 @@ html,body{
     width: 44.3%;
     top: 50%;
     left: 50%;
-    transform: translate(63%,20%);
+    transform: translate(63%,25%);
 }
 
 .container-teh-kiri-depan{
@@ -110,7 +110,7 @@ html,body{
     width: 29.7%;
     top: 50%;
     left: 50%;
-    transform: translate(-61%,14%);
+    transform: translate(-61%,19%);
 }
 
 .tombol-next-mamus{
@@ -119,7 +119,7 @@ html,body{
     left: 50%;
     height: 8.4%;
     width: 15.88%;
-    transform: translate(180%, 400%);
+    transform: translate(190%, 450%);
 
     background: #597FA3;
     border-radius: 11.4%/38.4%;
