@@ -11,6 +11,10 @@
                     <img src="../assets/png/MamusPage/5. skor/mamus kanan.png" alt="" class="topeng-kanan">
                     <img src="../assets/png/MamusPage/5. skor/mamus kiri.png" alt="" class="topeng-kiri">
                 </div>
+                <div class="container-bintang-skor-mamus">
+                    <img src="../assets/png/MamusPage/5. skor/bintang.png" alt="" class="bintang-kanan">
+                    <img src="../assets/png/MamusPage/5. skor/bintang.png" alt="" class="bintang-kiri">
+                </div>
                 <div class="tombol-next-mamus">
                     <p class="next-mamus">Next</p>
                 </div>
@@ -113,6 +117,26 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-240%, 60%);
+}
+
+.container-bintang-skor-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-bintang-skor-mamus .bintang-kiri{
+    width: 5.1%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-800%, 255%);
+}
+
+.container-bintang-skor-mamus .bintang-kanan{
+    width: 7.44%;
+    top: 50%;
+    left: 50%;
+    transform: translate(480%, 340%);
 }
 
 .tombol-next-mamus{
