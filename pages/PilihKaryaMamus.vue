@@ -111,12 +111,14 @@
 }
 
 .container-bg-element .atas{
+    height: 25.2%;
     top: 50%;
     left: 50%;
     transform: translate(50%, 30%);
 }
 
 .container-bg-element .bawah{
+    height: 72.8%;
     top: 50%;
     left: 50%;
     transform: translate(13%, -8%);
