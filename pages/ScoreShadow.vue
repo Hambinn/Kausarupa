@@ -5,9 +5,6 @@
                 <div class="container-back-score-shadow">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back-score-shadow">
                 </div>
-                <div class="container-volume-score-shadow">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on-score-shadow">
-                </div>
                 <div class="container-hiasan-score-shadow">
                     <img src="../assets/png/ShadowPage/5. score/kanan-bawah.png" alt="" class="score-shadow-kanan-bawah">
                     <img src="../assets/png/ShadowPage/5. score/kiri-bawah.png" alt="" class="score-shadow-kiri-bawah">
@@ -21,6 +18,9 @@
                 <div class="container-text-score-shadow">
                     <p class="score-shadow-text-atas"> You've Got </p>
                     <p class="score-shadow-text-bawah"> 000 </p>
+                </div>
+                <div class="container-volume-score-shadow">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on-score-shadow">
                 </div>
                 <div class="tombol-next-score-shadow">
                     <p class="next-score-shadow">Next</p>
@@ -131,24 +131,24 @@ html,body{
 }
 
 .container-hiasan-score-shadow .score-shadow-kanan-bawah{
-    width: 38.5%;
+    width: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(129%, 47.2%);
+    transform: translate(86%, 76%);
 }
 
 .container-hiasan-score-shadow .score-shadow-kiri-bawah{
-    width: 37.3%;
+    width: 35%;
     top: 50%;
     left: 50%;
-    transform: translate(-137%, 45.5%);
+    transform: translate(-165%, 45%);
 }
 
 .container-hiasan-score-shadow .score-shadow-kanan-atas{
-    width: 37.3%;
+    width: 23%;
     top: 50%;
     left: 50%;
-    transform: translate(-137%, 45.5%);
+    transform: translate(168%, -105%);
 }
 
 .container-topeng-score-shadow{
@@ -168,14 +168,14 @@ html,body{
     width: 13.9%;
     top: 50%;
     left: 50%;
-    transform: translate(92%, 60%);
+    transform: translate(80%, 60%);
 }
 
 .container-topeng-score-shadow .topeng-kiri-score-shadow{
-    width: 18.9%;
+    width: 15%;
     top: 50%;
     left: 50%;
-    transform: translate(-240%, 60%);
+    transform: translate(-280%, 60%);
 }
 
 .tombol-next-score-shadow{
