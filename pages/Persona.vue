@@ -2,6 +2,17 @@
     <div class="container-persona">
       <div class="top-cont">
         <div class="canvas">
+          <div class="score">   
+            <div class="container-box">
+              <div class="container-text-box">
+                {{score}}
+              </div>
+              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
+            </div>
+          </div>
+          <div class="container-orang">
+              <img src="../assets/svg/PersonaPage/mascot berdiri.png" alt="">
+          </div>
           <div class="container-kotak">
           <kotak-item/>
           </div>
@@ -17,16 +28,9 @@
           </div>
           <div class="container-header">
               <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-              <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
+              <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
           </div>
-          <div class="score">
-            <div class="container-box">
-              <div class="container-text-box">
-                {{score}}
-              </div>
-              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
-            </div>
-          </div>
+          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
         </div>  
       </div>
     </div>
@@ -37,6 +41,24 @@
 import kotakItem from '../components/Persona/kotakItem.vue'
     export default {
     components: { kotakItem },
+    data(){
+        return{
+            score: 0
+        }
+    },
+    methods:{
+        back(){
+            this.$router.push('/topeng')
+        },
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+            }else{
+                this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+            }
+        }
+    }
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
@@ -49,6 +71,12 @@ html,body{
     padding: 0;
     margin: 0;
         
+}
+
+.volume-persona1{
+    position: fixed;
+    height: 5%;
+    transform: translate(1600%, 200%);
 }
 
 .top-cont{
@@ -71,7 +99,7 @@ html,body{
 .container-persona{
     position: absolute;
     text-align: center;
-    background-image: url("../assets/png/PersonaPage/bgPersona.png");
+    background-image: url("../assets/png/PersonaPage/bg-lain.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,6 +126,18 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-1600%,60%);
+}
+
+.container-orang{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-orang img{
+    top: 50%;
+    left: 50%;
+    transform: translate(-27%,0%);
 }
 
 .container-awan{
@@ -137,7 +177,7 @@ html,body{
 }
 
 .tombol-next-persona{
-    position: fixed;
+    position: absolute;
     height: 6.5%;
     width: 13%;
     transform: translate(630%, 1300%);
@@ -165,21 +205,27 @@ color: #fff;
 
 /* score */
 .score{
-    position: fixed
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-box{
-    position: fixed;
+    position: absolute;
     height: 6%;
     width: 13%;
     background-color: #33485C;
-    transform: translate(630%, 150%);
+    transform: translate(630%, 160%);
     border-radius: 50px;
 }
 
 .container-box .topeng-score{
     position: fixed;
     height: 90%;
-    transform: translate(-150%, 10%);
+    transform: translate(-160%, -100%);
+}
+
+.container-text-box{
+    font-size: 3vw;
 }
 </style>

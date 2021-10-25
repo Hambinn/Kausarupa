@@ -80,7 +80,9 @@
               </div>
               <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
             </div>
+            
         </div>
+        <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-main" @click="volume()" ref="volumeBtn">
     </div>
 </template>
 
@@ -180,7 +182,15 @@ if (process.client) {
             dariPersona(){
                 localStorage.setItem('persona', 'false')
                 location.reload()
-            }
+            },
+            volume(){
+        this.isVolume = !this.isVolume
+        if(this.isVolume){
+            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+        }else{
+            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+        }
+    }
         },
     }
 </script>
@@ -204,7 +214,11 @@ body{
     height: 100%;
 }
 
-
+.volume-main{
+    position: fixed;
+    height: 5%;
+    transform: translate(3500%, 170%);
+}
 .container-main{
     overflow-x: hidden;
 }
@@ -518,7 +532,7 @@ body{
     height: 7.5%;
     width: 13%;
     background-color: #fff;
-    transform: translate(630%, 100%);
+    transform: translate(580%, 100%);
     border-radius: 50px;
 }
 

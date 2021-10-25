@@ -3,7 +3,13 @@
         <div class="top-cont">
             <div class="canvas">
                 <div class="container-header-mamus">
-                    <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header">
+                    <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
+                </div>
+                <div class="container-back-mamus">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
+                </div>
+                <div class="container-volume-mamus">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
                 <div class="tombol-next-mamus">
                     <p class="next-mamus">Next</p>
@@ -79,11 +85,37 @@ html,body{
     width: 100%;
 }
 
-.container-header-mamus .header{
+.container-header-mamus .header-mamus{
     width: 37%;
     top: 50%;
     left: 50%;
-    transform: translate(-65%, 20%);
+    transform: translate(-60%, 12%);
+}
+
+.container-volume-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-mamus .volume-on{
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1050%, 70%);
+}
+
+.container-back-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-back-mamus .back{
+    width: 4.2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1050%, 70%);
 }
 
 .container-jamur-kanan-belakang{
