@@ -18,7 +18,9 @@
                 <div class="container-bg-element">
                     <img src="..\assets\png\MamusPage\3. scroll\kanan.png" alt="" class="kanan">
                     <img src="..\assets\png\MamusPage\3. scroll\kiri.png" alt="" class="kiri">
-
+                </div>
+                <div class="tombol-next-mamus">
+                    <p class="next-mamus">Next</p>
                 </div>
             </div>
         </div>
@@ -141,5 +143,30 @@
     height: 30%;
     top: 50%;
     left: 50%;
+}
+
+.tombol-next-mamus{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
+
+    background: #597FA3;
+    border-radius: 11.4%/38.4%;
+}
+
+.tombol-next-mamus .next-mamus{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.1vw;
+    color: white;
 }
 </style>
