@@ -18,6 +18,7 @@
             <button class="tap-me">Tap Me!</button>
           </Nuxt-link>
         </div>
+        <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-index" @click="volume()" ref="volumeBtn">
       </div>
     </div>
   </div>
@@ -25,7 +26,20 @@
 
 <script>
 export default {
-    middleware: 'redirect'
+    methods:{
+    volume(){
+        this.isVolume = !this.isVolume
+        if(this.isVolume){
+            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+        }else{
+            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+        }
+    }},
+    data(){
+        return{
+            isVolume: true
+        }
+    }
     }
 </script>
 
@@ -38,6 +52,12 @@ html,body{
         padding: 0;
         margin: 0;
         
+}
+
+.volume-index{
+    position: fixed;
+    height: 5%;
+    transform: translate(1600%, 200%);
 }
 
 .top-cont{
@@ -133,7 +153,7 @@ html,body{
 
 .tap-me{
     all: unset;
-    font-family: 'Tf Grotesk';
+    font-family: 'Tf Grotesk-italic';
     font-weight: normal;
     font-style: italic;
     background: #30455A;

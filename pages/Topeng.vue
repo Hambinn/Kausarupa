@@ -22,10 +22,11 @@
               </transition>
           </div>
           <div class="topeng">
-            <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus">
-            <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona" @mouseover="munculPersona" @mouseleave="ilangPersona">
+            <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus" >
+            <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona" @mouseover="munculPersona" @mouseleave="ilangPersona" @click="kePersona">
             <img src="~/assets/svg/ChoosePage/Shadow 1.svg" alt="" class="shadow" @mouseover="munculShadow" @mouseleave="ilangShadow">
           </div>
+          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-topeng" @click="volume()" ref="volumeBtn">
         </div>
       </div>
     </div>
@@ -62,6 +63,16 @@
             ilangShadow(){
                 this.shadow = false
             },
+            kePersona(){
+                this.$router.push('/persona')
+            },    volume(){
+        this.isVolume = !this.isVolume
+        if(this.isVolume){
+            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+        }else{
+            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+        }
+    }
         },
         mounted(){
             localStorage.setItem('persona','true')
@@ -82,6 +93,12 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+.volume-topeng{
+    position: fixed;
+    height: 5%;
+    transform: translate(1600%, 200%);
 }
 
 .top-cont{
