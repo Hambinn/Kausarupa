@@ -71,7 +71,7 @@ html,body{
 .container-kumpulan-karya{
     position: absolute;
     text-align: center;
-    background-image: url("../assets/png/PersonaPage/bgPersona.png");
+    background-image: url("../assets/png/PersonaPage/Group 45 (2)-min.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;

@@ -57,32 +57,33 @@
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="bawah-papan">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="belakang-kasur">
           </div>
-        <div class="container-kasur">
+          <div class="container-kasur">
             <img src="../assets/svg/MainPage/kasur.svg" alt="" class="kasur">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur1">
             <img src="../assets/svg/MainPage/awan-kiri-permen.svg" alt="" class="depan-kasur2">
           </div>
           <div class="svg-container">
-            <img src="../assets/png/MainPage/lubang revisi.png" alt="" class="lubang"/>
-            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" class="lubang-atas" alt=""> 
-            <img  src="../assets/svg/MainPage/awan-kiri-permen.svg" class="lubang-bawah" alt="">
-            <img src="../assets/png/MainPage/mascot tidur + light.png" alt="" class="orang"/>
+            <img src="../assets/png/MainPage/lubang revisi.png" alt="" class="lubang" />
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" class="lubang-atas" alt="">
+            <img src="../assets/svg/MainPage/awan-kiri-permen.svg" class="lubang-bawah" alt="">
+            <img src="../assets/png/MainPage/mascot tidur + light.png" alt="" class="orang" />
           </div>
           <div class="container-bintang-putih" v-for="star in stars" :key="star.id">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" :class="star.class" @click="countBintang(star.id); " :style="star.opac">
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" :class="star.class"
+              @click="countBintang(star.id); " :style="star.opac">
           </div>
         </div>
       </div>
       <div class="score">
-            <div class="container-box">
-              <div class="container-text-box">
-                {{score}}
-              </div>
-              <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
-            </div>
-            
+        <div class="container-box">
+          <div class="container-text-box">
+            {{score}}
+          </div>
+          <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
         </div>
-        <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-main" @click="volume()" ref="volumeBtn">
+
+      </div>
+      <img src="../assets/png/umum/volumeon.png" alt="" class="volume-main" @click="volume()" ref="volumeBtn">
     </div>
 </template>
 
@@ -217,7 +218,7 @@ body{
 .volume-main{
     position: fixed;
     height: 5%;
-    transform: translate(3500%, 170%);
+    transform: translate(3600%, 170%);
 }
 .container-main{
     overflow-x: hidden;

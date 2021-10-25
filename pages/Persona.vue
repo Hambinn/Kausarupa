@@ -26,7 +26,7 @@
               <img src="../assets/svg/PersonaPage/awan kuning.svg" alt="" class="satu">
               <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
           </div>
-          <div class="container-header">
+          <div class="container-header-persona">
               <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
               <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
           </div>
@@ -108,24 +108,24 @@ html,body{
     overflow: hidden;
     }
 
-.container-header{
+.container-header-persona{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-header .header{
+.container-header-persona .header{
     height: 10%;
     top: 50%;
     left: 50%;
-    transform: translate(-180%,70%);
+    transform: translate(-180%,90%);
 }
 
-.container-header .back{
+.container-header-persona .back{
     height: 6%;
     top: 50%;
     left: 50%;
-    transform: translate(-1600%,60%);
+    transform: translate(-1600%,90%);
 }
 
 .container-orang{
@@ -137,7 +137,8 @@ html,body{
 .container-orang img{
     top: 50%;
     left: 50%;
-    transform: translate(-27%,0%);
+    height: 190%;
+    transform: translate(-25%,3%);
 }
 
 .container-awan{
@@ -204,7 +205,7 @@ color: #fff;
 }
 
 /* score */
-.score{
+.score-persona{
     position: absolute;
     height: 100%;
     width: 100%;
