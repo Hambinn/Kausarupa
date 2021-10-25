@@ -86,10 +86,10 @@ html,body{
 }
 
 .container-header-mamus .header-mamus{
-    width: 37%;
+    width: 30%;
     top: 50%;
     left: 50%;
-    transform: translate(-60%, 12%);
+    transform: translate(-85%, 70%);
 }
 
 .container-volume-mamus{
@@ -102,7 +102,7 @@ html,body{
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1050%, 70%);
+    transform: translate(1060%, 160%);
 }
 
 .container-back-mamus{
@@ -115,7 +115,7 @@ html,body{
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 70%);
+    transform: translate(-1050%, 160%);
 }
 
 .container-jamur-kanan-belakang{
@@ -125,10 +125,10 @@ html,body{
 }
 
 .container-jamur-kanan-belakang .jamur{
-    width: 44.3%;
+    width: 38%;
     top: 50%;
     left: 50%;
-    transform: translate(63%,25%);
+    transform: translate(82%, 36.5%);
 }
 
 .container-teh-kiri-depan{
@@ -139,19 +139,19 @@ html,body{
 }
 
 .container-teh-kiri-depan .teh{
-    width: 29.7%;
+    width: 25.5%;
     top: 50%;
     left: 50%;
-    transform: translate(-61%,19%);
+    transform: translate(-70%, 24%);
 }
 
 .tombol-next-mamus{
     position: fixed;
     top: 50%;
     left: 50%;
-    height: 8.4%;
-    width: 15.88%;
-    transform: translate(190%, 450%);
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
 
     background: #597FA3;
     border-radius: 11.4%/38.4%;
@@ -166,7 +166,7 @@ html,body{
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 2.3vw;
+    font-size: 2.1vw;
     color: white;
 }
 

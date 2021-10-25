@@ -92,7 +92,7 @@ html,body{
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1050%, 70%);
+    transform: translate(1060%, 160%);
 }
 
 .container-back-mamus{
@@ -105,7 +105,7 @@ html,body{
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 70%);
+    transform: translate(-1050%, 160%);
 }
 
 .container-text-skor-mamus{
@@ -137,14 +137,14 @@ html,body{
     width: 38.5%;
     top: 50%;
     left: 50%;
-    transform: translate(129%, 60.2%);
+    transform: translate(129%, 47.2%);
 }
 
 .container-hiasan .jamur-kiri-bawah{
     width: 37.3%;
     top: 50%;
     left: 50%;
-    transform: translate(-137%, 58.5%);
+    transform: translate(-137%, 45.5%);
 }
 
 .container-topeng{
@@ -198,9 +198,9 @@ html,body{
     position: fixed;
     top: 50%;
     left: 50%;
-    height: 8.4%;
-    width: 15.88%;
-    transform: translate(190%, 450%);
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
 
     background: #597FA3;
     border-radius: 11.4%/38.4%;
@@ -215,7 +215,7 @@ html,body{
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 2.3vw;
+    font-size: 2.1vw;
     color: white;
 }
 
