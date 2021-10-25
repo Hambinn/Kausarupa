@@ -111,19 +111,17 @@
 }
 
 .container-bg-element .kanan{
-    position: absolute;
     height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(67%, -39.5%);
+    transform: translate(168%, 18%);
 }
 
 .container-bg-element .kiri{
-    position: absolute;
     height: 80%;
     top: 50%;
     left: 50%;
-    transform: translate(-165%, -47%);
+    transform: translate(-165%, 15.5%);
 }
 
 .container-asep-mamus{
@@ -133,15 +131,13 @@
 }
 
 .container-asep-mamus .asep-1{
-    position: absolute;
     height: 30%;
     top: 50%;
     left: 50%;
-    transform: rotate(180deg) translate(150%, -15%);
+    transform: rotate(180deg) translate(0%, -150%);
 }
 
 .container-asep-mamus .asep-2{
-    position: absolute;
     height: 30%;
     top: 50%;
     left: 50%;

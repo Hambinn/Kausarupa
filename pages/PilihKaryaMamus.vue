@@ -111,17 +111,15 @@
 }
 
 .container-bg-element .atas{
-    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(0%, -168%);
+    transform: translate(50%, 30%);
 }
 
 .container-bg-element .bawah{
-    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-37%, -40%);
+    transform: translate(13%, -8%);
 }
 
 .pilih-tema-mamus{
@@ -131,26 +129,23 @@
 }
 
 .pilih-tema-mamus .king{
-    position: absolute;
     height: 62%;
     top: 50%;
     left: 50%;
-    transform: translate(-32%, -30%)
+    transform: translate(65%, 40%)
 }
 
 .pilih-tema-mamus .kq{
-    position: absolute;
     height: 68%;
     top: 50%;
     left: 50%;
-    transform: translate(-95%, -38%)
+    transform: translate(-100%, 36%)
 }
 
 .pilih-tema-mamus .queen{
-    position: absolute;
     height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(-156.7%, -39.5%);
+    transform: translate(-107%, -65%);
 }
 </style>
