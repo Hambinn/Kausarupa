@@ -10,6 +10,7 @@
                 </div>
                 <div class="container-box-mamus">
                     <p class="text-box-mamus">00</p>
+                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>                
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
@@ -113,9 +114,9 @@ html,body{
     top: 50%;
     left: 50%;
     height: 7.5%;
-    width: 14.5%;
+    width: 15.5%;
     background-color: #30455A;
-    transform: translate(178%, -510%);
+    transform: translate(160%, -510%);
     border-radius: 14.6%/53.6%;
 }
 
@@ -126,8 +127,15 @@ html,body{
     font-family: Tf Grotesk;
     top: 50%;
     left: 50%;
-    transform: translate(0%, -55%);
+    transform: translate(24%, -55%);
     color: white;
+}
+
+.container-box-mamus .topeng-score-mamus{
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, -28%);
 }
 
 .container-back-mamus{
