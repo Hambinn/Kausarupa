@@ -8,17 +8,19 @@
                 <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
-                <div class="container-bg-element">
-                    <img src="../assets/png/MamusPage/2. pilih/atas.png" alt="" class="atas">
-                    <img src="../assets/png/MamusPage/2. pilih/bawah.png" alt="" class="bawah">
-                </div>
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
-                <div class="pilih-tema-mamus">
-                    <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king">
-                    <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq">
-                    <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen">
+                <div class="container-asep-mamus">
+                    <img src="..\assets\gif\asep pink.GIF" alt="" class="asep-1">
+                    <img src="..\assets\gif\asep.GIF" alt="" class="asep-2">
+                </div>
+                <div class="container-bg-element">
+                    <img src="..\assets\png\MamusPage\3. scroll\kanan.png" alt="" class="kanan">
+                    <img src="..\assets\png\MamusPage\3. scroll\kiri.png" alt="" class="kiri">
+                </div>
+                <div class="tombol-next-mamus">
+                    <p class="next-mamus">Next</p>
                 </div>
             </div>
         </div>
@@ -107,45 +109,64 @@
 .container-bg-element{
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 100%;     
 }
 
-.container-bg-element .atas{
-    top: 50%;
-    left: 50%;
-    transform: translate(50%, 30%);
-}
-
-.container-bg-element .bawah{
-    top: 50%;
-    left: 50%;
-    transform: translate(13%, -8%);
-}
-
-.pilih-tema-mamus{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.pilih-tema-mamus .king{
-    height: 62%;
-    top: 50%;
-    left: 50%;
-    transform: translate(65%, 40%)
-}
-
-.pilih-tema-mamus .kq{
-    height: 68%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-100%, 36%)
-}
-
-.pilih-tema-mamus .queen{
+.container-bg-element .kanan{
     height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(-107%, -65%);
+    transform: translate(168%, 18%);
+}
+
+.container-bg-element .kiri{
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-165%, 15.5%);
+}
+
+.container-asep-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+}
+
+.container-asep-mamus .asep-1{
+    height: 30%;
+    top: 50%;
+    left: 50%;
+    transform: rotate(180deg) translate(0%, -150%);
+}
+
+.container-asep-mamus .asep-2{
+    height: 30%;
+    top: 50%;
+    left: 50%;
+}
+
+.tombol-next-mamus{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
+
+    background: #597FA3;
+    border-radius: 11.4%/38.4%;
+}
+
+.tombol-next-mamus .next-mamus{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.1vw;
+    color: white;
 }
 </style>
