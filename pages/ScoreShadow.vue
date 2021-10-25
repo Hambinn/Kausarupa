@@ -11,6 +11,7 @@
                 <div class="container-hiasan-score-shadow">
                     <img src="../assets/png/ShadowPage/5. score/kanan-bawah.png" alt="" class="score-shadow-kanan-bawah">
                     <img src="../assets/png/ShadowPage/5. score/kiri-bawah.png" alt="" class="score-shadow-kiri-bawah">
+                    <img src="../assets/png/ShadowPage/5. score/kanan-atas.png" alt="" class="score-shadow-kanan-atas">
                 </div>
                 <div class="container-topeng-score-shadow">
                     <img src="../assets/png/ShadowPage/5. score/topeng-utama.png" alt="" class="topeng-utama-score-shadow">
@@ -137,6 +138,13 @@ html,body{
 }
 
 .container-hiasan-score-shadow .score-shadow-kiri-bawah{
+    width: 37.3%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-137%, 45.5%);
+}
+
+.container-hiasan-score-shadow .score-shadow-kanan-atas{
     width: 37.3%;
     top: 50%;
     left: 50%;
