@@ -2,6 +2,12 @@
     <div class="bg-skor-mamus">
         <div class="top-cont">
             <div class="canvas">
+                <div class="container-back-mamus">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
+                </div>
+                <div class="container-volume-mamus">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
+                </div>
                 <div class="container-hiasan">
                     <img src="../assets/png/MamusPage/5. skor/kanan bawah.png" alt="" class="jamur-kanan-bawah">
                     <img src="../assets/png/MamusPage/5. skor/kiri bawah.png" alt="" class="jamur-kiri-bawah">
@@ -75,6 +81,32 @@ html,body{
     width: 100vw;
     overflow: hidden;
     }
+
+.container-volume-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-mamus .volume-on{
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1050%, 70%);
+}
+
+.container-back-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-back-mamus .back{
+    width: 4.2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1050%, 70%);
+}
 
 .container-text-skor-mamus{
     position: absolute;
