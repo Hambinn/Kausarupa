@@ -14,10 +14,10 @@
 .container{
 position: absolute;
 width: 50%;
-height: 55%;
+height: 54%;
 left: 50%;
 top: 50%;
-transform: translate(-22%, -42%);
+transform: translate(-22%, -48%);
 z-index: 3;
 opacity: 0.95;
 
