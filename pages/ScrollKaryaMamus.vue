@@ -8,6 +8,7 @@
                 <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
+
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
@@ -21,7 +22,11 @@
                 </div>
                 <div class="tombol-next-mamus">
                     <p class="next-mamus">Next</p>
-                </div>
+                </div>                
+                <div class="container-box-mamus">
+                    <p class="text-box-mamus">00</p>
+                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
+                </div>   
             </div>
         </div>
     </div>
@@ -91,6 +96,35 @@
     top: 50%;
     left: 50%;
     transform: translate(1060%, 160%);
+}
+
+.container-box-mamus{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
+}
+
+.container-box-mamus .text-box-mamus{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-mamus .topeng-score-mamus{
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, -28%);
 }
 
 .container-back-mamus{
