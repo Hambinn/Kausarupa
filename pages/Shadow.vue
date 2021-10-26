@@ -2,6 +2,14 @@
     <div class="bg-shadow">
         <div class="top-cont">
             <div class="canvas">
+                <div class="score">
+                    <div class="box-shadow">
+                        <div class="text-box-shadow">
+                         {{score}}
+                        </div>
+                    </div>
+                    <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topeng-score-shadow">
+                </div>
                 <div class="container-kotak">
                 <kotak-biru/>
                 </div>
@@ -13,12 +21,6 @@
                 <div class="container_header">
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header">
                     <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back">
-                </div>
-                <div class="score-shadow">
-                    <div class="container-text-box-shadow">
-                        {{score}}
-                    </div>
-                    <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topeng-score-shadow">
                 </div>
                 <div class="tombol-next-shadow">
                     <p class="next-shadow">Next</p>
@@ -104,17 +106,17 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
 }
 
 .container_header .header{
-    height: 15%;
+    height: 1000%;
     top: 50%;
     left: 50%;
-    transform: translate(-140%,60%);
+    transform: translate(0%,0%);
 }
 
 .container_header .back{
-    height: 6%;
+    height: 1000%;
     top: 50%;
     left: 50%;
-    transform: translate(-1670%,60%);
+    transform: translate(-1000%,60%);
 }
 
 .tombol-next-shadow{
@@ -143,22 +145,29 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
 color: #fff;
 }
 
+/* score */
 .score-shadow{
-    position: absolute
-}
-
-.container-text-box-shadow{
     position: absolute;
     height: 100%;
     width: 100%;
-    transform: translate(620%, 150%);
+}
+
+.box-shadow{
+    position: absolute;
+    height: 6%;
+    width: 13%;
+    background-color: #33485C;
+    transform: translate(630%, 160%);
     border-radius: 50px;
 }
 
-.container-text-box-shadow .topeng-score-shadow{
-    position: absolute;
+.box-shadow .topeng-score-shadow{
+    position: fixed;
     height: 90%;
-    transform: translate(-120%, 20%);
+    transform: translate(-160%, -100%);
 }
 
+.text-box-shadow{
+    font-size: 3vw;
+}
 </style>
