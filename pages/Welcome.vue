@@ -3,8 +3,8 @@
     <div class="top-cont">
       <div class="canvas">
         <div class="container-bintang">
-          <img src="../assets/svg/WelcomePage/bintang oren.svg" alt="" class="oren">
-          <img src="../assets/svg/WelcomePage/bintang ungu.svg" alt="" class="ungu">
+          <img src="../assets/gif/bintang oren.GIF" alt="" class="oren">
+          <img src="../assets/gif/bintang pink.GIF" alt="" class="ungu">
         </div>
         <div class="container-popup">
           <img src="~assets/png/WelcomePage/contact us.png" alt="" class="contact" @click="showContact = true">
@@ -315,14 +315,14 @@ input::-webkit-input-placeholder{
     height: 12%;
     top: 50%;
     left: 50%;
-    transform: translate(-370%,110%);
+    transform: translate(-400%,110%);
 }
 
 .container-bintang .ungu{
     height: 8%;
     top: 50%;
     left: 50%;
-    transform: translate(600%,330%);
+    transform: translate(620%,330%);
 }
 
 .container-popup{
