@@ -5,7 +5,7 @@
                 <div class="tombol-next-persona">
                     <p class="next-persona">Next</p>
                 </div>
-                <div class= "container-rumah">
+                <div class= "container-rumah-PKP">
                     <img src="../assets/svg/PersonaPage/rumah coklat 1.svg" alt="" class="coklatsatu">
                     <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklatdua">
                     <img src="../assets/svg/PersonaPage/rumah coklat 3.svg" alt="" class="coklattiga">
@@ -20,6 +20,7 @@
                 <div class="container-header">
                     <img src="../assets/svg/PersonaPage/header persona.svg" alt="">
                 </div>
+
             </div>
         </div>
     </div>
@@ -47,7 +48,7 @@ html,body{
     text-align: center;
     background-image: url("../assets/png/PersonaPage/bgPersona.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     }
@@ -59,6 +60,7 @@ html,body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
 }
 
 .canvas{
@@ -96,25 +98,27 @@ position: absolute;
     transform: translate(120%,3%);
     z-index: 2;
 }
-.container-rumah{
+.container-rumah-PKP{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
-.container-rumah .coklatsatu {
+.container-rumah-PKP .coklatsatu {
     position: absolute;
     width: 25%;
     height: 25%;
-    transform: translate(-45%,130%);
+    transform: translate(-45%,0%);
 }
 
-.container-rumah .coklatdua {
+.container-rumah-PKP .coklatdua {
     position: absolute;
     width: 25%;
     height: 25%;
     transform: translate(180%, 170%);
 }
 
-.container-rumah .coklattiga {
+.container-rumah-PKP .coklattiga {
     position: absolute;
     width: 25%;
     height: 25%;
