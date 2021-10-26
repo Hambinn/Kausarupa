@@ -1,22 +1,26 @@
 <template>
     <div class="bg-karya-shadow">
-        <div class="pilih-jenis">
-            <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan atas (1).png" alt="" class="kanan-atas">
-            <img src="~/assets/png/ShadowPage/2. pilih jenis/kiri bawah.png" alt="" class="kiri-bawah">
-            <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kanan.png" alt="" class="hole-kanan">
-            <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan bawah (1).png" alt="" class="kanan-bawah">
-            <img src="~/assets/png/ShadowPage/2. pilih jenis/hole tengah.png" alt="" class="hole-tengah">
-            <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kiri.png" alt="" class="hole-kiri">
-        </div>
-        <div class="container-header-shadow">
-            <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-shadow">
-            <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="tombol-back">
-        </div>
-        <div class="scoreshadow">
-            <div class="container-box-shadow">
-                {{score}}
+        <div class="top-cont">
+            <div class="canvas">
+                <div class="pilih-jenis">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan atas (1).png" alt="" class="kanan-atas">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kiri bawah.png" alt="" class="kiri-bawah">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kanan.png" alt="" class="hole-kanan">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan bawah (1).png" alt="" class="kanan-bawah">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole tengah.png" alt="" class="hole-tengah">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kiri.png" alt="" class="hole-kiri">
+                </div>
+                <div class="container-header-shadow">
+                    <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-shadow">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="tombol-back">
+                </div>
+                <div class="scoreshadow">
+                    <div class="container-box-shadow">
+                        {{score}}
+                    </div>
+                    <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topengscore-shadow">
+                </div>
             </div>
-            <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topengscore-shadow">
         </div>
     </div>
 </template>
@@ -25,6 +29,23 @@
 *{
     padding: 0;
     margin: 0;
+}
+
+.top-cont{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
+}
+
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .bg-karya-shadow{
@@ -45,45 +66,45 @@
 }
 
 .pilih-jenis .kanan-atas{
-    height: 47%;
+    height: 42%;
     top: 50%;
     left: 50%;
-    transform: translate(160%,-81%)
+    transform: translate(165%,-57%)
 }
 
 .pilih-jenis .kanan-bawah{
     height: 42%;
     top: 50%;
     left: 50%;
-    transform: translate(131%,-84%)
+    transform: translate(130%,-65%)
 }
 
 .pilih-jenis .kiri-bawah{
-    height: 85%;
+    height: 72%;
     top: 50%;
     left: 50%;
-    transform: translate(-108%,18%)
+    transform: translate(-134%,30%)
 }
 
 .pilih-jenis .hole-kanan{
-    height: 42%;
+    height: 38%;
     top: 50%;
     left: 50%;
-    transform: translate(-40%,-5%)
+    transform: translate(-22%,20%)
 }
 
 .pilih-jenis .hole-tengah{
-    height: 50%;
+    height: 52%;
     top: 50%;
     left: 50%;
-    transform: translate(-40%,-140%)
+    transform: translate(-45%,-106%)
 }
 
 .pilih-jenis .hole-kiri{
-    height: 46%;
+    height: 42%;
     top: 50%;
     left: 50%;
-    transform: translate(-263%,-113%)
+    transform: translate(-299%,-104%)
 }
 
 .container-header-shadow{
@@ -96,14 +117,14 @@
     height: 15%;
     top: 50%;
     left: 50%;
-    transform: translate(-135%,20%);
+    transform: translate(-140%,60%);
 }
 
 .container-header-shadow .tombol-back{
     height: 6%;
     top: 50%;
     left: 50%;
-    transform: translate(-1650%,-50%);
+    transform: translate(-1670%,60%);
 }
 
 /* score */
