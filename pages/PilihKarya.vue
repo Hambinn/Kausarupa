@@ -2,23 +2,32 @@
     <div class="container-persona">
         <div class="top-cont">
             <div class="canvas">
-                <div class="tombol-next-persona">
-                    <p class="next-persona">Next</p>
-                </div>
-                <div class= "container-rumah">
-                    <img src="../assets/svg/PersonaPage/rumah coklat 1.svg" alt="" class="coklatsatu">
-                    <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklatdua">
-                    <img src="../assets/svg/PersonaPage/rumah coklat 3.svg" alt="" class="coklattiga">
+                <div class= "container-rumahoren">
                     <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu">
                     <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua">
                     <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="orentiga">
                 </div>
-                <div class="container-awan">
+                <div class="container-rumahcoklat">
+                    <img src="../assets/svg/PersonaPage/rumah coklat 1.svg" alt="" class="coklatsatu">
+                    <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklatdua">
+                    <img src="../assets/svg/PersonaPage/rumah coklat 3.svg" alt="" class="coklattiga">
+                </div>
+                <div class="container-awankuning">
                     <img src="../assets/svg/PersonaPage/awan kuning.svg" alt="" class="satu">
                     <img src="../assets/svg/PersonaPage/awan kuning.svg" alt="" class="dua">
                 </div>
-                <div class="container-header">
-                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="">
+                <div class="container-awanoren">
+                    <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="satu">
+                    <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
+                    <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="tiga">
+                </div>
+                <div class="container-header-persona">
+                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                    <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
+                </div>
+                <div class="topeng score">
+                    <img src="../assets/png/PersonaPage/topeng score.png" alt="">
                 </div>
             </div>
         </div>
@@ -42,16 +51,14 @@ html,body{
         
 }
 
-
 .container-persona{
     text-align: center;
-    background-image: url("../assets/png/PersonaPage/bgPersona.png");
+    background-image: url("../assets/png/PersonaPage/backgroudn umum persona.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100vh;
     width: 100vw;
     }
-
 
 .top-cont{
   position: absolute;
@@ -70,82 +77,84 @@ html,body{
 }
 
 
-.container-header{
+.container-header-persona{
     position: absolute;
-    height: 70%;
-    width: 70%;
-    transform: translate(-25%,15%);
+    height: 100%;
+    width: 100%;
 }
 
-.container-awan{
+.container-header-persona .header{
+    height: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(100%,90%);
+}
+
+.container-header-persona .back{
+    height: 6%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1600%,90%);
+}
+
+.container-header-persona .volume-persona1{
+    position: fixed;
+    height: 60%;
+}
+
+.container-awankuning{
 position: absolute;
 }
 
-.container-awan .satu{
+.container-awankuning .satu{
     position: absolute;
-    width: 800px;
-    height: 800px;
-    transform: translate(90%,-16%);
-    z-index: 2;
+    transform: translate(0%, 0%);
 }
 
-.container-awan .dua{
+.container-awankuning .dua{
     position: absolute;
-    width: 1000px;
-    height: 1000px;
     transform: translate(120%,3%);
     z-index: 2;
 }
-.container-rumah{
+
+.container-awanoren{
     position: absolute;
 }
 
-.container-rumah .coklatsatu {
+.container-awanoren .satu{
     position: absolute;
-    width: 25%;
-    height: 25%;
-    transform: translate(-45%,130%);
+    transform: translate(0%,0%);
 }
 
-.container-rumah .coklatdua {
+.container-awanoren .dua{
     position: absolute;
-    width: 25%;
-    height: 25%;
-    transform: translate(180%, 170%);
+    transform: translate(0%, 0%);
 }
 
-.container-rumah .coklattiga {
+.container-awanoren .tiga{
     position: absolute;
-    width: 25%;
-    height: 25%;
-    transform: translate(180%, 170%);
+    transform: translate(0%, 0%);
 }
 
-.tombol-next-persona{
+.container-rumahoren{
     position: absolute;
-    width: 305px;
-    height: 80px;
-    transform: translate(460%,1100%);
-
-    background: #597FA3;
-    border-radius: 35px;
 }
 
-.tombol-next-persona .next-persona{
+.container-rumahoren .orensatu{
     position: absolute;
-    width: 116px;
-    height: 58px;
-    left: 90px;
-    top: 10px;
+    height: 60%;
+    width: 60%;
+}
 
-    font-family: Tf Grotesk;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 48px;
-    line-height: 58px;
-/* identical to box height */
+.container-rumahoren .orendua{
+    position: absolute;
+    height: 60%;
+    width: 60%;
+}
 
-
-color: #fff;
+.container-rumahoren .orentiga{
+    position: absolute;
+    height: 60%;
+    width: 60%;
 }
 </style>
