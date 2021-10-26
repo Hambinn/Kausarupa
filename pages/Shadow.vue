@@ -1,25 +1,29 @@
 <template>
     <div class="bg-shadow">
-        <div class="container-kotak">
-          <kotak-biru/>
-        </div>
-        <div class="narasi">
-            <img src="~/assets/png/ShadowPage/1. narasi/kanan atas.png" alt="" class="kanan_atas">
-            <img src="~/assets/png/ShadowPage/1. narasi/kanan bawah.png" alt="" class="kanan_bawah">
-            <img src="~/assets/svg/ShadowPage/header shadow.svg" alt="" class="header">
-        </div>
-        <div class="container_header">
-            <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header">
-            <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back">
-        </div>
-        <div class="score-shadow">
-            <div class="container-text-box-shadow">
-                {{score}}
+        <div class="top-cont">
+            <div class="canvas">
+                <div class="container-kotak">
+                <kotak-biru/>
+                </div>
+                <div class="narasi">
+                    <img src="~/assets/png/ShadowPage/1. narasi/kanan atas.png" alt="" class="kanan_atas">
+                    <img src="~/assets/png/ShadowPage/1. narasi/kanan bawah.png" alt="" class="kanan_bawah">
+                    <img src="~/assets/png/ShadowPage/1. narasi/mascot narasi.png" alt="" class="mascot-narasi">
+                </div>
+                <div class="container_header">
+                    <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back">
+                </div>
+                <div class="score-shadow">
+                    <div class="container-text-box-shadow">
+                        {{score}}
+                    </div>
+                    <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topeng-score-shadow">
+                </div>
+                <div class="tombol-next-shadow">
+                    <p class="next-shadow">Next</p>
+                </div>
             </div>
-            <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topeng-score-shadow">
-        </div>
-        <div class="tombol-next-shadow">
-            <p class="next-shadow">Next</p>
         </div>
     </div>
 </template>
@@ -36,6 +40,23 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
 *{
     padding: 0;
     margin: 0;
+}
+
+.top-cont{
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
+}
+
+.canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .bg-shadow{
@@ -56,17 +77,24 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
 }
 
 .narasi .kanan_atas{
-    height: 60%;
+    height: 55%;
     top: 50%;
     left: 50%;
-    transform: translate(41%,0%)
+    transform: translate(93%,-3%)
 }
 
 .narasi .kanan_bawah{
-    height: 70%;
+    height: 63%;
     top: 50%;
     left: 50%;
-    transform: translate(75%,-43%)
+    transform: translate(5%,49%)
+}
+
+.narasi .mascot-narasi{
+    height: 190%;
+    top: 50%;
+    left: 50%;
+    transform: translate(55.5%,-39.5%) rotate(-39deg);
 }
 
 .container_header{
@@ -79,21 +107,21 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     height: 15%;
     top: 50%;
     left: 50%;
-    transform: translate(-135%,20%);
+    transform: translate(-140%,60%);
 }
 
 .container_header .back{
     height: 6%;
     top: 50%;
     left: 50%;
-    transform: translate(-1650%,-50%);
+    transform: translate(-1670%,60%);
 }
 
 .tombol-next-shadow{
     position: fixed;
     height: 6.5%;
     width: 13%;
-    transform: translate(625%, 1365%);
+    transform: translate(635%, 1285%);
     background: #597FA3;
     border-radius: 35px;
 }

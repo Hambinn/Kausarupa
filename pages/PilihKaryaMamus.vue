@@ -8,6 +8,7 @@
                 <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
+
                 <div class="container-bg-element">
                     <img src="../assets/png/MamusPage/2. pilih/atas.png" alt="" class="atas">
                     <img src="../assets/png/MamusPage/2. pilih/bawah.png" alt="" class="bawah">
@@ -19,6 +20,10 @@
                     <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king">
                     <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq">
                     <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen">
+                </div>
+                <div class="container-box-mamus">
+                    <p class="text-box-mamus">00</p>
+                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>
             </div>
         </div>
@@ -91,6 +96,35 @@
     transform: translate(1060%, 160%);
 }
 
+.container-box-mamus{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
+}
+
+.container-box-mamus .text-box-mamus{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-mamus .topeng-score-mamus{
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, -28%);
+}
+
 .container-back-mamus{
     position: absolute;
     height: 100%;
@@ -111,12 +145,14 @@
 }
 
 .container-bg-element .atas{
+    height: 25.2%;
     top: 50%;
     left: 50%;
     transform: translate(50%, 30%);
 }
 
 .container-bg-element .bawah{
+    height: 72.8%;
     top: 50%;
     left: 50%;
     transform: translate(13%, -8%);
