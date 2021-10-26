@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-narasi-mamus">
+    <div class="bg-karya-mamus">
         <div class="top-cont">
             <div class="canvas">
                 <div class="container-header-mamus">
@@ -8,24 +8,22 @@
                 <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
-                <div class="container-box-mamus">
-                    <p class="text-box-mamus">00</p>
-                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
-                </div>                
+
+                <div class="container-bg-element">
+                    <img src="../assets/png/MamusPage/2. pilih/atas.png" alt="" class="atas">
+                    <img src="../assets/png/MamusPage/2. pilih/bawah.png" alt="" class="bawah">
+                </div>
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
-                <div class="tombol-next-mamus">
-                    <p class="next-mamus">Next</p>
+                <div class="pilih-tema-mamus">
+                    <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king">
+                    <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq">
+                    <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen">
                 </div>
-                <div class="container-kotak-mamus">
-                    <kotak-pink/>          
-                </div>
-                <div class="container-teh-kiri-depan">
-                    <img src="../assets/png/MamusPage/1. narasi/kiri depan.png" alt="" class="teh">
-                </div>
-                <div class="container-jamur-kanan-belakang">
-                    <img src="../assets/png/MamusPage/1. narasi/kanan belakang.png" alt="" class="jamur">
+                <div class="container-box-mamus">
+                    <p class="text-box-mamus">00</p>
+                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>
             </div>
         </div>
@@ -33,23 +31,12 @@
 </template>
 
 <script>
-import kotakPink from '../components/Mamus/kotakPink.vue'
     export default {
-  components: { kotakPink },
         
     }
 </script>
 
 <style>
-html,body{
-    all: unset;
-    margin: 0;
-    padding: 0;
-    font-family: 'Tf Grotesk';
-    font-style: normal;
-    font-weight: normal;
-}
-
 *{
     padding: 0;
     margin: 0;
@@ -72,7 +59,7 @@ html,body{
   height: 100%;
 }
 
-.bg-narasi-mamus{
+.bg-karya-mamus{
     position: absolute;
     text-align: center;
     background-image: url("~/assets/png/MamusPage/background mamus.png");
@@ -151,56 +138,50 @@ html,body{
     transform: translate(-1050%, 160%);
 }
 
-.container-jamur-kanan-belakang{
+.container-bg-element{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-jamur-kanan-belakang .jamur{
-    width: 38%;
+.container-bg-element .atas{
+    height: 25.2%;
     top: 50%;
     left: 50%;
-    transform: translate(82%, 36.5%);
+    transform: translate(50%, 30%);
 }
 
-.container-teh-kiri-depan{
+.container-bg-element .bawah{
+    height: 72.8%;
+    top: 50%;
+    left: 50%;
+    transform: translate(13%, -8%);
+}
+
+.pilih-tema-mamus{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 4;
 }
 
-.container-teh-kiri-depan .teh{
-    width: 25.5%;
+.pilih-tema-mamus .king{
+    height: 62%;
     top: 50%;
     left: 50%;
-    transform: translate(-70%, 24%);
+    transform: translate(65%, 40%)
 }
 
-.tombol-next-mamus{
-    position: fixed;
+.pilih-tema-mamus .kq{
+    height: 68%;
     top: 50%;
     left: 50%;
-    height: 7%;
-    width: 14%;
-    transform: translate(230%, 454%);
-
-    background: #597FA3;
-    border-radius: 11.4%/38.4%;
+    transform: translate(-100%, 36%)
 }
 
-.tombol-next-mamus .next-mamus{
-    position: absolute;
-    left: 50%;
+.pilih-tema-mamus .queen{
+    height: 70%;
     top: 50%;
-    transform: translate(-50%,-60%);
-
-    font-family: Tf Grotesk;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2.1vw;
-    color: white;
+    left: 50%;
+    transform: translate(-107%, -65%);
 }
-
 </style>

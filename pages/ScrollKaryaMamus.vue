@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-narasi-mamus">
+    <div class="bg-karya-mamus">
         <div class="top-cont">
             <div class="canvas">
                 <div class="container-header-mamus">
@@ -8,48 +8,37 @@
                 <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
-                <div class="container-box-mamus">
-                    <p class="text-box-mamus">00</p>
-                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
-                </div>                
+
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
+                <div class="container-asep-mamus">
+                    <img src="..\assets\gif\asep pink.GIF" alt="" class="asep-1">
+                    <img src="..\assets\gif\asep.GIF" alt="" class="asep-2">
+                </div>
+                <div class="container-bg-element">
+                    <img src="..\assets\png\MamusPage\3. scroll\kanan.png" alt="" class="kanan">
+                    <img src="..\assets\png\MamusPage\3. scroll\kiri.png" alt="" class="kiri">
+                </div>
                 <div class="tombol-next-mamus">
                     <p class="next-mamus">Next</p>
-                </div>
-                <div class="container-kotak-mamus">
-                    <kotak-pink/>          
-                </div>
-                <div class="container-teh-kiri-depan">
-                    <img src="../assets/png/MamusPage/1. narasi/kiri depan.png" alt="" class="teh">
-                </div>
-                <div class="container-jamur-kanan-belakang">
-                    <img src="../assets/png/MamusPage/1. narasi/kanan belakang.png" alt="" class="jamur">
-                </div>
+                </div>                
+                <div class="container-box-mamus">
+                    <p class="text-box-mamus">00</p>
+                    <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
+                </div>   
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import kotakPink from '../components/Mamus/kotakPink.vue'
     export default {
-  components: { kotakPink },
         
     }
 </script>
 
 <style>
-html,body{
-    all: unset;
-    margin: 0;
-    padding: 0;
-    font-family: 'Tf Grotesk';
-    font-style: normal;
-    font-weight: normal;
-}
-
 *{
     padding: 0;
     margin: 0;
@@ -72,7 +61,7 @@ html,body{
   height: 100%;
 }
 
-.bg-narasi-mamus{
+.bg-karya-mamus{
     position: absolute;
     text-align: center;
     background-image: url("~/assets/png/MamusPage/background mamus.png");
@@ -151,31 +140,43 @@ html,body{
     transform: translate(-1050%, 160%);
 }
 
-.container-jamur-kanan-belakang{
+.container-bg-element{
     position: absolute;
     height: 100%;
-    width: 100%;
+    width: 100%;     
 }
 
-.container-jamur-kanan-belakang .jamur{
-    width: 38%;
+.container-bg-element .kanan{
+    height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(82%, 36.5%);
+    transform: translate(168%, 18%);
 }
 
-.container-teh-kiri-depan{
+.container-bg-element .kiri{
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-165%, 15.5%);
+}
+
+.container-asep-mamus{
     position: absolute;
     height: 100%;
-    width: 100%;
-    z-index: 4;
+    width: 100%; 
 }
 
-.container-teh-kiri-depan .teh{
-    width: 25.5%;
+.container-asep-mamus .asep-1{
+    height: 30%;
     top: 50%;
     left: 50%;
-    transform: translate(-70%, 24%);
+    transform: rotate(180deg) translate(0%, -150%);
+}
+
+.container-asep-mamus .asep-2{
+    height: 30%;
+    top: 50%;
+    left: 50%;
 }
 
 .tombol-next-mamus{
@@ -202,5 +203,4 @@ html,body{
     font-size: 2.1vw;
     color: white;
 }
-
 </style>
