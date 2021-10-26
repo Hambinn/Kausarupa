@@ -24,12 +24,11 @@
                 <div class="container-header-persona">
                     <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
-                    <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
                 </div>
                 <div class="topeng score">
                     <img src="../assets/png/PersonaPage/topeng score.png" alt="">
                 </div>
-
+                <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
             </div>
         </div>
     </div>
@@ -105,17 +104,21 @@ html,body{
 }
 
 .container-awankuning{
-position: absolute;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-awankuning .satu{
     position: absolute;
+    height: 40%;
     transform: translate(0%, 0%);
 }
 
 .container-awankuning .dua{
     position: absolute;
-    transform: translate(120%,3%);
+    transform: translate(10%,3%);
+    height: 40%;
     z-index: 2;
 }
 
@@ -127,21 +130,26 @@ position: absolute;
 
 .container-awanoren .satu{
     position: absolute;
+    height: 20%;
     transform: translate(0%,0%);
 }
 
 .container-awanoren .dua{
     position: absolute;
-    transform: translate(0%, 0%);
+    height: 20%;
+    transform: translate(20%, 0%);
 }
 
 .container-awanoren .tiga{
     position: absolute;
-    transform: translate(0%, 0%);
+    height: 20%;
+    transform: translate(-10%, 0%);
 }
 
 .container-rumahoren{
     position: absolute;
+    height: 100%;
+    width: 100%;
 }
 
 .container-rumahoren .orensatu{
@@ -160,5 +168,11 @@ position: absolute;
     position: absolute;
     height: 60%;
     width: 60%;
+}
+
+.container-rumahcoklat{
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
 </style>
