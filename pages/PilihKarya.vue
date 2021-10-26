@@ -25,7 +25,7 @@
                     <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
-                <div class="topeng score">
+                <div class="topeng-score-atas">
                     <img src="../assets/png/PersonaPage/topeng score.png" alt="">
                 </div>
                 <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
@@ -88,19 +88,27 @@ html,body{
     height: 10%;
     top: 50%;
     left: 50%;
-    transform: translate(100%,90%);
+    transform: translate(-185%,90%);
 }
 
 .container-header-persona .back{
     height: 6%;
     top: 50%;
     left: 50%;
-    transform: translate(-1600%,90%);
+    transform: translate(-1650%,90%);
 }
 
 .container-header-persona .volume-persona1{
     position: fixed;
-    height: 60%;
+    height: 5%;
+    transform: translate(1200%, 180%);
+}
+
+.topeng-score-atas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: translate(0%,50%);
 }
 
 .container-awankuning{
@@ -111,14 +119,14 @@ html,body{
 
 .container-awankuning .satu{
     position: absolute;
-    height: 40%;
-    transform: translate(0%, 0%);
+    height: 25%;
+    transform: translate(-200%, 150%);
 }
 
 .container-awankuning .dua{
     position: absolute;
-    transform: translate(10%,3%);
-    height: 40%;
+    transform: translate(30%,180%);
+    height: 25%;
     z-index: 2;
 }
 
@@ -130,20 +138,20 @@ html,body{
 
 .container-awanoren .satu{
     position: absolute;
-    height: 20%;
-    transform: translate(0%,0%);
+    height: 28%;
+    transform: translate(-100%,120%);
 }
 
 .container-awanoren .dua{
     position: absolute;
-    height: 20%;
-    transform: translate(20%, 0%);
+    height: 27%;
+    transform: translate(-70%, 250%);
 }
 
 .container-awanoren .tiga{
     position: absolute;
-    height: 20%;
-    transform: translate(-10%, 0%);
+    height: 22%;
+    transform: translate(-5%, 45%);
 }
 
 .container-rumahoren{
@@ -154,20 +162,24 @@ html,body{
 
 .container-rumahoren .orensatu{
     position: absolute;
-    height: 60%;
-    width: 60%;
+    height: 50%;
+    width: 50%;
+    transform: translate(-100%,20%);
 }
 
 .container-rumahoren .orendua{
     position: absolute;
-    height: 60%;
-    width: 60%;
+    height: 45%;
+    width: 45%;
+    transform: translate(0%, 25%);
+    z-index: 3;
 }
 
 .container-rumahoren .orentiga{
     position: absolute;
     height: 60%;
     width: 60%;
+    transform: translate(-55%, 62%);
 }
 
 .container-rumahcoklat{
@@ -175,4 +187,27 @@ html,body{
     height: 100%;
     width: 100%;
 }
+
+.container-rumahcoklat .coklatsatu{
+    position: absolute;
+    height: 25%;
+    width: 25%;
+    transform: translate(-210%, 198%);
+    z-index: 3;
+}
+
+.container-rumahcoklat .coklatdua{
+    position: absolute;
+    height: 25%;
+    width: 25%;
+    transform: translate(12%, 250%);
+}
+
+.container-rumahcoklat .coklattiga{
+    position: absolute;
+    height: 38%;
+    width: 38%;
+    transform: translate(35%, 85%);
+}
+
 </style>
