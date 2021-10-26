@@ -10,8 +10,8 @@
           <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
         </div>
         <div class="container-bintang">
-          <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="kecil">
-          <img src="../assets/svg/LandingPage/bintang oren.svg" alt="" class="besar">
+          <img src="../assets/gif/bintang oren.GIF" alt="" class="kecil">
+          <img src="../assets/gif/bintang oren.GIF" alt="" class="besar">
         </div>
         <div class="container-tombol">
           <Nuxt-link to="/Welcome">
@@ -117,7 +117,7 @@ html,body{
     height: 8%;
     top: 50%;
     left: 50%;
-    transform: translate(570%,150%);
+    transform: translate(600%,150%);
 }
 
 .container-bintang .besar{

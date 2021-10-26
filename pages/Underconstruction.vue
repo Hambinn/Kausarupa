@@ -6,8 +6,8 @@
             <img src="../assets/svg/UnderConstruction/pc.png" alt="" class="monitor">
           </div>
           <div class="container-bintang-undercons">
-            <img src="../assets/png/UnderConstruction/bintang oren.png" alt="" class="oren">
-            <img src="../assets/png/UnderConstruction/bintang pink.png" alt="" class="ungu">
+            <img src="../assets/gif/bintang oren.GIF" alt="" class="oren">
+            <img src="../assets/gif/bintang pink.GIF" alt="" class="ungu">
           </div>
           <div class="container-hewan">
             <img src="../assets/png/UnderConstruction/kiri atas.png" alt="" class="dino">
