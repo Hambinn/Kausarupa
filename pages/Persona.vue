@@ -5,7 +5,7 @@
           <div class="score">   
             <div class="container-box">
               <div class="container-text-box">
-                {{score}}
+                {{score}} 
               </div>
               <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
             </div>

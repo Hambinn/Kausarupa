@@ -164,7 +164,7 @@ color: #fff;
 .box-shadow .topeng-score-shadow{
     position: fixed;
     height: 90%;
-    transform: translate(-160%, -100%);
+    transform: translate(-150%, -100%);
 }
 
 .text-box-shadow{

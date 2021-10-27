@@ -1,21 +1,22 @@
 <template>
     <div class="bg-skshadow">
-        <div class="top-cont">
-            <div class="canvas">
-                <div class="score">
-                    <div class="box-skshadow">
-                        <div class="text-box-skshadow">
-                         {{score}}
-                        </div>
-                    </div>
-                    <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="score-skshadow">
-                </div>
-                <div class="scroll-karya">
-                    <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan_tas">
-                    <img src="~/assets/png/ShadowPage/3. scroll karya/kiri bawah (1).png" alt="" class="kir_baw">
-                </div>
+      <div class="top-cont">
+        <div class="canvas">
+          <div class="scroll-karya">
+              <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
+              <img src="~/assets/png/ShadowPage/3. scroll karya/kiri bawah (1).png" alt="" class="kir-baw">
+          </div>     
+          <div class="score">   
+            <div class="box-skshadow">
+              <div class="text-box-skshadow">
+                {{score}} 
+              </div>
+              <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="score-skshadow">
             </div>
-        </div>
+          </div>
+          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-shadow3" @click="volume()" ref="volumeBtn">
+        </div>  
+      </div>
     </div>
 </template>
 
@@ -59,18 +60,18 @@
     width: 100%;
 }
 
-.scroll-karya .kan_tas{
-    height: 55%;
+.scroll-karya .kan-tas{
+    height: 40%;
     top: 50%;
     left: 50%;
-    transform: translate(93%,-3%)
+    transform: translate(233%,-35%)
 }
 
-.scroll-karya .kir_baw{
-    height: 63%;
+.scroll-karya .kir-baw{
+    height: 60%;
     top: 50%;
     left: 50%;
-    transform: translate(5%,49%)
+    transform: translate(-138%,56%)
 }
 
 /* score */
@@ -91,8 +92,8 @@
 
 .box-skshadow .score-skshadow{
     position: absolute;
-    height: 20%;
-    transform: translate(-160%, -100%);
+    height: 90%;
+    transform: translate(-50%, 5%);
 }
 
 .text-box-skshadow{
