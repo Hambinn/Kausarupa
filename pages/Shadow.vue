@@ -2,13 +2,11 @@
     <div class="bg-shadow">
         <div class="top-cont">
             <div class="canvas">
-                <div class="score">
-                    <div class="box-shadow">
-                        <div class="text-box-shadow">
-                         {{score}}
-                        </div>
-                    </div>
-                    <img src="../assets/png/ShadowPage/topeng score (1).png" alt="" class="topeng-score-shadow">
+                <div class="container-header-shadow">
+                    <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-shadow">
+                </div>
+                <div class="container-back-shadow">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-shadow">
                 </div>
                 <div class="container-kotak">
                 <kotak-biru/>
@@ -18,9 +16,12 @@
                     <img src="~/assets/png/ShadowPage/1. narasi/kanan bawah.png" alt="" class="kanan_bawah">
                     <img src="~/assets/png/ShadowPage/1. narasi/mascot narasi.png" alt="" class="mascot-narasi">
                 </div>
-                <div class="container_header">
-                    <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header">
-                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back">
+                <div class="container-box-shadow">
+                    <p class="text-box-shadow">00</p>
+                    <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-shadow">                    
+                </div>                
+                <div class="container-volume-shadow">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow1">
                 </div>
                 <div class="tombol-next-shadow">
                     <p class="next-shadow">Next</p>
@@ -72,6 +73,32 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     overflow: hidden;
     }
 
+.container-header-shadow{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-header-shadow .header-shadow{
+    width: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-155%, 80%);
+}
+
+.container-back-shadow{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-back-shadow .back-shadow{
+    width: 4.2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1050%, 160%);
+}
+
 .narasi{
     position: absolute;
     height: 100%;
@@ -99,75 +126,71 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     transform: translate(55.5%,-39.5%) rotate(-39deg);
 }
 
-.container_header{
+.container-volume-shadow{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container_header .header{
-    height: 1000%;
+.container-volume-shadow .volume-shadow1{
+    width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(0%,0%);
+    transform: translate(1060%, 160%);
 }
 
-.container_header .back{
-    height: 1000%;
+.container-box-shadow{
+    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-1000%,60%);
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
+}
+
+.container-box-shadow .text-box-shadow{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-shadow .score-shadow{
+    width: 38%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -14%);
 }
 
 .tombol-next-shadow{
     position: fixed;
-    height: 6.5%;
-    width: 13%;
-    transform: translate(635%, 1285%);
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
+
     background: #597FA3;
-    border-radius: 35px;
+    border-radius: 11.4%/38.4%;
 }
 
 .tombol-next-shadow .next-shadow{
     position: absolute;
-    width: 116%;
-    height: 60%;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-70%);
+    transform: translate(-50%,-60%);
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 2.3vw;
-/* identical to box height */
-
-color: #fff;
+    font-size: 2.1vw;
+    color: white;
 }
 
-/* score */
-.score-shadow{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.box-shadow{
-    position: absolute;
-    height: 6%;
-    width: 13%;
-    background-color: #33485C;
-    transform: translate(630%, 160%);
-    border-radius: 50px;
-}
-
-.box-shadow .topeng-score-shadow{
-    position: fixed;
-    height: 90%;
-    transform: translate(-150%, -100%);
-}
-
-.text-box-shadow{
-    font-size: 3vw;
-}
 </style>
