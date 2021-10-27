@@ -1,7 +1,7 @@
 <template>
-    <div class="container-persona">
-        <div class="top-cont">
-            <div class="canvas">
+    <div class="container-pilihkaryap">
+        <div class="top-cont-pk">
+            <div class="canvas-pk">
                 <div class= "container-rumahoren">
                     <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu">
                     <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua">
@@ -21,14 +21,19 @@
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="tiga">
                 </div>
-                <div class="container-header-persona">
+                <div class="container-header-pilihkarya">
                     <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
-                <div class="topeng-score-atas">
-                    <img src="../assets/png/PersonaPage/topeng score.png" alt="">
+                <div class="container-scorepersona">
+                    <div class="score-pk">
+                        <div class="text-score-pk">
+                            {{score}}
+                        </div>
+                        <img src="../assets/png/PersonaPage/topeng score.png" alt="" class="scorepilihkarya">
+                    </div>
                 </div>
-                <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
+                <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-pilihkarya" @click="volume()" ref="volumeBtn">
             </div>
         </div>
     </div>
@@ -51,7 +56,7 @@ html,body{
         
 }
 
-.container-persona{
+.container-pilihkaryap{
     text-align: center;
     background-image: url("../assets/png/PersonaPage/backgroudn umum persona.png");
     background-repeat: no-repeat;
@@ -60,7 +65,7 @@ html,body{
     width: 100vw;
     }
 
-.top-cont{
+.top-cont-pk{
   position: absolute;
   width: 100%;
   top: 50%;
@@ -69,7 +74,7 @@ html,body{
   padding-bottom: 56.25%;
 }
 
-.canvas{
+.canvas-pk{
   position: absolute;
   top: 0;
   left: 0;
@@ -78,37 +83,43 @@ html,body{
 }
 
 
-.container-header-persona{
+.container-header-pilihkarya{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-header-persona .header{
+.container-header-pilihkarya .header{
     height: 10%;
     top: 50%;
     left: 50%;
     transform: translate(-185%,90%);
 }
 
-.container-header-persona .back{
+.container-header-pilihkarya .back{
     height: 6%;
     top: 50%;
     left: 50%;
     transform: translate(-1650%,90%);
 }
 
-.container-header-persona .volume-persona1{
+.volume-pilihkarya{
     position: fixed;
     height: 5%;
-    transform: translate(1200%, 180%);
+    transform: translate(1500%, 177%);
 }
 
-.topeng-score-atas{
-    position: absolute;
+.container-scorepersona{
+    position: fixed;
     height: 100%;
     width: 100%;
-    transform: translate(0%,50%);
+}
+
+.container-scorepersona .scorepilihkarya{
+    position: fixed;
+    height: 6%;
+    width: 11,5%;
+    transform: translate(230%, 140%);
 }
 
 .container-awankuning{
