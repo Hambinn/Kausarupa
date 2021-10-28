@@ -3,10 +3,10 @@
         <div class="top-cont">
             <div class="canvas">
                 <div class="container-bintang-oren-feedback">
-                    <img src="../assets/svg/FeedbackPage/bintang oren.svg" alt="" class="oren-feedback">
+                    <img src="../assets/gif/bintang oren.GIF" alt="" class="oren-feedback">
                 </div>
                 <div class="container-bintang-ungu-feedback">
-                    <img src="../assets/svg/FeedbackPage/bintang ungu.svg" alt="" class="ungu-feedback">
+                    <img src="../assets/gif/bintang pink.GIF" alt="" class="ungu-feedback">
                 </div>
                 <div class="container-box-besar-form">
                     <p class="title-feedback">Feedback</p>
