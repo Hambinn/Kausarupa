@@ -16,9 +16,6 @@
           <div class="container-kotak">
           <kotak-item/>
           </div>
-          <div class="tombol-next-persona">
-              <p class="next-persona">Next</p>
-          </div>
           <div class= "container-rumah">
               <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklat">
           </div>
@@ -29,6 +26,9 @@
           <div class="container-header-persona">
               <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
               <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+          </div>
+          <div class="tombol-next-persona" @click="next">
+              <p class="next-persona">Next</p>
           </div>
           <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
         </div>  
@@ -57,6 +57,9 @@ import kotakItem from '../components/Persona/kotakItem.vue'
             }else{
                 this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
             }
+        },
+        next(){
+             this.$router.push('/pilihkarya')
         }
     }
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.

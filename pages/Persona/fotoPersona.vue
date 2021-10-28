@@ -7,30 +7,30 @@
               <div class="container-text-box">
                 {{score}}
               </div>
-              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
+              <img src="~assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
             </div>
           </div>
           <div class="tombol-next-persona">
             <p class="next-persona">Next</p>
           </div>
-          <div class="container-header">
-            <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-            <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
-          </div>
           <div class= "container-rumah">
-              <img src="../assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
-              <img src="../assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
+              <img src="~assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
+              <img src="~assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
           </div>
           <div class="container-awan">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
+          </div>
+          <div class="container-header">
+            <img src="~assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+            <img src="~assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back()">
           </div>
           <div class="scroll-karya">
-              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya"/>
+              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
           </div>
         <!-- <layout-karya v-show="showLayout" @close-modal="showLayout = false" /> -->
-        <layout-karya-persona v-show="showLayout" @close-modal="showLayout = false"/>
+        <layout-karya-persona v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength" />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
       </div>
@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import karyaPersona from '../components/Persona/karyaPersona.vue'
-import LayoutKarya from '../components/LayoutKarya.vue'
-import LayoutKaryaPersona from '../components/Persona/layoutKaryaPersona.vue'
+import karyaPersona from '@/components/Persona/karyaPersona.vue'
+import LayoutKarya from '@/components/LayoutKarya.vue'
+import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
     export default {
         components: { LayoutKarya, karyaPersona, LayoutKaryaPersona},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
@@ -48,26 +48,81 @@ import LayoutKaryaPersona from '../components/Persona/layoutKaryaPersona.vue'
             return{
                 score: 0,
                 showLayout: false,
-                arrkarya: []
+                arrkarya: [],
+                karyalength: 0,
+                id: 0,
+                title: '',
+                nama:'',
+                caption:'',
+                img: [],
+                karlength: 0
             }
         },
         methods:{
-            async getKarya(){
-                const karyaRef = this.$fire.firestore.collection('persona-foto/Beauty Rots/Karya').doc('Foto')  
+            async getThumbnail(){
+                const karyaRef = this.$fire.firestore.collection('persona-foto').doc('thumbnail')
                 try{
                     const karya = await karyaRef.get()
-                    console.log(karya.data())
                     this.arrkarya = Object.values(karya.data())
                     console.log(this.arrkarya)
+                    this.karyalength = this.arrkarya.length
+                    console.log(this.karyalength)
                 } catch(e){
                     alert(e)
                     return
                 }
-                console.log('ntaps')
             },
+            back(){
+                this.$router.push('/pilihkarya')
+            },
+            ChangeId(id){
+                this.id = id;
+                if(id ==1){
+                    this.title = 'Beauty Rots'
+                }else if(id ==2){
+                    this.title = 'Bersiap'
+                }else if(id ==3){
+                    this.title = 'Blue Lights'
+                }else if(id ==4){
+                    this.title = 'Hidden Beauty.'
+                }else if(id ==5){
+                    this.title = 'PERSONA'
+                }else if(id ==6){
+                    this.title = 'Transformasi'
+                }else if(id == 7){
+                    this.title = 'Type of Smiles'
+                }else if(id ==8){
+                    this.title = 'Warm and Cold'
+                }else if(id ==9){
+                    this.title = 'Who Am I'
+                }else if(id ==10){
+                    this.title = 'Whole Emotion at Once'
+                }
+                this.getKarya()
+            },
+            async getKarya(){
+                const allKarya = this.$fire.firestore.collection('persona-foto').doc(this.title)
+                try{
+                    const imgsrc = await allKarya.collection('Karya').doc('Foto').get() // fotonya
+                    const datas = await allKarya.get() // datanya
+                    this.title = datas.data().title
+                    this.nama = datas.data().nama
+                    this.caption = datas.data().caption
+                    this.img = Object.values(imgsrc.data())
+                    this.karlength = this.img.length
+                    console.log(this.id)
+                    console.log(this.title)
+                    console.log(this.nama)
+                    console.log(this.caption)
+                    console.log(this.img)
+                }catch(e){
+                    alert(e)
+                    return
+                }
+            }
         },
         mounted(){
-            this.getKarya();
+            this.getThumbnail();
         }
 
     }
@@ -108,7 +163,7 @@ html,body{
 .container-scroll-karya{
     position: absolute;
     text-align: center;
-    background-image: url("../assets/png/PersonaPage/Group 45 (2)-min.png");
+    background-image: url("~assets/png/PersonaPage/Group 45 (2)-min.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -135,6 +190,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-1600%,60%);
+    z-index: 4;
 }
 
 .container-rumah{

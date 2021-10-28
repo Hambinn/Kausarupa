@@ -15,9 +15,6 @@
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
-                <div class="tombol-next-mamus">
-                    <p class="next-mamus">Next</p>
-                </div>
                 <div class="container-kotak-mamus">
                     <kotak-pink/>          
                 </div>
@@ -26,6 +23,9 @@
                 </div>
                 <div class="container-jamur-kanan-belakang">
                     <img src="../assets/png/MamusPage/1. narasi/kanan belakang.png" alt="" class="jamur">
+                </div>
+                 <div class="tombol-next-mamus">
+                    <p class="next-mamus">Next</p>
                 </div>
             </div>
         </div>
@@ -185,7 +185,7 @@ html,body{
     height: 7%;
     width: 14%;
     transform: translate(230%, 454%);
-
+    z-index: 5;
     background: #597FA3;
     border-radius: 11.4%/38.4%;
 }

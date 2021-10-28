@@ -7,24 +7,24 @@
               <div class="container-text-box">
                 {{score}}
               </div>
-              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
+              <img src="~assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
             </div>
           </div>
           <div class="tombol-next-persona">
             <p class="next-persona">Next</p>
           </div>
-          <div class="container-header">
-            <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-            <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
-          </div>
           <div class= "container-rumah">
-              <img src="../assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
-              <img src="../assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
+              <img src="~assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
+              <img src="~assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
           </div>
           <div class="container-awan">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
-              <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
+          </div>
+          <div class="container-header">
+            <img src="~assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+            <img src="~assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back()">
           </div>
           <div class="scroll-karya">
               <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya"/>
@@ -38,9 +38,9 @@
 </template>
 
 <script>
-import karyaPersona from '../components/Persona/karyaPersona.vue'
-import LayoutKarya from '../components/LayoutKarya.vue'
-import LayoutKaryaPersona from '../components/Persona/layoutKaryaPersona.vue'
+import karyaPersona from '@/components/Persona/karyaPersona.vue'
+import LayoutKarya from '@/components/LayoutKarya.vue'
+import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
     export default {
         components: { LayoutKarya, karyaPersona, LayoutKaryaPersona},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
@@ -65,6 +65,9 @@ import LayoutKaryaPersona from '../components/Persona/layoutKaryaPersona.vue'
                 }
                 console.log('ntaps')
             },
+            back(){
+                this.$router.push('/pilihkarya')
+            }
         },
         mounted(){
             this.getKarya();
@@ -108,7 +111,7 @@ html,body{
 .container-scroll-karya{
     position: absolute;
     text-align: center;
-    background-image: url("../assets/png/PersonaPage/Group 45 (2)-min.png");
+    background-image: url("~assets/png/PersonaPage/Group 45 (2)-min.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -135,6 +138,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-1600%,60%);
+    z-index: 4;
 }
 
 .container-rumah{

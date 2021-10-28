@@ -2,11 +2,6 @@
     <div class="container-pilihkaryap">
         <div class="top-cont-pk">
             <div class="canvas-pk">
-                <div class= "container-rumahoren">
-                    <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu">
-                    <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua">
-                    <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="orentiga">
-                </div>
                 <div class="container-rumahcoklat">
                     <img src="../assets/svg/PersonaPage/rumah coklat 1.svg" alt="" class="coklatsatu">
                     <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklatdua">
@@ -21,10 +16,6 @@
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="tiga">
                 </div>
-                <div class="container-header-pilihkarya">
-                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
-                </div>
                 <div class="container-scorepersona">
                     <div class="score-pk">
                         <div class="text-score-pk">
@@ -33,6 +24,16 @@
                         <img src="../assets/png/PersonaPage/topeng score.png" alt="" class="scorepilihkarya">
                     </div>
                 </div>
+                <div class="container-header-pilihkarya">
+                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
+                    
+                </div>
+                <div class= "container-rumahoren">
+                    <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua" @click="foto">
+                    <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="orentiga" @click="kine">
+                    <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu" @click="video">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
                 <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-pilihkarya" @click="volume()" ref="volumeBtn">
             </div>
         </div>
@@ -40,7 +41,35 @@
 </template>
 
 <script>
-        // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+        export default{
+            data(){
+                return{
+                    score :0
+                }
+            },
+            methods:{
+                back(){
+                    this.$router.push('/narasipersona')
+                },
+                volume(){
+                       this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+            }else{
+                this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+            }
+                },
+                foto(){ 
+                    this.$router.push('Persona/fotoPersona')
+                },
+                kine(){
+                    this.$router.push('Persona/kinePersona')
+                },
+                video(){
+                    this.$router.push('Persona/videoPersona')
+                }
+            }
+        }
 </script>
 
 <style>
@@ -57,12 +86,14 @@ html,body{
 }
 
 .container-pilihkaryap{
+    position: absolute;
     text-align: center;
     background-image: url("../assets/png/PersonaPage/backgroudn umum persona.png");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
     }
 
 .top-cont-pk{
@@ -96,11 +127,12 @@ html,body{
     transform: translate(-185%,90%);
 }
 
-.container-header-pilihkarya .back{
+.container-rumahoren .back{
     height: 6%;
     top: 50%;
     left: 50%;
-    transform: translate(-1650%,90%);
+    transform: translate(-1320%,160%);
+    z-index: 2;
 }
 
 .volume-pilihkarya{
@@ -151,18 +183,21 @@ html,body{
     position: absolute;
     height: 28%;
     transform: translate(-100%,120%);
+    z-index: 1;
 }
 
 .container-awanoren .dua{
     position: absolute;
     height: 27%;
     transform: translate(-70%, 250%);
+    z-index: 1;
 }
 
 .container-awanoren .tiga{
     position: absolute;
     height: 22%;
     transform: translate(-5%, 45%);
+    z-index: 1;
 }
 
 .container-rumahoren{
@@ -178,6 +213,12 @@ html,body{
     transform: translate(-100%,20%);
 }
 
+.container-rumahoren .orensatu:hover{
+    height: 60%;
+    transform: translate(-100%, 0%);
+    cursor: pointer;
+}
+
 .container-rumahoren .orendua{
     position: absolute;
     height: 45%;
@@ -185,12 +226,24 @@ html,body{
     transform: translate(0%, 25%);
     z-index: 3;
 }
+.container-rumahoren .orendua:hover{
+    height: 55%;
+    transform: translate(0%,5%);
+    cursor: pointer;
+}
+
 
 .container-rumahoren .orentiga{
     position: absolute;
     height: 60%;
     width: 60%;
     transform: translate(-55%, 62%);
+}
+
+.container-rumahoren .orentiga:hover{
+    height: 70%;
+    transform: translate(-55%,45%);
+    cursor: pointer;
 }
 
 .container-rumahcoklat{
