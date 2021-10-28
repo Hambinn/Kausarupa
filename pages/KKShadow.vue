@@ -17,6 +17,10 @@
                     <img src="../assets/png/ShadowPage/4. kk/jaring-laba.png" alt="" class="jaring-laba-kk-shadow-2">
                     <img src="../assets/png/ShadowPage/4. kk/jaring-laba.png" alt="" class="jaring-laba-kk-shadow-3">
                 </div>
+                <div class="container-box-kk-shadow">
+                    <p class="text-box-kk-shadow">00</p>
+                    <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-kk-shadow">                    
+                </div>      
                 <div class="container-volume-kk-shadow">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on-kk-shadow">
                 </div>
@@ -84,10 +88,10 @@ html,body{
 }
 
 .container-header-kk-shadow .header-kk-shadow{
-    width: 30%;
+    width: 20%;
     top: 50%;
     left: 50%;
-    transform: translate(-85%, 70%);
+    transform: translate(-155%, 80%);
 }
 
 
@@ -130,6 +134,35 @@ html,body{
     color: white;
 }
 
+.container-box-kk-shadow{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
+}
+
+.container-box-kk-shadow .text-box-kk-shadow{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-kk-shadow .score-kk-shadow{
+    width: 38%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-48%, -14%);
+}
+
 .container-volume-kk-shadow{
     position: absolute;
     height: 100%;
@@ -150,17 +183,17 @@ html,body{
 }
 
 .container-hiasan-kk-shadow .kanan-atas-kk-shadow{
-    width: 33%;
+    width: 30%;
     top: 50%;
     left: 50%;
-    transform: translate(175%, -40%);
+    transform: translate(165%, 10%);
 }
 
 .container-hiasan-kk-shadow .kiri-bawah-kk-shadow{
     width: 28%;
     top: 50%;
     left: 50%;
-    transform: translate(-200%, 47%);
+    transform: translate(-200%, 75%);
 }
 
 .container-jaring-laba-kk-shadow{
@@ -173,21 +206,21 @@ html,body{
     width: 15%;
     top: 50%;
     left: 50%;
-    transform: translate(-80%,-110%);
+    transform: translate(-80%,-80%);
 }
 
 .container-jaring-laba-kk-shadow .jaring-laba-kk-shadow-2{
     width: 39%;
     top: 50%;
     left: 50%;
-    transform: translate(0%,%);
+    transform: translate(0%,25%);
 }
 
 .container-jaring-laba-kk-shadow .jaring-laba-kk-shadow-3{
     width: 15%;
     top: 50%;
     left: 50%;
-    transform: translate(80%,15%);
+    transform: translate(80%,40%);
 }
 
 

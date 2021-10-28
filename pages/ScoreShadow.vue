@@ -134,21 +134,21 @@ html,body{
     width: 50%;
     top: 50%;
     left: 50%;
-    transform: translate(86%, 76%);
+    transform: translate(86%, 83%);
 }
 
 .container-hiasan-score-shadow .score-shadow-kiri-bawah{
     width: 35%;
     top: 50%;
     left: 50%;
-    transform: translate(-165%, 45%);
+    transform: translate(-165%, 50%);
 }
 
 .container-hiasan-score-shadow .score-shadow-kanan-atas{
     width: 23%;
     top: 50%;
     left: 50%;
-    transform: translate(168%, -105%);
+    transform: translate(168%, -110%);
 }
 
 .container-topeng-score-shadow{
