@@ -9,10 +9,10 @@
             <p class="desc">{{caption}}</p>
             </div>
         </div>
-        <div class="swiper-container-karya" >
-            <div class="swiper-wrapper-karya"> 
+        <div class="swiper-container" >
+            <div class="swiper-wrapper"> 
             <swiper class="swiper" :options="swiperOptionv" @click.stop>
-                <swiper-slide class="img-wrapper-karya" v-for="i in karlength" :key="i"><img :src="img[i-1]" alt="" @click.stop></swiper-slide>
+                <swiper-slide class="img-wrapper" v-for="i in karlength" :key="i"><img :src="img[i-1]" alt="" @click.stop></swiper-slide>
                 <div class="swiper-pagination swiper-pagination-v" slot="pagination" @click.stop></div>
             </swiper>
             </div>
@@ -120,11 +120,11 @@ border-radius: 10%;
     z-index: 3;
 }
 
-    .img-wrapper-karya img{
+    .img-wrapper img{
         height: 100%;
         object-fit: cover;
     }
-    .swiper-wrapper-karya{
+    .swiper-wrapper{
             height: 500px;
     }
 
@@ -144,10 +144,10 @@ border-radius: 10%;
         height: 300px;
     }
     }
-    .swiper-container-karya{
+    .swiper-container{
         width: 100%;
         height: 100%;
-        transform: translate(-19%,28%);
+        transform: translate(-10%,20%);
     }
     .swiper-slide{
       text-align: center;
