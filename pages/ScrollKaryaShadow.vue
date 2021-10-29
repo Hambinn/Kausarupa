@@ -10,7 +10,8 @@
                 </div>
                 <div class="scroll-karya">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
-                    <img src="~/assets/png/ShadowPage/3. scroll karya/kiri bawah (1).png" alt="" class="kir-baw">
+                    <img src="~/assets/png/ShadowPage/3. scroll karya/kanan bawah.png" alt="" class="kan-baw">
+                    <img src="~/assets/png/ShadowPage/3. scroll karya/tangga.png" alt="" class="tangga">                
                 </div>
                 <div class="container-box-skshadow">
                     <p class="text-box-skshadow">00</p>
@@ -94,17 +95,24 @@
 }
 
 .scroll-karya .kan-tas{
-    height: 48%;
+    height: 45%;
     top: 50%;
     left: 50%;
-    transform: translate(186%,-14%)
+    transform: translate(199%,11%)
 }
 
-.scroll-karya .kir-baw{
-    height: 60%;
+.scroll-karya .kan-baw{
+    height: 43%;
     top: 50%;
     left: 50%;
-    transform: translate(-146%,56%)
+    transform: translate(67%,113%)
+}
+
+.scroll-karya .tangga{
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-14%,-46%)
 }
 
 .container-volume-skshadow{
