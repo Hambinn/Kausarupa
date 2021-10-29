@@ -5,7 +5,7 @@
                 <div class="container-surat">
                     <img src="..\assets\png\FinishPage\Surat\amplop.png" alt="" class="surat">
                 </div>
-                <div class="container-back-mamus">
+                <div class="container-back-surat">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
                 <div class="container-kertas">
@@ -84,13 +84,13 @@ html,body{
     width: 100%;
 }
 
-.container-back-mamus{
+.container-back-surat{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-back-mamus .back{
+.container-back-surat .back{
     width: 4.2%;
     top: 50%;
     left: 50%;
