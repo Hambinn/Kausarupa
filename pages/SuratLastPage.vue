@@ -2,9 +2,11 @@
     <div class="bg-skor-surat">
         <div class="top-cont">
             <div class="canvas">
-
                 <div class="container-surat">
                     <img src="..\assets\png\FinishPage\Surat\amplop.png" alt="" class="surat">
+                </div>
+                <div class="container-back-surat">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
                 <div class="container-kertas">
                     <img src="..\assets\png\FinishPage\Surat\kertas.png" alt="" class="kertas">
@@ -80,6 +82,19 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+.container-back-surat{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-back-surat .back{
+    width: 4.2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1050%, 160%);
 }
 
 .container-volume-surat .volume-on{
