@@ -5,9 +5,6 @@
                 <div class="container-header-shadow">
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-shadow">
                 </div>
-                <div class="container-back-shadow">
-                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-shadow">
-                </div>
                 <div class="container-kotak">
                 <kotak-biru/>
                 </div>
@@ -22,8 +19,9 @@
                 </div>                
                 <div class="container-volume-shadow">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow1">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-shadow" @click="back()">
                 </div>
-                <div class="tombol-next-shadow">
+                <div class="tombol-next-shadow" @click="next">
                     <p class="next-shadow">Next</p>
                 </div>
             </div>
@@ -34,8 +32,16 @@
 <script>
 import kotakBiru from '../components/Shadow/kotakBiru.vue'
     export default {
-    components: { kotakBiru },
-        // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
+        components: { kotakBiru },
+        methods:{
+            back(){
+                this.$router.push('/topeng')
+            },
+            next(){
+                this.$router.push('/pilihkaryashadow')
+            }
+        }
+        
     }
 </script>
 
@@ -92,11 +98,11 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     width: 100%;
 }
 
-.container-back-shadow .back-shadow{
+.container-volume-shadow .back-shadow{
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, 160%);
 }
 
 .narasi{
@@ -136,7 +142,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1100%, 160%);
 }
 
 .container-box-shadow{

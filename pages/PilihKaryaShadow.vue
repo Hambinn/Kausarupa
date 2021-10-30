@@ -6,15 +6,7 @@
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-pkshadow">
                 </div>
                 <div class="container-back-pkshadow">
-                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow">
-                </div>
-                <div class="pilih-jenis">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan atas (1).png" alt="" class="kanan-atas">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kiri bawah.png" alt="" class="kiri-bawah">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kanan.png" alt="" class="hole-kanan">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan bawah (1).png" alt="" class="kanan-bawah">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole tengah.png" alt="" class="hole-tengah">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kiri.png" alt="" class="hole-kiri">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow" @click="back">
                 </div>
                 <div class="container-box-pkshadow">
                     <p class="text-box-pkshadow">00</p>
@@ -23,10 +15,37 @@
                 <div class="container-volume-pkshadow">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
                 </div>
+                <div class="pilih-jenis">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan atas (1).png" alt="" class="kanan-atas">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kiri bawah.png" alt="" class="kiri-bawah">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan bawah (1).png" alt="" class="kanan-bawah">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole tengah.png" alt="" class="hole-tengah" @click="keVideo">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kanan.png" alt="" class="hole-kanan" @click="keKine">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kiri.png" alt="" class="hole-kiri" @click="keFoto">
+                </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    methods:{
+        back(){
+            this.$router.push('/shadow')
+        },
+        keVideo(){
+            this.$router.push('/Shadow/videoShadow')
+        },
+        keKine(){
+            this.$router.push('/Shadow/kineShadow')
+        },
+        keFoto(){
+            this.$router.push('/Shadow/fotoShadow')
+        }
+    }
+}
+</script>
 
 <style>
 *{
@@ -82,10 +101,12 @@
 }
 
 .container-back-pkshadow .back-pkshadow{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, -510%);
+    z-index: 2;
 }
 
 .pilih-jenis{
@@ -112,28 +133,28 @@
     height: 72%;
     top: 50%;
     left: 50%;
-    transform: translate(-134%,30%)
+    transform: translate(-174%,32%)
 }
 
 .pilih-jenis .hole-kanan{
-    height: 38%;
+    height: 40%;
     top: 50%;
     left: 50%;
-    transform: translate(-22%,20%)
+    transform: translate(-8%,-100%)
 }
 
 .pilih-jenis .hole-tengah{
     height: 52%;
     top: 50%;
     left: 50%;
-    transform: translate(-45%,-106%)
+    transform: translate(-35%,-106%)
 }
 
 .pilih-jenis .hole-kiri{
     height: 42%;
     top: 50%;
     left: 50%;
-    transform: translate(-299%,-104%)
+    transform: translate(-140%,-188%)
 }
 
 .container-volume-pkshadow{
@@ -143,10 +164,12 @@
 }
 
 .container-volume-pkshadow .volume-shadow2{
+    position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1060%, -520%);
+    z-index: 2;
 }
 
 .container-box-pkshadow{
@@ -158,6 +181,7 @@
     background-color: #30455A;
     transform: translate(160%, -510%);
     border-radius: 14.6%/53.6%;
+    z-index: 1;
 }
 
 .container-box-pkshadow .text-box-pkshadow{
