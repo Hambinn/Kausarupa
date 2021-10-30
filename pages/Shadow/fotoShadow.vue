@@ -6,7 +6,7 @@
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-skshadow">
                 </div>
                 <div class="container-back-skshadow">
-                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-skshadow">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-skshadow" @click="back">
                 </div>
                 <div class="scroll-karya">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
@@ -53,7 +53,7 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
         },
         methods:{
             async getThumbnail(){
-                const karyaRef = this.$fire.firestore.collection('persona-foto').doc('thumbnail')
+                const karyaRef = this.$fire.firestore.collection('shadow-foto').doc('thumbnail')
                 try{
                     const karya = await karyaRef.get()
                     this.arrkarya = Object.values(karya.data())
@@ -66,35 +66,45 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
                 }
             },
             back(){
-                this.$router.push('/pilihkarya')
+                this.$router.push('/pilihkaryashadow')
             },
             ChangeId(id){
                 this.id = id;
                 if(id ==1){
-                    this.title = 'Beauty Rots'
+                    this.title = '????!!!!'
                 }else if(id ==2){
-                    this.title = 'Bersiap'
+                    this.title = 'Abyss'
                 }else if(id ==3){
-                    this.title = 'Blue Lights'
+                    this.title = 'Anthophobia'
                 }else if(id ==4){
-                    this.title = 'Hidden Beauty.'
+                    this.title = 'Biggest Fear'
                 }else if(id ==5){
-                    this.title = 'PERSONA'
+                    this.title = 'Bęneath'
                 }else if(id ==6){
-                    this.title = 'Transformasi'
+                    this.title = 'Drowned'
                 }else if(id == 7){
-                    this.title = 'Type of Smiles'
+                    this.title = 'Flower Explosion'
                 }else if(id ==8){
-                    this.title = 'Warm and Cold'
+                    this.title = 'H LANG'
                 }else if(id ==9){
-                    this.title = 'Who Am I'
+                    this.title = 'Lensa Cembung'
                 }else if(id ==10){
-                    this.title = 'Whole Emotion at Once'
+                    this.title = 'Me'
+                }else if(id ==11){
+                    this.title = 'Plebeian'
+                }else if(id ==12){
+                    this.title = 'Scattered'
+                }else if(id == 13){
+                    this.title = 'Telantar'
+                }else if(id ==14){
+                    this.title = 'woe.'
+                }else if(id ==15){
+                    this.title = 'さようなら'
                 }
                 this.getKarya()
             },
             async getKarya(){
-                const allKarya = this.$fire.firestore.collection('persona-foto').doc(this.title)
+                const allKarya = this.$fire.firestore.collection('shadow-foto').doc(this.title)
                 try{
                     const imgsrc = await allKarya.collection('Karya').doc('Foto').get() // fotonya
                     const datas = await allKarya.get() // datanya
@@ -180,10 +190,12 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
 }
 
 .container-back-skshadow .back-skshadow{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, -500%);
+    z-index: 1;
 }
 
 .scroll-karya{
@@ -265,6 +277,7 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
 
     background: #597FA3;
     border-radius: 11.4%/38.4%;
+    z-index: 1;
 }
 
 .tombol-next-skshadow .next-skshadow{

@@ -6,7 +6,7 @@
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-skshadow">
                 </div>
                 <div class="container-back-skshadow">
-                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-skshadow">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-skshadow" @click="back">
                 </div>
                 <div class="scroll-karya">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
@@ -24,18 +24,18 @@
                     <p class="next-skshadow">Next</p>
                 </div>
             <div class="scroll-karya-fotoshadow">
-              <karya-shadow-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
+              <karya-shadow-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
             </div>
-            <layout-karya-shadow-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength" />
+            <layout-karya-shadow-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
             </div>
         </div>
     </div>
 </template>
 <script>
-import karyaShadowFoto from '@/components/Shadow/karyaShadowFoto.vue'
-import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue'
+import karyaShadowVideo from '@/components/Shadow/karyaShadowVideo.vue'
+import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.vue'
     export default {
-        components: {karyaShadowFoto, LayoutKaryaShadowFoto},
+        components: {karyaShadowVideo, LayoutKaryaShadowVideo},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
@@ -47,13 +47,13 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
                 title: '',
                 nama:'',
                 caption:'',
-                img: [],
+                vid: [],
                 karlength: 0
             }
         },
         methods:{
             async getThumbnail(){
-                const karyaRef = this.$fire.firestore.collection('persona-foto').doc('thumbnail')
+                const karyaRef = this.$fire.firestore.collection('shadow-video').doc('thumbnail')
                 try{
                     const karya = await karyaRef.get()
                     this.arrkarya = Object.values(karya.data())
@@ -66,48 +66,34 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
                 }
             },
             back(){
-                this.$router.push('/pilihkarya')
+                this.$router.push('/pilihkaryashadow')
             },
             ChangeId(id){
                 this.id = id;
                 if(id ==1){
-                    this.title = 'Beauty Rots'
+                    this.title = 'I Feel Like Leaving'
                 }else if(id ==2){
-                    this.title = 'Bersiap'
+                    this.title = 'Umbra'
                 }else if(id ==3){
-                    this.title = 'Blue Lights'
-                }else if(id ==4){
-                    this.title = 'Hidden Beauty.'
-                }else if(id ==5){
-                    this.title = 'PERSONA'
-                }else if(id ==6){
-                    this.title = 'Transformasi'
-                }else if(id == 7){
-                    this.title = 'Type of Smiles'
-                }else if(id ==8){
-                    this.title = 'Warm and Cold'
-                }else if(id ==9){
-                    this.title = 'Who Am I'
-                }else if(id ==10){
-                    this.title = 'Whole Emotion at Once'
+                    this.title = 'Kalibut Tiga Babak'
                 }
                 this.getKarya()
             },
             async getKarya(){
-                const allKarya = this.$fire.firestore.collection('persona-foto').doc(this.title)
+                const allKarya = this.$fire.firestore.collection('shadow-video').doc(this.title)
                 try{
-                    const imgsrc = await allKarya.collection('Karya').doc('Foto').get() // fotonya
+                    const imgsrc = await allKarya.collection('Karya').doc('Video').get() // fotonya
                     const datas = await allKarya.get() // datanya
                     this.title = datas.data().title
                     this.nama = datas.data().nama
                     this.caption = datas.data().caption
-                    this.img = Object.values(imgsrc.data())
-                    this.karlength = this.img.length
+                    this.vid = Object.values(imgsrc.data())
+                    this.karlength = this.vid.length
                     console.log(this.id)
                     console.log(this.title)
                     console.log(this.nama)
                     console.log(this.caption)
-                    console.log(this.img)
+                    console.log(this.vid)
                 }catch(e){
                     alert(e)
                     return
@@ -180,10 +166,12 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
 }
 
 .container-back-skshadow .back-skshadow{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, -500%);
+    z-index: 1;
 }
 
 .scroll-karya{
@@ -265,6 +253,7 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
 
     background: #597FA3;
     border-radius: 11.4%/38.4%;
+    z-index: 1;
 }
 
 .tombol-next-skshadow .next-skshadow{
