@@ -70,7 +70,7 @@
                 this.$router.push('/narasimamus')
             },
             keShadow(){
-                this.$router.push('/shadow')
+                this.$router.push('/narasishadow')
             },
             volume(){
         this.isVolume = !this.isVolume
