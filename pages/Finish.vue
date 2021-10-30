@@ -30,7 +30,7 @@
 
 <style>
 
-html.body{
+html body{
     all: unset
 }
 
@@ -46,6 +46,7 @@ html.body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-bottom: 56.25%;
 }
 
 .container-finish{
