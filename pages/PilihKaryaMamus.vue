@@ -4,22 +4,19 @@
             <div class="canvas">
                 <div class="container-header-mamus">
                     <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
-                </div>
-                <div class="container-back-mamus">
-                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
-                </div>
-
+                </div>      
                 <div class="container-bg-element">
                     <img src="../assets/png/MamusPage/2. pilih/atas.png" alt="" class="atas">
                     <img src="../assets/png/MamusPage/2. pilih/bawah.png" alt="" class="bawah">
                 </div>
                 <div class="container-volume-mamus">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on-1">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="pilih-tema-mamus">
-                    <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king">
-                    <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq">
-                    <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen">
+                    <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king" @click="toKine">
+                    <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq" @click="toVideo">
+                    <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen" @click="toFoto">
                 </div>
                 <div class="container-box-mamus">
                     <p class="text-box-mamus">00</p>
@@ -32,7 +29,20 @@
 
 <script>
     export default {
-        
+        methods:{
+            toKine(){
+                this.$router.push('/Mamus/kineMamus')
+            },
+            toVideo(){
+                this.$router.push('/Mamus/videoMamus')
+            },
+            toFoto(){
+                this.$router.push('/Mamus/fotoMamus')
+            },
+            back(){
+                this.$router.push('/narasimamus')
+            }
+        }
     }
 </script>
 
@@ -87,13 +97,17 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    
 }
 
-.container-volume-mamus .volume-on{
+.container-volume-mamus .volume-on-1{
+    position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1005%, -518%);
+    z-index: 1;
+    
 }
 
 .container-box-mamus{
@@ -131,11 +145,13 @@
     width: 100%;
 }
 
-.container-back-mamus .back{
+.container-volume-mamus .back{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, -520%);
+    z-index: 1;
 }
 
 .container-bg-element{
@@ -148,40 +164,59 @@
     height: 25.2%;
     top: 50%;
     left: 50%;
-    transform: translate(50%, 30%);
+    transform: translate(50%, 15%);
 }
 
 .container-bg-element .bawah{
     height: 72.8%;
     top: 50%;
     left: 50%;
-    transform: translate(13%, -8%);
+    transform: translate(13%, -4%);
 }
 
 .pilih-tema-mamus{
     position: absolute;
     height: 100%;
     width: 100%;
+    
 }
 
 .pilih-tema-mamus .king{
     height: 62%;
     top: 50%;
     left: 50%;
-    transform: translate(65%, 40%)
+    transform: translate(65%, 48%);
+    
+}
+
+.king:hover{
+    cursor: pointer;
+
 }
 
 .pilih-tema-mamus .kq{
     height: 68%;
     top: 50%;
     left: 50%;
-    transform: translate(-100%, 36%)
+    transform: translate(-100%, 44%);
+}
+
+.kq:hover{
+    cursor: pointer;
+
 }
 
 .pilih-tema-mamus .queen{
     height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(-107%, -65%);
+    transform: translate(-107%, -59%);
+    
+}
+
+.queen:hover{
+    cursor: pointer;
+
+    
 }
 </style>

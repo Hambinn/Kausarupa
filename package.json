@@ -17,6 +17,7 @@
     "js-cookie": "^3.0.1",
     "nuxt": "^2.15.7",
     "nuxt-fullpage.js": "^0.0.3",
+    "nuxt-video-player": "^1.0.17",
     "object-to-array-convert": "^1.1.0",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1"

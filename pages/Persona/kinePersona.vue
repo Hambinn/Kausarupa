@@ -27,10 +27,10 @@
             <img src="~assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back()">
           </div>
           <div class="scroll-karya">
-              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya"/>
+              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
           </div>
         <!-- <layout-karya v-show="showLayout" @close-modal="showLayout = false" /> -->
-        <layout-karya-persona v-show="showLayout" @close-modal="showLayout = false"/>
+        <layout-karya-persona-kine v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :pdf="pdf" :karlength="karlength" />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
       </div>
@@ -40,37 +40,78 @@
 <script>
 import karyaPersona from '@/components/Persona/karyaPersona.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
-import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
+
+import LayoutKaryaPersonaKine from '../../components/Persona/layoutKaryaPersonaKine.vue'
     export default {
-        components: { LayoutKarya, karyaPersona, LayoutKaryaPersona},
+        components: { LayoutKarya, karyaPersona, LayoutKaryaPersonaKine},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
                 score: 0,
                 showLayout: false,
-                arrkarya: []
+                arrkarya: [],
+                karyalength: 0,
+                id: 0,
+                title: '',
+                nama:'',
+                caption:'',
+                pdf: [],
+                karlength: 0
             }
         },
         methods:{
-            async getKarya(){
-                const karyaRef = this.$fire.firestore.collection('persona-foto/Beauty Rots/Karya').doc('Foto')  
+            async getThumbnail(){
+                const karyaRef = this.$fire.firestore.collection('persona-kine').doc('thumbnail')
                 try{
                     const karya = await karyaRef.get()
-                    console.log(karya.data())
                     this.arrkarya = Object.values(karya.data())
                     console.log(this.arrkarya)
+                    this.karyalength = this.arrkarya.length
+                    console.log(this.karyalength)
                 } catch(e){
                     alert(e)
                     return
                 }
-                console.log('ntaps')
             },
             back(){
                 this.$router.push('/pilihkarya')
+            },
+            ChangeId(id){
+                this.id = id;
+                if(id ==1){
+                    this.title = 'Star Wars: Visions - Another Side of the Galaxy Far, Far Away'
+                }else if(id ==2){
+                    this.title = 'Ted Lasso: We Love Ted Lasso'
+                }else if(id ==3){
+                    this.title = 'Watchmen: Tulsa, Tudung, dan Tuhan'
+                }else if(id ==4){
+                    this.title = 'What a Way To Go: A Story Told in 73 Costumes'
+                }
+                this.getKarya()
+            },
+            async getKarya(){
+                const allKarya = this.$fire.firestore.collection('persona-kine').doc(this.title)
+                try{
+                    const imgsrc = await allKarya.collection('Karya').doc('Kine').get() // fotonya
+                    const datas = await allKarya.get() // datanya
+                    this.title = datas.data().title
+                    this.nama = datas.data().nama
+                    this.caption = datas.data().caption 
+                    this.pdf = Object.values(imgsrc.data())
+                    this.karlength = this.pdf.length
+                    console.log(this.id)
+                    console.log(this.title)
+                    console.log(this.nama)
+                    console.log(this.caption)
+                    console.log(this.pdf)
+                }catch(e){
+                    alert(e)
+                    return
+                }
             }
         },
         mounted(){
-            this.getKarya();
+            this.getThumbnail();
         }
 
     }

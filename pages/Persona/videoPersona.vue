@@ -27,10 +27,10 @@
             <img src="~assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back()">
           </div>
           <div class="scroll-karya">
-              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya"/>
+              <karya-persona-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
           </div>
         <!-- <layout-karya v-show="showLayout" @close-modal="showLayout = false" /> -->
-        <layout-karya-persona v-show="showLayout" @close-modal="showLayout = false"/>
+        <layout-karya-persona-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
       </div>
@@ -38,39 +38,73 @@
 </template>
 
 <script>
-import karyaPersona from '@/components/Persona/karyaPersona.vue'
+import karyaPersonaVideo from '@/components/Persona/karyaPersonaVideo.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
-import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
+import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVideo.vue'
     export default {
-        components: { LayoutKarya, karyaPersona, LayoutKaryaPersona},
+        components: { LayoutKarya, karyaPersonaVideo, LayoutKaryaPersonaVideo},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
                 score: 0,
                 showLayout: false,
-                arrkarya: []
+                arrkarya: [],
+                karyalength: 0,
+                id: 0,
+                title: '',
+                nama:'',
+                caption:'',
+                vid: [],
+                karlength: 0
             }
         },
         methods:{
-            async getKarya(){
-                const karyaRef = this.$fire.firestore.collection('persona-foto/Beauty Rots/Karya').doc('Foto')  
+            async getThumbnail(){
+                const karyaRef = this.$fire.firestore.collection('persona-video').doc('thumbnail')
                 try{
                     const karya = await karyaRef.get()
-                    console.log(karya.data())
                     this.arrkarya = Object.values(karya.data())
                     console.log(this.arrkarya)
+                    this.karyalength = this.arrkarya.length
+                    console.log(this.karyalength)
                 } catch(e){
                     alert(e)
                     return
                 }
-                console.log('ntaps')
             },
             back(){
                 this.$router.push('/pilihkarya')
+            },
+            ChangeId(id){
+                this.id = id;
+                if(id ==1){
+                    this.title = 'Dunia Tara'
+                }
+                this.getKarya()
+            },
+            async getKarya(){
+                const allKarya = this.$fire.firestore.collection('persona-video').doc(this.title)
+                try{
+                    const vidsrc = await allKarya.collection('Karya').doc('Video').get() // fotonya
+                    const datas = await allKarya.get() // datanya
+                    this.title = datas.data().title
+                    this.nama = datas.data().nama
+                    this.caption = datas.data().caption
+                    this.vid = Object.values(vidsrc.data())
+                    this.karlength = this.vid.length
+                    console.log(this.id)
+                    console.log(this.title)
+                    console.log(this.nama)
+                    console.log(this.caption)
+                    console.log(this.vid)
+                }catch(e){
+                    alert(e)
+                    return
+                }
             }
         },
         mounted(){
-            this.getKarya();
+            this.getThumbnail();
         }
 
     }

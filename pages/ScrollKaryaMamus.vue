@@ -150,14 +150,14 @@
     height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(168%, 18%);
+    transform: translate(168%, 20%);
 }
 
 .container-bg-element .kiri{
     height: 80%;
     top: 50%;
     left: 50%;
-    transform: translate(-165%, 15.5%);
+    transform: translate(-165%, 18%);
 }
 
 .container-asep-mamus{
@@ -170,14 +170,15 @@
     height: 30%;
     top: 50%;
     left: 50%;
-    transform: rotate(180deg) translate(0%, -150%);
+    transform: rotate(180deg) translate(0%, -200%);
 }
 
 .container-asep-mamus .asep-2{
     height: 30%;
     top: 50%;
     left: 50%;
-}
+    transform:translate(0%, 30%);
+}   
 
 .tombol-next-mamus{
     position: fixed;
