@@ -3,24 +3,25 @@
         <div class="top-cont-finish">
             <div class="canvas-finish">
                 <div class="lemari-finish">
+                    <img src="../assets/png/FinishPage/Last/lemari (1)-min.png" alt="">
                 </div>
                 <div class="meja-finish">
-                    <img src="~/assets/png/FinishPage/Last/meja (1)-min.png" alt="" class="meja-finish">
+                    <img src="../assets/png/FinishPage/Last/meja (1)-min.png" alt="">
                 </div>
                 <div class="bunga-finish">
-                    <img src="~/assets/png/FinishPage/Last/vas bunga-min.png" alt="" class="bunga-finish">
+                    <img src="../assets/png/FinishPage/Last/vas bunga-min.png" alt="">
                 </div>
                 <div class="orang-finish">
-                    <img src="~/assets/png/FinishPage/Last/orang-min" alt="" class="orang-finish">
+                    <img src="../assets/png/FinishPage/Last/orang-min.png" alt="">
                 </div>
                 <div class="jendela-finish">
-                    <img src="~/assets/png/FinishPage/Last/jendela (1)-min.png" alt="" class="jendela-finish">
+                    <img src="../assets/png/FinishPage/Last/jendela (1)-min.png" alt="">
                 </div>
                 <div class="topeng-finish">
-                    <img src="~/assets/png/FinishPage/Last/3 topeng.png" alt="" class="topeng-finish">
+                    <img src="../assets/png/FinishPage/Last/3 topeng.png" alt="">
                 </div>
                 <div class="logo-finish">
-                    <img src="~/assets/png/FinishPage/Last/logo kausarupa.png" alt="" class="logo-finish">
+                    <img src="../assets/png/FinishPage/Last/logo kausarupa.png" alt="">
                 </div>
                 <div class="cont-tombol-finish">
                 </div>
@@ -57,4 +58,9 @@ html.body{
     overflow: hidden;
     }
 
+.lemari-finish{
+    position: absolute;
+    height: 40%;
+    transform: translate(20%, 90%);
+}
 </style>
