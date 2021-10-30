@@ -12,7 +12,7 @@
         <div class="swiper-container" >
             <div class="swiper-wrapper"> 
             <swiper class="swiper" :options="swiperOptionv" @click.stop>
-                <swiper-slide class="img-wrapper " v-for="i in karlength" :key="i"><img :src="img[i-1]" alt="" @click.stop></swiper-slide>
+                <swiper-slide class="img-wrapper " v-for="i in karlength" :key="i"><video-player :src="vid[i-1]" alt="" @click.stop/></swiper-slide>
                 <div class="swiper-pagination swiper-pagination-v" slot="pagination" @click.stop></div>
             </swiper>
             </div>
@@ -24,6 +24,8 @@
 <script>
 import {Swiper, SwiperSlide} from "vue-awesome-swiper"
 import 'swiper/css/swiper.css'
+import VideoPlayer from 'nuxt-video-player'
+require('nuxt-video-player/src/assets/css/main.css')
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
@@ -39,10 +41,11 @@ import 'swiper/css/swiper.css'
         },
         methods:{
         },
-        props: ['title','nama','caption','img','karlength'],
+        props: ['title','nama','caption','vid','karlength'],
         components:{
             Swiper,
-            SwiperSlide
+            SwiperSlide,
+            VideoPlayer
         },
 
     }

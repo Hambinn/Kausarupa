@@ -5,9 +5,6 @@
                 <div class="container-header-mamus">
                     <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
                 </div>
-                <div class="container-back-mamus">
-                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
-                </div>
                 <div class="container-box-mamus">
                     <p class="text-box-mamus">00</p>
                     <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
@@ -24,7 +21,10 @@
                 <div class="container-jamur-kanan-belakang">
                     <img src="../assets/png/MamusPage/1. narasi/kanan belakang.png" alt="" class="jamur">
                 </div>
-                 <div class="tombol-next-mamus">
+                <div class="container-back-mamus">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
+                 <div class="tombol-next-mamus" @click="next">
                     <p class="next-mamus">Next</p>
                 </div>
             </div>
@@ -35,7 +35,15 @@
 <script>
 import kotakPink from '../components/Mamus/kotakPink.vue'
     export default {
-  components: { kotakPink },
+    components: { kotakPink },
+    methods:{
+        back(){
+            this.$router.push('/topeng')
+        },
+        next(){
+            this.$router.push('/pilihkaryamamus')
+        }
+    }
         
     }
 </script>
@@ -142,6 +150,7 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
+    z-index: 5;
 }
 
 .container-back-mamus .back{
@@ -149,6 +158,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-1050%, 160%);
+    z-index: 5;
 }
 
 .container-jamur-kanan-belakang{

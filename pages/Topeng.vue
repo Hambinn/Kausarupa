@@ -24,7 +24,7 @@
           <div class="topeng">
             <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus" @click="keMamus">
             <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona" @mouseover="munculPersona" @mouseleave="ilangPersona" @click="kePersona">
-            <img src="~/assets/svg/ChoosePage/Shadow 1.svg" alt="" class="shadow" @mouseover="munculShadow" @mouseleave="ilangShadow">
+            <img src="~/assets/svg/ChoosePage/Shadow 1.svg" alt="" class="shadow" @mouseover="munculShadow" @mouseleave="ilangShadow" @click="keShadow">
           </div>
           <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-topeng" @click="volume()" ref="volumeBtn">
         </div>
@@ -68,6 +68,9 @@
             }, 
             keMamus(){
                 this.$router.push('/narasimamus')
+            },
+            keShadow(){
+                this.$router.push('/shadow')
             },
             volume(){
         this.isVolume = !this.isVolume
