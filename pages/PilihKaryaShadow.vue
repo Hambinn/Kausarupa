@@ -32,7 +32,7 @@
 export default {
     methods:{
         back(){
-            this.$router.push('/shadow')
+            this.$router.push('/narasishadow')
         },
         keVideo(){
             this.$router.push('/Shadow/videoShadow')

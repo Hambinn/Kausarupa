@@ -164,8 +164,13 @@ html,body{
     transform: translate(0%,770%);
     font-size: 2.7vw;
     color: #F2F7ED;
+    cursor: pointer;
 }
+
+
  
+
+
 a{
     text-decoration: none;
 }

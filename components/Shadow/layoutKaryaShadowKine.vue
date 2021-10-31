@@ -10,12 +10,7 @@
             </div>
         </div>
         <div class="swiper-container" >
-            <div class="swiper-wrapper"> 
-            <swiper class="swiper" :options="swiperOptionv" @click.stop>
-                <swiper-slide class="img-wrapper " v-for="i in karlength" :key="i"><video-player :src="vid[i-1]" alt="" @click.stop/></swiper-slide>
-                <div class="swiper-pagination swiper-pagination-v" slot="pagination" @click.stop></div>
-            </swiper>
-            </div>
+            <iframe :src="pdf+ '#toolbar=0'"  title="karya"></iframe>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -24,8 +19,6 @@
 <script>
 import {Swiper, SwiperSlide} from "vue-awesome-swiper"
 import 'swiper/css/swiper.css'
-import VideoPlayer from 'nuxt-video-player'
-require('nuxt-video-player/src/assets/css/main.css')
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
@@ -41,11 +34,10 @@ require('nuxt-video-player/src/assets/css/main.css')
         },
         methods:{
         },
-        props: ['title','nama','caption','vid','karlength'],
+        props: ['title','nama','caption','pdf','karlength'],
         components:{
             Swiper,
-            SwiperSlide,
-            VideoPlayer
+            SwiperSlide
         },
 
     }
@@ -54,18 +46,14 @@ require('nuxt-video-player/src/assets/css/main.css')
 
 <style  scoped>
 
-
+iframe{
+    width: 100%;
+}
 
 .container-karya{
     position: absolute;
     width: 100%;
     height: 100%;
-}
-
-.container-karya img{
-    max-width: 30%;
-    transform: translate(-50%, 20%);
-    
 }
 
 
@@ -97,7 +85,7 @@ border-radius: 10%;
 }
 
 .title{
-    font-size: 3vw;
+    font-size: 1vw;
 }
 
 .desc{
@@ -116,7 +104,7 @@ border-radius: 10%;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; 
     display: flex;
     justify-content: center;
     background: rgba(112, 112, 112, 0.2);
@@ -125,34 +113,18 @@ border-radius: 10%;
     z-index: 3;
 }
 
-    .img-wrapper img{
+    .img-wrapper iframe{
         height: 100%;
         object-fit: cover;
     }
-    .swiper-wrapper{
-            height: 500px;
-    }
 
-    @media only screen and (max-width:1366px){
-        .swiper-wrapper{
-        height: 300px;
-    }
-
-    }
-    @media only screen and (max-width:1536px){
-        .swiper-wrapper{
-        height: 400px;
-    }
-    }
-    @media only screen and (max-width:1280px){
-        .swiper-wrapper{
-        height: 300px;
-    }
-    }
     .swiper-container{
-        width: 100%;
+        width: 60%;
+        transform: translate(-29%,6%);
+    }
+
+    .swiper-container iframe{
         height: 100%;
-        transform: translate(-9%,19%);
     }
     .swiper-slide{
       text-align: center;
@@ -168,6 +140,7 @@ border-radius: 10%;
     .swiper-container-vertical .swiper-pagination-bullets{
         right: 25%;
     }
+
 
 /* @media only  screen and (max-width: 1366px) {
   .AboutUs{
