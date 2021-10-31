@@ -10,12 +10,7 @@
             </div>
         </div>
         <div class="swiper-container" >
-            <div class="swiper-wrapper"> 
-            <swiper class="swiper" :options="swiperOptionv" @click.stop>
-                <swiper-slide class="img-wrapper " v-for="i in karlength" :key="i"><video-player :src="vid[i-1]" alt="" @click.stop/></swiper-slide>
-                <div class="swiper-pagination swiper-pagination-v" slot="pagination" @click.stop></div>
-            </swiper>
-            </div>
+            <video-player :src="vid" alt="" @click.stop class="video"/>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -154,9 +149,8 @@ border-radius: 10%;
     }
     }
     .swiper-container{
-        width: 100%;
-        height: 100%;
-        transform: translate(-9%,19%);
+        width: 50%;
+        transform: translate(-30%,26%);
     }
     .swiper-slide{
       text-align: center;

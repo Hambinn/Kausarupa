@@ -2,14 +2,10 @@
     <div class="container-persona">
       <div class="top-cont">
         <div class="canvas">
-          <div class="score">   
-            <div class="container-box">
-              <div class="container-text-box">
-                {{score}} 
-              </div>
-              <img src="../assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
-            </div>
-          </div>
+          <div class="container-box-persona">
+                    <p class="text-box-persona">00</p>
+                    <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
+                </div>
           <div class="container-orang">
               <img src="../assets/svg/PersonaPage/mascot berdiri.png" alt="">
           </div>
@@ -24,13 +20,17 @@
               <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
           </div>
           <div class="container-header-persona">
-              <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-              <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
           </div>
+          <div class="container-back-persona">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+          </div>
+            <div class="container-volume-persona">
+                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+            </div>
           <div class="tombol-next-persona" @click="next">
               <p class="next-persona">Next</p>
           </div>
-          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-persona1" @click="volume()" ref="volumeBtn">
         </div>  
       </div>
     </div>
@@ -43,7 +43,8 @@ import kotakItem from '../components/Persona/kotakItem.vue'
     components: { kotakItem },
     data(){
         return{
-            score: 0
+            score: 0,
+            isVolume: true
         }
     },
     methods:{
@@ -54,8 +55,10 @@ import kotakItem from '../components/Persona/kotakItem.vue'
             this.isVolume = !this.isVolume
             if(this.isVolume){
                 this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+                console.log('masuk on')
             }else{
                 this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+                console.log('masuk off')
             }
         },
         next(){
@@ -76,10 +79,20 @@ html,body{
         
 }
 
-.volume-persona1{
-    position: fixed;
-    height: 5%;
-    transform: translate(1600%, 200%);
+.container-volume-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-persona .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .top-cont{
@@ -117,18 +130,27 @@ html,body{
     width: 100%;
 }
 
-.container-header-persona .header{
-    height: 10%;
+.container-header-persona .header-persona{
+    width: 20%;
     top: 50%;
     left: 50%;
-    transform: translate(-180%,90%);
+    transform: translate(-150%, 90%);
 }
 
-.container-header-persona .back{
-    height: 6%;
+.container-back-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+
+.container-back-persona .back{
+    width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1600%,90%);
+    transform: translate(-1050%, 160%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-orang{
@@ -181,55 +203,57 @@ html,body{
 }
 
 .tombol-next-persona{
-    position: absolute;
-    height: 6.5%;
-    width: 13%;
-    transform: translate(630%, 1300%);
-
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
+    z-index: 5;
     background: #597FA3;
-    border-radius: 35px;
+    border-radius: 11.4%/38.4%;
+    cursor: pointer;
 }
 
 .tombol-next-persona .next-persona{
     position: absolute;
-    width: 116%;
-    height: 60%;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-70%);
+    transform: translate(-50%,-60%);
 
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;
-    font-size: 2.3vw;
-/* identical to box height */
-
-color: #fff;
+    font-size: 2.1vw;
+    color: white;
 }
 
-/* score */
-.score-persona{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.container-box{
-    position: absolute;
-    height: 6%;
-    width: 13%;
-    background-color: #33485C;
-    transform: translate(630%, 160%);
-    border-radius: 50px;
-}
-
-.container-box .topeng-score{
+.container-box-persona{
     position: fixed;
-    height: 90%;
-    transform: translate(-160%, -100%);
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
 }
 
-.container-text-box{
-    font-size: 3vw;
+.container-box-persona .text-box-persona{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-persona .topeng-score-persona{
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, 10%);
 }
 </style>

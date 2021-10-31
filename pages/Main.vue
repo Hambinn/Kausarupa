@@ -69,7 +69,7 @@
             <img src="../assets/png/MainPage/mascot tidur + light.png" alt="" class="orang" />
           </div>
           <div class="container-bintang-putih" v-for="star in stars" :key="star.id">
-            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" :class="star.class"
+            <img src="../assets/svg/MainPage/bintang-putih.svg" alt="" :class="star.class" class="bintank"
               @click="countBintang(star.id); " :style="star.opac">
           </div>
         </div>
@@ -213,6 +213,10 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
+}
+
+.bintank{
+    cursor: pointer;
 }
 
 .volume-main{

@@ -19,7 +19,7 @@
           </div>
           <div class="container-awan">
               <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK1">
-              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2">
+              <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2"> 
               <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
           </div>
           <div class="container-header">
