@@ -23,12 +23,17 @@
           <div class="container-jendela-last">
             <img src="../assets/svg/LastPage/jendela (1)-min.png" alt="" class="JendelaLast">
           </div>
+          <tombol-finish/>
         </div>
       </div>
     </div>
 </template>
 
 <script>
+    import TombolFinish from '../components/TombolFinish.vue'
+        export default {
+            components:{ TombolFinish }
+        }
 </script>
 
 <style>
