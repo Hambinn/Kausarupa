@@ -103,6 +103,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     top: 50%;
     left: 50%;
     transform: translate(-1100%, 160%);
+    cursor: pointer;
 }
 
 .narasi{
@@ -115,7 +116,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     height: 55%;
     top: 50%;
     left: 50%;
-    transform: translate(93%,-3%)
+    transform: translate(93%,-7%)
 }
 
 .narasi .kanan_bawah{
@@ -143,6 +144,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     top: 50%;
     left: 50%;
     transform: translate(1100%, 160%);
+    cursor: pointer;
 }
 
 .container-box-shadow{
@@ -181,9 +183,9 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     height: 7%;
     width: 14%;
     transform: translate(230%, 454%);
-
     background: #597FA3;
     border-radius: 11.4%/38.4%;
+    cursor: pointer;
 }
 
 .tombol-next-shadow .next-shadow{
@@ -191,7 +193,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     left: 50%;
     top: 50%;
     transform: translate(-50%,-60%);
-
+    z-index: 5;
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;

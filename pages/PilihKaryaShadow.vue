@@ -98,6 +98,7 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
+    
 }
 
 .container-back-pkshadow .back-pkshadow{
@@ -106,7 +107,8 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -510%);
-    z-index: 2;
+    z-index: 5;
+    cursor: pointer;
 }
 
 .pilih-jenis{
@@ -143,11 +145,39 @@ export default {
     transform: translate(-8%,-100%)
 }
 
+@keyframes hole-kanan{
+    0%{transform: translate(-8%,-100%);}
+    50%{transform: translate(-8%, -110%);}
+    100%{transform: translate(-8%,-100%);}
+}
+
+.hole-kanan:hover{
+    animation-name: hole-kanan;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
 .pilih-jenis .hole-tengah{
     height: 52%;
     top: 50%;
     left: 50%;
     transform: translate(-35%,-106%)
+}
+
+@keyframes hole-tengah{
+    0%{transform: translate(-35%,-106%)}
+    50%{transform: translate(-35%,-116%)}
+    100%{transform: translate(-35%,-106%)}
+}
+
+.hole-tengah:hover{
+    animation-name: hole-tengah;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
 }
 
 .pilih-jenis .hole-kiri{
@@ -156,6 +186,22 @@ export default {
     left: 50%;
     transform: translate(-140%,-188%)
 }
+
+@keyframes hole-kiri{
+    0%{transform: translate(-140%,-188%)}
+    50%{transform: translate(-140%,-198%)}
+    100%{transform: translate(-140%,-188%)}
+}
+
+.hole-kiri:hover{
+    animation-name: hole-kiri;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+
 
 .container-volume-pkshadow{
     position: absolute;
@@ -168,8 +214,9 @@ export default {
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, -520%);
-    z-index: 2;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-box-pkshadow{

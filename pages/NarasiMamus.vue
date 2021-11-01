@@ -168,14 +168,14 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 5;
 }
 
 .container-back-mamus .back{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, -530%);
     z-index: 5;
     cursor: pointer;
 }

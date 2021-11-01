@@ -35,6 +35,7 @@ import 'swiper/css/swiper.css'
                 swiperOptionv:{
                     spaceBetween: 60,
                     direction: 'vertical',
+                    mousewheel:true,
                     pagination:{
                         el: '.swiper-pagination-v',
                         clickable: true
@@ -70,6 +71,7 @@ import 'swiper/css/swiper.css'
         height: 100%;
         object-fit: cover;
         border-radius: 30px;
+        cursor: pointer;
     }
 
 

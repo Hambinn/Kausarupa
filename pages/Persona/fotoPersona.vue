@@ -238,7 +238,6 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-115%,-25%);
-    z-index: 2;
 }
 
 .container-rumah .rumahSK1{
@@ -247,7 +246,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(140%,-40%);
-    z-index: 1;
+    
 }
 
 .container-awan{
@@ -260,50 +259,24 @@ html,body{
     position: absolute;
     height: 35%;
     transform: translate(-70%,205%);
-    z-index: 1;
+    
 }
 
 .container-awan .SK2{
     position: absolute;
     height: 50%;
     transform: translate(-110%,130%);
-    z-index: 3;
+    
 }
 
 .container-awan .SK3{
     position: absolute;
     height: 55%;
     transform: translate(-10%,110%);
-    z-index: 2;
+    
 }
 
-.tombol-next-persona{
-    position: fixed;
-    height: 6.5%;
-    width: 13%;
-    transform: translate(630%, 1300%);
 
-    background: #597FA3;
-    border-radius: 35px;
-    z-index: 3;
-}
-
-.tombol-next-persona .next-persona{
-    position: absolute;
-    width: 116%;
-    height: 60%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-70%);
-
-    font-family: Tf Grotesk;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2.3vw;
-/* identical to box height */
-
-color: #fff;
-}
 
 /* score */
 .container-box-persona{

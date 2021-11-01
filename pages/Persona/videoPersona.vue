@@ -6,9 +6,6 @@
                 <p class="text-box-persona">{{score}}</p>
                 <img src="~/assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
           </div>
-          <div class="tombol-next-persona">
-            <p class="next-persona">Next</p>
-          </div>
           <div class= "container-rumah">
               <img src="~assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
               <img src="~assets/svg/PersonaPage/rumah oren kiri bawah.svg" alt="" class="rumahSK2">
@@ -262,33 +259,7 @@ html,body{
     z-index: 2;
 }
 
-.tombol-next-persona{
-    position: fixed;
-    height: 6.5%;
-    width: 13%;
-    transform: translate(630%, 1300%);
 
-    background: #597FA3;
-    border-radius: 35px;
-    z-index: 3;
-}
-
-.tombol-next-persona .next-persona{
-    position: absolute;
-    width: 116%;
-    height: 60%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-70%);
-
-    font-family: Tf Grotesk;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2.3vw;
-/* identical to box height */
-
-color: #fff;
-}
 
 /* score */
 .container-box-persona{
