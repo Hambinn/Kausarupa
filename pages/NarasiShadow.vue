@@ -14,7 +14,7 @@
                     <img src="~/assets/png/ShadowPage/1. narasi/mascot narasi.png" alt="" class="mascot-narasi">
                 </div>
                 <div class="container-box-shadow">
-                    <p class="text-box-shadow">00</p>
+                    <p class="text-box-shadow">{{scoreshadow}}</p>
                     <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-shadow">                    
                 </div>                
                 <div class="container-volume-shadow">

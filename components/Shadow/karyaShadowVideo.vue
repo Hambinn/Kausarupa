@@ -2,7 +2,7 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
         <swiper class="swiper" :options="swiperOptionv">
-        <swiper-slide class="img-wrapper" v-for="i in karyalength" :key="i"><img :src="arrkarya[i-1]" alt="" @click="$emit(`toggle`); passId(i)"></swiper-slide>
+        <swiper-slide class="img-wrapper" v-for="i in karyalength" :key="i"><img :src="arrkarya[i-1]" alt="" @click="$emit(`toggle`); passId(i);score()"></swiper-slide>
         <div class="swiper-pagination swiper-pagination-v" slot="pagination"></div>
     </swiper>
     </div>
@@ -53,6 +53,10 @@ import 'swiper/css/swiper.css'
             },
             passId(id){
                 this.$emit('changeId',id)
+                console.log('masuk')
+            },
+            score(){
+                this.$emit('tambahshadow')
                 console.log('masuk')
             }
         }

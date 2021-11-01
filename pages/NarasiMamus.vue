@@ -6,7 +6,7 @@
                     <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
                 </div>
                 <div class="container-box-mamus">
-                    <p class="text-box-mamus">00</p>
+                    <p class="text-box-mamus">{{scoremamus}}</p>
                     <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>                
                 <div class="container-kotak-mamus">

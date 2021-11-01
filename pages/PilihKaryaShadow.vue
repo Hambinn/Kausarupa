@@ -9,7 +9,7 @@
                     <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow" @click="back">
                 </div>
                 <div class="container-box-pkshadow">
-                    <p class="text-box-pkshadow">00</p>
+                    <p class="text-box-pkshadow">{{scoreshadow}}</p>
                     <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-pkshadow">                    
                 </div>                
                 <div class="container-volume-pkshadow">
@@ -43,7 +43,20 @@ export default {
         keFoto(){
             this.$router.push('/Shadow/fotoShadow')
         }
-    }
+    },
+    data(){
+        return{
+            scoreshadow: '0'
+        }
+    },
+    beforeMount(){
+            if(!localStorage.getItem('scoreshadow')){
+                localStorage.setItem('scoreshadow', 0)
+            }
+            else{
+                this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
+            }
+        }
 }
 </script>
 

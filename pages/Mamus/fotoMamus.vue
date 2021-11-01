@@ -11,7 +11,7 @@
                     <img src="~assets/png/MamusPage/3. scroll/kiri.png" alt="" class="kiri">
                 </div>           
                 <div class="container-box-mamus">
-                    <p class="text-box-mamus">00</p>
+                    <p class="text-box-mamus">{{scoremamus}}</p>
                     <img src="~assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>   
                 <div class="container-header-mamus">
@@ -24,7 +24,7 @@
                     <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
                 </div>
                 <div class="scroll-karya-mamus">
-                    <karya-mamus-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
+                    <karya-mamus-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus"/>
                 </div>
                     <layout-karya-mamus-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength"/>
             </div>
@@ -106,11 +106,18 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
                     alert(e)
                     return
                 }
+            },
+            tambahmamus(){
+                if(localStorage.getItem('scoremamus')<16){
+                    localStorage.setItem('scoremamus',Number(this.scoremamus+1))
+                    this.scoremamus = Number(localStorage.getItem('scoremamus'))
+                }
+                console.log('masuk')
             }
         },
         data(){
             return{
-                score: 0,
+                scoremamus: 0,
                 showLayout: false,
                 arrkarya: [],
                 karyalength: 0,
@@ -125,6 +132,14 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
         },
         mounted(){
             this.getThumbnail();
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoremamus')){
+                localStorage.setItem('scoremamus', 0)
+            }
+            else{
+                this.scoremamus = Number(localStorage.getItem('scoremamus'))
+            }
         }
     }
 </script>

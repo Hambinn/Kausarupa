@@ -14,14 +14,14 @@
                     <img src="~/assets/png/ShadowPage/3. scroll karya/tangga.png" alt="" class="tangga">                
                 </div>
                 <div class="container-box-skshadow">
-                    <p class="text-box-skshadow">00</p>
+                    <p class="text-box-skshadow">{{scoreshadow}}</p>
                     <img src="~/assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-skshadow">                    
                 </div>                
                 <div class="container-volume-pkshadow">
                     <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
                 </div>
             <div class="scroll-karya-fotoshadow">
-              <karya-shadow-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
+              <karya-shadow-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahshadow="tambahshadow"/>
             </div>
             <layout-karya-shadow-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
             </div>
@@ -36,7 +36,7 @@ import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.v
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
-                score: 0,
+                scoreshadow: 0,
                 showLayout: false,
                 arrkarya: [],
                 karyalength: 0,
@@ -95,10 +95,25 @@ import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.v
                     alert(e)
                     return
                 }
+            },
+            tambahshadow(){
+                if(localStorage.getItem('scoreshadow')<22){
+                    localStorage.setItem('scoreshadow',Number(this.scoreshadow+1))
+                    this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
+                }
+                console.log('masuk')
             }
         },
         mounted(){
             this.getThumbnail();
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoreshadow')){
+                localStorage.setItem('scoreshadow', 0)
+            }
+            else{
+                this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
+            }
         }
 
     }

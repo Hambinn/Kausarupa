@@ -7,7 +7,7 @@
                 <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
           </div>
           <div class="container-orang">
-              <img src="../assets/svg/PersonaPage/mascot berdiri.png" alt="">
+              <img src="../assets/png/umum/persona berdiri.png" alt="">
           </div>
           <div class="container-kotak">
           <kotak-item/>
@@ -170,8 +170,8 @@ html,body{
 .container-orang img{
     top: 50%;
     left: 50%;
-    height: 190%;
-    transform: translate(-25%,3%);
+    height: 80%;
+    transform: translate(-95%,25%);
 }
 
 .container-awan{

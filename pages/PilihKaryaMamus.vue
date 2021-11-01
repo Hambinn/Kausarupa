@@ -21,7 +21,7 @@
                     <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen" @click="toFoto">
                 </div>
                 <div class="container-box-mamus">
-                    <p class="text-box-mamus">00</p>
+                    <p class="text-box-mamus">{{scoremamus}}</p>
                     <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>
             </div>
@@ -33,7 +33,8 @@
     export default {
         data(){
             return{
-                isVolume: true
+                isVolume: true,
+                scoremamus: '0'
             }
         },
         methods:{
@@ -59,6 +60,14 @@
                 console.log('masuk off')
             }
         },
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoremamus')){
+                localStorage.setItem('scoremamus', 0)
+            }
+            else{
+                this.scoremamus = Number(localStorage.getItem('scoremamus'))
+            }
         }
     }
 </script>
