@@ -3,7 +3,7 @@
       <div class="top-cont">
         <div class="canvas">
             <div class="container-box-persona">
-                <p class="text-box-persona">{{score}}</p>
+                <p class="text-box-persona">{{scorepersona}}</p>
                 <img src="~/assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
           </div>
           <div class= "container-rumah">
@@ -25,7 +25,7 @@
                 <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
           </div>
           <div class="scroll-karya">
-              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
+              <karya-persona @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahpersona="tambahpersona"/>
           </div>
         <!-- <layout-karya v-show="showLayout" @close-modal="showLayout = false" /> -->
         <layout-karya-persona v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength" />
@@ -44,7 +44,7 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
-                score: 0,
+                scorepersona: '0',
                 showLayout: false,
                 arrkarya: [],
                 karyalength: 0,
@@ -74,16 +74,16 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
             back(){
                 this.$router.push('/pilihkarya')
             },
-        volume(){
-            this.isVolume = !this.isVolume
-            if(this.isVolume){
-                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
-                console.log('masuk on')
-            }else{
-                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
-                console.log('masuk off')
-            }
-        },
+            volume(){
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                    console.log('masuk on')
+                }else{
+                    this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                    console.log('masuk off')
+                }
+            },
             ChangeId(id){
                 this.id = id;
                 if(id ==1){
@@ -128,10 +128,25 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
                     alert(e)
                     return
                 }
+            },
+            tambahpersona(){
+                if(localStorage.getItem('scorepersona')<15){
+                    localStorage.setItem('scorepersona',Number(this.scorepersona+1))
+                    this.scorepersona = Number(localStorage.getItem('scorepersona'))
+                }
+                console.log('masuk')
             }
         },
         mounted(){
             this.getThumbnail();
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scorepersona')){
+                localStorage.setItem('scorepersona', 0)
+            }
+            else{
+                this.scorepersona = Number(localStorage.getItem('scorepersona'))
+            }
         }
 
     }

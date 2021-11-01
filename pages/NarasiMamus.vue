@@ -38,7 +38,8 @@ import kotakPink from '../components/Mamus/kotakPink.vue'
     components: { kotakPink },
     data(){
         return{
-            isVolume: true
+            isVolume: true,
+            scoremamus: 0,
         }
     },
     methods:{
@@ -58,7 +59,15 @@ import kotakPink from '../components/Mamus/kotakPink.vue'
         next(){
             this.$router.push('/pilihkaryamamus')
         }
-    }
+    },
+    beforeMount(){
+            if(!localStorage.getItem('scoremamus')){
+                localStorage.setItem('scoremamus', 0)
+            }
+            else{
+                this.scoremamus = Number(localStorage.getItem('scoremamus'))
+            }
+        }
         
     }
 </script>

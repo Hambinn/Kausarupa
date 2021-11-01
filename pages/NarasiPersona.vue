@@ -3,7 +3,7 @@
       <div class="top-cont">
         <div class="canvas">
           <div class="container-box-persona">
-                <p class="text-box-persona">{{score}}</p>
+                <p class="text-box-persona">{{scorepersona}}</p>
                 <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
           </div>
           <div class="container-orang">
@@ -43,7 +43,7 @@ import kotakItem from '../components/Persona/kotakItem.vue'
     components: { kotakItem },
     data(){
         return{
-            score: 0,
+            scorepersona: 0,
             isVolume: true
         }
     },
@@ -64,7 +64,15 @@ import kotakItem from '../components/Persona/kotakItem.vue'
         next(){
              this.$router.push('/pilihkarya')
         }
-    }
+    },
+    beforeMount(){
+            if(!localStorage.getItem('scorepersona')){
+                localStorage.setItem('scorepersona', 0)
+            }
+            else{
+                this.scorepersona = Number(localStorage.getItem('scorepersona'))
+            }
+        }
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>

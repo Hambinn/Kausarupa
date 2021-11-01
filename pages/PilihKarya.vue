@@ -17,7 +17,7 @@
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="tiga">
                 </div>
                 <div class="container-box-persona">
-                    <p class="text-box-persona">{{score}}</p>
+                    <p class="text-box-persona">{{scorepersona}}</p>
                     <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
                 </div>
                 <div class="container-header-persona">
@@ -43,7 +43,7 @@
         export default{
             data(){
                 return{
-                    score :0,
+                    scorepersona :0,
                     isVolume: true
                 }
             },
@@ -68,7 +68,15 @@
                 video(){
                     this.$router.push('Persona/videoPersona')
                 }
+            },
+            beforeMount(){
+            if(!localStorage.getItem('scorepersona')){
+                localStorage.setItem('scorepersona', 0)
             }
+            else{
+                this.scorepersona = Number(localStorage.getItem('scorepersona'))
+            }
+        }
         }
 </script>
 

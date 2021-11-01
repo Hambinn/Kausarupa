@@ -33,12 +33,25 @@
 import kotakBiru from '../components/Shadow/kotakBiru.vue'
     export default {
         components: { kotakBiru },
+        data(){
+            return{
+                scoreshadow: '0',
+            }
+        },
         methods:{
             back(){
                 this.$router.push('/topeng')
             },
             next(){
                 this.$router.push('/pilihkaryashadow')
+            }
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoreshadow')){
+                localStorage.setItem('scoreshadow', 0)
+            }
+            else{
+                this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
             }
         }
         
