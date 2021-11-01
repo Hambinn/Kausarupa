@@ -67,6 +67,7 @@ import 'swiper/css/swiper.css'
         height: 100%;
         object-fit: cover;
         border-radius: 30px;
+        cursor: pointer;
     }
 
 

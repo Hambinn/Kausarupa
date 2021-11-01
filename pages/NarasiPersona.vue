@@ -3,9 +3,9 @@
       <div class="top-cont">
         <div class="canvas">
           <div class="container-box-persona">
-                    <p class="text-box-persona">00</p>
-                    <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
-                </div>
+                <p class="text-box-persona">{{score}}</p>
+                <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
+          </div>
           <div class="container-orang">
               <img src="../assets/svg/PersonaPage/mascot berdiri.png" alt="">
           </div>
@@ -20,14 +20,14 @@
               <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
           </div>
           <div class="container-header-persona">
-                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
-          </div>
-          <div class="container-back-persona">
-                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
           </div>
             <div class="container-volume-persona">
                 <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
             </div>
+          <div class="container-back-persona">
+                <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+          </div>
           <div class="tombol-next-persona" @click="next">
               <p class="next-persona">Next</p>
           </div>
@@ -141,7 +141,7 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 5;
+    
 }
 
 .container-back-persona .back{

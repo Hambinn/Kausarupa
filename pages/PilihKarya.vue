@@ -16,25 +16,24 @@
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="dua">
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="tiga">
                 </div>
-                <div class="container-scorepersona">
-                    <div class="score-pk">
-                        <div class="text-score-pk">
-                            {{score}}
-                        </div>
-                        <img src="../assets/png/PersonaPage/topeng score.png" alt="" class="scorepilihkarya">
-                    </div>
+                <div class="container-box-persona">
+                    <p class="text-box-persona">{{score}}</p>
+                    <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
                 </div>
-                <div class="container-header-pilihkarya">
-                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-                    
+                <div class="container-header-persona">
+                    <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
                 </div>
+                <div class="container-back-narasipersona">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+          </div>
+            <div class="container-volume-persona">
+                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+            </div>
                 <div class= "container-rumahoren">
                     <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua" @click="foto">
                     <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="orentiga" @click="kine">
                     <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu" @click="video">
-                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
-                <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-pilihkarya" @click="volume()" ref="volumeBtn">
             </div>
         </div>
     </div>
@@ -44,7 +43,8 @@
         export default{
             data(){
                 return{
-                    score :0
+                    score :0,
+                    isVolume: true
                 }
             },
             methods:{
@@ -114,44 +114,78 @@ html,body{
 }
 
 
-.container-header-pilihkarya{
+.container-header-persona{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-header-pilihkarya .header{
-    height: 10%;
+.container-header-persona .header-persona{
+    width: 20%;
     top: 50%;
     left: 50%;
-    transform: translate(-185%,90%);
+    transform: translate(-150%, 90%);
 }
 
-.container-rumahoren .back{
-    height: 6%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-1320%,160%);
-    z-index: 2;
-}
-
-.volume-pilihkarya{
-    position: fixed;
-    height: 5%;
-    transform: translate(1500%, 177%);
-}
-
-.container-scorepersona{
-    position: fixed;
+.container-back-persona{
+    position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-scorepersona .scorepilihkarya{
+.container-back-narasipersona .back{
+    position: absolute;
+    width: 4.2%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1100%, -520%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+.container-volume-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-persona .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+.container-box-persona{
     position: fixed;
-    height: 6%;
-    width: 11,5%;
-    transform: translate(230%, 140%);
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
+}
+
+.container-box-persona .text-box-persona{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-persona .topeng-score-persona{
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, 10%);
 }
 
 .container-awankuning{

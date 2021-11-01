@@ -2,13 +2,9 @@
     <div class="container-scroll-karya">
       <div class="top-cont">
         <div class="canvas">
-            <div class="score">   
-            <div class="container-box">
-              <div class="container-text-box">
-                {{score}}
-              </div>
-              <img src="~assets/svg/PersonaPage/topeng score.svg" alt="" class="topeng-score">
-            </div>
+            <div class="container-box-persona">
+                <p class="text-box-persona">{{score}}</p>
+                <img src="~/assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
           </div>
           <div class="tombol-next-persona">
             <p class="next-persona">Next</p>
@@ -22,9 +18,14 @@
               <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK2"> 
               <img src="~assets/svg/PersonaPage/awan oren (1).svg" alt="" class="SK3">
           </div>
-          <div class="container-header">
-            <img src="~assets/svg/PersonaPage/header persona.svg" alt="" class="header">
-            <img src="~assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back()">
+          <div class="container-header-persona">
+                <img src="~/assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
+          </div>
+          <div class="container-volume-persona">
+                <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+            </div>
+          <div class="container-back-persona">
+                <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
           </div>
           <div class="scroll-karya">
               <karya-persona-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
@@ -55,7 +56,8 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
                 nama:'',
                 caption:'',
                 vid: [],
-                karlength: 0
+                karlength: 0,
+                isVolume: true
             }
         },
         methods:{
@@ -75,6 +77,16 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
             back(){
                 this.$router.push('/pilihkarya')
             },
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                console.log('masuk on')
+            }else{
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                console.log('masuk off')
+            }
+        },
             ChangeId(id){
                 this.id = id;
                 if(id ==1){
@@ -119,6 +131,22 @@ html,body{
     margin: 0;   
 }
 
+.container-volume-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-persona .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
+}
+
 .scroll-karya{
     height: 100%;
     padding: 40px;
@@ -154,25 +182,33 @@ html,body{
     overflow: hidden;
     }
 
-.container-header{
+.container-header-persona{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-header .header{
-    height: 10%;
+.container-header-persona .header-persona{
+    width: 20%;
     top: 50%;
     left: 50%;
-    transform: translate(-180%,70%);
+    transform: translate(-150%, 90%);
 }
 
-.container-header .back{
-    height: 6%;
+.container-back-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.container-back-persona .back{
+    width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1600%,60%);
-    z-index: 4;
+    transform: translate(-1050%, 160%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-rumah{
@@ -255,29 +291,33 @@ color: #fff;
 }
 
 /* score */
-.score-persona{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.container-box{
-    position: absolute;
-    height: 6%;
-    width: 13%;
-    background-color: #33485C;
-    transform: translate(630%, 160%);
-    border-radius: 50px;
-}
-
-.container-box .topeng-score{
+.container-box-persona{
     position: fixed;
-    height: 90%;
-    transform: translate(-160%, -100%);
+    top: 50%;
+    left: 50%;
+    height: 7.5%;
+    width: 15.5%;
+    background-color: #30455A;
+    transform: translate(160%, -510%);
+    border-radius: 14.6%/53.6%;
 }
 
-.container-text-box{
-    font-size: 3vw;
+.container-box-persona .text-box-persona{
+    position: absolute;
+    text-align: justify;
+    font-size: 5.6vh;
+    font-family: Tf Grotesk;
+    top: 50%;
+    left: 50%;
+    transform: translate(24%, -55%);
+    color: white;
+}
+
+.container-box-persona .topeng-score-persona{
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-90%, 10%);
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

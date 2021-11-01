@@ -21,12 +21,14 @@
               <h3 v-show="shadow" class="tulisan-shadow">Shadow</h3>
               </transition>
           </div>
+          <div class="container-volume-persona">
+                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+            </div>
           <div class="topeng">
             <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus" @click="keMamus">
             <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona" @mouseover="munculPersona" @mouseleave="ilangPersona" @click="kePersona">
             <img src="~/assets/svg/ChoosePage/Shadow 1.svg" alt="" class="shadow" @mouseover="munculShadow" @mouseleave="ilangShadow" @click="keShadow">
           </div>
-          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-topeng" @click="volume()" ref="volumeBtn">
         </div>
       </div>
     </div>
@@ -39,7 +41,8 @@
             return{
                 mamus: false,
                 persona: false,
-                shadow: false
+                shadow: false,
+                isVolume: true
             }
         },
         methods:{
@@ -102,10 +105,20 @@ html,body{
     margin: 0;
 }
 
-.volume-topeng{
-    position: fixed;
-    height: 5%;
-    transform: translate(1600%, 200%);
+.container-volume-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-persona .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .top-cont{
