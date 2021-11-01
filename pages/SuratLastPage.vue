@@ -3,22 +3,22 @@
         <div class="top-cont">
             <div class="canvas">
                 <div class="container-surat">
-                    <img src="..\assets\png\FinishPage\Surat\amplop.png" alt="" class="surat">
+                    <img src="../assets/png/FinishPage/Surat/amplop.png" alt="" class="surat">
                 </div>
                 <div class="container-back-surat">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
                 </div>
                 <div class="container-kertas">
-                    <img src="..\assets\png\FinishPage\Surat\kertas.png" alt="" class="kertas">
+                    <img src="../assets/png/FinishPage/Surat/kertas.png" alt="" class="kertas">
                 </div>
                 <div class="container-pena">
-                    <img src="..\assets\png\FinishPage\Surat\pena.png" alt="" class="pena">
+                    <img src="../assets/png/FinishPage/Surat/pena.png" alt="" class="pena">
                 </div>                
                 <div class="container-volume-surat">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
                 <div class="container-tinta">
-                    <img src="..\assets\png\FinishPage\Surat\tint.png" alt="" class="tinta">
+                    <img src="../assets/png/FinishPage/Surat/tint.png" alt="" class="tinta">
                 </div>
                 <div class="container-isi-surat">
                     <p class="judul-surat">Surat Cinta</p>

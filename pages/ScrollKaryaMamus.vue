@@ -13,12 +13,12 @@
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
                 </div>
                 <div class="container-asep-mamus">
-                    <img src="..\assets\gif\asep pink.GIF" alt="" class="asep-1">
-                    <img src="..\assets\gif\asep.GIF" alt="" class="asep-2">
+                    <img src="../assets/gif/asep pink.GIF" alt="" class="asep-1">
+                    <img src="../assets/gif/asep.GIF" alt="" class="asep-2">
                 </div>
                 <div class="container-bg-element">
-                    <img src="..\assets\png\MamusPage\3. scroll\kanan.png" alt="" class="kanan">
-                    <img src="..\assets\png\MamusPage\3. scroll\kiri.png" alt="" class="kiri">
+                    <img src="../assets/png/MamusPage/3. scroll/kanan.png" alt="" class="kanan">
+                    <img src="../assets/png/MamusPage/3. scroll/kiri.png" alt="" class="kiri">
                 </div>
                 <div class="tombol-next-mamus">
                     <p class="next-mamus">Next</p>

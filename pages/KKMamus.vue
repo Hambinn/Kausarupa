@@ -10,12 +10,12 @@
                 </div>
               
                 <div class="container-bg-element">
-                    <img src="..\assets\png\MamusPage\4. karya\kanan atas.png" alt="" class="atas">
-                    <img src="..\assets\png\MamusPage\4. karya\kiri bawah.png" alt="" class="bawah">
+                    <img src="../assets/png/MamusPage/4. karya/kanan atas.png" alt="" class="atas">
+                    <img src="../assets/png/MamusPage/4. karya/kiri bawah.png" alt="" class="bawah">
                 </div>
                 <div class="container-bulet">
-                    <img src="..\assets\png\MamusPage\4. karya\buletan.png" alt="" class="bulet-1">
-                    <img src="..\assets\png\MamusPage\4. karya\buletan.png" alt="" class="bulet-2">
+                    <img src="../assets/png/MamusPage/4. karya/buletan.png" alt="" class="bulet-1">
+                    <img src="../assets/png/MamusPage/4. karya/buletan.png" alt="" class="bulet-2">
                 </div>
                 <div class="container-volume-mamus">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
@@ -24,7 +24,7 @@
                     <p class="next-mamus">Next</p>
                 </div>
                 <div class="container-bulet-karya">
-                    <img src="..\assets\png\MamusPage\4. karya\buletan.png" alt="" class="bulet-karya">
+                    <img src="../assets/png/MamusPage/4. karya/buletan.png" alt="" class="bulet-karya">
                 </div>                
                 <div class="container-box-mamus">
                     <p class="text-box-mamus">00</p>
