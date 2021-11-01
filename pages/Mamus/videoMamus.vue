@@ -2,9 +2,6 @@
     <div class="bg-karya-mamus">
         <div class="top-cont">
             <div class="canvas">
-                <div class="container-volume-mamus">
-                    <img src="~assets/png/umum/volumeon.png" alt="" class="volume-on">
-                </div>
                 <div class="container-asep-mamus">
                     <img src="~assets/gif/asep pink.GIF" alt="" class="asep-1">
                     <img src="~assets/gif/asep.GIF" alt="" class="asep-2">
@@ -12,17 +9,19 @@
                 <div class="container-bg-element">
                     <img src="~assets/png/MamusPage/3. scroll/kanan.png" alt="" class="kanan">
                     <img src="~assets/png/MamusPage/3. scroll/kiri.png" alt="" class="kiri">
-                </div>
-                <div class="tombol-next-mamus" >
-                    <p class="next-mamus">Next</p>
-                </div>                
+                </div>             
                 <div class="container-box-mamus">
                     <p class="text-box-mamus">00</p>
                     <img src="~assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>   
                 <div class="container-header-mamus">
                     <img src="~assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
-                    <img src="~assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
+                <div class="container-back-mamuskarya">
+                    <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
+                <div class="container-volume-mamus">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
                 </div>
                 <div class="scroll-karya-mamus">
                     <karya-mamus-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
@@ -42,6 +41,16 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
             back(){
                 this.$router.push('/pilihkaryamamus')
             },
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                console.log('masuk on')
+            }else{
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                console.log('masuk off')
+            }
+        },
             async getThumbnail(){
                 const karyaRef = this.$fire.firestore.collection('mamus-video').doc('thumbnail')
                 try{
@@ -109,6 +118,22 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
     margin: 0;
 }
 
+.container-volume-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-mamus .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
+}
+
 .scroll-karya-mamus{
     height: 100%;
     padding: 40px;
@@ -156,18 +181,7 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
     transform: translate(-85%, 70%);
 }
 
-.container-volume-mamus{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
 
-.container-volume-mamus .volume-on{
-    width: 4.16%;
-    top: 50%;
-    left: 50%;
-    transform: translate(1060%, 160%);
-}
 
 .container-box-mamus{
     position: fixed;
@@ -204,11 +218,14 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
     width: 100%;
 }
 
-.container-header-mamus .back{
+.container-back-mamuskarya .back{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1450%, 90%);
+    transform: translate(-1100%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-bg-element{

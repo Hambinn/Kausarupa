@@ -9,9 +9,6 @@
                     <p class="text-box-mamus">00</p>
                     <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>                
-                <div class="container-volume-mamus">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
-                </div>
                 <div class="container-kotak-mamus">
                     <kotak-pink/>          
                 </div>
@@ -23,6 +20,9 @@
                 </div>
                 <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
+                <div class="container-volume-mamus">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
                 </div>
                  <div class="tombol-next-mamus" @click="next">
                     <p class="next-mamus">Next</p>
@@ -36,9 +36,24 @@
 import kotakPink from '../components/Mamus/kotakPink.vue'
     export default {
     components: { kotakPink },
+    data(){
+        return{
+            isVolume: true
+        }
+    },
     methods:{
         back(){
-            this.$router.push('/topeng')
+                this.$router.push('/topeng')
+            },
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                console.log('masuk on')
+            }else{
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                console.log('masuk off')
+            }
         },
         next(){
             this.$router.push('/pilihkaryamamus')
@@ -111,10 +126,13 @@ html,body{
 }
 
 .container-volume-mamus .volume-on{
+    position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-box-mamus{
@@ -159,6 +177,7 @@ html,body{
     left: 50%;
     transform: translate(-1050%, 160%);
     z-index: 5;
+    cursor: pointer;
 }
 
 .container-jamur-kanan-belakang{
@@ -198,6 +217,7 @@ html,body{
     z-index: 5;
     background: #597FA3;
     border-radius: 11.4%/38.4%;
+    cursor: pointer;
 }
 
 .tombol-next-mamus .next-mamus{
