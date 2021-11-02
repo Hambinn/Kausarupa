@@ -25,7 +25,7 @@
             <img src="../assets/png/FinishPage/home.png">
         </div>
         <div class="feedback-finish">
-            <p> Feedback </p>
+            <p class="tulisan-feedback"> Feedback </p>
         </div>
   </div>  
 </template>
@@ -114,11 +114,13 @@
     width: 70%;
     transform: translate(0%, 0%);
     color:#466584;
+}
 
+.feedback-finish .tulisan-feedback{
     font-family: Tf Grotesk;
     font-style: italic;
     font-weight: normal;
-    font: size 10vh;
+    font-size: 4vh;
     color: #ffffff;
 }
 </style>
