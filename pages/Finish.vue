@@ -97,10 +97,10 @@ html,body{
 
 .container-meja-last .MejaLast{
     position: absolute;
-    height: 15%;
+    height: 18%;
     top: 50%;
     left: 50%;
-    transform: translate(-120%,200%);
+    transform: translate(-100%,160%);
     z-index: 1;
 }
 
@@ -112,10 +112,10 @@ html,body{
 
 .container-vas-last .VasLast{
     position: absolute;
-    height: 30%;
+    height: 40%;
     top: 50%;
     left: 50%;
-    transform: translate(-180%, 30%);
+    transform: translate(-90%, 0%);
     z-index: 2;
 }
 
