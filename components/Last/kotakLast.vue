@@ -1,6 +1,8 @@
 <template>
     <div class="container">
-        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        <p class="narasi">
+            Menarik banget kan sosok-sosok yang ada nih di diri kita semua? Tapi sebenernya apasih hubungan dari berbagai sosok ini? NAH penggabungan dari sosok-sosok tadi tuh bakal ngehasilin satu bagian dari Self. Self ini tapi bukan cuman gabungan dari sosok-sosok alam bawah sadar kita doang nih, tapi juga meliputi aspek-aspek yang ada saat kita sadar. Keren banget kan?
+        </p>
     </div>
 </template>
 
@@ -27,6 +29,16 @@ backdrop-filter: blur(4rem);
 /* Note: backdrop-filter has minimal browser support */
 
 border-radius: 5.5%/8.59%;
+}
+
+.narasi{
+    font-family: "Tf Grotesk";
+    font-style: normal;
+    font-weight: normal;
+    text-align: justify;
+    font-size: 1.5vw;
+    padding: 2%;
+    color: #30455A;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

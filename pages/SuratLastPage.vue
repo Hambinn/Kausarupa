@@ -22,7 +22,8 @@
                 </div>
                 <div class="container-isi-surat">
                     <p class="judul-surat">Surat Cinta</p>
-                    <p class="isi-surat">ini katanya ada surat kalo uda selesai gep-nya tapi isinya gatau apa ya siapa yang membuat isi surat semangat kru</p>
+                    <p class="isi-surat">Melalui penjelajahan diri lewat persona, shadow, anima/animus, serta self sampailah kita di titik akhir perjalanan. Berbagai karya telah menjadi gambaran akan beragam karakter yang ditunjukkan, maupun tak ditunjukkan pada dunia. Setelah melalui penjelajahan karya ini, ayo tuliskan perasaanmu dalam Majalah dinding GEP di Bit.ly/MadingKausarupa ! jangan lupa tinggalkan jejak ya!
+                    </p>
                 </div>
             </div>
         </div>
@@ -172,7 +173,7 @@ html,body{
 
 .container-isi-surat .isi-surat{
     margin: 10% 40%;
-    font-size: 1.5vw;
-    transform: translate(-4%,90%);
+    font-size: 1.3vw;
+    transform: translate(-4%,30%);
 }
 </style>

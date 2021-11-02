@@ -2,6 +2,9 @@
     <div class="bg-karya-shadow">
         <div class="top-cont">
             <div class="canvas">
+                <div class="cont-mas-nar-shadow">
+                    <img src="~/assets/png/umum/shadow msct 2 (ada shadownya).png" alt="">
+                </div>
                 <div class="container-header-pkshadow">
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-pkshadow">
                 </div>
@@ -64,6 +67,18 @@ export default {
 *{
     padding: 0;
     margin: 0;
+}
+
+.cont-mas-nar-shadow{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-nar-shadow img{
+    position: absolute;
+    height: 30%;
+    transform: translate(-50%,220%);
 }
 
 .top-cont{

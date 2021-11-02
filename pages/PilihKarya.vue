@@ -2,6 +2,9 @@
     <div class="container-pilihkaryap">
         <div class="top-cont-pk">
             <div class="canvas-pk">
+                <div class="cont-mas-pk-persona">
+                    <img src="~/assets/png/umum/persona 2.png" alt="">
+                </div>
                 <div class="container-rumahcoklat">
                     <img src="../assets/svg/PersonaPage/rumah coklat 1.svg" alt="" class="coklatsatu">
                     <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklatdua">
@@ -91,6 +94,18 @@ html,body{
     padding: 0;
     margin: 0;
         
+}
+
+.cont-mas-pk-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-pk-persona img{
+    position: absolute;
+    height: 30%;
+    transform: translate(-190%,215%);
 }
 
 .container-pilihkaryap{

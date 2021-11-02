@@ -151,7 +151,7 @@ html,body{
     width: 100%;
     
 }
-
+    
 .container-back-persona .back{
     width: 4.2%;
     top: 50%;

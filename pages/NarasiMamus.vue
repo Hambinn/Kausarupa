@@ -2,6 +2,9 @@
     <div class="bg-narasi-mamus">
         <div class="top-cont">
             <div class="canvas">
+                <div class="cont-mas-nar-mamus">
+                    <img src="~/assets/png/umum/mamus berdiri.png" alt="">
+                </div>
                 <div class="container-header-mamus">
                     <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
                 </div>
@@ -85,6 +88,19 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+.cont-mas-nar-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-nar-mamus img{
+    position: absolute;
+    height: 70%;
+    transform: translate(-160%,35%);
+    z-index: 5;
 }
 
 .top-cont{
@@ -206,7 +222,7 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 4;
+    z-index: 2;
 }
 
 .container-teh-kiri-depan .teh{

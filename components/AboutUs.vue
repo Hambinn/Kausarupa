@@ -1,7 +1,7 @@
 <template>
     <div class="modal-overlay" @click="$emit(`close-modal`)">
         <div class="AboutUs" @click.stop>About Us
-            <p>ini isinya apa jancok we mantap</p>
+            <p>GEP (Ganesha Exhibition Program) adalah acara pameran tahunan yang diselenggarakan oleh kru LFM (Liga Film Mahasiswa) ITB sebagai wadah eksploratif dan apresiasi karya-karya kru LFM ITB. Selain itu, GEP memberi wawasan dan menyediakan ruang berdiskusi mengenai tema yang diangkat. Pameran GEP juga dimeriahkan dengan berbagai acara pra-event seperti webinar and workshop seputar fotografi,videografi dan review perfilman yang berhubungan dengan tema pameran. Diharapkan pameran GEP dapat membawa pesan bermakna mengenai tema yang diangkat serta menginspirasi kru LFM ITB dan para pengunjung pameran.</p>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>

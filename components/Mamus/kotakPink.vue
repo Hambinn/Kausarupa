@@ -1,6 +1,14 @@
 <template>
     <div class="container">
-        <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+        <p class="narasi">
+            Keseimbangan itu penting loh! Itulah yang tergambar di dalam Anima/Animus.
+            <br>
+            <br>
+            Anima/Animus itu sebenernya ada dua bagian. Anima itu sisi feminim di laki-laki dan Animus itu sisi maskulin di perempuan. Nah kedua sisi ini itu ada di tiap laki-laki dan perempuan dan juga sisi ini tuh harus seimbang sama diri kita sendiri biar kita ga “kaku”
+            <br>
+            <br>
+            Sabi banget nih kita cek karya-karya untuk lebih mendapat esensi dari Anima/Animus!
+        </p>
     </div>
 </template>
 
@@ -27,6 +35,16 @@ backdrop-filter: blur(4rem);
 /* Note: backdrop-filter has minimal browser support */
 
 border-radius: 5.5%/8.59%;
+}
+
+.narasi{
+    font-family: "Tf Grotesk";
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    font-size: 1.5vw;
+    padding: 2%;
+    color: #30455A;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

@@ -11,7 +11,7 @@
                 <div class="narasi">
                     <img src="~/assets/png/ShadowPage/1. narasi/kanan atas.png" alt="" class="kanan_atas">
                     <img src="~/assets/png/ShadowPage/1. narasi/kanan bawah.png" alt="" class="kanan_bawah">
-                    <img src="~/assets/png/ShadowPage/1. narasi/mascot narasi.png" alt="" class="mascot-narasi">
+                    <img src="~/assets/png/umum/shadow msct brdiri copy.png" alt="" class="mascot-narasi">
                 </div>
                 <div class="container-box-shadow">
                     <p class="text-box-shadow">{{scoreshadow}}</p>
@@ -140,10 +140,10 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
 }
 
 .narasi .mascot-narasi{
-    height: 190%;
+    height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(55.5%,-39.5%) rotate(-39deg);
+    transform: translate(100%,-49%)
 }
 
 .container-volume-shadow{

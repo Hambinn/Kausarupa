@@ -2,6 +2,9 @@
     <div class="bg-karya-mamus">
         <div class="top-cont">
             <div class="canvas">
+                <div class="cont-mas-nar-mamus">
+                    <img src="~/assets/png/umum/mamus msct peace copy.png" alt="">
+                </div>
                 <div class="container-header-mamus">
                     <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
                 </div>      
@@ -76,6 +79,19 @@
 *{
     padding: 0;
     margin: 0;
+}
+
+.cont-mas-nar-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-nar-mamus img{
+    position: absolute;
+    height: 60%;
+    transform: translate(100%,60%);
+    z-index: 5;
 }
 
 .top-cont{
