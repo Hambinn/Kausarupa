@@ -25,24 +25,27 @@
           </div>
           <div class="tulisan-btn-last">
             <transition name="trans-kat">
-            <p class="kat">Katalog<br>Karya</p>
+            <p class="kat" v-show="kat">Katalog<br>Karya</p>
             </transition >
             <transition name="trans-mer">
-            <p class="mer">Merch</p>
+            <p class="mer" v-show="mer">Merch</p>
             </transition>
             <transition name="trans-pho">
-            <p class="pho">Photobooth</p>
+            <p class="pho" v-show="pho">Photobooth</p>
             </transition>
             <transition name="trans-gep">
-            <p class="gep">GEP<br>Sebelumnya</p>
+            <p class="gep" v-show="gep">GEP<br>Sebelumnya</p>
             </transition>
           </div>
           <div class="cont-tombol-finish">
-              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat">
-              <img src="../assets/png/FinishPage/Last/merch.png" class="merch">            
-              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth">            
-              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum">              
-              <img src="../assets/png/FinishPage/home.png" class="home">              
+              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat">
+              <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer">            
+              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho">            
+              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep">              
+              <img src="../assets/png/FinishPage/home.png" class="home" @click="home">
+              <div class="btn-feedback">
+                Feedback
+              </div>  
           </div>
         </div>
       </div>
@@ -50,9 +53,10 @@
 </template>
 
 <script>
+import Katalog from '../components/Katalog.vue'
     import TombolFinish from '../components/TombolFinish.vue'
         export default {
-            components:{ TombolFinish },
+            components:{ TombolFinish, Katalog },
             data(){
               return{
                 kat:false,
@@ -73,6 +77,9 @@
               },
               showgep(){
                 this.gep = !this.gep
+              },
+              home(){
+                this.$router.push('/main')
               }
             }
         }
@@ -85,6 +92,24 @@ html,body{
 *{
     padding: 0;
     margin: 0;   
+}
+
+.btn-feedback{
+  all: unset;
+  position: absolute;
+    font-family: 'Tf Grotesk-italic';
+    font-weight: normal;
+    font-style: italic;
+    background-image: linear-gradient(#30455A,#898989);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    width: 25%;
+    height: 6%;
+    transform: translate(50%,1270%);
+    font-size: 2vw;
+    color: #F2F7ED;
+    cursor: pointer;
+    z-index: 5;
 }
 
 .tulisan-btn-last{
@@ -121,6 +146,15 @@ html,body{
     transform: translate(690%, 1430%);
 }
 
+.trans-mer-enter-active, .trans-mer-leave-active{
+    transition: all .5s ease;
+}
+
+.trans-mer-enter, .trans-mer-leave-to{
+    opacity: 0;
+    transform: translate(690%, 1730%);
+}
+
 .pho{
     position: absolute;
     font-family: Tf Grotesk-italic;
@@ -131,6 +165,15 @@ html,body{
     transform: translate(170%,2350%);
 }
 
+.trans-pho-enter-active, .trans-pho-leave-active{
+    transition: all .5s ease;
+}
+
+.trans-pho-enter, .trans-pho-leave-to{
+    opacity: 0;
+    transform: translate(170%, 2650%);
+}
+
 .gep{
   position: absolute;
     font-family: Tf Grotesk-italic;
@@ -139,6 +182,15 @@ html,body{
     color: #466584;
     text-align: center;
     transform: translate(345%, 1170%);
+}
+
+.trans-gep-enter-active, .trans-gep-leave-active{
+    transition: all .5s ease;
+}
+
+.trans-gep-enter, .trans-gep-leave-to{
+    opacity: 0;
+    transform: translate(345%, 1470%);
 }
 
 .cont-tombol-finish{
@@ -152,30 +204,35 @@ html,body{
   position: absolute;
   height: 30%;
   transform: translate(-240%,60%);
+  cursor: pointer;
 }
 
 .merch{
   position: absolute;
   height: 30%;
   transform: translate(-150%,60%);
+  cursor: pointer;
 }
 
 .photobooth{
   position: absolute;
   height: 30%;
   transform: translate(-240%,165%);
+  cursor: pointer;
 }
 
 .sebelum{
   position: absolute;
   height: 30%;
   transform: translate(-150%,165%);
+  cursor: pointer;
 }
 
 .home{
   position: absolute;
   height: 7%;
   transform: translate(-1200%,150%);
+  cursor: pointer;
 }
 
 

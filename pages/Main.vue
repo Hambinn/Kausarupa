@@ -29,7 +29,7 @@
             <img src="../assets/svg/MainPage/permen.svg" alt="" class="oren">
           </div>
           <div class="container-text-middle-title">
-            Story/Panduan?
+            Intro
           </div>
           <div class="container-text-middle">
             Malam yang penuh gemerlap bintang. Di tengah kesunyian ruang, Saka terbangun. Loh tetapi badannya masih menempel pada kasur? Oh sepertinya ia mengalami lucid dream. Sambil berusaha terbangun, ia meratapi langit malam. Bintang kelap kelip sangat menarik matanya. Ia mencoba meraih bintang tersebut. Tak disangka, bintang itu bisa di sentuh. Hmmm mungkin ia bisa mengumpulkan bintang dulu sebelum lanjut menjelajah! Oiya, jika sudah selesai mengumpulkan bintang, jangan lupa untuk mencari portal menuju petualangan menarik selanjutnya.
@@ -263,9 +263,10 @@ body{
 .container-text-middle-title{
     position: absolute;
     font-size: 5vw;
-    margin: 10% 30%;
+    margin: 10% 43%;
     font-family: Tf Grotesk;
     color: #D2D5D3;
+    text-align: center;
 }     
 
 .container-text-middle{

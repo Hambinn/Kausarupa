@@ -2,7 +2,7 @@
     <div class="bg-narasi-mamus">
         <div class="top-cont">
             <div class="canvas">
-                <div class="cont-mas-nar-mamus">
+                <div class="cont-mas-nar-mamus-int">
                     <img src="~/assets/png/umum/mamus berdiri.png" alt="">
                 </div>
                 <div class="container-header-mamus">
@@ -90,13 +90,13 @@ html,body{
     margin: 0;
 }
 
-.cont-mas-nar-mamus{
+.cont-mas-nar-mamus-int{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.cont-mas-nar-mamus img{
+.cont-mas-nar-mamus-int img{
     position: absolute;
     height: 70%;
     transform: translate(-160%,35%);
