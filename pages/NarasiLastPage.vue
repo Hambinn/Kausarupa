@@ -6,7 +6,7 @@
                     <img src="~/assets/png/umum/mamus berdiri.png" alt="">
                 </div>
                 <div class="container-back-last">
-                    <img src="../assets/png/FinishPage/keyboard_backspace.png" alt="" class="back">
+                    <img src="../assets/png/FinishPage/keyboard_backspace.png" alt="" class="back" @click="back">
                 </div>
                 <div class="container-sound-last">
                     <img src="../assets/png/FinishPage/sound on.png" alt="" class="sound-on">
@@ -23,6 +23,9 @@
                 <div class="container-kasur-last">
                     <img src="../assets/png/FinishPage/Narasi/kasur.png" alt="" class="kasur-biru">
                 </div>                
+                <div class="tombol-next-last" @click="next">
+                    <p class="next-last">Next</p>
+                </div>
             </div>
         </div>
     </div>
@@ -32,6 +35,14 @@
 import kotakLast from '../components/Last/kotakLast.vue'
     export default {
   components: { kotakLast },
+  methods:{
+      next(){
+          this.$router.push('/suratlastpage')
+      },
+      back(){
+          this.$router.push('/topeng')
+      }
+  }
         
     }
 </script>
@@ -50,6 +61,33 @@ html,body{
     padding: 0;
     margin: 0;
 }
+
+.tombol-next-last{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
+    z-index: 5;
+    background: #597FA3;
+    border-radius: 11.4%/38.4%;
+    cursor: pointer;
+}
+
+.tombol-next-last .next-last{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.1vw;
+    color: white;
+}
+
 
 .cont-mas-nar-last{
     position: absolute;
@@ -143,6 +181,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-1050%, 160%);
+    cursor: pointer;
 }
 
 .container-sound-last{

@@ -5,9 +5,6 @@
                 <div class="container-surat">
                     <img src="../assets/png/FinishPage/Surat/amplop.png" alt="" class="surat">
                 </div>
-                <div class="container-back-surat">
-                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back">
-                </div>
                 <div class="container-kertas">
                     <img src="../assets/png/FinishPage/Surat/kertas.png" alt="" class="kertas">
                 </div>
@@ -25,6 +22,12 @@
                     <p class="isi-surat">Melalui penjelajahan diri lewat persona, shadow, anima/animus, serta self sampailah kita di titik akhir perjalanan. Berbagai karya telah menjadi gambaran akan beragam karakter yang ditunjukkan, maupun tak ditunjukkan pada dunia. Setelah melalui penjelajahan karya ini, ayo tuliskan perasaanmu dalam Majalah dinding GEP di Bit.ly/MadingKausarupa ! jangan lupa tinggalkan jejak ya!
                     </p>
                 </div>
+                <div class="container-back-surat">
+                    <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
+                <div class="tombol-next-last" @click="next">
+                    <p class="next-last">Next</p>
+                </div>
             </div>
         </div>
     </div>
@@ -32,7 +35,14 @@
 
 <script>
     export default {
-        
+        methods:{
+            back(){
+                this.$router.push('/narasilastpage')
+            },
+            next(){
+                this.$router.push('/finish')
+            }
+        }
     }
 </script>
 
@@ -49,6 +59,32 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+.tombol-next-last{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(230%, 454%);
+    z-index: 5;
+    background: #597FA3;
+    border-radius: 11.4%/38.4%;
+    cursor: pointer;
+}
+
+.tombol-next-last .next-last{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.1vw;
+    color: white;
 }
 
 .top-cont{
@@ -96,6 +132,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-1050%, 160%);
+    cursor: pointer;
 }
 
 .container-volume-surat .volume-on{

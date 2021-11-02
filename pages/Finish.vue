@@ -23,7 +23,27 @@
           <div class="container-jendela-last">
             <img src="../assets/svg/LastPage/jendela (1)-min.png" alt="" class="JendelaLast">
           </div>
-          <tombol-finish/>
+          <div class="tulisan-btn-last">
+            <transition name="trans-kat">
+            <p class="kat">Katalog<br>Karya</p>
+            </transition >
+            <transition name="trans-mer">
+            <p class="mer">Merch</p>
+            </transition>
+            <transition name="trans-pho">
+            <p class="pho">Photobooth</p>
+            </transition>
+            <transition name="trans-gep">
+            <p class="gep">GEP<br>Sebelumnya</p>
+            </transition>
+          </div>
+          <div class="cont-tombol-finish">
+              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat">
+              <img src="../assets/png/FinishPage/Last/merch.png" class="merch">            
+              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth">            
+              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum">              
+              <img src="../assets/png/FinishPage/home.png" class="home">              
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +52,29 @@
 <script>
     import TombolFinish from '../components/TombolFinish.vue'
         export default {
-            components:{ TombolFinish }
+            components:{ TombolFinish },
+            data(){
+              return{
+                kat:false,
+                mer: false,
+                pho: false,
+                gep: false,
+              }
+            },
+            methods:{
+              showkat(){
+                this.kat = !this.kat
+              },
+              showmer(){
+                this.mer = !this.mer
+              },
+              showpho(){
+                this.pho = !this.pho
+              },
+              showgep(){
+                this.gep = !this.gep
+              }
+            }
         }
 </script>
 
@@ -44,6 +86,99 @@ html,body{
     padding: 0;
     margin: 0;   
 }
+
+.tulisan-btn-last{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.kat{
+    position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: #466584;
+    text-align: center;
+    transform: translate(270%, 700%);
+}
+.trans-kat-enter-active, .trans-kat-leave-active{
+    transition: all .5s ease;
+}
+
+.trans-kat-enter, .trans-kat-leave-to{
+    opacity: 0;
+    transform: translate(270%, 1000%);
+}
+
+.mer{
+  position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: #466584;
+    text-align: center;
+    transform: translate(690%, 1430%);
+}
+
+.pho{
+    position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: #466584;
+    text-align: center;
+    transform: translate(170%,2350%);
+}
+
+.gep{
+  position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 1.5vw;
+    color: #466584;
+    text-align: center;
+    transform: translate(345%, 1170%);
+}
+
+.cont-tombol-finish{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
+.katalog{
+  position: absolute;
+  height: 30%;
+  transform: translate(-240%,60%);
+}
+
+.merch{
+  position: absolute;
+  height: 30%;
+  transform: translate(-150%,60%);
+}
+
+.photobooth{
+  position: absolute;
+  height: 30%;
+  transform: translate(-240%,165%);
+}
+
+.sebelum{
+  position: absolute;
+  height: 30%;
+  transform: translate(-150%,165%);
+}
+
+.home{
+  position: absolute;
+  height: 7%;
+  transform: translate(-1200%,150%);
+}
+
+
 
 .top-cont{
   position: absolute;
@@ -173,6 +308,98 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(70%,5%);
+}
+
+.katalog-finish{
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    transform: translate(100%, 160%);
+}
+
+.cont-tombol-finish .tulisan-katalog{
+    position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 3.5vh;
+    color: #466584;
+    text-align: center;
+    transform: translate(100%, 1200%);
+}
+
+.merch-finish{
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    transform: translate(250%, 160%);
+}
+
+.cont-tombol-finish .tulisan-merch{
+  position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 3.5vh;
+    color: #466584;
+    text-align: center;
+    transform: translate(590%, 1200%);
+}
+
+.photobooth-finish{
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    transform: translate(100%, 480%);
+}
+
+.cont-tombol-finish .tulisan-photobooth{
+  position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 3.5vh;
+    color: #466584;
+    text-align: center;
+    transform: translate(-31.5%, 2000%);
+}
+
+.gepsebelumnya-finish{
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    transform: translate(250%,480%);
+}
+
+.cont-tombol-finish .tulisan-gep{
+  position: absolute;
+    font-family: Tf Grotesk-italic;
+    font-weight: normal;
+    font-size: 3.5vh;
+    color: #466584;
+    text-align: center;
+    transform: translate(-31.5%, 1200%);
+}
+
+.homebutton-finish{
+    position: absolute;
+    height: 5%;
+    width: 5%;
+    transform: translate(20%, 150%);
+}
+
+.feedback-finish{
+    position: absolute;
+    height: 50%;
+    width: 70%;
+    transform: translate(0%, 0%);
+    color:#466584;
+}
+
+.cont-tombol-finish .tulisan-feedback{
+  position: absolute;
+    font-family: Tf Grotesk;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 4vh;
+    color: #ffffff;
 }
 
 </style>
