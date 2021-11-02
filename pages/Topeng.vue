@@ -231,6 +231,9 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
+    font-family: 'Tf Grotesk';
+    font-style: normal;
+    font-weight: normal;
 }
 
 .tulisan-persona{

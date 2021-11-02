@@ -3,11 +3,8 @@
       <div class="top-cont">
         <div class="canvas">
             <div class="container-box-persona">
-                <p class="text-box-persona">{{score}}</p>
+                <p class="text-box-persona">{{scorepersona}}</p>
                 <img src="~/assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
-          </div>
-          <div class="tombol-next-persona">
-            <p class="next-persona">Next</p>
           </div>
           <div class= "container-rumah">
               <img src="~assets/svg/PersonaPage/rumah oren kanan bawah.svg" alt="" class="rumahSK1">
@@ -28,7 +25,7 @@
                 <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
           </div>
           <div class="scroll-karya">
-              <karya-persona-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
+              <karya-persona-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahpersona="tambahpersona"/>
           </div>
         <!-- <layout-karya v-show="showLayout" @close-modal="showLayout = false" /> -->
         <layout-karya-persona-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
@@ -47,7 +44,7 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
-                score: 0,
+                scorepersona: 0,
                 showLayout: false,
                 arrkarya: [],
                 karyalength: 0,
@@ -113,10 +110,25 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
                     alert(e)
                     return
                 }
+            },
+            tambahpersona(){
+                if(localStorage.getItem('scorepersona')<15){
+                    localStorage.setItem('scorepersona',Number(this.scorepersona+1))
+                    this.scorepersona = Number(localStorage.getItem('scorepersona'))
+                }
+                console.log('masuk')
             }
         },
         mounted(){
             this.getThumbnail();
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scorepersona')){
+                localStorage.setItem('scorepersona', 0)
+            }
+            else{
+                this.scorepersona = Number(localStorage.getItem('scorepersona'))
+            }
         }
 
     }
@@ -262,33 +274,7 @@ html,body{
     z-index: 2;
 }
 
-.tombol-next-persona{
-    position: fixed;
-    height: 6.5%;
-    width: 13%;
-    transform: translate(630%, 1300%);
 
-    background: #597FA3;
-    border-radius: 35px;
-    z-index: 3;
-}
-
-.tombol-next-persona .next-persona{
-    position: absolute;
-    width: 116%;
-    height: 60%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-70%);
-
-    font-family: Tf Grotesk;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2.3vw;
-/* identical to box height */
-
-color: #fff;
-}
 
 /* score */
 .container-box-persona{

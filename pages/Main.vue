@@ -32,10 +32,7 @@
             Story/Panduan?
           </div>
           <div class="container-text-middle">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cupiditate corrupti est, vel nesciunt
-            natus tempore recusandae quae cumque eius esse nihil amet blanditiis, illo facere. Accusantium voluptatum
-            tempora earum? Perferendis itaque eveniet exercitationem, beatae quasi dolore, aperiam recusandae rerum
-            voluptatibus perspiciatis, ullam dolorum praesentium accusantium saepe placeat iste veritatis.
+            Malam yang penuh gemerlap bintang. Di tengah kesunyian ruang, Saka terbangun. Loh tetapi badannya masih menempel pada kasur? Oh sepertinya ia mengalami lucid dream. Sambil berusaha terbangun, ia meratapi langit malam. Bintang kelap kelip sangat menarik matanya. Ia mencoba meraih bintang tersebut. Tak disangka, bintang itu bisa di sentuh. Hmmm mungkin ia bisa mengumpulkan bintang dulu sebelum lanjut menjelajah! Oiya, jika sudah selesai mengumpulkan bintang, jangan lupa untuk mencari portal menuju petualangan menarik selanjutnya.
           </div>
           <div class="container-segitiga">
             <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">

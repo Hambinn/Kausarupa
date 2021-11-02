@@ -2,6 +2,9 @@
     <div class="bg-karya-mamus">
         <div class="top-cont">
             <div class="canvas">
+                <div class="cont-mas-nar-mamus">
+                    <img src="~/assets/png/umum/mamus msct peace copy.png" alt="">
+                </div>
                 <div class="container-header-mamus">
                     <img src="../assets/png/MamusPage/header mamus.png" alt="" class="header-mamus">
                 </div>      
@@ -9,9 +12,11 @@
                     <img src="../assets/png/MamusPage/2. pilih/atas.png" alt="" class="atas">
                     <img src="../assets/png/MamusPage/2. pilih/bawah.png" alt="" class="bawah">
                 </div>
-                <div class="container-volume-mamus">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on-1">
+                <div class="container-back-mamus">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
+                </div>
+                <div class="container-volume-mamus">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
                 </div>
                 <div class="pilih-tema-mamus">
                     <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king" @click="toKine">
@@ -19,7 +24,7 @@
                     <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen" @click="toFoto">
                 </div>
                 <div class="container-box-mamus">
-                    <p class="text-box-mamus">00</p>
+                    <p class="text-box-mamus">{{scoremamus}}</p>
                     <img src="../assets/png/MamusPage/topeng score putih mamus.png" alt="" class="topeng-score-mamus">                    
                 </div>
             </div>
@@ -29,6 +34,12 @@
 
 <script>
     export default {
+        data(){
+            return{
+                isVolume: true,
+                scoremamus: '0'
+            }
+        },
         methods:{
             toKine(){
                 this.$router.push('/Mamus/kineMamus')
@@ -41,6 +52,24 @@
             },
             back(){
                 this.$router.push('/narasimamus')
+            },
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                console.log('masuk on')
+            }else{
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                console.log('masuk off')
+            }
+        },
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoremamus')){
+                localStorage.setItem('scoremamus', 0)
+            }
+            else{
+                this.scoremamus = Number(localStorage.getItem('scoremamus'))
             }
         }
     }
@@ -50,6 +79,19 @@
 *{
     padding: 0;
     margin: 0;
+}
+
+.cont-mas-nar-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-nar-mamus img{
+    position: absolute;
+    height: 60%;
+    transform: translate(100%,60%);
+    z-index: 5;
 }
 
 .top-cont{
@@ -97,17 +139,16 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    
 }
 
-.container-volume-mamus .volume-on-1{
+.container-volume-mamus .volume-on{
     position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1005%, -518%);
-    z-index: 1;
-    
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-box-mamus{
@@ -145,13 +186,14 @@
     width: 100%;
 }
 
-.container-volume-mamus .back{
+.container-back-mamus .back{
     position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -520%);
-    z-index: 1;
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-bg-element{
@@ -182,41 +224,47 @@
 }
 
 .pilih-tema-mamus .king{
+    position: absolute;
     height: 62%;
     top: 50%;
     left: 50%;
-    transform: translate(65%, 48%);
+    transform: translate(-35%, -25%);
+    z-index: 5;
     
 }
 
 .king:hover{
     cursor: pointer;
-
+    z-index: 10;
 }
 
 .pilih-tema-mamus .kq{
+    position: absolute;
     height: 68%;
     top: 50%;
     left: 50%;
-    transform: translate(-100%, 44%);
+    transform: translate(-100%, -32%);
+    z-index: 5;
 }
 
 .kq:hover{
     cursor: pointer;
-
+    z-index: 10;
 }
 
 .pilih-tema-mamus .queen{
+    position: absolute;
     height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(-107%, -59%);
+    transform: translate(-158%, -32%);
+    z-index: 5;
     
 }
 
 .queen:hover{
     cursor: pointer;
-
+    z-index: 10;
     
 }
 </style>

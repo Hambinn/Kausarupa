@@ -5,8 +5,8 @@
                 <div class="container-header-skshadow">
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-skshadow">
                 </div>
-                <div class="container-back-skshadow">
-                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-skshadow" @click="back">
+                <div class="container-back-pkshadow">
+                    <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow" @click="back">
                 </div>
                 <div class="scroll-karya">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
@@ -14,17 +14,14 @@
                     <img src="~/assets/png/ShadowPage/3. scroll karya/tangga.png" alt="" class="tangga">                
                 </div>
                 <div class="container-box-skshadow">
-                    <p class="text-box-skshadow">00</p>
+                    <p class="text-box-skshadow">{{scoreshadow}}</p>
                     <img src="~/assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-skshadow">                    
                 </div>                
-                <div class="container-volume-skshadow">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow3">
-                </div>
-                <div class="tombol-next-skshadow">
-                    <p class="next-skshadow">Next</p>
+                <div class="container-volume-pkshadow">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
                 </div>
             <div class="scroll-karya-fotoshadow">
-              <karya-shadow-kine @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)"/>
+              <karya-shadow-kine @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahshadow="tambahshadow"/>
             </div>
             <layout-karya-shadow-kine v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :pdf="pdf" :karlength="karlength" />
             </div>
@@ -39,7 +36,7 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
-                score: 0,
+                scoreshadow: 0,
                 showLayout: false,
                 arrkarya: [],
                 karyalength: 0,
@@ -100,10 +97,25 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
                     alert(e)
                     return
                 }
+            },
+            tambahshadow(){
+                if(localStorage.getItem('scoreshadow')<22){
+                    localStorage.setItem('scoreshadow',Number(this.scoreshadow+1))
+                    this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
+                }
+                console.log('masuk')
             }
         },
         mounted(){
             this.getThumbnail();
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoreshadow')){
+                localStorage.setItem('scoreshadow', 0)
+            }
+            else{
+                this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
+            }
         }
 
     }
@@ -161,19 +173,21 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
     transform: translate(-155%, 80%);
 }
 
-.container-back-skshadow{
+.container-back-pkshadow{
     position: absolute;
     height: 100%;
     width: 100%;
+    
 }
 
-.container-back-skshadow .back-skshadow{
+.container-back-pkshadow .back-pkshadow{
     position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1100%, -500%);
-    z-index: 1;
+    transform: translate(-1100%, -510%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .scroll-karya{
@@ -203,17 +217,20 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
     transform: translate(-14%,-46%)
 }
 
-.container-volume-skshadow{
+.container-volume-pkshadow{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.container-volume-skshadow .volume-shadow3{
+.container-volume-pkshadow .volume-shadow2{
+    position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-box-skshadow{

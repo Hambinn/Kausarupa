@@ -3,11 +3,11 @@
       <div class="top-cont">
         <div class="canvas">
           <div class="container-box-persona">
-                <p class="text-box-persona">{{score}}</p>
+                <p class="text-box-persona">{{scorepersona}}</p>
                 <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
           </div>
           <div class="container-orang">
-              <img src="../assets/svg/PersonaPage/mascot berdiri.png" alt="">
+              <img src="../assets/png/umum/persona berdiri.png" alt="">
           </div>
           <div class="container-kotak">
           <kotak-item/>
@@ -43,7 +43,7 @@ import kotakItem from '../components/Persona/kotakItem.vue'
     components: { kotakItem },
     data(){
         return{
-            score: 0,
+            scorepersona: 0,
             isVolume: true
         }
     },
@@ -64,7 +64,15 @@ import kotakItem from '../components/Persona/kotakItem.vue'
         next(){
              this.$router.push('/pilihkarya')
         }
-    }
+    },
+    beforeMount(){
+            if(!localStorage.getItem('scorepersona')){
+                localStorage.setItem('scorepersona', 0)
+            }
+            else{
+                this.scorepersona = Number(localStorage.getItem('scorepersona'))
+            }
+        }
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>
@@ -143,7 +151,7 @@ html,body{
     width: 100%;
     
 }
-
+    
 .container-back-persona .back{
     width: 4.2%;
     top: 50%;
@@ -162,8 +170,8 @@ html,body{
 .container-orang img{
     top: 50%;
     left: 50%;
-    height: 190%;
-    transform: translate(-25%,3%);
+    height: 80%;
+    transform: translate(-95%,25%);
 }
 
 .container-awan{

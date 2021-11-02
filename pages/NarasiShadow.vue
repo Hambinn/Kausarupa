@@ -11,10 +11,10 @@
                 <div class="narasi">
                     <img src="~/assets/png/ShadowPage/1. narasi/kanan atas.png" alt="" class="kanan_atas">
                     <img src="~/assets/png/ShadowPage/1. narasi/kanan bawah.png" alt="" class="kanan_bawah">
-                    <img src="~/assets/png/ShadowPage/1. narasi/mascot narasi.png" alt="" class="mascot-narasi">
+                    <img src="~/assets/png/umum/shadow msct brdiri copy.png" alt="" class="mascot-narasi">
                 </div>
                 <div class="container-box-shadow">
-                    <p class="text-box-shadow">00</p>
+                    <p class="text-box-shadow">{{scoreshadow}}</p>
                     <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-shadow">                    
                 </div>                
                 <div class="container-volume-shadow">
@@ -33,12 +33,25 @@
 import kotakBiru from '../components/Shadow/kotakBiru.vue'
     export default {
         components: { kotakBiru },
+        data(){
+            return{
+                scoreshadow: '0',
+            }
+        },
         methods:{
             back(){
                 this.$router.push('/topeng')
             },
             next(){
                 this.$router.push('/pilihkaryashadow')
+            }
+        },
+        beforeMount(){
+            if(!localStorage.getItem('scoreshadow')){
+                localStorage.setItem('scoreshadow', 0)
+            }
+            else{
+                this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
             }
         }
         
@@ -103,6 +116,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     top: 50%;
     left: 50%;
     transform: translate(-1100%, 160%);
+    cursor: pointer;
 }
 
 .narasi{
@@ -115,7 +129,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     height: 55%;
     top: 50%;
     left: 50%;
-    transform: translate(93%,-3%)
+    transform: translate(93%,-7%)
 }
 
 .narasi .kanan_bawah{
@@ -126,10 +140,10 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
 }
 
 .narasi .mascot-narasi{
-    height: 190%;
+    height: 70%;
     top: 50%;
     left: 50%;
-    transform: translate(55.5%,-39.5%) rotate(-39deg);
+    transform: translate(100%,-49%)
 }
 
 .container-volume-shadow{
@@ -143,6 +157,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     top: 50%;
     left: 50%;
     transform: translate(1100%, 160%);
+    cursor: pointer;
 }
 
 .container-box-shadow{
@@ -181,9 +196,9 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     height: 7%;
     width: 14%;
     transform: translate(230%, 454%);
-
     background: #597FA3;
     border-radius: 11.4%/38.4%;
+    cursor: pointer;
 }
 
 .tombol-next-shadow .next-shadow{
@@ -191,7 +206,7 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
     left: 50%;
     top: 50%;
     transform: translate(-50%,-60%);
-
+    z-index: 5;
     font-family: Tf Grotesk;
     font-style: normal;
     font-weight: normal;

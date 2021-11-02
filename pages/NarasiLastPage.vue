@@ -2,6 +2,9 @@
     <div class="bg-narasi-last">
         <div class="top-cont">
             <div class="canvas">
+                <div class="cont-mas-nar-last">
+                    <img src="~/assets/png/umum/mamus berdiri.png" alt="">
+                </div>
                 <div class="container-back-last">
                     <img src="../assets/png/FinishPage/keyboard_backspace.png" alt="" class="back">
                 </div>
@@ -46,6 +49,19 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+.cont-mas-nar-last{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-nar-last img{
+    position: absolute;
+    height: 65%;
+    transform: translate(75%,45%);
+    z-index: 5;
 }
 
 .top-cont{
@@ -99,7 +115,7 @@ html,body{
     width: 22.4%;
     top: 50%;
     left: 50%;
-    transform: translate(142%, 20%);
+    transform: translate(80%, -20%);
 }
 
 .container-kasur-last{

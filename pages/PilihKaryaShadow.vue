@@ -2,6 +2,9 @@
     <div class="bg-karya-shadow">
         <div class="top-cont">
             <div class="canvas">
+                <div class="cont-mas-nar-shadow">
+                    <img src="~/assets/png/umum/shadow msct 2 (ada shadownya).png" alt="">
+                </div>
                 <div class="container-header-pkshadow">
                     <img src="~/assets/png/ShadowPage/header shadow.png" alt="" class="header-pkshadow">
                 </div>
@@ -9,7 +12,7 @@
                     <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow" @click="back">
                 </div>
                 <div class="container-box-pkshadow">
-                    <p class="text-box-pkshadow">00</p>
+                    <p class="text-box-pkshadow">{{scoreshadow}}</p>
                     <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-pkshadow">                    
                 </div>                
                 <div class="container-volume-pkshadow">
@@ -43,7 +46,20 @@ export default {
         keFoto(){
             this.$router.push('/Shadow/fotoShadow')
         }
-    }
+    },
+    data(){
+        return{
+            scoreshadow: '0'
+        }
+    },
+    beforeMount(){
+            if(!localStorage.getItem('scoreshadow')){
+                localStorage.setItem('scoreshadow', 0)
+            }
+            else{
+                this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
+            }
+        }
 }
 </script>
 
@@ -51,6 +67,18 @@ export default {
 *{
     padding: 0;
     margin: 0;
+}
+
+.cont-mas-nar-shadow{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-nar-shadow img{
+    position: absolute;
+    height: 30%;
+    transform: translate(-50%,220%);
 }
 
 .top-cont{
@@ -98,6 +126,7 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
+    
 }
 
 .container-back-pkshadow .back-pkshadow{
@@ -106,7 +135,8 @@ export default {
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -510%);
-    z-index: 2;
+    z-index: 5;
+    cursor: pointer;
 }
 
 .pilih-jenis{
@@ -143,11 +173,39 @@ export default {
     transform: translate(-8%,-100%)
 }
 
+@keyframes hole-kanan{
+    0%{transform: translate(-8%,-100%);}
+    50%{transform: translate(-8%, -110%);}
+    100%{transform: translate(-8%,-100%);}
+}
+
+.hole-kanan:hover{
+    animation-name: hole-kanan;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
 .pilih-jenis .hole-tengah{
     height: 52%;
     top: 50%;
     left: 50%;
     transform: translate(-35%,-106%)
+}
+
+@keyframes hole-tengah{
+    0%{transform: translate(-35%,-106%)}
+    50%{transform: translate(-35%,-116%)}
+    100%{transform: translate(-35%,-106%)}
+}
+
+.hole-tengah:hover{
+    animation-name: hole-tengah;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
 }
 
 .pilih-jenis .hole-kiri{
@@ -156,6 +214,22 @@ export default {
     left: 50%;
     transform: translate(-140%,-188%)
 }
+
+@keyframes hole-kiri{
+    0%{transform: translate(-140%,-188%)}
+    50%{transform: translate(-140%,-198%)}
+    100%{transform: translate(-140%,-188%)}
+}
+
+.hole-kiri:hover{
+    animation-name: hole-kiri;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+
 
 .container-volume-pkshadow{
     position: absolute;
@@ -168,8 +242,9 @@ export default {
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, -520%);
-    z-index: 2;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-box-pkshadow{

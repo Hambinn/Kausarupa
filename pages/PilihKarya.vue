@@ -2,6 +2,9 @@
     <div class="container-pilihkaryap">
         <div class="top-cont-pk">
             <div class="canvas-pk">
+                <div class="cont-mas-pk-persona">
+                    <img src="~/assets/png/umum/persona 2.png" alt="">
+                </div>
                 <div class="container-rumahcoklat">
                     <img src="../assets/svg/PersonaPage/rumah coklat 1.svg" alt="" class="coklatsatu">
                     <img src="../assets/svg/PersonaPage/rumah coklat 2.svg" alt="" class="coklatdua">
@@ -17,7 +20,7 @@
                     <img src="../assets/svg/PersonaPage/awan oren (1).svg" alt="" class="tiga">
                 </div>
                 <div class="container-box-persona">
-                    <p class="text-box-persona">{{score}}</p>
+                    <p class="text-box-persona">{{scorepersona}}</p>
                     <img src="../assets/png/PersonaPage/topeng score putih persona.png" alt="" class="topeng-score-persona">                    
                 </div>
                 <div class="container-header-persona">
@@ -43,7 +46,7 @@
         export default{
             data(){
                 return{
-                    score :0,
+                    scorepersona :0,
                     isVolume: true
                 }
             },
@@ -68,7 +71,15 @@
                 video(){
                     this.$router.push('Persona/videoPersona')
                 }
+            },
+            beforeMount(){
+            if(!localStorage.getItem('scorepersona')){
+                localStorage.setItem('scorepersona', 0)
             }
+            else{
+                this.scorepersona = Number(localStorage.getItem('scorepersona'))
+            }
+        }
         }
 </script>
 
@@ -83,6 +94,18 @@ html,body{
     padding: 0;
     margin: 0;
         
+}
+
+.cont-mas-pk-persona{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cont-mas-pk-persona img{
+    position: absolute;
+    height: 30%;
+    transform: translate(-190%,215%);
 }
 
 .container-pilihkaryap{

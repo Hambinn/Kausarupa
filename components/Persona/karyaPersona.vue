@@ -2,7 +2,7 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
         <swiper class="swiper" :options="swiperOption">
-        <swiper-slide class="img-wrapper" v-for="i in karyalength" :key="i"><img :src="arrkarya[i-1]" alt="" @click="$emit(`toggle`); passId(i)"></swiper-slide>
+        <swiper-slide class="img-wrapper" v-for="i in karyalength" :key="i"><img :src="arrkarya[i-1]" alt="" @click="$emit(`toggle`); passId(i);score()"></swiper-slide>
         <div class="swiper-pagination swiper-pagination-h" slot="pagination"></div>
     </swiper>
     </div>
@@ -46,11 +46,11 @@ import 'swiper/css/swiper.css'
             pindahindex(){
                 this.$router.push("/")
             },
-            testDoang(){
-                console.log('masuk')
-            },
             passId(id){
                 this.$emit('changeId',id)
+            },
+            score(){
+                this.$emit('tambahpersona')
                 console.log('masuk')
             }
         }
@@ -63,12 +63,12 @@ import 'swiper/css/swiper.css'
     }
 
 
-
     .img-wrapper img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 30px;
+        cursor: pointer;
     }
 
 

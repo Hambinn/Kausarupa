@@ -30,6 +30,7 @@ import 'swiper/css/swiper.css'
             return{
                 swiperOptionv:{
                     direction: 'vertical',
+                    mousewheel:true,
                     pagination:{
                         el: '.swiper-pagination-v',
                         clickable: true
