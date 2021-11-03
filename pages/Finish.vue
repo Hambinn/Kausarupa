@@ -2,6 +2,9 @@
     <div class="container-finish">
       <div class="top-cont">
         <div class="canvas">
+          <div class="container-jendela-last">
+            <img src="../assets/svg/LastPage/jendela (1)-min.png" alt="" class="JendelaLast">
+          </div>
           <div class="container-orang">
             <img src="../assets/svg/LastPage/orang-min.png" alt="" class="OrangLast">
           </div>
@@ -20,9 +23,6 @@
           <div class="container-logo-last">
             <img src="../assets/svg/LastPage/logo kausarupa.png" alt="" class="LogoLast">
           </div>
-          <div class="container-jendela-last">
-            <img src="../assets/svg/LastPage/jendela (1)-min.png" alt="" class="JendelaLast">
-          </div>
           <div class="tulisan-btn-last">
             <transition name="trans-kat">
             <p class="kat" v-show="kat">Katalog<br>Karya</p>
@@ -38,7 +38,7 @@
             </transition>
           </div>
           <div class="cont-tombol-finish">
-              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat">
+              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true">
               <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer">            
               <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho">            
               <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep">              
@@ -47,6 +47,7 @@
                 Feedback
               </div>  
           </div>
+          <katalog-karya  @close-modal="toggKat=false"/>
         </div>
       </div>
     </div>
@@ -54,15 +55,20 @@
 
 <script>
 import Katalog from '../components/Katalog.vue'
+import KatalogKarya from '../components/KatalogKarya.vue'
     import TombolFinish from '../components/TombolFinish.vue'
         export default {
-            components:{ TombolFinish, Katalog },
+            components:{ TombolFinish, Katalog, KatalogKarya },
             data(){
               return{
                 kat:false,
                 mer: false,
                 pho: false,
                 gep: false,
+                toggKat: false,
+                toggMerch: false,
+                toggPho: false,
+                toggGep:false
               }
             },
             methods:{
@@ -109,7 +115,6 @@ html,body{
     font-size: 2vw;
     color: #F2F7ED;
     cursor: pointer;
-    z-index: 5;
 }
 
 .tulisan-btn-last{
@@ -278,7 +283,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(106%,-35%);
-    z-index: 1;
+    z-index: 0;
 }
 
 .container-meja-last{
@@ -293,7 +298,6 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-100%,160%);
-    z-index: 1;
 }
 
 .container-vas-last{
@@ -308,7 +312,6 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-90%, 0%);
-    z-index: 2;
 }
 
 .container-topeng-last{
@@ -351,7 +354,6 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(28%,-52%);
-    z-index: 2;
 }
 
 .container-jendela-last{
