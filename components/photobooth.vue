@@ -2,8 +2,8 @@
     <div class="photobooth-container">
         <div class="video-container">
             <video id="videoElement" autoplay="true"/>
-            <img src="~assets/frame/Frame Photobooth 1.png" alt="frame" id="skeleton-frame">
-            <img src="~assets/frame/Frame Photobooth 1.png" alt="frame" id="frame">
+            <img :src="`~assets/frame/Frame Photobooth ${frame}.png`" alt="frame" id="skeleton-frame">
+            <img :src="`~assets/frame/Frame Photobooth ${frame}.png`" alt="frame" id="frame">
             <canvas id="snapshotCanvas" style="display: none"/>
         </div>
         <div class="control-container">
@@ -39,9 +39,7 @@ const MAX_FRAME = 5
             }
         },
         mounted(){
-            this.setupScreenshot()
-            this.startCamera()
-            this.preloadImages()
+            
         },
         methods:{
             preloadImages(){
@@ -88,12 +86,12 @@ const MAX_FRAME = 5
                 setTimeout(()=>{
                     this.canvas.style.display = "none"
                     this.displayBlackScreen = false
-                },2000)
+                },500)
             },
             download(){
                 var link = document.getElementById('link')
                 link.setAttribute('download','Oleh2 GEP Kausarua.png')
-                link.setAttribute('href', this.newCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream"))
+                link.setAttribute('href',this.newCanvas.toDataUrl("image/png").replace("image/png", "image/octet-stream"))
                 link.click()
             },
             startCamera(){

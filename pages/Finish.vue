@@ -38,7 +38,7 @@
             </transition>
           </div>
           <div class="cont-tombol-finish">
-              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true">
+              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true; forceRender()">
               <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer">            
               <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho">            
               <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep">              
@@ -47,7 +47,7 @@
                 Feedback
               </div>  
           </div>
-          <katalog-karya  @close-modal="toggKat=false"/>
+          <katalog-karya v-show="toggKat"  @close-modal="toggKat=false" :key="componentKey"/>
         </div>
       </div>
     </div>
@@ -68,7 +68,8 @@ import KatalogKarya from '../components/KatalogKarya.vue'
                 toggKat: false,
                 toggMerch: false,
                 toggPho: false,
-                toggGep:false
+                toggGep:false,
+                componentKey: 0,
               }
             },
             methods:{
@@ -86,6 +87,10 @@ import KatalogKarya from '../components/KatalogKarya.vue'
               },
               home(){
                 this.$router.push('/main')
+              },
+              forceRender(){
+                this.componentKey +=1;
+                console.log(this.componentKey)
               }
             }
         }

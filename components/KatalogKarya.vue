@@ -1,13 +1,15 @@
 <template>
   <div class="modal-overlay" @click="$emit(`close-modal`)">
-    <div class="container-katalog" >
-      <fw-turn class="magazine" :options="options" @click.stop>
-        <div v-for="i in 60" :key="i">
+    <div class="bungkus-karya">
+    <div class="container-katalog" @click.stop>
+      <fw-turn class="magazine" :options="options" >
+        <div v-for="i in 60" :key="i" @click.stop>
           <img :src="
           `https://storage.googleapis.com/kausarupa.appspot.com/Katalog/${i}.png`
         " alt="image${i}" class="futu" />
         </div>
       </fw-turn>
+      </div>
     </div>
     <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
   </div>
@@ -53,13 +55,20 @@
     margin: 0;
     padding: 0;
 }
+
+.bungkus-karya{
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    transform: translate(0%,30%);
+}
 .container-katalog{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 .magazine {
-  height: 78%;
+  height: 69%;
 }
 .magazine .turn-page {
   background-color: #ccc;
