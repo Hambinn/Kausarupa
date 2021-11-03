@@ -40,7 +40,7 @@
           <div class="cont-tombol-finish">
               <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true; forceRender()">
               <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer">            
-              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho">            
+              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho" @click="toggPho = true; forceRender()">            
               <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep">              
               <img src="../assets/png/FinishPage/home.png" class="home" @click="home">
               <div class="btn-feedback">
@@ -50,15 +50,17 @@
           <katalog-karya v-show="toggKat"  @close-modal="toggKat=false" :key="componentKey"/>
         </div>
       </div>
+          <photobooth v-show="toggPho" @close-modal="toggPho=false" :key="componentKey"/>
     </div>
 </template>
 
 <script>
 import Katalog from '../components/Katalog.vue'
 import KatalogKarya from '../components/KatalogKarya.vue'
+import Photobooth from '../components/photobooth.vue'
     import TombolFinish from '../components/TombolFinish.vue'
         export default {
-            components:{ TombolFinish, Katalog, KatalogKarya },
+            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth },
             data(){
               return{
                 kat:false,
@@ -90,7 +92,6 @@ import KatalogKarya from '../components/KatalogKarya.vue'
               },
               forceRender(){
                 this.componentKey +=1;
-                console.log(this.componentKey)
               }
             }
         }

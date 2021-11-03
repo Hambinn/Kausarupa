@@ -6,13 +6,14 @@
 
 <script>
 import Photobooth from '../components/photobooth.vue'
+
   export default {
     components:{Photobooth}
   }
 </script>
 
-<style
-    Photobooth
-    Photobooth  scoped>
-
+<style>
+html,body{
+  overflow: hidden;
+}
 </style>

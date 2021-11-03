@@ -1,23 +1,19 @@
 <template>
-    <div class="photobooth-container">
-        <div class="video-container">
+    <div class="photobooth-container" @click="$emit(`close-modal`)">
+        <div class="video-container" @click.stop>
             <video id="videoElement" autoplay="true"/>
             <img :src="`/frame/Frame Photobooth ${frame}.png`" alt="frame" id="skeleton-frame">
             <img :src="`/frame/Frame Photobooth ${frame}.png`" alt="frame" id="frame">
             <canvas id="snapshotCanvas" style="display: none"/>
         </div>
-        <div class="control-container">
-            <button id="captureButton" @click="capture">
+        <div class="control-container" >
+            <button id="captureButton" @click="capture" @click.stop>
                 Capture
             </button>
-            <button id="prev" @click="switchFrame(-1)">
-                Prev Frame
-            </button >
-            <button id="next" @click="switchFrame(1)">
-                Next Frame
-            </button>
-            <a id="link" style="display: none"/>
-            <button v-show="displayBlackScreen" id="downloadButton" @click="download">
+            <img src="../assets/png/umum/next.png" alt="" class="next-pho" @click="switchFrame(1)" @click.stop>
+            <img src="../assets/png/umum/pevious.png" alt="" class="prev-pho" @click="switchFrame(-1)" @click.stop>
+            <a id="link" style="display: none" @click.stop/>
+            <button v-show="displayBlackScreen" id="downloadButton" @click="download" @click.stop>
                 Download
             </button>
         </div>
@@ -25,7 +21,7 @@
 </template>
 
 <script>
-const MAX_FRAME = 6
+const MAX_FRAME = 5
     export default {
         data(){
             return{
@@ -51,6 +47,7 @@ const MAX_FRAME = 6
       },
       setupScreenshot(){
         this.canvas = document.querySelector("#snapshotCanvas")
+        console.log(this.canvas)
         this.ctx = this.canvas.getContext('2d')
         this.video = document.querySelector("#videoElement")
       },
@@ -75,6 +72,11 @@ const MAX_FRAME = 6
         newContext = this.newCanvas.getContext('2d')
         this.newCanvas.width = this.canvas.width * scaleFactor
         this.newCanvas.height = this.canvas.height * scaleFactor
+        console.log(scaleFactor)
+        console.log(this.canvas.height)
+        console.log(this.canvas.width)
+        console.log(this.newCanvas.height)
+        console.log(this.newCanvas.width)
         newContext.scale(scaleFactor, scaleFactor)
         this.ctx.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height)
         newContext.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height)
@@ -121,14 +123,36 @@ const MAX_FRAME = 6
     }
 </script>
 <style scoped>
-.photobooth-container {
-  background-image: url("../assets/png/WelcomePage/bg welcome 16_9.png");
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  background-position: center top;
-  height: 100vh;
-  width: 100vw;
+.photobooth-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #000000da;
 }
+
+.control-container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.next-pho{
+    height: 6%;
+    transform: translate(1200%,600%);
+    cursor: pointer;
+}
+.prev-pho{
+    height: 6%;
+    transform: translate(-1200%,600%);
+    cursor: pointer;
+}
+
+
 .video-container {
   position: absolute;
   top: 40%;
@@ -138,19 +162,20 @@ const MAX_FRAME = 6
 }
 button {
   position: absolute;
-  font-family: 'KG Happy Solid';
-  font-size: 24px;
+  font-family: 'Tf Grotesk-italic';
+  font-size: 1.7vw;
   border: none;
   outline: none;
   border-radius: 20px;
   padding: 7px 20px;
-  background-color: #ede5d1;
-  transition: background-color 0.2s ease;
+  height: 7%;
+  width: 27%;
+  background-image: linear-gradient(#5678A0,#8FA1B3);
+  color: white ;
+  cursor: pointer;
 }
 
-button:active{
-  background-color: #d1bb10;
-}
+
 
 #prev{
   left: 5%;
