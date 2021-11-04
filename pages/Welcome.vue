@@ -11,7 +11,7 @@
           <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
           <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
-          <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
+          <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar" @click="showCalendar = true">
           <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
           <button  class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
             :style="styleObj">
@@ -35,6 +35,7 @@
           <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
           <contact-us v-show="showContact" @close-modal="showContact = false" />
           <youtube v-show="showYoutube" @close-modal="showYoutube=false" />
+          <calendar-welcome v-show="showCatatan" @close-modal="showCalendar = false" />
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
       </div>
@@ -50,10 +51,11 @@ import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
 import Youtube from '../components/Youtube.vue'
 import Cookies from 'js-cookie'
+import CalendarWelcome from '../components/CalendarWelcome.vue'
     export default {
-        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
+        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome},
         beforeMount(){
-            if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
+                if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
                 this.$router.push('/Main')
             }
         },
