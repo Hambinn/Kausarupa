@@ -39,15 +39,17 @@
           </div>
           <div class="cont-tombol-finish">
               <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true; forceRender()">
-              <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer">            
+              <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer" @click="toggMerch = true">            
               <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho" @click="toggPho = true; forceRender()">            
-              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep">              
+              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep" @click="toggGep=true; forceRenderThrowback() ">              
               <img src="../assets/png/FinishPage/home.png" class="home" @click="home">
               <div class="btn-feedback">
                 Feedback
               </div>  
           </div>
           <katalog-karya v-show="toggKat"  @close-modal="toggKat=false" :key="componentKey"/>
+          <merch v-show="toggMerch" @close-modal="toggMerch=false"/>
+          <throwback v-show="toggGep" @close-modal="toggGep=false" :karyalength="karyalength" :arrkarya="arrkarya" :key="throwbackKey"/>
         </div>
       </div>
           <photobooth v-show="toggPho" @close-modal="toggPho=false" :key="componentKey"/>
@@ -57,10 +59,12 @@
 <script>
 import Katalog from '../components/Katalog.vue'
 import KatalogKarya from '../components/KatalogKarya.vue'
+import Merch from '../components/Merch.vue'
 import Photobooth from '../components/photobooth.vue'
+import Throwback from '../components/Throwback.vue'
     import TombolFinish from '../components/TombolFinish.vue'
         export default {
-            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth },
+            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback },
             data(){
               return{
                 kat:false,
@@ -72,6 +76,15 @@ import Photobooth from '../components/photobooth.vue'
                 toggPho: false,
                 toggGep:false,
                 componentKey: 0,
+                throwbackKey: 1,
+                arrkarya: [],
+                karyalength: 0,
+                id: 0,
+                title: '',
+                nama:'',
+                caption:'',
+                img: [],
+                karlength: 0,
               }
             },
             methods:{
@@ -92,7 +105,28 @@ import Photobooth from '../components/photobooth.vue'
               },
               forceRender(){
                 this.componentKey +=1;
-              }
+                console.log(this.componentKey)
+              },
+              forceRenderThrowback(){
+                this.throwbackKey +=1
+                console.log(this.throwbackKey)
+              },
+              async getThumbnail(){
+                const karyaRef = this.$fire.firestore.collection('throwback').doc('Foto')
+                try{
+                    const karya = await karyaRef.get()
+                    this.arrkarya = Object.values(karya.data())
+                    console.log(this.arrkarya)
+                    this.karyalength = this.arrkarya.length
+                    console.log(this.karyalength)
+                } catch(e){
+                    alert(e)
+                    return
+                }
+            },
+            },
+            mounted(){
+              this.getThumbnail()
             }
         }
 </script>
