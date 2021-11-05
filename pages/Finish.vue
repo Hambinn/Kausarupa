@@ -43,13 +43,14 @@
               <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho" @click="toggPho = true; forceRender()">            
               <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep" @click="toggGep=true; forceRenderThrowback() ">              
               <img src="../assets/png/FinishPage/home.png" class="home" @click="home">
-              <div class="btn-feedback">
+              <div class="btn-feedback" @click="toggFeed = true">
                 Feedback
               </div>  
           </div>
           <katalog-karya v-show="toggKat"  @close-modal="toggKat=false" :key="componentKey"/>
           <merch v-show="toggMerch" @close-modal="toggMerch=false"/>
           <throwback v-show="toggGep" @close-modal="toggGep=false" :karyalength="karyalength" :arrkarya="arrkarya" :key="throwbackKey"/>
+          <umpan-balik v-show="toggFeed" @close-modal="toggFeed=false"/>
         </div>
       </div>
           <photobooth v-show="toggPho" @close-modal="toggPho=false" :key="componentKey"/>
@@ -63,8 +64,9 @@ import Merch from '../components/Merch.vue'
 import Photobooth from '../components/photobooth.vue'
 import Throwback from '../components/Throwback.vue'
     import TombolFinish from '../components/TombolFinish.vue'
+import UmpanBalik from '../components/UmpanBalik.vue'
         export default {
-            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback },
+            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback, UmpanBalik },
             data(){
               return{
                 kat:false,
@@ -75,6 +77,7 @@ import Throwback from '../components/Throwback.vue'
                 toggMerch: false,
                 toggPho: false,
                 toggGep:false,
+                toggFeed: false,
                 componentKey: 0,
                 throwbackKey: 1,
                 arrkarya: [],

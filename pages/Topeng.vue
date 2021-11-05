@@ -9,6 +9,7 @@
           </div>
           <div class="ChooseOne" >
             <h4>Choose one!</h4>
+            <h3>Sisi manusia mana yang ingin kamu jelajahi lebih dulu?</h3>
           </div>
           <div class="tulisan-topeng">
               <transition name="persona">
@@ -190,6 +191,12 @@ html,body{
     font-style: normal;
     font-weight: normal;
     font-size: 4.5vw;
+}
+
+.ChooseOne h3{
+    transform: translate(0%, 300%);
+    font-family: 'Gaegu', cursive;
+    font-size: 2vw;
 }
 
 .topeng{

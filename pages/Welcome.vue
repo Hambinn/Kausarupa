@@ -35,7 +35,7 @@
           <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
           <contact-us v-show="showContact" @close-modal="showContact = false" />
           <youtube v-show="showYoutube" @close-modal="showYoutube=false" />
-          <calendar-welcome v-show="showCatatan" @close-modal="showCalendar = false" />
+          <calendar-welcome v-show="showCalendar" @close-modal="showCalendar = false" />
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
       </div>
@@ -50,7 +50,6 @@ import CatatanKuratorial from '../components/CatatanKuratorial.vue'
 import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
 import Youtube from '../components/Youtube.vue'
-import Cookies from 'js-cookie'
 import CalendarWelcome from '../components/CalendarWelcome.vue'
     export default {
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome},
@@ -65,6 +64,7 @@ import CalendarWelcome from '../components/CalendarWelcome.vue'
                 showCatatan: false,
                 showContact: false,
                 showYoutube: false,
+                showCalendar: false,
                 nama:'',
                 instansi:'',
                 disabled: true,

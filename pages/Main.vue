@@ -32,7 +32,11 @@
             Intro
           </div>
           <div class="container-text-middle">
-            Malam yang penuh gemerlap bintang. Di tengah kesunyian ruang, Saka terbangun. Loh tetapi badannya masih menempel pada kasur? Oh sepertinya ia mengalami lucid dream. Sambil berusaha terbangun, ia meratapi langit malam. Bintang kelap kelip sangat menarik matanya. Ia mencoba meraih bintang tersebut. Tak disangka, bintang itu bisa di sentuh. Hmmm mungkin ia bisa mengumpulkan bintang dulu sebelum lanjut menjelajah! Oiya, jika sudah selesai mengumpulkan bintang, jangan lupa untuk mencari portal menuju petualangan menarik selanjutnya.
+            Saka terbangun di malam penuh gemerlap bintang. Namun, badannya masih menempel pada kasur. Oh, sepertinya ia mengalami lucid dream. 
+            <br> <br>
+            Kerlap-kerlip bintang membuat Saka ingin meraih benda itu. Oh! ternyata ia bisa meraihnya. Hmmm mungkin ia bisa mengumpulkan bintang dahulu sebelum lanjut menjelajahi berbagai sisi dari manusia!
+            <br> <br>
+            Oiya, jika sudah selesai mengumpulkan bintang, jangan lupa  mencari portal dan pindahkan saka kedalamnya untuk menuju petualangan menarik selanjutnya!
           </div>
           <div class="container-segitiga">
             <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">
