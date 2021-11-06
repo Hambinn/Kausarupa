@@ -80,7 +80,7 @@ import $ from 'jquery'
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-100%,400%);
+  transform: translate(-190%,400%);
   cursor: pointer;
 }
 
