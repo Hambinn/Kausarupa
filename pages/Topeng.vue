@@ -163,7 +163,7 @@ html,body{
     left: 50%;
     height: 7%;
     width: 14%;
-    transform: translate(-50%, 300%);
+    transform: translate(-50%, 340%);
     background: #597FA3;
     border-radius: 11.4%/38.4%;
     cursor: pointer;
