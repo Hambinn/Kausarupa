@@ -3,7 +3,7 @@
     <div class="bungkus-karya">
     <div class="container-katalog" @click.stop>
       <fw-turn class="magazine" :options="options" >
-        <div v-for="i in 60" :key="i" @click.stop>
+        <div v-for="i in 64" :key="i" @click.stop>
           <img :src="
           `https://storage.googleapis.com/kausarupa.appspot.com/Katalog/${i}.png`
         " alt="image${i}" class="futu" />
@@ -11,11 +11,13 @@
       </fw-turn>
       </div>
     </div>
-    <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
+    <img src="@/assets/png/umum/next.png" alt="" class="next-cat"  id="next" @click.stop @click="next">
+    <img src="@/assets/png/umum/pevious.png" alt="" class="prev-cat" @click.stop @click="prev">
   </div>
 </template>
 
 <script>
+import $ from 'jquery'
     export default {
       data() {
         return {
@@ -23,7 +25,9 @@
             display: "double",
             acceleration: true,
             elevation: 50,
-            duration: 1000
+            duration: 1000,
+            autoCenter: true,
+            pages: 64,
           },
           arrkarya: [],
           karyalength: 0
@@ -31,6 +35,8 @@
       },
       mounted() {
         this.getThumbnail()
+
+        
       },
       methods: {
         async getThumbnail() {
@@ -46,6 +52,13 @@
             return
           }
         },
+        next(){
+          $('.magazine').turn('next')
+        },
+        prev(){
+          $('.magazine').turn('previous')
+        }
+
       }
     }
 </script>
@@ -54,6 +67,21 @@
 *{
     margin: 0;
     padding: 0;
+}
+
+.next-cat{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(100%,400%);
+  cursor: pointer;
+}
+.prev-cat{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%,400%);
+  cursor: pointer;
 }
 
 .bungkus-karya{
