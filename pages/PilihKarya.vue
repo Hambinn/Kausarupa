@@ -33,13 +33,13 @@
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
                 </div>
                 <div class="text-persona-anim-cont">
-                    <transition name="foto">
+                    <transition name="fotoper">
                     <p class="per-text-anim-foto" v-show="foto">Karya <br> Foto</p>
                     </transition>
-                    <transition name="kine">
+                    <transition name="kineper">
                     <p class="per-text-anim-kine" v-show="kine">Karya <br> Kine</p>
                     </transition>
-                    <transition name="video">
+                    <transition name="videoper">
                     <p class="per-text-anim-video" v-show="video">Karya <br> Video</p>
                     </transition>
                 </div>
@@ -163,29 +163,29 @@ html,body{
     transform: translate(-280%,230%);
 }
 
-.foto-enter-active, .foto-leave-active{
+.fotoper-enter-active, .fotoper-leave-active{
     transition: all .5s ease;
 }
 
-.foto-enter, .foto-leave-to{
+.fotoper-enter, .fotoper-leave-to{
     opacity: 0;
     transform: translate(-130%, 0%);
 }
 
-.kine-enter-active, .kine-leave-active{
+.kineper-enter-active, .kineper-leave-active{
     transition: all .5s ease;
 }
 
-.kine-enter, .kine-leave-to{
+.kineper-enter, .kineper-leave-to{
     opacity: 0;
     transform: translate(540%, 0%);
 }
 
-.video-enter-active, .video-leave-active{
+.videoper-enter-active, .videoper-leave-active{
     transition: all .5s ease;
 }
 
-.video-enter, .video-leave-to{
+.videoper-enter, .videoper-leave-to{
     opacity: 0;
     transform: translate(-280%,0%);
 }

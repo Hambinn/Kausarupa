@@ -19,9 +19,20 @@
                     <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
                 </div>
                 <div class="pilih-tema-mamus">
-                    <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king" @click="toKine">
-                    <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq" @click="toVideo">
-                    <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen" @click="toFoto">
+                    <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king" @click="toVideo" @mouseover="munculvideo" @mouseleave="ilangvideo">
+                    <img src="../assets/png/MamusPage/2. pilih/kq.png" alt="" class="kq" @click="toKine" @mouseover="munculkine" @mouseleave="ilangkine">
+                    <img src="../assets/png/MamusPage/2. pilih/queen.png" alt="" class="queen" @click="toFoto" @mouseover="munculfoto" @mouseleave="ilangfoto">
+                </div>
+                <div class="text-mamus-anim-cont">
+                    <transition name="fotomam">
+                    <p class="mam-text-anim-foto" v-show="foto">Karya Foto</p>
+                    </transition>
+                    <transition name="kinemam">
+                    <p class="mam-text-anim-kine" v-show="kine">Karya Kine</p>
+                    </transition>
+                    <transition name="videomam">
+                    <p class="mam-text-anim-video" v-show="video">Karya Video</p>
+                    </transition>
                 </div>
                 <div class="container-box-mamus">
                     <p class="text-box-mamus">{{scoremamus}}</p>
@@ -37,7 +48,10 @@
         data(){
             return{
                 isVolume: true,
-                scoremamus: '0'
+                scoremamus: '0',
+                foto: false,
+                video: false,
+                kine: false,
             }
         },
         methods:{
@@ -62,7 +76,27 @@
                 this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
                 console.log('masuk off')
             }
-        },
+            },
+            munculfoto(){
+                this.foto = true
+            },
+            ilangfoto(){
+                this.foto = false
+            },
+
+            munculkine(){
+                this.kine = true
+            },
+            ilangkine(){
+                this.kine = false
+            },
+
+            munculvideo(){
+                this.video = true
+            },
+            ilangvideo(){
+                this.video = false
+            },
         },
         beforeMount(){
             if(!localStorage.getItem('scoremamus')){
@@ -80,6 +114,68 @@
     padding: 0;
     margin: 0;
 }
+.text-mamus-anim-cont{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Tf Grotesk;
+    font-size: 2.3vw;
+}
+
+.mam-text-anim-foto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-360%,-480%) rotate(-10deg);
+    color: #883c8f;
+    z-index: 99;
+}
+
+.mam-text-anim-kine{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-170%,-500%) rotate(6deg);
+    color: #3f479c;
+    z-index: 99;
+}
+
+.mam-text-anim-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%,-350%) rotate(-10deg);
+    color: #462C85;
+    z-index: 99;
+}
+
+.fotomam-enter-active, .fotomam-leave-active{
+    transition: all .5s ease;
+}
+
+.fotomam-enter, .fotomam-leave-to{
+    opacity: 0;
+    transform: translate(-360%, 0%);
+}
+
+.kinemam-enter-active, .kinemam-leave-active{
+    transition: all .5s ease;
+}
+
+.kinemam-enter, .kinemam-leave-to{
+    opacity: 0;
+    transform: translate(-170%, 0%);
+}
+
+.videomam-enter-active, .videomam-leave-active{
+    transition: all .5s ease;
+}
+
+.videomam-enter, .videomam-leave-to{
+    opacity: 0;
+    transform: translate(-20%,0%);
+}
+
 
 .cont-mas-nar-mamus{
     position: absolute;

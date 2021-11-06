@@ -17,14 +17,25 @@
                 </div>                
                 <div class="container-volume-pkshadow">
                     <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
+                </div>                
+                <div class="text-shadow-anim-cont">
+                    <transition name="fotodow">
+                    <p class="dow-text-anim-foto" v-show="foto">Karya <br> Foto</p>
+                    </transition>
+                    <transition name="kinedow">
+                    <p class="dow-text-anim-kine" v-show="kine">Karya <br> Kine</p>
+                    </transition>
+                    <transition name="videodow">
+                    <p class="dow-text-anim-video" v-show="video">Karya <br> Video</p>
+                    </transition>
                 </div>
                 <div class="pilih-jenis">
                     <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan atas (1).png" alt="" class="kanan-atas">
                     <img src="~/assets/png/ShadowPage/2. pilih jenis/kiri bawah.png" alt="" class="kiri-bawah">
                     <img src="~/assets/png/ShadowPage/2. pilih jenis/kanan bawah (1).png" alt="" class="kanan-bawah">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole tengah.png" alt="" class="hole-tengah" @click="keVideo">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kanan.png" alt="" class="hole-kanan" @click="keKine">
-                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kiri.png" alt="" class="hole-kiri" @click="keFoto">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole tengah.png" alt="" class="hole-tengah" @click="keFoto" @mouseover="munculfoto" @mouseleave="ilangfoto">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kanan.png" alt="" class="hole-kanan" @click="keKine" @mouseover="munculkine" @mouseleave="ilangkine">
+                    <img src="~/assets/png/ShadowPage/2. pilih jenis/hole kiri.png" alt="" class="hole-kiri" @click="keVideo" @mouseover="munculvideo" @mouseleave="ilangvideo">
                 </div>
             </div>
         </div>
@@ -45,11 +56,34 @@ export default {
         },
         keFoto(){
             this.$router.push('/Shadow/fotoShadow')
-        }
+        },
+        munculfoto(){
+                this.foto = true
+            },
+            ilangfoto(){
+                this.foto = false
+            },
+
+            munculkine(){
+                this.kine = true
+            },
+            ilangkine(){
+                this.kine = false
+            },
+
+            munculvideo(){
+                this.video = true
+            },
+            ilangvideo(){
+                this.video = false
+            },
     },
     data(){
         return{
-            scoreshadow: '0'
+            scoreshadow: '0',
+            foto: false,
+            kine: false,
+            video: false,
         }
     },
     beforeMount(){
@@ -67,6 +101,66 @@ export default {
 *{
     padding: 0;
     margin: 0;
+}
+
+.text-shadow-anim-cont{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Tf Grotesk;
+    font-size: 2.3vw;
+    color: #F8FeF0;
+}
+
+.dow-text-anim-foto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%,-100%) ;
+    z-index: 99;
+}
+
+.dow-text-anim-kine{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(430%,110%) ;
+    z-index: 99;
+}
+
+.fotodow-enter-active, .fotodow-leave-active{
+    transition: all .5s ease;
+}
+
+.fotodow-enter, .fotodow-leave-to{
+    opacity: 0;
+    
+}
+
+.kinedow-enter-active, .kinedow-leave-active{
+    transition: all .5s ease;
+}
+
+.kinedow-enter, .kinedow-leave-to{
+    opacity: 0;
+    
+}
+
+.videodow-enter-active, .videodow-leave-active{
+    transition: all .5s ease;
+}
+
+.videodow-enter, .videodow-leave-to{
+    opacity: 0;
+    
+}
+
+.dow-text-anim-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-500%,120%) ;
+    z-index: 99;
 }
 
 .cont-mas-nar-shadow{
