@@ -9,7 +9,9 @@
           <a href="https://twitter.com/GEPLFMITB?s=20" target="_blank">
             <img src="~assets/svg/WelcomePage/icon twitter.svg" alt="" class="twitter" @click.stop>
           </a>
-          <img src="~assets/svg/WelcomePage/icon youtube.svg" alt="" class="youtube" @click.stop>
+          <a href="https://www.tiktok.com/@geplfm?" target="_blank">
+          <img src="~assets/png/WelcomePage/tiktok.png" alt="" class="youtube" @click.stop>
+          </a>
           <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
     </div>
@@ -44,7 +46,7 @@
     width: 13%;
     height: 13%;
     top: 32%;
-    left: 32%;
+    left: 35%;
 }
 
 .cp{
@@ -52,7 +54,7 @@
     width: 13%;
     height: 13%;
     top: 32%;
-    left: 48%;
+    left: 52%;
 }
 
 .twitter{
@@ -60,15 +62,14 @@
     width: 13%;
     height: 13%;
     top: 49%;
-    left: 32%;
+    left: 35%;
 }
 
 .youtube{
     position: absolute;
-    width: 13%;
-    height: 13%;
+    width: 7.5%;
     top: 49%;
-    left: 48%;
+    left: 55%;
 }
 
 .modal-overlay{

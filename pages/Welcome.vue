@@ -12,7 +12,7 @@
           <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
           <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar" @click="showCalendar = true">
-          <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
+          <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts" @click="showBTS = true">
           <button  class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
             :style="styleObj">
             <p>Next</p>
@@ -35,6 +35,7 @@
           <contact-us v-show="showContact" @close-modal="showContact = false" />
           <youtube v-show="showYoutube" @close-modal="showYoutube=false" />
           <calendar-welcome v-show="showCalendar" @close-modal="showCalendar = false" />
+          <BehindTheScenes v-show="showBTS" @close-modal="showBTS = false"/>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
       </div>
@@ -64,6 +65,7 @@ import CalendarWelcome from '../components/CalendarWelcome.vue'
                 showContact: false,
                 showYoutube: false,
                 showCalendar: false,
+                showBTS: false,
                 nama:'',
                 instansi:'',
                 disabled: true,
