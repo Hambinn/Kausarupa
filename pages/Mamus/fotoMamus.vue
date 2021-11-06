@@ -132,6 +132,7 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("mamus",true)
         },
         beforeMount(){
             if(!localStorage.getItem('scoremamus')){

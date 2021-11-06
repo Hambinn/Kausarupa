@@ -121,6 +121,7 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("persona",true)
         },
         beforeMount(){
             if(!localStorage.getItem('scorepersona')){

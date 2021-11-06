@@ -106,6 +106,7 @@ import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.v
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("shadow",true)
         },
         beforeMount(){
             if(!localStorage.getItem('scoreshadow')){

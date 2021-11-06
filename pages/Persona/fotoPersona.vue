@@ -139,6 +139,7 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("persona",true)
         },
         beforeMount(){
             if(!localStorage.getItem('scorepersona')){

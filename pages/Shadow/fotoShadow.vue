@@ -130,6 +130,7 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("shadow",true)
         },
         beforeMount(){
             if(!localStorage.getItem('scoreshadow')){

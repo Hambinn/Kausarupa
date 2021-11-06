@@ -25,6 +25,9 @@
           <div class="container-volume-persona">
                 <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
             </div>
+            <div class="tombol-next-topeng" @click="next" v-show="isNext">
+              <p class="next-topeng">Next</p>
+            </div>
           <div class="topeng">
             <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus" @click="keMamus">
             <img src="~/assets/svg/ChoosePage/Persona 2 1.svg" alt="" class="persona" @mouseover="munculPersona" @mouseleave="ilangPersona" @click="kePersona">
@@ -43,7 +46,8 @@
                 mamus: false,
                 persona: false,
                 shadow: false,
-                isVolume: true
+                isVolume: true,
+                isNext: false
             }
         },
         methods:{
@@ -77,16 +81,27 @@
                 this.$router.push('/narasishadow')
             },
             volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+                }else{
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+                }
+            },
+            next(){
+                this.$router.push('/narasilastpage')
+            }
         },
         mounted(){
-            localStorage.setItem('persona','true')
+            if(!localStorage.getItem('self')){
+                localStorage.setItem('self', false)
+            }
+            
+        },
+        beforeMount(){
+            if(localStorage.getItem("persona") && localStorage.getItem("mamus") && localStorage.getItem("shadow")){
+                this.isNext = true    
+            }
         }
     }
 </script>
@@ -104,6 +119,32 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+.tombol-next-topeng{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(-50%, 300%);
+    background: #597FA3;
+    border-radius: 11.4%/38.4%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.tombol-next-topeng .next-topeng{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.1vw;
+    color: white;
+    cursor: pointer;
 }
 
 .container-volume-persona{

@@ -126,6 +126,7 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("mamus",true)
         },
         beforeMount(){
             if(!localStorage.getItem('scoremamus')){
