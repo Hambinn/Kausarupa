@@ -18,7 +18,7 @@
                     <img src="~/assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-skshadow">                    
                 </div>                
                 <div class="container-volume-pkshadow">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow2" @click="changeMute" ref="volumeBtn">
                 </div>
             <div class="scroll-karya-fotoshadow">
               <karya-shadow-kine @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahshadow="tambahshadow"/>
@@ -45,7 +45,10 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
                 nama:'',
                 caption:'',
                 pdf: [],
-                karlength: 0
+                karlength: 0,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         methods:{
@@ -104,11 +107,41 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
                     this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         mounted(){
             this.getThumbnail();
             localStorage.setItem("shadow",true)
+            this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+            this.audio.volume = 0.2
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('dowduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scoreshadow')){
@@ -117,6 +150,10 @@ import LayoutKaryaShadowKine from '@/components/Shadow/layoutKaryaShadowKine.vue
             else{
                 this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('dowduration',this.audio.currentTime)
         }
 
     }

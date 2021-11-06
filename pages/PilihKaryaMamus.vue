@@ -16,7 +16,7 @@
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="container-volume-mamus">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="pilih-tema-mamus">
                     <img src="../assets/png/MamusPage/2. pilih/king.png" alt="" class="king" @click="toVideo" @mouseover="munculvideo" @mouseleave="ilangvideo">
@@ -47,11 +47,13 @@
     export default {
         data(){
             return{
-                isVolume: true,
                 scoremamus: '0',
                 foto: false,
                 video: false,
                 kine: false,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         methods:{
@@ -67,16 +69,41 @@
             back(){
                 this.$router.push('/narasimamus')
             },
-        volume(){
-            this.isVolume = !this.isVolume
-            if(this.isVolume){
-                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
-                console.log('masuk on')
-            }else{
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
                 this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
-                console.log('masuk off')
-            }
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
             },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
+            volume(){
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                    console.log('masuk on')
+                }else{
+                    this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                    console.log('masuk off')
+                }
+                },
             munculfoto(){
                 this.foto = true
             },
@@ -105,6 +132,17 @@
             else{
                 this.scoremamus = Number(localStorage.getItem('scoremamus'))
             }
+        },
+        mounted(){
+            this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+            this.audio.volume = 0.2
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('mamduration'))
+            this.playAudio()
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('mamduration',this.audio.currentTime)
         }
     }
 </script>

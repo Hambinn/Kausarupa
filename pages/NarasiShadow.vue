@@ -18,7 +18,7 @@
                     <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-shadow">                    
                 </div>                
                 <div class="container-volume-shadow">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow1">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow1" @click="changeMute" ref="volumeBtn">
                     <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-shadow" @click="back()">
                 </div>
                 <div class="tombol-next-shadow" @click="next">
@@ -36,6 +36,9 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
         data(){
             return{
                 scoreshadow: '0',
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         methods:{
@@ -44,7 +47,40 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
             },
             next(){
                 this.$router.push('/pilihkaryashadow')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
+            volume(){
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+                }else{
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+                }
+            },
         },
         beforeMount(){
             if(!localStorage.getItem('scoreshadow')){
@@ -53,6 +89,16 @@ import kotakBiru from '../components/Shadow/kotakBiru.vue'
             else{
                 this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
             }
+        },
+        mounted(){
+            this.audio = new Audio('/sound/5. Narasi Shadow.mp3')
+            this.audio.volume = 0.4
+            this.audio.loop = true
+            this.playAudio()
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0
         }
         
     }

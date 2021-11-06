@@ -21,7 +21,7 @@
                     <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="container-volume-mamus">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="scroll-karya-mamus">
                     <karya-mamus-kine @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus"/>
@@ -108,7 +108,32 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
                     this.scoremamus = Number(localStorage.getItem('scoremamus'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         data(){
             return{
@@ -121,12 +146,20 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
                 nama:'',
                 caption:'',
                 pdf: [],
-                karlength: 0
+                karlength: 0,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         mounted(){
             this.getThumbnail();
             localStorage.setItem("mamus",true)
+            this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+            this.audio.volume = 0.2
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('mamduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scoremamus')){
@@ -135,6 +168,10 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
             else{
                 this.scoremamus = Number(localStorage.getItem('scoremamus'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('mamduration',this.audio.currentTime)
         }
     }
 </script>

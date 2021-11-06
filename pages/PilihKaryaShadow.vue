@@ -16,7 +16,7 @@
                     <img src="../assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-pkshadow">                    
                 </div>                
                 <div class="container-volume-pkshadow">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-shadow2" @click="changeMute" ref="volumeBtn">
                 </div>                
                 <div class="text-shadow-anim-cont">
                     <transition name="fotodow">
@@ -77,6 +77,31 @@ export default {
             ilangvideo(){
                 this.video = false
             },
+        changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
     },
     data(){
         return{
@@ -84,6 +109,9 @@ export default {
             foto: false,
             kine: false,
             video: false,
+            isVolume: true,
+            audio: undefined,
+            isAudioPlaying: false,
         }
     },
     beforeMount(){
@@ -93,6 +121,18 @@ export default {
             else{
                 this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
             }
+        },
+
+    mounted(){
+        this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+        this.audio.volume = 0.2
+        this.audio.loop = true
+        this.audio.currentTime = Number(localStorage.getItem('dowduration'))
+        this.playAudio()
+    },
+    beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('dowduration',this.audio.currentTime)
         }
 }
 </script>
