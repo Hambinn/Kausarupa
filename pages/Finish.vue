@@ -2,6 +2,9 @@
     <div class="container-finish">
       <div class="top-cont">
         <div class="canvas">
+          <div class="container-volume-finish">
+            <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
+          </div>
           <div class="container-jendela-last">
             <img src="../assets/svg/LastPage/jendela (1)-min.png" alt="" class="JendelaLast">
           </div>
@@ -88,6 +91,9 @@ import UmpanBalik from '../components/UmpanBalik.vue'
                 caption:'',
                 img: [],
                 karlength: 0,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
               }
             },
             methods:{
@@ -126,11 +132,40 @@ import UmpanBalik from '../components/UmpanBalik.vue'
                     alert(e)
                     return
                 }
+              },
+              changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
             },
             },
             mounted(){
               this.getThumbnail()
               localStorage.setItem("daritopeng",true)
+              this.audio = new Audio('/sound/11. kamar.mp3')
+              this.audio.volume = 0.2
+              this.audio.loop = true
+              this.playAudio()
             }
         }
 </script>
@@ -142,6 +177,21 @@ html,body{
 *{
     padding: 0;
     margin: 0;   
+}
+
+.container-volume-finish{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.container-volume-finish .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .btn-feedback{

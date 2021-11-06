@@ -12,7 +12,7 @@
                     <img src="../assets/png/FinishPage/Surat/pena.png" alt="" class="pena">
                 </div>                
                 <div class="container-volume-surat">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="container-tinta">
                     <img src="../assets/png/FinishPage/Surat/tint.png" alt="" class="tinta">
@@ -44,7 +44,57 @@
             },
             miro(){
                 window.open("https://miro.com/welcomeonboard/NExubDk2Q0FSc2E4SlJCNDdYVGN3STliUHE3SHVjNnVNcUdZQWhsWXZKVDNYSXhoc2djZVJxQVFEYVNEZXhxaHwzMDc0NDU3MzY2OTYxMjg5OTI1?invite_link_id=61924221316")
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
+            volume(){
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+                }else{
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+                }
+            },
+        },
+        data(){
+            return{
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
+        },
+        mounted(){
+            this.audio = new Audio('/sound/10. Outro [surat cinta].wav')
+            this.audio.volume = 0.3
+            this.audio.loop = true
+            this.playAudio()
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0
         }
     }
 </script>
@@ -129,11 +179,6 @@ mark:hover{
     overflow: hidden;
     }
 
-.container-volume-surat{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
 
 .container-back-surat{
     position: absolute;
@@ -151,12 +196,19 @@ mark:hover{
     z-index: 5
 }
 
+.container-volume-surat{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 .container-volume-surat .volume-on{
     position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1000%, -500%);
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .container-surat{

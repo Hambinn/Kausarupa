@@ -9,7 +9,7 @@
                     <img src="../assets/png/FinishPage/keyboard_backspace.png" alt="" class="back" @click="back">
                 </div>
                 <div class="container-sound-last">
-                    <img src="../assets/png/FinishPage/sound on.png" alt="" class="sound-on">
+                    <img src="../assets/png/FinishPage/sound on.png" alt="" class="sound-on" @click="changeMute" ref="volumeBtn">
                 </div>                
                 <div class="container-kotak-last">
                     <kotak-last/>
@@ -41,10 +41,60 @@ import kotakLast from '../components/Last/kotakLast.vue'
       },
       back(){
           this.$router.push('/topeng')
-      }
-  }
+      },
+      changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
+            volume(){
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+                }else{
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+                }
+            },
+      },
+      data(){
+          return{
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
+          }
+      },
+      mounted(){
+            this.audio = new Audio('/sound/9. Narasi Self.mp3')
+            this.audio.volume = 0.4
+            this.audio.loop = true
+            this.playAudio()
+      },
+      beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0
+        }
         
-    }
+}
 </script>
 
 <style>
@@ -191,10 +241,13 @@ html,body{
 }
 
 .container-sound-last .sound-on{
+    position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1000%, -520%);
+    cursor: pointer;
+    z-index: 5;
 }
 
 </style>
