@@ -33,6 +33,11 @@ export default {
     "~assets/fonts/global.css"
   ],
 
+  script:[
+    {src: '~assets/js/Lightense.js'},
+    {src: '/Lightense.js'}
+  ],
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
@@ -72,7 +77,16 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile :['gsap']
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    },
+    transpile :['gsap'],
   },
   router:{
     base: '/'

@@ -30,7 +30,6 @@
               </form>
             </div>
           </div>
-          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-welcome" @click="volume()" ref="volumeBtn">
           <about-us v-show="showAboutUs" @close-modal="showAboutUs = false" />
           <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
           <contact-us v-show="showContact" @close-modal="showContact = false" />
@@ -123,14 +122,6 @@ import CalendarWelcome from '../components/CalendarWelcome.vue'
                     this.$router.push("/main")  
                 }
             },
-            volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }
         },
         beforeDestroy(){
             console.log('test aja')

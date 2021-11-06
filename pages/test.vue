@@ -1,14 +1,15 @@
 <template>
   <div>
-    <umpan-balik/>
+    <iseng/>
   </div>
 </template>
 
 <script>
-import feed from '../components/feed.vue'
-import UmpanBalik from '../components/UmpanBalik.vue'
+import iseng from './iseng.vue'
+
   export default {
-  components: { feed, UmpanBalik },
+  components: { iseng },
+  
     
   }
 </script>

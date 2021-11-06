@@ -2,23 +2,22 @@
   <div class="container-landing">
     <div class="top-cont">
       <div class="canvas">
-        <div class="container-logo">
-          <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
+          <div class="container-logo">
+            <img src="../assets/svg/LandingPage/logo kausarupa.svg" alt="">
+          </div>
+          <div class="container-awan">
+            <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
+            <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
+          </div>
+          <div class="container-bintang">
+            <img src="../assets/gif/bintang oren.GIF" alt="" class="kecil">
+            <img src="../assets/gif/bintang oren.GIF" alt="" class="besar">
+          </div>
+          <div class="container-tombol">
+            <Nuxt-link to="/Welcome">
+              <button class="tap-me">Tap Me!</button>
+            </Nuxt-link>
         </div>
-        <div class="container-awan">
-          <img src="../assets/svg/LandingPage/awan kanan bawah ver 2.svg" alt="" class="kanan">
-          <img src="../assets/svg/LandingPage/awan kiri atas ver 1.svg" alt="" class="kiri">
-        </div>
-        <div class="container-bintang">
-          <img src="../assets/gif/bintang oren.GIF" alt="" class="kecil">
-          <img src="../assets/gif/bintang oren.GIF" alt="" class="besar">
-        </div>
-        <div class="container-tombol">
-          <Nuxt-link to="/Welcome">
-            <button class="tap-me">Tap Me!</button>
-          </Nuxt-link>
-        </div>
-        <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-index" @click="volume()" ref="volumeBtn">
       </div>
     </div>
   </div>
@@ -26,20 +25,7 @@
 
 <script>
 export default {
-    methods:{
-    volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }},
-    data(){
-        return{
-            isVolume: true
-        }
-    }
+    
     }
 </script>
 
@@ -54,11 +40,7 @@ html,body{
         
 }
 
-.volume-index{
-    position: fixed;
-    height: 5%;
-    transform: translate(1600%, 200%);
-}
+
 
 .top-cont{
   position: absolute;

@@ -30,7 +30,7 @@
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="container-volume-persona">
-                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="text-persona-anim-cont">
                     <transition name="fotoper">
@@ -58,12 +58,21 @@
             data(){
                 return{
                     scorepersona :0,
-                    isVolume: true,
                     foto: false,
                     video: false,
-                    kine: false
+                    kine: false,
+                    isVolume: true,
+                    audio: undefined,
+                    isAudioPlaying: false,
                     
                 }
+            },
+            mounted(){
+                this.audio = new Audio('/sound/4. Karya dan milih karya Persona.mp3')
+                this.audio.volume = 0.3
+                this.audio.loop = true
+                this.audio.currentTime = Number(localStorage.getItem('perduration'))
+                this.playAudio()
             },
             methods:{
                 back(){
@@ -106,6 +115,31 @@
             ilangvideo(){
                 this.video = false
             },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
             },
             beforeMount(){
             if(!localStorage.getItem('scorepersona')){
@@ -114,7 +148,11 @@
             else{
                 this.scorepersona = Number(localStorage.getItem('scorepersona'))
             }
-        }
+            },
+            beforeDestroy(){
+            this.audio.pause()
+            localStorage.setItem('perduration',this.audio.currentTime)
+            }
         }
 </script>
 

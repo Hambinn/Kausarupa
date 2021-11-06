@@ -3,6 +3,9 @@
     <div class="container-main">
       <div class="top-cont">
         <div class="canvas">
+            <div class="container-sound-last">
+            <img src="../assets/png/FinishPage/sound on.png" alt="" class="sound-on" @click="changeMute" ref="volumeBtn">
+          </div>
           <div class="container-bulan">
             <img src="../assets/svg/MainPage/bulan.svg" alt="" class="oren">
           </div>
@@ -82,9 +85,7 @@
           </div>
           <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
         </div>
-
       </div>
-      <img src="../assets/png/umum/volumeon.png" alt="" class="volume-main" @click="volume()" ref="volumeBtn">
     </div>
 </template>
 
@@ -109,19 +110,13 @@ if (process.client) {
             }
             
         },
-        mounted(){
-            console.log(localStorage.getItem('score'))
-            this.dragAwanAtas()
-            this.dragAwanBawah()
-            this.dragOrang()
-            if(localStorage.getItem('daritopeng') == 'true'){
-                this.dariPersona()
-            }
-        },
         data(){
             return{
                 score: '0',
                 bintangCount: 10,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
                 stars:[
                     {id :1, class:'putih1',opac:{opacity:1} },
                     {id :2, class:'putih2',opac:{opacity:1} },
@@ -135,6 +130,20 @@ if (process.client) {
                     {id :10, class:'putih10',opac:{opacity:1} },
                 ],
             }
+        },
+        mounted(){
+            console.log(localStorage.getItem('score'))
+            this.dragAwanAtas()
+            this.dragAwanBawah()
+            this.dragOrang()
+            if(localStorage.getItem('daritopeng') == 'true'){
+                this.dariPersona()
+            }
+            this.audio = new Audio('/sound/1 main.mp3')
+            this.audio.volume = 0.5
+            this.audio.loop = true
+            this.playAudio()
+
         },
         computed:{
 
@@ -185,15 +194,46 @@ if (process.client) {
                 localStorage.setItem('daritopeng', 'false')
                 location.reload()
             },
-            volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                console.log('masuk on')
+            }else{
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                console.log('masuk off')
+            }
         },
+        changeMute() {
+        this.audio.muted = !this.audio.muted
+        if (this.audio.muted == true) {
+          this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+        } else {
+          this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+        }
+        if (!this.isAudioPlaying) {
+          this.playAudio()
+        }
+      },
+      playAudio(){
+        let startPlayPromise = this.audio.play()
+        this.isAudioPlaying = true
+        if (startPlayPromise !== undefined) {
+          startPlayPromise.then(() => {
+              console.log('play')
+            // Yaudah biarin aja dia ngeplay
+          }).catch(() => {
+            this.isAudioPlaying = false
+            this.audio.muted = true
+            console.log(startPlayPromise)
+            })
+        }
+      },
+    },
+    beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0;
+    }
     }
 </script>
 
@@ -220,10 +260,20 @@ body{
     cursor: pointer;
 }
 
-.volume-main{
-    position: fixed;
-    height: 5%;
-    transform: translate(3600%, 170%);
+.container-sound-last{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-sound-last .sound-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(1000%, -530%);
+    cursor: pointer;
 }
 .container-main{
     overflow-x: hidden;

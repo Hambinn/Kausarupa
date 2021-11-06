@@ -23,7 +23,7 @@
               </transition>
           </div>
           <div class="container-volume-persona">
-                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
             </div>
             <div class="tombol-next-topeng" @click="next" v-show="isNext">
               <p class="next-topeng">Next</p>
@@ -47,6 +47,8 @@
                 persona: false,
                 shadow: false,
                 isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
                 isNext: false
             }
         },
@@ -90,12 +92,41 @@
             },
             next(){
                 this.$router.push('/narasilastpage')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         mounted(){
             if(!localStorage.getItem('self')){
                 localStorage.setItem('self', false)
             }
+            this.audio = new Audio('/sound/2. Pilih Karya.mp3')
+            this.audio.volume = 0.5
+            this.audio.loop = true
+            this.playAudio()
             
         },
         beforeMount(){
@@ -103,7 +134,11 @@
                 this.isNext = true    
             }
             localStorage.setItem("daritopeng",true)
-        }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0;
+    }
     }
 </script>
 
