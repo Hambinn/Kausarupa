@@ -130,6 +130,7 @@ import UmpanBalik from '../components/UmpanBalik.vue'
             },
             mounted(){
               this.getThumbnail()
+              localStorage.setItem("daritopeng",true)
             }
         }
 </script>

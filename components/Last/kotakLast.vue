@@ -1,7 +1,8 @@
 <template>
-    <div class="container">
-        <p class="narasi">
-            Menarik banget kan sosok-sosok yang ada nih di diri kita semua? Tapi sebenernya apasih hubungan dari berbagai sosok ini? NAH penggabungan dari sosok-sosok tadi tuh bakal ngehasilin satu bagian dari Self. Self ini tapi bukan cuman gabungan dari sosok-sosok alam bawah sadar kita doang nih, tapi juga meliputi aspek-aspek yang ada saat kita sadar. Keren banget kan?
+    <div class="container-narasi-last">
+        <p class="narasi-last">
+            Menarik banget kan sosok-sosok yang ada nih di diri kita semua? Tapi sebenernya apasih hubungan dari berbagai sosok ini? NAH penggabungan dari sosok-sosok tadi tuh bakal ngehasilin satu bagian dari Self. <br> <br>
+            Self ini tapi bukan cuman gabungan dari sosok-sosok alam bawah sadar kita doang nih, tapi juga meliputi aspek-aspek yang ada saat kita sadar. Keren banget kan?
         </p>
     </div>
 </template>
@@ -13,7 +14,7 @@
 </script>
 
 <style  scoped>
-.container{
+.container-narasi-last{
 position: absolute;
 width: 50%;
 height: 56%;
@@ -31,12 +32,12 @@ backdrop-filter: blur(4rem);
 border-radius: 5.5%/8.59%;
 }
 
-.narasi{
+.narasi-last{
     font-family: "Tf Grotesk";
     font-style: normal;
     font-weight: normal;
     text-align: justify;
-    font-size: 2.3vw;
+    font-size: 2vw;
     padding: 2%;
     color: #30455A;
 }

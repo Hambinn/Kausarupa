@@ -102,6 +102,7 @@
             if(localStorage.getItem("persona") && localStorage.getItem("mamus") && localStorage.getItem("shadow")){
                 this.isNext = true    
             }
+            localStorage.setItem("daritopeng",true)
         }
     }
 </script>

@@ -99,7 +99,7 @@ html,body{
     position: absolute;
     height: 65%;
     transform: translate(75%,45%);
-    z-index: 5;
+    z-index: 2;
 }
 
 .top-cont{

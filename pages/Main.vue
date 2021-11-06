@@ -114,7 +114,7 @@ if (process.client) {
             this.dragAwanAtas()
             this.dragAwanBawah()
             this.dragOrang()
-            if(localStorage.getItem('persona') == 'true'){
+            if(localStorage.getItem('daritopeng') == 'true'){
                 this.dariPersona()
             }
         },
@@ -182,7 +182,7 @@ if (process.client) {
                 this.$router.push('/topeng')
             },
             dariPersona(){
-                localStorage.setItem('persona', 'false')
+                localStorage.setItem('daritopeng', 'false')
                 location.reload()
             },
             volume(){
