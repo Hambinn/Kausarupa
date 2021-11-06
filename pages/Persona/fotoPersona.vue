@@ -108,6 +108,8 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
                     this.title = 'Who Am I'
                 }else if(id ==10){
                     this.title = 'Whole Emotion at Once'
+                }else if(id == 11){
+                    this.title = 'Ta(m)pak 1000'
                 }
                 this.getKarya()
             },
