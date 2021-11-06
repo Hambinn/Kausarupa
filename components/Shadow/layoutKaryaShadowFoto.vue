@@ -118,11 +118,13 @@ border-radius: 10%;
     font-size: 3vw;
 }
 
+
 .desc{
     font-family: 'Gaegu';
     font-style: normal;
     font-weight: normal;
     font-size: 1.2vw;
+    line-height: 1.2vw;
 }
 
 
