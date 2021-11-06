@@ -28,14 +28,25 @@
                 </div>
                 <div class="container-back-narasipersona">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
-          </div>
-            <div class="container-volume-persona">
-                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
-            </div>
+                </div>
+                <div class="container-volume-persona">
+                    <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                </div>
+                <div class="text-persona-anim-cont">
+                    <transition name="foto">
+                    <p class="per-text-anim-foto" v-show="foto">Karya <br> Foto</p>
+                    </transition>
+                    <transition name="kine">
+                    <p class="per-text-anim-kine" v-show="kine">Karya <br> Kine</p>
+                    </transition>
+                    <transition name="video">
+                    <p class="per-text-anim-video" v-show="video">Karya <br> Video</p>
+                    </transition>
+                </div>
                 <div class= "container-rumahoren">
-                    <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua" @click="foto">
-                    <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="orentiga" @click="kine">
-                    <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu" @click="video">
+                    <img src="../assets/svg/PersonaPage/rumah oren 2.svg" alt="" class="orendua" @click="tokine" @mouseover="munculkine" @mouseleave="ilangkine">
+                    <img src="../assets/svg/PersonaPage/rumah oren 3.svg" alt="" class="orentiga" @click="tovideo" @mouseover="munculvideo" @mouseleave="ilangvideo">
+                    <img src="../assets/svg/PersonaPage/rumah oren 1.svg" alt="" class="orensatu" @click="tofoto" @mouseover="munculfoto" @mouseleave="ilangfoto">
                 </div>
             </div>
         </div>
@@ -47,7 +58,11 @@
             data(){
                 return{
                     scorepersona :0,
-                    isVolume: true
+                    isVolume: true,
+                    foto: false,
+                    video: false,
+                    kine: false
+                    
                 }
             },
             methods:{
@@ -62,15 +77,35 @@
                 this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
             }
                 },
-                foto(){ 
+                tofoto(){ 
                     this.$router.push('Persona/fotoPersona')
                 },
-                kine(){
+                tokine(){
                     this.$router.push('Persona/kinePersona')
                 },
-                video(){
+                tovideo(){
                     this.$router.push('Persona/videoPersona')
-                }
+                },
+                munculfoto(){
+                this.foto = true
+            },
+            ilangfoto(){
+                this.foto = false
+            },
+
+            munculkine(){
+                this.kine = true
+            },
+            ilangkine(){
+                this.kine = false
+            },
+
+            munculvideo(){
+                this.video = true
+            },
+            ilangvideo(){
+                this.video = false
+            },
             },
             beforeMount(){
             if(!localStorage.getItem('scorepersona')){
@@ -95,6 +130,73 @@ html,body{
     margin: 0;
         
 }
+
+
+
+.text-persona-anim-cont{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: Tf Grotesk;
+    font-size: 2.3vw;
+    color: #BE5B38;
+}
+
+.per-text-anim-foto{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-130%,-180%);
+}
+
+.per-text-anim-kine{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(540%,-270%);
+}
+
+.per-text-anim-video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-280%,230%);
+}
+
+.foto-enter-active, .foto-leave-active{
+    transition: all .5s ease;
+}
+
+.foto-enter, .foto-leave-to{
+    opacity: 0;
+    transform: translate(-130%, 0%);
+}
+
+.kine-enter-active, .kine-leave-active{
+    transition: all .5s ease;
+}
+
+.kine-enter, .kine-leave-to{
+    opacity: 0;
+    transform: translate(540%, 0%);
+}
+
+.video-enter-active, .video-leave-active{
+    transition: all .5s ease;
+}
+
+.video-enter, .video-leave-to{
+    opacity: 0;
+    transform: translate(-280%,0%);
+}
+
+
+
+
+
+
+
+/* #################################################### */
 
 .cont-mas-pk-persona{
     position: absolute;

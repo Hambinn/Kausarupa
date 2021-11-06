@@ -17,16 +17,16 @@
                 <div class="container-tinta">
                     <img src="../assets/png/FinishPage/Surat/tint.png" alt="" class="tinta">
                 </div>
-                <div class="container-isi-surat">
-                    <p class="judul-surat">Surat Cinta</p>
-                    <p class="isi-surat">Melalui penjelajahan diri lewat persona, shadow, anima/animus, serta self sampailah kita di titik akhir perjalanan. Berbagai karya telah menjadi gambaran akan beragam karakter yang ditunjukkan, maupun tak ditunjukkan pada dunia. Setelah melalui penjelajahan karya ini, ayo tuliskan perasaanmu dalam Majalah dinding GEP di Bit.ly/MadingKausarupa ! jangan lupa tinggalkan jejak ya!
-                    </p>
-                </div>
                 <div class="container-back-surat">
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="tombol-next-last" @click="next">
                     <p class="next-last">Next</p>
+                </div>
+                <div class="container-isi-surat">
+                    <p class="judul-surat">Outro</p>
+                    <p class="isi-surat">Melalui penjelajahan diri lewat persona, shadow, anima/animus, serta self sampailah kita di titik akhir perjalanan. Berbagai karya telah menjadi gambaran akan beragam karakter yang ditunjukkan, maupun tak ditunjukkan pada dunia. Setelah melalui penjelajahan karya ini, ayo tuliskan perasaanmu dalam Majalah dinding GEP di <mark @click="miro">Bit.ly/MadingKausarupa</mark> ! jangan lupa tinggalkan jejak ya!
+                    </p>
                 </div>
             </div>
         </div>
@@ -41,6 +41,9 @@
             },
             next(){
                 this.$router.push('/finish')
+            },
+            miro(){
+                window.open("https://miro.com/welcomeonboard/NExubDk2Q0FSc2E4SlJCNDdYVGN3STliUHE3SHVjNnVNcUdZQWhsWXZKVDNYSXhoc2djZVJxQVFEYVNEZXhxaHwzMDc0NDU3MzY2OTYxMjg5OTI1?invite_link_id=61924221316")
             }
         }
     }
@@ -59,6 +62,17 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+mark{
+    all: unset;
+    text-decoration: underline;
+}
+
+mark:hover{
+    cursor: pointer;
+    color: #597FA3;
+    
 }
 
 .tombol-next-last{
@@ -128,18 +142,21 @@ html,body{
 }
 
 .container-back-surat .back{
+    position: absolute;
     width: 4.2%;
     top: 50%;
     left: 50%;
-    transform: translate(-1050%, 160%);
+    transform: translate(-1100%, -500%);
     cursor: pointer;
+    z-index: 5
 }
 
 .container-volume-surat .volume-on{
+    position: absolute;
     width: 4.16%;
     top: 50%;
     left: 50%;
-    transform: translate(1060%, 160%);
+    transform: translate(1000%, -500%);
 }
 
 .container-surat{
@@ -209,7 +226,7 @@ html,body{
 }
 
 .container-isi-surat .isi-surat{
-    margin: 10% 40%;
+    margin: 13% 37%;
     font-size: 1.3vw;
     transform: translate(-4%,30%);
 }

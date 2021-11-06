@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <p class="narasi">
+    <div class="container-nar-per">
+        <p class="narasi-item">
             Asik sampe juga nih kita! Dari keliatannya,,, kita lagi di persona sekarang. Apasih makna persona?
             <br>
             <br>
@@ -19,7 +19,7 @@
 </script>
 
 <style  scoped>
-.container{
+.container-nar-per{
 position: absolute;
 width: 50%;
 height: 55%;
@@ -37,13 +37,15 @@ backdrop-filter: blur(40px);
 border-radius: 40px;
 }
 
-.narasi{
+.narasi-item{
     font-family: "Tf Grotesk";
     font-style: normal;
     font-weight: normal;
-    text-align: left;
-    font-size: 1.5vw;
-    padding: 2%;
+    text-align: justify;
+    font-size: 1.9vw;
+    padding-left: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
     color: #D2D5D3;
 }
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */

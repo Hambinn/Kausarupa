@@ -36,7 +36,7 @@ border-radius: 5.5%/8.59%;
     font-style: normal;
     font-weight: normal;
     text-align: justify;
-    font-size: 1.5vw;
+    font-size: 2.3vw;
     padding: 2%;
     color: #30455A;
 }

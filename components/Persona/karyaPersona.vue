@@ -25,7 +25,6 @@ import 'swiper/css/swiper.css'
                 swiperOption: {
                     slidesPerView: 'auto',
                     spaceBetween: 140,
-                    loop: true,
                     centeredSlides: true,
                     pagination:{
                         el: '.swiper-pagination-h',
