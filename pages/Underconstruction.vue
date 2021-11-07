@@ -22,13 +22,13 @@
           </div>
           <div class="container-countdown">
             <div class="days">
-              {{days}}D
-            </div>
-            <div class="hours">
               {{hour}}H
             </div>
-            <div class="minutes">
+            <div class="hours">
               {{minute}}M
+            </div>
+            <div class="minutes">
+              {{second}}S
             </div>
           </div>
         </div>
@@ -37,19 +37,24 @@
 </template>
 
 <script>
-const gepDate = new Date("Nov 8, 2021 21:00:00").getTime();
+const gepDate = new Date("Nov 8, 2021 20:45:00").getTime();
     export default {
         data(){
           return{
             days: 0,
             hour: 0,
             minute:0,
+            second:0,
+            distance:0,
             timerInterval: null
           }
         },
         mounted(){
           this.updateTimer()
           this.startCountdown()
+          const now = new Date().getTime();
+          this.distance = gepDate - now;
+          this.countDownTime()
         },
         methods: {
           updateTimer(){
@@ -58,9 +63,20 @@ const gepDate = new Date("Nov 8, 2021 21:00:00").getTime();
             this.days = Math.floor(remainingTime/ (1000*60*60*24))
             this.hour = Math.floor((remainingTime % (1000*60*60*24)) / (1000 * 60 * 60))
             this.minute = Math.floor((remainingTime %(1000*60 * 60))/(1000*60))
+            this.second = Math.floor((remainingTime % (1000*60))/1000)
+            this.startCountdown()
           },
           startCountdown(){
             this.timerInterval = setInterval(()=> this.updateTimer(), 1000 * 60 * 60)
+          },
+          countDownTime(){
+            if(this.distance > 0){
+              setTimeout(()=>{
+                this.distance -=1
+                this.countDownTime()
+              }, 1000)
+            }
+            this.updateTimer()
           }
         }
     }
