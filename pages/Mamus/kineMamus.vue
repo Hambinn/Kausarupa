@@ -182,6 +182,25 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
     margin: 0;
 }
 
+
+
+.container-volume-mamus{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-volume-mamus .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
+}
+
+
 .scroll-karya-mamus{
     height: 100%;
     padding: 40px;
@@ -228,6 +247,7 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
     left: 50%;
     transform: translate(-85%, 70%);
 }
+
 .container-back-mamus{
     position: absolute;
     height: 100%;
@@ -244,21 +264,6 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
     cursor: pointer;
 }
 
-.container-volume-mamus{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.container-volume-mamus .volume-on{
-    position: absolute;
-    width: 4.16%;
-    top: 50%;
-    left: 50%;
-    transform: translate(1000%, -520%);
-    z-index: 5;
-    cursor: pointer;
-}
 
 .container-box-mamus{
     position: fixed;

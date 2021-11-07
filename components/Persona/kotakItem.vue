@@ -42,7 +42,7 @@ border-radius: 40px;
     font-style: normal;
     font-weight: normal;
     text-align: justify;
-    font-size: 1.9vw;
+    font-size: 1.8vw;
     padding-left: 2%;
     padding-top: 2%;
     padding-right: 2%;

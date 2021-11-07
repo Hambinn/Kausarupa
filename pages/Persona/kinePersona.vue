@@ -279,7 +279,6 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-115%,-25%);
-    z-index: 2;
 }
 
 .container-rumah .rumahSK1{
@@ -288,7 +287,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(140%,-40%);
-    z-index: 1;
+    
 }
 
 .container-awan{
@@ -301,21 +300,21 @@ html,body{
     position: absolute;
     height: 35%;
     transform: translate(-70%,205%);
-    z-index: 1;
+    
 }
 
 .container-awan .SK2{
     position: absolute;
     height: 50%;
     transform: translate(-110%,130%);
-    z-index: 3;
+    
 }
 
 .container-awan .SK3{
     position: absolute;
     height: 55%;
     transform: translate(-10%,110%);
-    z-index: 2;
+    
 }
 
 

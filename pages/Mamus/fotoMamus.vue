@@ -24,7 +24,7 @@
                     <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="scroll-karya-mamus">
-                    <karya-mamus-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus"/>
+                    <karya-mamus-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus" />
                 </div>
                     <layout-karya-mamus-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength"/>
             </div>
@@ -186,6 +186,9 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
     padding: 0;
     margin: 0;
 }
+
+
+
 .container-volume-mamus{
     position: absolute;
     height: 100%;
