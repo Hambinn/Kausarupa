@@ -8,7 +8,7 @@
                 <div class="container-back-pkshadow">
                     <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow" @click="back">
                 </div>
-                <div class="scroll-karya">
+                <div class="scroll-karya-shadow">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan bawah.png" alt="" class="kan-baw">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/tangga.png" alt="" class="tangga">                
@@ -250,27 +250,27 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
     cursor: pointer;
 }
 
-.scroll-karya{
+.scroll-karya-shadow{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.scroll-karya .kan-tas{
+.scroll-karya-shadow .kan-tas{
     height: 45%;
     top: 50%;
     left: 50%;
     transform: translate(199%,11%)
 }
 
-.scroll-karya .kan-baw{
+.scroll-karya-shadow .kan-baw{
     height: 43%;
     top: 50%;
     left: 50%;
     transform: translate(67%,113%)
 }
 
-.scroll-karya .tangga{
+.scroll-karya-shadow .tangga{
     height: 90%;
     top: 50%;
     left: 50%;
