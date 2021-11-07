@@ -75,6 +75,7 @@ import $ from 'jquery'
   left: 50%;
   transform: translate(100%,400%);
   cursor: pointer;
+  height: 7.5%;
 }
 .prev-cat{
   position: absolute;
@@ -82,6 +83,7 @@ import $ from 'jquery'
   left: 50%;
   transform: translate(-190%,400%);
   cursor: pointer;
+  height: 7.5%;
 }
 
 .bungkus-karya{
