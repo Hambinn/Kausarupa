@@ -86,16 +86,19 @@
           <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
         </div>
       </div>
+      <rcp/>
     </div>
 </template>
 
 <script>
 import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable"
+import rcp from '../components/rcp.vue';
 if (process.client) {
   gsap.registerPlugin(Draggable);
 }
     export default {
+  components: { rcp },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
 
         beforeMount(){

@@ -26,13 +26,15 @@
             <layout-karya-shadow-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 <script>
 import karyaShadowVideo from '@/components/Shadow/karyaShadowVideo.vue'
 import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: {karyaShadowVideo, LayoutKaryaShadowVideo},
+        components: {karyaShadowVideo, LayoutKaryaShadowVideo,Rcp },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{

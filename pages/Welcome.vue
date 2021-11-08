@@ -40,6 +40,7 @@
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
       </div>
     </div>
+    <rcp/>
   </div>
 </template>
 
@@ -51,8 +52,9 @@ import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
 import Youtube from '../components/Youtube.vue'
 import CalendarWelcome from '../components/CalendarWelcome.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome},
+        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome, Rcp},
         beforeMount(){
                 if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
                 this.$router.push('/Main')

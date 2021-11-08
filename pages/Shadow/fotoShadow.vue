@@ -26,13 +26,15 @@
             <layout-karya-shadow-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength" />
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 <script>
 import karyaShadowFoto from '@/components/Shadow/karyaShadowFoto.vue'
 import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: {karyaShadowFoto, LayoutKaryaShadowFoto},
+        components: {karyaShadowFoto, LayoutKaryaShadowFoto,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{

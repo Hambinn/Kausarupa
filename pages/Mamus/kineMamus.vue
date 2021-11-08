@@ -29,14 +29,16 @@
                     <layout-karya-mamus-kine v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :pdf="pdf" :karlength="karlength"/>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import karyaMamusKine from '../../components/Mamus/karyaMamusKine.vue'
 import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-  components: { layoutKaryaMamusKine, karyaMamusKine },
+  components: { layoutKaryaMamusKine, karyaMamusKine, Rcp },
         methods:{
             back(){
                 this.$router.push('/pilihkaryamamus')

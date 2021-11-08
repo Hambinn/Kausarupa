@@ -29,14 +29,16 @@
                     <layout-karya-mamus-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength"/>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import karyaMamusVideo from '../../components/Mamus/karyaMamusVideo.vue'
 import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-  components: { layoutKaryaMamusVideo, karyaMamusVideo },
+  components: { layoutKaryaMamusVideo, karyaMamusVideo, Rcp },
         methods:{
             back(){
                 this.$router.push('/pilihkaryamamus')

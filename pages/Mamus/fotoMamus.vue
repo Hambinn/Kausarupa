@@ -29,14 +29,16 @@
                     <layout-karya-mamus-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength"/>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import karyaMamusFoto from '../../components/Mamus/karyaMamusFoto.vue'
 import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-  components: { layoutKaryaMamusFoto, karyaMamusFoto },
+  components: { layoutKaryaMamusFoto, karyaMamusFoto, Rcp },
         methods:{
             back(){
                 this.$router.push('/pilihkaryamamus')

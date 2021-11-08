@@ -31,6 +31,7 @@
         <layout-karya-persona-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
+        <rcp/>
       </div>
     </div>
 </template>
@@ -39,8 +40,9 @@
 import karyaPersonaVideo from '@/components/Persona/karyaPersonaVideo.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
 import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVideo.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: { LayoutKarya, karyaPersonaVideo, LayoutKaryaPersonaVideo},
+        components: { LayoutKarya, karyaPersonaVideo, LayoutKaryaPersonaVideo,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{

@@ -1,14 +1,16 @@
 <template>
   <div>
     <iseng/>
+    <rcp/>
   </div>
 </template>
 
 <script>
+import Rcp from '../components/rcp.vue'
 import iseng from './iseng.vue'
 
   export default {
-  components: { iseng },
+  components: { iseng, Rcp },
   
     
   }

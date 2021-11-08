@@ -32,13 +32,15 @@
                 </div>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import kotakPink from '../components/Mamus/kotakPink.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-    components: { kotakPink },
+    components: { kotakPink, Rcp },
     data(){
         return{
             scoremamus: 0,

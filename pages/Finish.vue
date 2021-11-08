@@ -57,6 +57,7 @@
         </div>
       </div>
           <photobooth v-show="toggPho" @close-modal="toggPho=false" :key="componentKey"/>
+          <rcp/>
     </div>
 </template>
 
@@ -65,11 +66,12 @@ import Katalog from '../components/Katalog.vue'
 import KatalogKarya from '../components/KatalogKarya.vue'
 import Merch from '../components/Merch.vue'
 import Photobooth from '../components/photobooth.vue'
+import Rcp from '../components/rcp.vue'
 import Throwback from '../components/Throwback.vue'
     import TombolFinish from '../components/TombolFinish.vue'
 import UmpanBalik from '../components/UmpanBalik.vue'
         export default {
-            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback, UmpanBalik },
+            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback, UmpanBalik, Rcp },
             data(){
               return{
                 kat:false,

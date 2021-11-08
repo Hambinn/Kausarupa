@@ -33,14 +33,16 @@
           </div>
         </div>  
       </div>
+      <rcp/>
     </div>
 <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
 </template>
 
 <script>
 import kotakItem from '../components/Persona/kotakItem.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-    components: { kotakItem },
+    components: { kotakItem, Rcp },
     data(){
         return{
             scorepersona: 0,

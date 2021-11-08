@@ -33,12 +33,15 @@
           </div>
         </div>
       </div>
+      <rcp/>
     </div>
 </template>
 
 <script>
+import rcp from '../components/rcp.vue';
 const gepDate = new Date("Nov 8, 2021 20:45:00").getTime();
     export default {
+  components: { rcp },
         data(){
           return{
             days: 0,

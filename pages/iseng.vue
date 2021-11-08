@@ -12,12 +12,15 @@
         <swiper-slide>Slide 9</swiper-slide>
         <swiper-slide>Slide 10</swiper-slide>
   </swiper>
+    <rcp/>
     </div>
 </template>
 
 <script>
 import Lightense from 'lightense-images'
+import rcp from '../components/rcp.vue';
     export default {
+  components: { rcp },
         mounted(){
             window.addEventListener('load',function(){
                 Lightense('img');

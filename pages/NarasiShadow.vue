@@ -26,13 +26,15 @@
                 </div>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
+import Rcp from '../components/rcp.vue'
 import kotakBiru from '../components/Shadow/kotakBiru.vue'
     export default {
-        components: { kotakBiru },
+        components: { kotakBiru, Rcp },
         data(){
             return{
                 scoreshadow: '0',

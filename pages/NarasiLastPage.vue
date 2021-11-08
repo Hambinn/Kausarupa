@@ -28,13 +28,15 @@
                 </div>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import kotakLast from '../components/Last/kotakLast.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-  components: { kotakLast },
+  components: { kotakLast, Rcp },
   methods:{
       next(){
           this.$router.push('/suratlastpage')

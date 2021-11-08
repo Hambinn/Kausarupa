@@ -32,6 +32,7 @@
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
       </div>
+      <rcp/>
     </div>
 </template>
 
@@ -39,8 +40,9 @@
 import karyaPersona from '@/components/Persona/karyaPersona.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
 import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: { LayoutKarya, karyaPersona, LayoutKaryaPersona},
+        components: { LayoutKarya, karyaPersona, LayoutKaryaPersona,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
