@@ -28,7 +28,6 @@
 import rcp from '../components/rcp.vue'
 export default {
   components: { rcp },
-    middleware: 'redirect'
     }
 </script>
 
