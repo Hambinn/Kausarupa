@@ -40,13 +40,13 @@
       if (!this.enableCtxMenu){
         window.onmousemove = e => {
           this.handleMouseMove(e)
-          console.log('masuk mang')
+          
         }
         if (document.addEventListener) {
           document.addEventListener("contextmenu", e => {
               this.showCR()
               e.preventDefault()
-              console.log('masuk mang')
+              
             },
             false
           )
@@ -54,8 +54,17 @@
           document.attachEvent("oncontextmenu", () => {
             this.showCR()
             window.event.returnValue = false
-            console.log('masuk mang')
+            
           })
+        }
+      }
+      document.onkeydown = function (event) {
+        if (event.keyCode == 123) {
+          // Prevent F12
+          return false
+        } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+          // Prevent Ctrl+Shift+I
+          return false
         }
       }
     },
