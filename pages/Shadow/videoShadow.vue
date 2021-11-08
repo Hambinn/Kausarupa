@@ -222,7 +222,7 @@ import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.v
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -510%);
-    z-index: 5;
+    z-index: 2;
     cursor: pointer;
 }
 

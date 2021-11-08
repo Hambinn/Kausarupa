@@ -20,13 +20,13 @@
                 </div>                
                 <div class="text-shadow-anim-cont">
                     <transition name="fotodow">
-                    <p class="dow-text-anim-foto" v-show="foto">Karya <br> Foto</p>
+                    <p class="dow-text-anim-foto" v-show="foto" @mouseover="munculfoto" @mouseleave="ilangfoto">Karya <br> Foto</p>
                     </transition>
                     <transition name="kinedow">
-                    <p class="dow-text-anim-kine" v-show="kine">Karya <br> Kine</p>
+                    <p class="dow-text-anim-kine" v-show="kine" @mouseover="munculkine" @mouseleave="ilangkine">Karya <br> Kine</p>
                     </transition>
-                    <transition name="videodow">
-                    <p class="dow-text-anim-video" v-show="video">Karya <br> Video</p>
+                    <transition name="videodow" >
+                    <p class="dow-text-anim-video" v-show="video" @mouseover="munculvideo" @mouseleave="ilangvideo">Karya <br> Video</p>
                     </transition>
                 </div>
                 <div class="pilih-jenis">
@@ -150,6 +150,7 @@ export default {
     font-family: Tf Grotesk;
     font-size: 2.3vw;
     color: #F8FeF0;
+    cursor: pointer;
 }
 
 .dow-text-anim-foto{
@@ -158,6 +159,7 @@ export default {
     left: 50%;
     transform: translate(-45%,-100%) ;
     z-index: 99;
+    cursor: pointer;
 }
 
 .dow-text-anim-kine{
@@ -166,6 +168,7 @@ export default {
     left: 50%;
     transform: translate(430%,110%) ;
     z-index: 99;
+    cursor: pointer;
 }
 
 .fotodow-enter-active, .fotodow-leave-active{

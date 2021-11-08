@@ -260,7 +260,7 @@ import layoutKaryaMamusKine from '../../components/Mamus/layoutKaryaMamusKine.vu
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -520%);
-    z-index: 5;
+    z-index: 2;
     cursor: pointer;
 }
 

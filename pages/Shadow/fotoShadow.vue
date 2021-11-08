@@ -246,7 +246,7 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -510%);
-    z-index: 5;
+    z-index: 2;
     cursor: pointer;
 }
 
