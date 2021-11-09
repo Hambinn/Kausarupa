@@ -34,6 +34,7 @@
 import Rcp from '../components/rcp.vue'
 import kotakBiru from '../components/Shadow/kotakBiru.vue'
     export default {
+        middleware: 'red',
         components: { kotakBiru, Rcp },
         data(){
             return{

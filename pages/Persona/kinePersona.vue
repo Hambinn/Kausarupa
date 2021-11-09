@@ -41,6 +41,7 @@ import LayoutKarya from '@/components/LayoutKarya.vue'
 
 import LayoutKaryaPersonaKine from '../../components/Persona/layoutKaryaPersonaKine.vue'
     export default {
+        middleware: 'red',
         components: { LayoutKarya, karyaPersona, LayoutKaryaPersonaKine},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){

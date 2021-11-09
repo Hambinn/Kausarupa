@@ -42,6 +42,7 @@
 import kotakItem from '../components/Persona/kotakItem.vue'
 import Rcp from '../components/rcp.vue'
     export default {
+        middleware: 'red',
     components: { kotakItem, Rcp },
     data(){
         return{

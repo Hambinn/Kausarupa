@@ -40,6 +40,7 @@
 import kotakPink from '../components/Mamus/kotakPink.vue'
 import Rcp from '../components/rcp.vue'
     export default {
+        middleware: 'red',
     components: { kotakPink, Rcp },
     data(){
         return{

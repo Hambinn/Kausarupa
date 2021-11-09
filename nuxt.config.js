@@ -89,7 +89,7 @@ export default {
     transpile :['gsap'],
   },
   router:{
-    base: '/'
+    base: '/',
   },
   
 }

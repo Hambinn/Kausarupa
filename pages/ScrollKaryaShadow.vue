@@ -29,6 +29,12 @@
     </div>
 </template>
 
+<script>
+export default {
+    middleware: 'red',
+}
+</script>
+
 <style>
 *{
     padding: 0;

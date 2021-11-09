@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="swiper-container" >
-            <video-player :src="vid" alt="" @click.stop class="video"/>
+            <video-player :src="vid" alt="" @click.stop class="video" controlsList="nodownload"/>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>

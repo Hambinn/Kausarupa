@@ -36,6 +36,7 @@
 import kotakLast from '../components/Last/kotakLast.vue'
 import Rcp from '../components/rcp.vue'
     export default {
+        middleware: 'red',
   components: { kotakLast, Rcp },
   methods:{
       next(){
