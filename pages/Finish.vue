@@ -2,6 +2,9 @@
     <div class="container-finish">
       <div class="top-cont">
         <div class="canvas">
+          <div class="container-volume-finish">
+            <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
+          </div>
           <div class="container-jendela-last">
             <img src="../assets/svg/LastPage/jendela (1)-min.png" alt="" class="JendelaLast">
           </div>
@@ -38,27 +41,38 @@
             </transition>
           </div>
           <div class="cont-tombol-finish">
-              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true">
-              <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer">            
-              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho">            
-              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep">              
+              <img src="../assets/png/FinishPage/Last/katalog.png" class="katalog" @mouseover="showkat" @mouseleave="showkat" @click="toggKat = true; forceRender()">
+              <img src="../assets/png/FinishPage/Last/merch.png" class="merch" @mouseover="showmer" @mouseleave="showmer" @click="toggMerch = true">            
+              <img src="../assets/png/FinishPage/Last/photobooth.png" class="photobooth" @mouseover="showpho" @mouseleave="showpho" @click="toggPho = true; forceRender()">            
+              <img src="../assets/png/FinishPage/Last/gep sebelumnya.png" class="sebelum" @mouseover="showgep" @mouseleave="showgep" @click="toggGep=true; forceRenderThrowback() ">              
               <img src="../assets/png/FinishPage/home.png" class="home" @click="home">
-              <div class="btn-feedback">
+              <div class="btn-feedback" @click="toggFeed = true">
                 Feedback
               </div>  
           </div>
-          <katalog-karya  @close-modal="toggKat=false"/>
+          <katalog-karya v-show="toggKat"  @close-modal="toggKat=false" :key="componentKey"/>
+          <merch v-show="toggMerch" @close-modal="toggMerch=false"/>
+          <throwback v-show="toggGep" @close-modal="toggGep=false" :karyalength="karyalength" :arrkarya="arrkarya" :key="throwbackKey"/>
+          <umpan-balik v-show="toggFeed" @close-modal="toggFeed=false"/>
         </div>
       </div>
+          <photobooth v-show="toggPho" @close-modal="toggPho=false" :key="componentKey"/>
+          <rcp/>
     </div>
 </template>
 
 <script>
 import Katalog from '../components/Katalog.vue'
 import KatalogKarya from '../components/KatalogKarya.vue'
+import Merch from '../components/Merch.vue'
+import Photobooth from '../components/photobooth.vue'
+import Rcp from '../components/rcp.vue'
+import Throwback from '../components/Throwback.vue'
     import TombolFinish from '../components/TombolFinish.vue'
+import UmpanBalik from '../components/UmpanBalik.vue'
         export default {
-            components:{ TombolFinish, Katalog, KatalogKarya },
+          
+            components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback, UmpanBalik, Rcp },
             data(){
               return{
                 kat:false,
@@ -68,7 +82,21 @@ import KatalogKarya from '../components/KatalogKarya.vue'
                 toggKat: false,
                 toggMerch: false,
                 toggPho: false,
-                toggGep:false
+                toggGep:false,
+                toggFeed: false,
+                componentKey: 0,
+                throwbackKey: 1,
+                arrkarya: [],
+                karyalength: 0,
+                id: 0,
+                title: '',
+                nama:'',
+                caption:'',
+                img: [],
+                karlength: 0,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
               }
             },
             methods:{
@@ -86,7 +114,61 @@ import KatalogKarya from '../components/KatalogKarya.vue'
               },
               home(){
                 this.$router.push('/main')
-              }
+              },
+              forceRender(){
+                this.componentKey +=1;
+                console.log(this.componentKey)
+              },
+              forceRenderThrowback(){
+                this.throwbackKey +=1
+                console.log(this.throwbackKey)
+              },
+              async getThumbnail(){
+                const karyaRef = this.$fire.firestore.collection('throwback').doc('Foto')
+                try{
+                    const karya = await karyaRef.get()
+                    this.arrkarya = Object.values(karya.data())
+                    console.log(this.arrkarya)
+                    this.karyalength = this.arrkarya.length
+                    console.log(this.karyalength)
+                } catch(e){
+                    alert(e)
+                    return
+                }
+              },
+              changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
+            },
+            mounted(){
+              this.getThumbnail()
+              localStorage.setItem("daritopeng",true)
+              this.audio = new Audio('/sound/11. kamar.mp3')
+              this.audio.volume = 0.2
+              this.audio.loop = true
+              this.playAudio()
             }
         }
 </script>
@@ -98,6 +180,21 @@ html,body{
 *{
     padding: 0;
     margin: 0;   
+}
+
+.container-volume-finish{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.container-volume-finish .volume-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(1000%, -520%);
+    z-index: 5;
+    cursor: pointer;
 }
 
 .btn-feedback{

@@ -83,32 +83,17 @@ import 'swiper/css/swiper.css'
         height: 500px;
     }
     
-    @media only screen and (max-width:1366px){
-        .swiper-wrapper{
-        height: 300px;
-    }
-
-    }
-    @media only screen and (max-width:1536px){
-        .swiper-wrapper{
-        height: 400px;
-    }
-    }
-    @media only screen and (max-width:1280px){
-        .swiper-wrapper{
-        height: 300px;
-    }
-    }
+    
     .swiper-container{
         width: 100%;
         height: 100%;
         
     }
-
     .swiper {
   width: 1000px;
   padding: 50px;
 }
+
 
 .swiper-slide {
   background-position: center;
@@ -120,4 +105,38 @@ import 'swiper/css/swiper.css'
   display: block;
   width: 100%;
 }
+
+@media only screen and (max-width:1536px){
+        .swiper-wrapper{
+        height: 400px;
+    }
+
+        .swiper{
+            width: 900px;
+            padding: 50px;
+        }
+}
+    @media only screen and (max-width:1366px){
+        .swiper-wrapper{
+        height: 300px;
+        }
+
+        .swiper{
+            width: 750px;
+            padding: 50px;
+        }
+
+    }
+    
+    @media only screen and (max-width:1290px){
+        .swiper-wrapper{
+        height: 300px;
+    }
+
+        .swiper{
+            width: 700px;
+            padding: 50px;
+        }
+    
+    }
 </style>

@@ -19,7 +19,7 @@
                 <img src="~/assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
           </div>
           <div class="container-volume-persona">
-                <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
             </div>
           <div class="container-back-persona">
                 <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
@@ -32,6 +32,7 @@
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
       </div>
+      <rcp/>
     </div>
 </template>
 
@@ -39,8 +40,9 @@
 import karyaPersona from '@/components/Persona/karyaPersona.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
 import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: { LayoutKarya, karyaPersona, LayoutKaryaPersona},
+        components: { LayoutKarya, karyaPersona, LayoutKaryaPersona,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
@@ -54,7 +56,9 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
                 caption:'',
                 img: [],
                 karlength: 0,
-                isVolume: true
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         methods:{
@@ -106,6 +110,8 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
                     this.title = 'Who Am I'
                 }else if(id ==10){
                     this.title = 'Whole Emotion at Once'
+                }else if(id == 11){
+                    this.title = 'Ta(m)pak 1000'
                 }
                 this.getKarya()
             },
@@ -135,10 +141,41 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
                     this.scorepersona = Number(localStorage.getItem('scorepersona'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("persona",true)
+            this.audio = new Audio('/sound/4. Karya dan milih karya Persona.mp3')
+            this.audio.volume = 0.3
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('perduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scorepersona')){
@@ -147,6 +184,10 @@ import LayoutKaryaPersona from '@/components/Persona/layoutKaryaPersona.vue'
             else{
                 this.scorepersona = Number(localStorage.getItem('scorepersona'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('perduration',this.audio.currentTime)
         }
 
     }

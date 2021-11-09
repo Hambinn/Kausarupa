@@ -1,7 +1,7 @@
 <template>
     <div class="modal-overlay" @click="$emit(`close-modal`)">
         <div class="Youtube" @click.stop>
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?start=42" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/LxsQNgcAxXM" title="Teaser Kausarupa"   allowfullscreen></iframe>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -40,6 +40,7 @@ iframe{
     right: 8%;
     width: 85%;
     height: 70%;
+    transform: translate(1%,0);
 }
 
 /* @media only  screen and (max-width: 1366px) {

@@ -11,8 +11,8 @@
           <img src="~assets/svg/WelcomePage/about us.svg" alt="" class="about" @click="showAboutUs = true">
           <img src="~assets/svg/WelcomePage/catatan kuratorial.svg" alt="" class="catatan" @click="showCatatan = true">
           <img src="~assets/svg/WelcomePage/trailer.svg" alt="" class="trailer" @click="showYoutube = true">
-          <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar">
-          <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts">
+          <img src="~assets/png/WelcomePage/calendar.png" alt="" class="calendar" @click="showCalendar = true">
+          <img src="~assets/png/WelcomePage/bts.png" alt="" class="bts" @click="showBTS = true">
           <button  class="next" tag="button" :event="disabled ? '' : 'click'" @click=" setNama()"
             :style="styleObj">
             <p>Next</p>
@@ -30,15 +30,17 @@
               </form>
             </div>
           </div>
-          <img src="../assets/png/umum/volumeon.png"  alt="" class="volume-welcome" @click="volume()" ref="volumeBtn">
           <about-us v-show="showAboutUs" @close-modal="showAboutUs = false" />
           <catatan-kuratorial v-show="showCatatan" @close-modal="showCatatan = false" />
           <contact-us v-show="showContact" @close-modal="showContact = false" />
           <youtube v-show="showYoutube" @close-modal="showYoutube=false" />
+          <calendar-welcome v-show="showCalendar" @close-modal="showCalendar = false" />
+          <BehindTheScenes v-show="showBTS" @close-modal="showBTS = false"/>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
       </div>
     </div>
+    <rcp/>
   </div>
 </template>
 
@@ -49,11 +51,13 @@ import CatatanKuratorial from '../components/CatatanKuratorial.vue'
 import ContactUs from '../components/ContactUs.vue'
 import FormWelcome from '../components/FormWelcome.vue'
 import Youtube from '../components/Youtube.vue'
-import Cookies from 'js-cookie'
+import CalendarWelcome from '../components/CalendarWelcome.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs},
+        
+        components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome, Rcp},
         beforeMount(){
-            if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
+                if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
                 this.$router.push('/Main')
             }
         },
@@ -63,6 +67,8 @@ import Cookies from 'js-cookie'
                 showCatatan: false,
                 showContact: false,
                 showYoutube: false,
+                showCalendar: false,
+                showBTS: false,
                 nama:'',
                 instansi:'',
                 disabled: true,
@@ -121,14 +127,6 @@ import Cookies from 'js-cookie'
                     this.$router.push("/main")  
                 }
             },
-            volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }
         },
         beforeDestroy(){
             console.log('test aja')

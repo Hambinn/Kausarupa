@@ -25,24 +25,29 @@
                     <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="container-volume-mamus">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                  <div class="tombol-next-mamus" @click="next">
                     <p class="next-mamus">Next</p>
                 </div>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import kotakPink from '../components/Mamus/kotakPink.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-    components: { kotakPink },
+        
+    components: { kotakPink, Rcp },
     data(){
         return{
-            isVolume: true,
             scoremamus: 0,
+            isVolume: true,
+            audio: undefined,
+            isAudioPlaying: false,
         }
     },
     methods:{
@@ -61,7 +66,32 @@ import kotakPink from '../components/Mamus/kotakPink.vue'
         },
         next(){
             this.$router.push('/pilihkaryamamus')
-        }
+        },
+        changeMute() {
+            this.audio.muted = !this.audio.muted
+            if (this.audio.muted == true) {
+            this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+            } else {
+            this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+            }
+            if (!this.isAudioPlaying) {
+            this.playAudio()
+            }
+        },
+        playAudio(){
+            let startPlayPromise = this.audio.play()
+            this.isAudioPlaying = true
+            if (startPlayPromise !== undefined) {
+            startPlayPromise.then(() => {
+                console.log('play')
+                // Yaudah biarin aja dia ngeplay
+            }).catch(() => {
+                this.isAudioPlaying = false
+                this.audio.muted = true
+                console.log(startPlayPromise)
+                })
+            }
+        },
     },
     beforeMount(){
             if(!localStorage.getItem('scoremamus')){
@@ -70,7 +100,18 @@ import kotakPink from '../components/Mamus/kotakPink.vue'
             else{
                 this.scoremamus = Number(localStorage.getItem('scoremamus'))
             }
+    },
+    mounted(){
+        this.audio = new Audio('/sound/7. Narasi Mamus.mp3')
+        this.audio.volume = 0.5
+        this.audio.loop = true
+        this.playAudio()
+    },
+    beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0
         }
+    
         
     }
 </script>
@@ -222,7 +263,6 @@ html,body{
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 2;
 }
 
 .container-teh-kiri-depan .teh{

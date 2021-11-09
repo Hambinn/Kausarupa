@@ -33,11 +33,15 @@
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
       </div>
+      <rcp/>
     </div>
 </template>
 
 <script>
+import rcp from '../components/rcp.vue'
     export default {
+      
+  components: { rcp },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>

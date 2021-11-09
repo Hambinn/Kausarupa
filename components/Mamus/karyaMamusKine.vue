@@ -100,6 +100,74 @@ import 'swiper/css/swiper.css'
 
 .swiper-slide img {
   display: block;
+  height: 500px;
   width: 100%;
 }
+
+@media only screen and (max-width:1536px){
+            .swiper {
+    width: 400px;
+    height: 400px;
+    padding: 50px;
+    }
+
+    .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    }
+
+    .swiper-slide img {
+    display: block;
+    height: 400px;
+    width: 100%;
+    }
+
+}
+
+@media only screen and (max-width:1366px){
+        .swiper {
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+    }
+
+    .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    }
+
+    .swiper-slide img {
+    display: block;
+    height: 300px;
+    width: 100%;
+    }
+
+}
+
+@media only screen and (max-width:1200px){
+            .swiper {
+    width: 270px;
+    height: 270px;
+    padding: 50px;
+    }
+
+    .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 270px;
+    height: 270px;
+    }
+
+    .swiper-slide img {
+    display: block;
+    height: 270px;
+    width: 100%;
+    }
+
+}
+
 </style>

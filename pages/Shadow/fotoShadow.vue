@@ -8,7 +8,7 @@
                 <div class="container-back-pkshadow">
                     <img src="~/assets/svg/ShadowPage/back.svg" alt="" class="back-pkshadow" @click="back">
                 </div>
-                <div class="scroll-karya">
+                <div class="scroll-karya-shadow">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan atas (2).png" alt="" class="kan-tas">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/kanan bawah.png" alt="" class="kan-baw">
                     <img src="~/assets/png/ShadowPage/3. scroll karya/tangga.png" alt="" class="tangga">                
@@ -18,7 +18,7 @@
                     <img src="~/assets/png/ShadowPage/topeng score putih shadow.png" alt="" class="score-skshadow">                    
                 </div>                
                 <div class="container-volume-pkshadow">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow2">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-shadow2" @click="changeMute" ref="volumeBtn">
                 </div>
             <div class="scroll-karya-fotoshadow">
               <karya-shadow-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahshadow="tambahshadow"/>
@@ -26,13 +26,16 @@
             <layout-karya-shadow-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength" />
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 <script>
 import karyaShadowFoto from '@/components/Shadow/karyaShadowFoto.vue'
 import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: {karyaShadowFoto, LayoutKaryaShadowFoto},
+        
+        components: {karyaShadowFoto, LayoutKaryaShadowFoto,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
@@ -45,7 +48,10 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
                 nama:'',
                 caption:'',
                 img: [],
-                karlength: 0
+                karlength: 0,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         methods:{
@@ -126,10 +132,41 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
                     this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("shadow",true)
+            this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+            this.audio.volume = 0.2
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('dowduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scoreshadow')){
@@ -138,6 +175,10 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
             else{
                 this.scoreshadow = Number(localStorage.getItem('scoreshadow'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('dowduration',this.audio.currentTime)
         }
 
     }
@@ -208,31 +249,31 @@ import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -510%);
-    z-index: 5;
+    z-index: 2;
     cursor: pointer;
 }
 
-.scroll-karya{
+.scroll-karya-shadow{
     position: absolute;
     height: 100%;
     width: 100%;
 }
 
-.scroll-karya .kan-tas{
+.scroll-karya-shadow .kan-tas{
     height: 45%;
     top: 50%;
     left: 50%;
     transform: translate(199%,11%)
 }
 
-.scroll-karya .kan-baw{
+.scroll-karya-shadow .kan-baw{
     height: 43%;
     top: 50%;
     left: 50%;
     transform: translate(67%,113%)
 }
 
-.scroll-karya .tangga{
+.scroll-karya-shadow .tangga{
     height: 90%;
     top: 50%;
     left: 50%;

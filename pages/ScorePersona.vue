@@ -27,10 +27,17 @@
                 </div>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
+import rcp from '../components/rcp.vue'
+export default {
+    
+  components: { rcp },
+    
+}
 </script>
 
 <style>

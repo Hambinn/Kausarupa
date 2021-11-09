@@ -3,7 +3,7 @@
         <div class="swiper-wrapper">
         <swiper class="swiper" :options="swiperOption">
         <swiper-slide class="img-wrapper" v-for="i in karyalength" :key="i"><img :src="arrkarya[i-1]" alt="" @click="$emit(`toggle`); passId(i);score()"></swiper-slide>
-        <div class="swiper-pagination swiper-pagination-h" slot="pagination"></div>
+        <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
     </swiper>
     </div>
     </div>
@@ -25,10 +25,9 @@ import 'swiper/css/swiper.css'
                 swiperOption: {
                     slidesPerView: 'auto',
                     spaceBetween: 140,
-                    loop: true,
                     centeredSlides: true,
                     pagination:{
-                        el: '.swiper-pagination-h',
+                        el: '.swiper-pagination',
                         clickable: true
                     }
                 },
@@ -109,7 +108,5 @@ import 'swiper/css/swiper.css'
       align-items: center;
     }
 
-    .swiper-pagination-h{
-        
-    }
+
 </style>

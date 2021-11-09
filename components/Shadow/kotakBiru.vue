@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-nar-shad">
         Selamat datang di Shadow!Shadow itu apasih? 
         <br>
         <br>
@@ -17,7 +17,7 @@
 </script>
 
 <style  scoped>
-.container{
+.container-nar-shad{
 position: absolute;
 width: 53%;
 height: 58%;
@@ -37,20 +37,13 @@ font-family: "Tf Grotesk";
     font-style: normal;
     font-weight: normal;
     text-align: justify;
-    font-size: 1.5vw;
+    font-size: 1.9vw;
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 2%;
     color: #30455A;
 }
 
-.narasi{
-    font-family: "Tf Grotesk";
-    font-style: normal;
-    font-weight: normal;
-    text-align: justify;
-    font-size: 1.5vw;
-    padding: 2% 2%;
-}
+
     /* ini buat stylingnya, ngasih warna, benerin posisi, benerin ukuran, font, kasih border dll. */
 </style>

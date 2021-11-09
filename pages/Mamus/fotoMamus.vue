@@ -21,22 +21,25 @@
                     <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="container-volume-mamus">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="scroll-karya-mamus">
-                    <karya-mamus-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus"/>
+                    <karya-mamus-foto @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus" />
                 </div>
                     <layout-karya-mamus-foto v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :img="img" :karlength="karlength"/>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import karyaMamusFoto from '../../components/Mamus/karyaMamusFoto.vue'
 import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-  components: { layoutKaryaMamusFoto, karyaMamusFoto },
+        
+  components: { layoutKaryaMamusFoto, karyaMamusFoto, Rcp },
         methods:{
             back(){
                 this.$router.push('/pilihkaryamamus')
@@ -113,7 +116,32 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
                     this.scoremamus = Number(localStorage.getItem('scoremamus'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         data(){
             return{
@@ -127,11 +155,19 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
                 caption:'',
                 img: [],
                 karlength: 0,
-                isVolume: true
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("mamus",true)
+            this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+            this.audio.volume = 0.2
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('mamduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scoremamus')){
@@ -140,6 +176,10 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
             else{
                 this.scoremamus = Number(localStorage.getItem('scoremamus'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('mamduration',this.audio.currentTime)
         }
     }
 </script>
@@ -149,6 +189,9 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
     padding: 0;
     margin: 0;
 }
+
+
+
 .container-volume-mamus{
     position: absolute;
     height: 100%;
@@ -225,7 +268,7 @@ import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vu
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -520%);
-    z-index: 5;
+    z-index: 2;
     cursor: pointer;
 }
 

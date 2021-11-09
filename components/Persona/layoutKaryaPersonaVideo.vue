@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="swiper-container" >
-            <video-player :src="vid" alt="" @click.stop class="video"/>
+            <video :src="vid" alt="" @click.stop class="video" controls controlsList="nodownload"/>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -49,6 +49,9 @@ require('nuxt-video-player/src/assets/css/main.css')
 
 <style  scoped>
 
+.video{
+    width: 100%;
+}
 
 
 .container-karya{

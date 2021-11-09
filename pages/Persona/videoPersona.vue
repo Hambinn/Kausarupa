@@ -19,7 +19,7 @@
                 <img src="~/assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
           </div>
           <div class="container-volume-persona">
-                <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
             </div>
           <div class="container-back-persona">
                 <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
@@ -31,6 +31,7 @@
         <layout-karya-persona-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength" />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
+        <rcp/>
       </div>
     </div>
 </template>
@@ -39,8 +40,10 @@
 import karyaPersonaVideo from '@/components/Persona/karyaPersonaVideo.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
 import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVideo.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        components: { LayoutKarya, karyaPersonaVideo, LayoutKaryaPersonaVideo},
+        
+        components: { LayoutKarya, karyaPersonaVideo, LayoutKaryaPersonaVideo,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{
@@ -54,7 +57,9 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
                 caption:'',
                 vid: [],
                 karlength: 0,
-                isVolume: true
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         methods:{
@@ -117,10 +122,41 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
                     this.scorepersona = Number(localStorage.getItem('scorepersona'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("persona",true)
+            this.audio = new Audio('/sound/4. Karya dan milih karya Persona.mp3')
+            this.audio.volume = 0.3
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('perduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scorepersona')){
@@ -129,6 +165,10 @@ import LayoutKaryaPersonaVideo from '@/components/Persona/layoutKaryaPersonaVide
             else{
                 this.scorepersona = Number(localStorage.getItem('scorepersona'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('perduration',this.audio.currentTime)
         }
 
     }
@@ -235,7 +275,6 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-115%,-25%);
-    z-index: 2;
 }
 
 .container-rumah .rumahSK1{
@@ -244,7 +283,7 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(140%,-40%);
-    z-index: 1;
+    
 }
 
 .container-awan{
@@ -257,21 +296,21 @@ html,body{
     position: absolute;
     height: 35%;
     transform: translate(-70%,205%);
-    z-index: 1;
+    
 }
 
 .container-awan .SK2{
     position: absolute;
     height: 50%;
     transform: translate(-110%,130%);
-    z-index: 3;
+    
 }
 
 .container-awan .SK3{
     position: absolute;
     height: 55%;
     transform: translate(-10%,110%);
-    z-index: 2;
+    
 }
 
 

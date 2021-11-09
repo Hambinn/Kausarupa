@@ -1,6 +1,6 @@
 <template>
-    <div class="container">
-        <p class="narasi">
+    <div class="container-nar-mam">
+        <p class="narasi-pink">
             Keseimbangan itu penting loh! Itulah yang tergambar di dalam Anima/Animus.
             <br>
             <br>
@@ -19,7 +19,7 @@
 </script>
 
 <style  scoped>
-.container{
+.container-nar-mam{
 position: absolute;
 width: 50%;
 height: 54%;
@@ -37,12 +37,12 @@ backdrop-filter: blur(4rem);
 border-radius: 5.5%/8.59%;
 }
 
-.narasi{
+.narasi-pink{
     font-family: "Tf Grotesk";
     font-style: normal;
     font-weight: normal;
-    text-align: left;
-    font-size: 1.5vw;
+    text-align: justify;
+    font-size: 1.9vw;
     padding: 2%;
     color: #30455A;
 }

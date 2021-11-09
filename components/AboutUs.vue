@@ -30,13 +30,14 @@
     line-height: 150px;
     text-align: center;
     padding-left: 0px;
+    overflow-y: scroll;
 }
 
     p{
     font-family: 'Gaegu', cursive;
     font-style: normal;
     font-size: 2.5vh;
-    line-height: 30px;
+    line-height: 2vw;
     text-align: justify;
     padding-left: 50px;
     padding-right: 50px;

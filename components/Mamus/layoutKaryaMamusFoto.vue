@@ -16,6 +16,8 @@
                 <div class="swiper-pagination swiper-pagination-v" slot="pagination" @click.stop></div>
             </swiper>
             </div>
+            <img src="@/assets/png/umum/next.png" alt="" class="next-karya" @click.stop>
+            <img src="@/assets/png/umum/pevious.png" alt="" class="prev-karya" @click.stop>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -33,6 +35,10 @@ import 'swiper/css/swiper.css'
                     pagination:{
                         el: '.swiper-pagination-v',
                         clickable: true
+                    },
+                    navigation:{
+                        nextEl: '.prev-karya',
+                        prevEl: '.next-karya'
                     }
                 },
             }
@@ -51,7 +57,21 @@ import 'swiper/css/swiper.css'
 
 <style  scoped>
 
+.next-karya{
+    position: absolute;
+    height: 8%;
+    z-index: 5;
+    transform: translate(-250%,-575%) rotate(-90deg);
+    cursor: pointer;
+}
 
+.prev-karya{
+    position: absolute;
+    height: 8%;
+    z-index: 5;
+    transform: translate(-250%,115%) rotate(-90deg);
+    cursor: pointer;
+}
 
 .container-karya{
     position: absolute;

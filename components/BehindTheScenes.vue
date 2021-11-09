@@ -1,7 +1,6 @@
 <template>
     <div class="modal-overlay" @click="$emit(`close-modal`)">
-        <div class="AboutUs" @click.stop>Behind The Scenes
-        </div>
+        <img src="@/assets/png/umum/BTS STAFF.PNG" alt="" class="btss">
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
 </template>
@@ -13,6 +12,12 @@
 </script>
 
 <style  scoped>
+.btss{
+    position: absolute;
+    height: 80%;
+    transform: translate(0,12%);
+}
+
 .AboutUs{
     background-color: #466584;
     border-radius: 25px;

@@ -21,7 +21,7 @@
                     <img src="~/assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
                 </div>
                 <div class="container-volume-mamus">
-                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                    <img src="~/assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
                 </div>
                 <div class="scroll-karya-mamus">
                     <karya-mamus-video @toggle="showLayout = true" :arrkarya="arrkarya" :karyalength="karyalength" @changeId="ChangeId($event)" @tambahmamus="tambahmamus"/>
@@ -29,14 +29,17 @@
                     <layout-karya-mamus-video v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :vid="vid" :karlength="karlength"/>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
 import karyaMamusVideo from '../../components/Mamus/karyaMamusVideo.vue'
 import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-  components: { layoutKaryaMamusVideo, karyaMamusVideo },
+        
+  components: { layoutKaryaMamusVideo, karyaMamusVideo, Rcp },
         methods:{
             back(){
                 this.$router.push('/pilihkaryamamus')
@@ -97,7 +100,32 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
                     this.scoremamus = Number(localStorage.getItem('scoremamus'))
                 }
                 console.log('masuk')
-            }
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         data(){
             return{
@@ -110,11 +138,20 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
                 nama:'',
                 caption:'',
                 vid: [],
-                karlength: 0
+                karlength: 0,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
             }
         },
         mounted(){
             this.getThumbnail();
+            localStorage.setItem("mamus",true)
+            this.audio = new Audio('/sound/8. Karya dan milih karya Mamus.wav')
+            this.audio.volume = 0.2
+            this.audio.loop = true
+            this.audio.currentTime = Number(localStorage.getItem('mamduration'))
+            this.playAudio()
         },
         beforeMount(){
             if(!localStorage.getItem('scoremamus')){
@@ -123,6 +160,10 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
             else{
                 this.scoremamus = Number(localStorage.getItem('scoremamus'))
             }
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        localStorage.setItem('mamduration',this.audio.currentTime)
         }
     }
 </script>
@@ -239,7 +280,7 @@ import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.
     top: 50%;
     left: 50%;
     transform: translate(-1100%, -520%);
-    z-index: 5;
+    z-index: 2;
     cursor: pointer;
 }
 

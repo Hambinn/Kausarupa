@@ -23,7 +23,7 @@
                 <img src="../assets/svg/PersonaPage/header persona.svg" alt="" class="header-persona">
           </div>
             <div class="container-volume-persona">
-                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
             </div>
           <div class="container-back-persona">
                 <img src="../assets/svg/PersonaPage/keyboard_backspace.svg" alt="" class="back" @click="back">
@@ -33,19 +33,30 @@
           </div>
         </div>  
       </div>
+      <rcp/>
     </div>
 <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
 </template>
 
 <script>
 import kotakItem from '../components/Persona/kotakItem.vue'
+import Rcp from '../components/rcp.vue'
     export default {
-    components: { kotakItem },
+        
+    components: { kotakItem, Rcp },
     data(){
         return{
             scorepersona: 0,
-            isVolume: true
+            isVolume: true,
+            audio: undefined,
+            isAudioPlaying: false,
         }
+    },
+    mounted(){
+        this.audio = new Audio('/sound/3. Narasi Persona.mp3')
+        this.audio.volume = 0.5
+        this.audio.loop = true
+        this.playAudio()
     },
     methods:{
         back(){
@@ -63,7 +74,32 @@ import kotakItem from '../components/Persona/kotakItem.vue'
         },
         next(){
              this.$router.push('/pilihkarya')
-        }
+        },
+        changeMute() {
+            this.audio.muted = !this.audio.muted
+            if (this.audio.muted == true) {
+            this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+            } else {
+            this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+            }
+            if (!this.isAudioPlaying) {
+            this.playAudio()
+            }
+        },
+        playAudio(){
+            let startPlayPromise = this.audio.play()
+            this.isAudioPlaying = true
+            if (startPlayPromise !== undefined) {
+            startPlayPromise.then(() => {
+                console.log('play')
+                // Yaudah biarin aja dia ngeplay
+            }).catch(() => {
+                this.isAudioPlaying = false
+                this.audio.muted = true
+                console.log(startPlayPromise)
+                })
+            }
+        },
     },
     beforeMount(){
             if(!localStorage.getItem('scorepersona')){
@@ -72,7 +108,11 @@ import kotakItem from '../components/Persona/kotakItem.vue'
             else{
                 this.scorepersona = Number(localStorage.getItem('scorepersona'))
             }
-        }
+    },
+    beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0;
+    }
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
     }
 </script>

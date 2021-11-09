@@ -20,11 +20,15 @@
                 </div>
             </div>
         </div>
+        <rcp/>
     </div>
 </template>
 
 <script>
+import rcp from '../components/rcp.vue'
     export default {
+        
+  components: { rcp },
         
     }
 </script>
@@ -61,16 +65,7 @@ html,body{
   height: 100%;
 }
 
-.bg-feedback{
-    position: absolute;
-    text-align: center;
-    background-image: url("~/assets/png/FeedbackPage/Last Page.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    }
+
 
 .container-bintang-oren-feedback{
     position: absolute;
@@ -105,7 +100,7 @@ html,body{
     height: 44%;
     width: 38%;
     transform: translate(-50%, -60%);
-
+    text-align: center;
     background: rgba(196, 196, 196, 0.5);
     border-radius: 4.84%/7.5%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);

@@ -37,9 +37,7 @@ export default {
                 try{
                     const karya = await karyaRef.get()
                     this.arrkarya = Object.values(karya.data())
-                    console.log(this.arrkarya)
                     this.karyalength = this.arrkarya.length
-                    console.log(this.karyalength)
                 } catch(e){
                     alert(e)
                     return

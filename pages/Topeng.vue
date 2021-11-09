@@ -9,6 +9,7 @@
           </div>
           <div class="ChooseOne" >
             <h4>Choose one!</h4>
+            <h3>Sisi manusia mana yang ingin kamu jelajahi lebih dulu?</h3>
           </div>
           <div class="tulisan-topeng">
               <transition name="persona">
@@ -22,7 +23,10 @@
               </transition>
           </div>
           <div class="container-volume-persona">
-                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="volume" ref="volumeBtn">
+                <img src="../assets/png/umum/volumeon.png" alt="" class="volume-on" @click="changeMute" ref="volumeBtn">
+            </div>
+            <div class="tombol-next-topeng" @click="next" v-show="isNext">
+              <p class="next-topeng">Next</p>
             </div>
           <div class="topeng">
             <img src="~/assets/svg/ChoosePage/Ma Mus 1.svg" alt="" class="mamus" @mouseover="munculMamus" @mouseleave="ilangMamus" @click="keMamus">
@@ -31,18 +35,25 @@
           </div>
         </div>
       </div>
+      <rcp/>
     </div>
 </template>
 
 <script>
+import rcp from '../components/rcp.vue'
     export default {
+        
+  components: { rcp },
         layout: 'default',
         data(){
             return{
                 mamus: false,
                 persona: false,
                 shadow: false,
-                isVolume: true
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
+                isNext: false
             }
         },
         methods:{
@@ -76,17 +87,62 @@
                 this.$router.push('/narasishadow')
             },
             volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }
+                this.isVolume = !this.isVolume
+                if(this.isVolume){
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
+                }else{
+                    this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
+                }
+            },
+            next(){
+                this.$router.push('/narasilastpage')
+            },
+            changeMute() {
+                this.audio.muted = !this.audio.muted
+                if (this.audio.muted == true) {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                } else {
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                }
+                if (!this.isAudioPlaying) {
+                this.playAudio()
+                }
+            },
+            playAudio(){
+                let startPlayPromise = this.audio.play()
+                this.isAudioPlaying = true
+                if (startPlayPromise !== undefined) {
+                startPlayPromise.then(() => {
+                    console.log('play')
+                    // Yaudah biarin aja dia ngeplay
+                }).catch(() => {
+                    this.isAudioPlaying = false
+                    this.audio.muted = true
+                    console.log(startPlayPromise)
+                    })
+                }
+            },
         },
         mounted(){
-            localStorage.setItem('persona','true')
-        }
+            if(!localStorage.getItem('self')){
+                localStorage.setItem('self', false)
+            }
+            this.audio = new Audio('/sound/2. Pilih Karya.mp3')
+            this.audio.volume = 0.5
+            this.audio.loop = true
+            this.playAudio()
+            
+        },
+        beforeMount(){
+            if(localStorage.getItem("persona") && localStorage.getItem("mamus") && localStorage.getItem("shadow")){
+                this.isNext = true    
+            }
+            localStorage.setItem("daritopeng",true)
+        },
+        beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0;
+    }
     }
 </script>
 
@@ -103,6 +159,32 @@ html,body{
 *{
     padding: 0;
     margin: 0;
+}
+
+.tombol-next-topeng{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 7%;
+    width: 14%;
+    transform: translate(-50%, 340%);
+    background: #597FA3;
+    border-radius: 11.4%/38.4%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.tombol-next-topeng .next-topeng{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-60%);
+    font-family: Tf Grotesk;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.1vw;
+    color: white;
+    cursor: pointer;
 }
 
 .container-volume-persona{
@@ -190,6 +272,12 @@ html,body{
     font-style: normal;
     font-weight: normal;
     font-size: 4.5vw;
+}
+
+.ChooseOne h3{
+    transform: translate(0%, 300%);
+    font-family: 'Gaegu', cursive;
+    font-size: 2vw;
 }
 
 .topeng{

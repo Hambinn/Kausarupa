@@ -30,13 +30,20 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    "~assets/fonts/global.css"
+    "~assets/fonts/global.css",
+    'video.js/dist/video-js.css'
+  ],
+
+  script:[
+    {src: '~assets/js/Lightense.js'},
+    {src: '/Lightense.js'}
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
-    { src: '~/plugins/main.js', ssr: false}
+    { src: '~/plugins/main.js', ssr: false},
+    { src: '~plugins/nuxt-video-player-plugin.js', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -72,10 +79,19 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    transpile :['gsap']
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    },
+    transpile :['gsap'],
   },
   router:{
-    base: '/'
+    base: '/',
   },
   
 }

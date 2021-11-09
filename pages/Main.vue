@@ -3,6 +3,9 @@
     <div class="container-main">
       <div class="top-cont">
         <div class="canvas">
+            <div class="container-sound-last">
+            <img src="../assets/png/FinishPage/sound on.png" alt="" class="sound-on" @click="changeMute" ref="volumeBtn">
+          </div>
           <div class="container-bulan">
             <img src="../assets/svg/MainPage/bulan.svg" alt="" class="oren">
           </div>
@@ -32,7 +35,11 @@
             Intro
           </div>
           <div class="container-text-middle">
-            Malam yang penuh gemerlap bintang. Di tengah kesunyian ruang, Saka terbangun. Loh tetapi badannya masih menempel pada kasur? Oh sepertinya ia mengalami lucid dream. Sambil berusaha terbangun, ia meratapi langit malam. Bintang kelap kelip sangat menarik matanya. Ia mencoba meraih bintang tersebut. Tak disangka, bintang itu bisa di sentuh. Hmmm mungkin ia bisa mengumpulkan bintang dulu sebelum lanjut menjelajah! Oiya, jika sudah selesai mengumpulkan bintang, jangan lupa untuk mencari portal menuju petualangan menarik selanjutnya.
+            Saka terbangun di malam penuh gemerlap bintang. Namun, badannya masih menempel pada kasur. Oh, sepertinya ia mengalami lucid dream. 
+            <br> <br>
+            Kerlap-kerlip bintang membuat Saka ingin meraih benda itu. Oh! ternyata ia bisa meraihnya. Hmmm mungkin ia bisa mengumpulkan bintang dahulu sebelum lanjut menjelajahi berbagai sisi dari manusia!
+            <br> <br>
+            Oiya, jika sudah selesai mengumpulkan bintang, jangan lupa  mencari portal dan pindahkan saka kedalamnya untuk menuju petualangan menarik selanjutnya!
           </div>
           <div class="container-segitiga">
             <img src="../assets/svg/MainPage/segitiga.svg" alt="" class="ungu">
@@ -78,19 +85,21 @@
           </div>
           <img src="../assets/svg/MainPage/bintang-item.svg" alt="" class="oren">
         </div>
-
       </div>
-      <img src="../assets/png/umum/volumeon.png" alt="" class="volume-main" @click="volume()" ref="volumeBtn">
+      <rcp/>
     </div>
 </template>
 
 <script>
 import {gsap} from "gsap";
 import {Draggable} from "gsap/Draggable"
+import rcp from '../components/rcp.vue';
 if (process.client) {
   gsap.registerPlugin(Draggable);
 }
     export default {
+        
+  components: { rcp },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
 
         beforeMount(){
@@ -105,19 +114,13 @@ if (process.client) {
             }
             
         },
-        mounted(){
-            console.log(localStorage.getItem('score'))
-            this.dragAwanAtas()
-            this.dragAwanBawah()
-            this.dragOrang()
-            if(localStorage.getItem('persona') == 'true'){
-                this.dariPersona()
-            }
-        },
         data(){
             return{
                 score: '0',
                 bintangCount: 10,
+                isVolume: true,
+                audio: undefined,
+                isAudioPlaying: false,
                 stars:[
                     {id :1, class:'putih1',opac:{opacity:1} },
                     {id :2, class:'putih2',opac:{opacity:1} },
@@ -131,6 +134,20 @@ if (process.client) {
                     {id :10, class:'putih10',opac:{opacity:1} },
                 ],
             }
+        },
+        mounted(){
+            console.log(localStorage.getItem('score'))
+            this.dragAwanAtas()
+            this.dragAwanBawah()
+            this.dragOrang()
+            if(localStorage.getItem('daritopeng') == 'true'){
+                this.dariPersona()
+            }
+            this.audio = new Audio('/sound/1 main.mp3')
+            this.audio.volume = 0.5
+            this.audio.loop = true
+            this.playAudio()
+
         },
         computed:{
 
@@ -178,18 +195,49 @@ if (process.client) {
                 this.$router.push('/topeng')
             },
             dariPersona(){
-                localStorage.setItem('persona', 'false')
+                localStorage.setItem('daritopeng', 'false')
                 location.reload()
             },
-            volume(){
-        this.isVolume = !this.isVolume
-        if(this.isVolume){
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeon.png')
-        }else{
-            this.$refs.volumeBtn.src = require('../assets/png/umum/volumeoff.png')
-        }
-    }
+        volume(){
+            this.isVolume = !this.isVolume
+            if(this.isVolume){
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+                console.log('masuk on')
+            }else{
+                this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+                console.log('masuk off')
+            }
         },
+        changeMute() {
+        this.audio.muted = !this.audio.muted
+        if (this.audio.muted == true) {
+          this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeoff.png')
+        } else {
+          this.$refs.volumeBtn.src = require('~/assets/png/umum/volumeon.png')
+        }
+        if (!this.isAudioPlaying) {
+          this.playAudio()
+        }
+      },
+      playAudio(){
+        let startPlayPromise = this.audio.play()
+        this.isAudioPlaying = true
+        if (startPlayPromise !== undefined) {
+          startPlayPromise.then(() => {
+              console.log('play')
+            // Yaudah biarin aja dia ngeplay
+          }).catch(() => {
+            this.isAudioPlaying = false
+            this.audio.muted = true
+            console.log(startPlayPromise)
+            })
+        }
+      },
+    },
+    beforeDestroy(){
+        this.audio.pause()
+        this.audio.currentTime = 0;
+    }
     }
 </script>
 
@@ -216,10 +264,20 @@ body{
     cursor: pointer;
 }
 
-.volume-main{
-    position: fixed;
-    height: 5%;
-    transform: translate(3600%, 170%);
+.container-sound-last{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.container-sound-last .sound-on{
+    position: absolute;
+    width: 4.16%;
+    top: 50%;
+    left: 50%;
+    z-index: 5;
+    transform: translate(1000%, -530%);
+    cursor: pointer;
 }
 .container-main{
     overflow-x: hidden;
