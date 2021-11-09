@@ -95,7 +95,7 @@ const MAX_FRAME = 5
       },
       download(){
         var link = document.getElementById('link')
-        link.setAttribute('download', 'Terimakasih Sudah Datang!')
+        link.setAttribute('download', 'Terimakasih Sudah Datang.png')
         link.setAttribute('href', this.newCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream"))
         link.click()
       },
