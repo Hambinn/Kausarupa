@@ -22,13 +22,13 @@
           </div>
           <div class="container-countdown">
             <div class="days">
-              {{hour}}H
+              00
             </div>
             <div class="hours">
-              {{minute}}M
+              00
             </div>
             <div class="minutes">
-              {{second}}S
+              00
             </div>
           </div>
         </div>
