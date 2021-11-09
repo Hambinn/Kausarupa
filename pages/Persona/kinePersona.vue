@@ -31,6 +31,7 @@
         <layout-karya-persona-kine v-show="showLayout" @close-modal="showLayout = false" :title="title" :nama="nama" :caption="caption" :pdf="pdf" :karlength="karlength" />
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
         </div>
+        <rcp/>
       </div>
     </div>
 </template>
@@ -40,9 +41,9 @@ import karyaPersona from '@/components/Persona/karyaPersona.vue'
 import LayoutKarya from '@/components/LayoutKarya.vue'
 
 import LayoutKaryaPersonaKine from '../../components/Persona/layoutKaryaPersonaKine.vue'
+import Rcp from '../../components/rcp.vue'
     export default {
-        middleware: 'red',
-        components: { LayoutKarya, karyaPersona, LayoutKaryaPersonaKine},
+        components: { LayoutKarya, karyaPersona, LayoutKaryaPersonaKine, Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
             return{

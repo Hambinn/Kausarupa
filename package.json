@@ -22,13 +22,15 @@
     "object-to-array-convert": "^1.1.0",
     "swiper": "^5.4.5",
     "vue-awesome-swiper": "^4.1.1",
-    "vue-turnjs": "^1.3.2"
+    "vue-turnjs": "^1.3.2",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.2.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
     "jest": "^27.0.5",
+    "video.js": "^7.15.4",
     "vue-jest": "^3.0.4"
   }
 }

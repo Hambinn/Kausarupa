@@ -71,7 +71,7 @@ import Throwback from '../components/Throwback.vue'
     import TombolFinish from '../components/TombolFinish.vue'
 import UmpanBalik from '../components/UmpanBalik.vue'
         export default {
-          middleware: 'red',
+          
             components:{ TombolFinish, Katalog, KatalogKarya, Photobooth, Merch, Throwback, UmpanBalik, Rcp },
             data(){
               return{

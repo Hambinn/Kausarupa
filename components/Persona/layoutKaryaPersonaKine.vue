@@ -10,8 +10,7 @@
             </div>
         </div>
         <div class="swiper-container" >
-            <iframe :src="pdf+ '#toolbar=0'"  title="karya" controlsList="nodownload">
-            </iframe>
+            <iframe :src="pdf+ '#toolbar=0'"  title="karya"></iframe>
         </div>
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
     </div>
@@ -20,7 +19,6 @@
 <script>
 import {Swiper, SwiperSlide} from "vue-awesome-swiper"
 import 'swiper/css/swiper.css'
-import Rcp from '../rcp.vue'
     export default {
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
@@ -39,8 +37,7 @@ import Rcp from '../rcp.vue'
         props: ['title','nama','caption','pdf','karlength'],
         components:{
             Swiper,
-            SwiperSlide,
-                Rcp
+            SwiperSlide
         },
 
     }

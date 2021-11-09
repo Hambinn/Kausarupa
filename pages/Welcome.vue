@@ -54,7 +54,7 @@ import Youtube from '../components/Youtube.vue'
 import CalendarWelcome from '../components/CalendarWelcome.vue'
 import Rcp from '../components/rcp.vue'
     export default {
-        middleware: 'red',
+        
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome, Rcp},
         beforeMount(){
                 if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){

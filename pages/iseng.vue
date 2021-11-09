@@ -20,7 +20,7 @@
 import Lightense from 'lightense-images'
 import rcp from '../components/rcp.vue';
     export default {
-        middleware: 'red',
+        
   components: { rcp },
         mounted(){
             window.addEventListener('load',function(){

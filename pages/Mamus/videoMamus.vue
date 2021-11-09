@@ -38,7 +38,7 @@ import karyaMamusVideo from '../../components/Mamus/karyaMamusVideo.vue'
 import layoutKaryaMamusVideo from '../../components/Mamus/layoutKaryaMamusVideo.vue'
 import Rcp from '../../components/rcp.vue'
     export default {
-        middleware: 'red',
+        
   components: { layoutKaryaMamusVideo, karyaMamusVideo, Rcp },
         methods:{
             back(){

@@ -38,7 +38,7 @@ import karyaMamusFoto from '../../components/Mamus/karyaMamusFoto.vue'
 import layoutKaryaMamusFoto from '../../components/Mamus/layoutKaryaMamusFoto.vue'
 import Rcp from '../../components/rcp.vue'
     export default {
-        middleware: 'red',
+        
   components: { layoutKaryaMamusFoto, karyaMamusFoto, Rcp },
         methods:{
             back(){
