@@ -24,7 +24,7 @@ import kotakLoading from '../components/Loading/kotakLoading.vue'
     //   set timeout and push to other page
     setTimeout(() => {
       this.$router.push('/Welcome')
-        }, 3000)
+        }, 8000)
         
     }
     }
