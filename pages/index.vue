@@ -14,7 +14,7 @@
             <img src="../assets/gif/bintang oren.GIF" alt="" class="besar">
           </div>
           <div class="container-tombol">
-            <Nuxt-link to="/Welcome">
+            <Nuxt-link to="/Loading">
               <button class="tap-me">Tap Me!</button>
             </Nuxt-link>
         </div>

@@ -20,7 +20,13 @@
 import kotakLoading from '../components/Loading/kotakLoading.vue'
     export default {
   components: { kotakLoading },
+  mounted() {
+    //   set timeout and push to other page
+    setTimeout(() => {
+      this.$router.push('/Welcome')
+        }, 3000)
         
+    }
     }
 </script>
 
