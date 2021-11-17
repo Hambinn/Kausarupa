@@ -14,22 +14,8 @@
             <img src="../assets/png/UnderConstruction/bawah kanan.png" alt="" class="kelinci">
           </div>
           <div class="container-oops">
-              <h1 class="oops">OOPS!</h1>
-              <h2 class="this">This website is under construction</h2>
-          </div>
-          <div class="container-kotak-countdown">
-            <img src="../assets/png/UnderConstruction/countdown (1).png" alt="" class="kotak-ungu">
-          </div>
-          <div class="container-countdown">
-            <div class="days">
-              00
-            </div>
-            <div class="hours">
-              00
-            </div>
-            <div class="minutes">
-              00
-            </div>
+              <h1 class="oops">Sorry, Kausarupa is closed</h1>
+              <h2 class="this">Thank you for coming!</h2>
           </div>
         </div>
       </div>
@@ -182,12 +168,12 @@ const gepDate = new Date("Nov 8, 2021 20:45:00").getTime();
 }
 
 .container-oops .oops{
-    transform: translate(0%, 770%);
+    transform: translate(0%, 470%);
     font-size: 4vw;
 }
 
 .container-oops .this{
-    transform: translate(0%, 1340%);
+    transform: translate(0%, 900%);
     font-size: 2.3vw;
 }
 

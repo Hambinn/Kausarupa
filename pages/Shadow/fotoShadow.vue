@@ -34,7 +34,7 @@ import karyaShadowFoto from '@/components/Shadow/karyaShadowFoto.vue'
 import LayoutKaryaShadowFoto from '@/components/Shadow/layoutKaryaShadowFoto.vue'
 import Rcp from '../../components/rcp.vue'
     export default {
-        
+        middleware: "red",
         components: {karyaShadowFoto, LayoutKaryaShadowFoto,Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){

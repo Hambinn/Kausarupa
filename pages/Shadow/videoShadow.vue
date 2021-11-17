@@ -33,8 +33,7 @@
 import karyaShadowVideo from '@/components/Shadow/karyaShadowVideo.vue'
 import LayoutKaryaShadowVideo from '@/components/Shadow/layoutKaryaShadowVideo.vue'
 import Rcp from '../../components/rcp.vue'
-    export default {
-        
+    export default {middleware: "red",
         components: {karyaShadowVideo, LayoutKaryaShadowVideo,Rcp },
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){

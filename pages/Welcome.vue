@@ -40,7 +40,6 @@
         <!-- ini bisa buat components lagi, bisa juga buat contentnya yaa -->
       </div>
     </div>
-    <rcp/>
   </div>
 </template>
 
@@ -58,7 +57,7 @@ import Rcp from '../components/rcp.vue'
         components:{FormWelcome, Youtube, AboutUs, CatatanKuratorial, ContactUs, CalendarWelcome, Rcp},
         beforeMount(){
                 if(localStorage.getItem('nama') && localStorage.getItem('nama') !=''){
-                this.$router.push('/Main')
+                
             }
         },
         data(){
@@ -105,6 +104,13 @@ import Rcp from '../components/rcp.vue'
                 }
                 console.log('ntaps')
             },
+            // count how many docs in firestore
+            countDocs(){
+                const bukuRef = this.$fire.firestore.collection('buku-tamu')
+                bukuRef.get().then(snapshot => {
+                    console.log(snapshot.size)
+                })
+            },
             formValidation(){
                 if(this.nama.length > 0 && this.instansi.length>0){
                     this.disabled = false;
@@ -130,6 +136,9 @@ import Rcp from '../components/rcp.vue'
         },
         beforeDestroy(){
             console.log('test aja')
+        },
+        mounted(){
+            this.countDocs()
         }
     }
 </script>
