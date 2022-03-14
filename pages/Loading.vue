@@ -19,7 +19,6 @@
 <script>
 import kotakLoading from '../components/Loading/kotakLoading.vue'
     export default {
-        middleware: "red",
   components: { kotakLoading },
   mounted() {
     //   set timeout and push to other page

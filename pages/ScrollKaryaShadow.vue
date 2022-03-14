@@ -33,7 +33,6 @@
 import rcp from '../components/rcp.vue'
 export default {
   components: { rcp },
-    middleware: "red",
 }
 </script>
 

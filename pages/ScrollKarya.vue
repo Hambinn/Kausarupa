@@ -44,7 +44,6 @@ import LayoutKarya from '../components/LayoutKarya.vue'
 import LayoutKaryaPersona from '../components/Persona/layoutKaryaPersona.vue'
 import Rcp from '../components/rcp.vue'
     export default {
-        middleware: "red",
         components: { LayoutKarya, karyaPersona, LayoutKaryaPersona, Rcp},
         // ini buat naro script script yg diperluin buat websitenya, intinya logic nya inituh.
         data(){
